@@ -1,0 +1,38 @@
+[
+  {
+    "file": "readstat-v5.xpt",
+    "bytes": 1120,
+    "sha256": "42fb9bd94739b74f00be8efe59bba628d5d383c5d4cab158126a7d3699375f43",
+    "producer": "pyreadstat 1.3.7 / bundled ReadStat; timestamps normalized only",
+    "purpose": "single member, labels, format/informat, missing and literal CSV punctuation",
+    "license": "MIT test data authored for MoonXPT; no external survey records",
+    "generated": "2026-11-04"
+  },
+  {
+    "file": "xport-multi.xpt",
+    "bytes": 1840,
+    "sha256": "171254f9ddaff70f02a160f68c4438bfab9ffef3398da5b256dd669422260bab",
+    "producer": "Python xport 3.6.1; pandas constructor adapter only",
+    "purpose": "two different schemas, Windows-1252 metadata and characters",
+    "license": "MIT test data authored for MoonXPT; no external survey records",
+    "generated": "2026-11-04"
+  },
+  {
+    "file": "namestr-136.xpt",
+    "bytes": 1120,
+    "sha256": "f361e899d73607c444ca243809a609bc85461943cf97a1ea310987c0165e3a5b",
+    "producer": "SAS layout vector derived from ReadStat fixture",
+    "purpose": "136-byte descriptors",
+    "license": "MIT test data authored for MoonXPT; no external survey records",
+    "generated": "2026-11-04"
+  },
+  {
+    "file": "reordered-offsets.xpt",
+    "bytes": 1120,
+    "sha256": "ebddcdfd0f41d22ea382b5374943ecd01935bc6338cecb39bc3a215d8fbafd1a",
+    "producer": "SAS layout vector derived from ReadStat fixture",
+    "purpose": "descriptor order differs from observation positions",
+    "license": "MIT test data authored for MoonXPT; no external survey records",
+    "generated": "2026-11-04"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "member": "DEMO_J",
+    "rows": 9254,
+    "columns": 46,
+    "cells": 425684,
+    "sha256": "c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec",
+    "max_ulp": 0,
+    "metadata": "exact declared attributes",
+    "result": "PASS"
+  },
+  {
+    "member": "BMX_J",
+    "rows": 8704,
+    "columns": 21,
+    "cells": 182784,
+    "sha256": "8d675e42d8826ac98714b2c3dd4c5138a5e353fb4424f7eff5e6db4a01ce838a",
+    "max_ulp": 0,
+    "metadata": "exact declared attributes",
+    "result": "PASS"
+  },
+  {
+    "member": "GLU_J",
+    "rows": 3036,
+    "columns": 4,
+    "cells": 12144,
+    "sha256": "5b38897d0d7bfbc69dd9ca74ffdaf2f6a9bed5a91d4a7bf46e07f1332cc3379e",
+    "max_ulp": 0,
+    "metadata": "exact declared attributes",
+    "result": "PASS"
+  }
+]

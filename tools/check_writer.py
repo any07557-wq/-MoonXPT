@@ -32,6 +32,13 @@ for name in ['NUMBERS','WORDS','TAGS','EMPTY']:
         actual=[data[start+i*8:start+(i+1)*8] for i in range(rows)]
         expected=[bytes([tag])+b'\0'*7 for tag in sorted(b'._ABCDEFGHIJKLMNOPQRSTUVWXYZ')]
         assert actual==expected,(actual,expected)
+        import math
+        for raw in actual:
+            value=xport.v56.ibm_to_ieee(raw)
+            if raw[0]==ord('.'):
+                assert math.isnan(value)
+            else:
+                assert value.name==chr(raw[0]) and bytes(value)==raw
     pos=start+((rows*width+79)//80)*80
 assert pos==len(data)
 print('PASS: xport reads all 4 members; ReadStat reads first; 28 missing byte vectors exact')
