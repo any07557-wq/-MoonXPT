@@ -170,11 +170,11 @@ pub fn read_dataset(
   let start = input.offset() - 80L
   at_context(start, () => {
     expect_header(first, "MEMBER", start)
-    let descriptor_size = decimal_field(first, 75, 3)
+    let descriptor_size = decimal_field(first, 74, 4)
     if descriptor_size != 136 && descriptor_size != 140 {
       fail("structure", "NAMESTR size must be 136 or 140")
     }
-    if decimal_field(first, 63, 3) != 160 {
+    if decimal_field(first, 65, 3) != 160 {
       fail("structure", "unsupported member header size")
     }
     expect_header(input.required(80), "DSCRPTR", start + 80L)

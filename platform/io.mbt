@@ -1,0 +1,79 @@
+///|
+#borrow(path)
+extern "C" fn open_read_raw(path : Bytes) -> Int32 = "mx_open_read"
+
+///|
+#borrow(buffer)
+extern "C" fn read_raw(
+  fd : Int32,
+  buffer : FixedArray[Byte],
+  n : Int32,
+) -> Int32 = "mx_read"
+
+///|
+extern "C" fn close_raw(fd : Int32) -> Int32 = "mx_close"
+
+///|
+pub struct File {
+  fd : Int32
+  mut closed : Bool
+}
+
+///|
+fn path_bytes(path : String) -> Bytes raise @xpt.XptError {
+  if path.contains_char('\u0000') {
+    @xpt.fail("io", "path contains NUL")
+  }
+  @utf8.encode(path[:]) + b"\x00"
+}
+
+///|
+pub fn File::open(path : String) -> File raise @xpt.XptError {
+  let fd = open_read_raw(path_bytes(path))
+  if fd < 0 {
+    @xpt.fail("io", "cannot open \{path}: errno \{-fd}")
+  }
+  { fd, closed: false, }
+}
+
+///|
+pub fn File::read(self : File, n : Int32) -> Bytes raise @xpt.XptError {
+  if self.closed {
+    @xpt.fail("io", "read from closed file")
+  }
+  if n < 0 || n > 16777216 {
+    @xpt.fail("limit", "invalid platform read allocation")
+  }
+  let buffer = FixedArray::make(n, b'\x00')
+  let count = read_raw(self.fd, buffer, n)
+  if count < 0 {
+    @xpt.fail("io", "read failed: errno \{-count}")
+  }
+  Bytes::from_array(buffer[:count])
+}
+
+///|
+pub fn File::input(
+  self : File,
+  max_bytes~ : Int64 = 1099511627776L,
+) -> @xpt.Input raise @xpt.XptError {
+  @xpt.Input::new(n => self.read(n), max_bytes~)
+}
+
+///|
+pub fn File::close(self : File) -> Unit raise @xpt.XptError {
+  if !self.closed {
+    self.closed = true
+    let status = close_raw(self.fd)
+    if status < 0 {
+      @xpt.fail("io", "close failed: errno \{-status}")
+    }
+  }
+}
+
+///|
+pub fn File::cleanup(self : File) -> Unit {
+  self.close() catch {
+    _ => ()
+  }
+}

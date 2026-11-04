@@ -1,0 +1,9 @@
+import {
+  "any07557/moonxpt" @xpt,
+  "any07557/moonxpt/platform",
+  "moonbitlang/core/env",
+}
+
+pkgtype(kind: "executable")
+
+supported_targets = "native"

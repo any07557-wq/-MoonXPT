@@ -2,7 +2,7 @@
 fn fixture_headers(size : Int32, position~ : Int64 = 0L) -> Bytes raise {
   let first = ByteBuilder::new(80)
   first.put(0, header("MEMBER"))
-  first.put(63, b"160")
+  first.put(65, b"160")
   first.put(75, encode_text(size.to_string(), Ascii))
   let data = ByteBuilder::new(80)
   data.put(0, b"SAS     TEST    SASDATA ")

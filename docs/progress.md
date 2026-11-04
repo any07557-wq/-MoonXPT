@@ -13,3 +13,9 @@
 ## S1 完成
 
 C02 native 基线 7189a47。模型/流 I/O/诊断及交换契约已实现。`moon check --target native --deny-warn`、`moon test --target native --deny-warn`（4/4）、`moon build --target native --deny-warn` 和 native 探针运行通过。当前工具链 Bytes 不可变，构造使用受限 Array 后转 Bytes；采用 Debug 派生和 errdefer；仅关闭旧式 Eq 方法自动提升弃用警告。下一步 S2。
+
+## S2 完成
+
+C04 0b5d524；C05 df3dd87；C06 2404cf6。核心 reader 为拉取式，按物理块验证候选成员，失败候选有界回放。严格策略拒绝短空白尾部及成员/数据双重解释；显式 trim 或逐成员行数提示可消除约定层歧义。完整行原始字节可访问。
+
+真实扫描发现并修复 MEMBER 的 160 字段起点应为 65（合成夹具起初也用了错误偏移），已补独立真实输入验证。三份样本扫描得到 9254×46、8704×21、3036×4；完整数值对照由 tools/compare_scan.py 执行，数值容差 1 ULP（ReadStat 截断与本库最近舍入差异），精确整数与缺失不使用容差。`moon test --target native --deny-warn` 12/12；检查和构建通过。下一步 S3 writer。

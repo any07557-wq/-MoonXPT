@@ -1,0 +1,10 @@
+import {
+  "any07557/moonxpt" @xpt,
+  "moonbitlang/core/encoding/utf8",
+}
+
+supported_targets = "native"
+
+options(
+  "native-stub": [ "io.c" ],
+)

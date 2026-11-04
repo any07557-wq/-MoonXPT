@@ -152,7 +152,10 @@ pub fn[T] fail(
 pub struct Input {
   read : (Int32) -> Bytes raise
   mut offset : Int64
-  limit : Int64
+  mut limit : Int64
+  mut replay : Bytes
+  mut replay_at : Int32
+  mut capture : Array[Byte]?
 }
 
 ///|
@@ -163,7 +166,14 @@ pub fn Input::new(
   if max_bytes < 0 {
     fail("limit", "negative input limit")
   }
-  { read, offset: 0L, limit: max_bytes, }
+  {
+    read,
+    offset: 0L,
+    limit: max_bytes,
+    replay: b"",
+    replay_at: 0,
+    capture: None,
+  }
 }
 
 ///|
@@ -190,7 +200,18 @@ pub fn Input::exact(
     let wanted = (length - n).min(
       (self.limit - self.offset).min(16777216L).to_int(),
     )
-    let chunk = (self.read)(wanted)
+    let chunk = if self.replay_at < self.replay.length() {
+      let end = (self.replay_at + wanted).min(self.replay.length())
+      let bytes = self.replay[self.replay_at:end].to_owned()
+      self.replay_at = end
+      if end == self.replay.length() {
+        self.replay = b""
+        self.replay_at = 0
+      }
+      bytes
+    } else {
+      (self.read)(wanted)
+    }
     if chunk.length() > wanted {
       fail("io", "source exceeded read request", offset=self.offset)
     }
@@ -207,10 +228,30 @@ pub fn Input::exact(
     for i = 0; i < chunk.length(); i = i + 1 {
       result[n + i] = chunk[i]
     }
+    if self.capture is Some(log) {
+      log.push_iter(chunk.iter())
+    }
     n = n + chunk.length()
     self.offset = self.offset + chunk.length().to_int64()
   }
   Some(Bytes::from_array(result))
+}
+
+///|
+/// A metadata candidate can consume at most the configured descriptor bound.
+fn Input::start_capture(self : Input) -> Unit {
+  self.capture = Some([])
+}
+
+///|
+fn Input::rollback_capture(self : Input) -> Unit {
+  if self.capture is Some(log) {
+    let bytes = Bytes::from_array(log)
+    self.replay = bytes + self.replay[self.replay_at:].to_owned()
+    self.replay_at = 0
+    self.offset = self.offset - bytes.length().to_int64()
+  }
+  self.capture = None
 }
 
 ///|
