@@ -3,6 +3,7 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 int32_t mx_open_read(const uint8_t *path) {
   int fd;
@@ -32,3 +33,4 @@ int32_t mx_write(int32_t fd, const uint8_t *buffer, int32_t n) {
   return 0;
 }
 int32_t mx_sync(int32_t fd) { return fsync(fd)<0 ? -errno : 0; }
+void mx_exit(int32_t code) { exit(code); }

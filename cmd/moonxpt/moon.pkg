@@ -1,11 +1,13 @@
 import {
   "any07557/moonxpt" @xpt,
+  "any07557/moonxpt/exchange",
+  "any07557/moonxpt/platform",
+  "moonbitlang/core/env",
+  "moonbitlang/core/json",
+  "moonbitlang/core/debug",
+  "moonbitlang/core/string",
 }
 
 pkgtype(kind: "executable")
 
 supported_targets = "native"
-
-options(
-  "native-stub": [ "io.c" ],
-)

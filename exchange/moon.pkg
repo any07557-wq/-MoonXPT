@@ -1,0 +1,4 @@
+import {
+  "any07557/moonxpt" @xpt,
+  "moonbitlang/core/json",
+}
