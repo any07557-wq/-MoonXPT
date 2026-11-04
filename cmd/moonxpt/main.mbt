@@ -181,10 +181,8 @@ fn main {
     match parsed.command {
       "inspect" => inspect_file(parsed)
       "export" => export_file(parsed)
-      _ =>
-        @xpt.fail(
-          "usage", "this command is being implemented in the next milestone",
-        )
+      "write" => write_file(parsed)
+      _ => @xpt.fail("usage", "unsupported command")
     }
   } catch {
     @xpt.XptError(d) => {
@@ -200,6 +198,90 @@ fn main {
       @platform.exit(4)
     }
   }
+}
+
+///|
+fn write_file(args : Args) -> Unit raise {
+  let meta_path = required_option(args, "--metadata")
+  let output = required_option(args, "--output")
+  @platform.ensure_distinct(args.input, output)
+  @platform.ensure_distinct(meta_path, output)
+  let metadata = @exchange.parse_metadata(
+    @platform.read_text(meta_path),
+    limits=args.read_options.limits,
+  )
+  if args.opts.contains("--encoding") && args.encoding != metadata.encoding {
+    @xpt.fail("usage", "--encoding disagrees with metadata encoding")
+  }
+  let input = @platform.File::open(args.input)
+  defer input.cleanup()
+  let csv = @exchange.CsvReader::new(
+    n => input.read(n),
+    max_columns=args.read_options.limits.max_variables,
+    max_input_bytes=args.read_options.limits.max_input_bytes,
+  )
+  let header = csv
+    .next_record()
+    .unwrap_or_else(() => @xpt.fail("csv", "CSV header is missing"))
+  let names : Array[String] = []
+  for v in metadata.dataset.variables {
+    names.push(@xpt.text_field(v.name, @xpt.Ascii))
+  }
+  if !(names.is_empty() && header == [""]) && header != names {
+    @xpt.fail("csv", "CSV header names/order do not match metadata")
+  }
+  let stage = @platform.Stage::new(output, force=args.flags.contains("--force"))
+  defer stage.cleanup()
+  let writer = @xpt.Writer::new(stage.output(), library=metadata.library, options={
+    ..@xpt.WriteOptions::default(),
+    limits: args.read_options.limits,
+  })
+  writer.begin_dataset(metadata.dataset)
+  let mut count = 0L
+  while true {
+    let offset = csv.offset()
+    let cells = csv.next_record()
+    if cells is None {
+      break
+    }
+    if count >= metadata.row_count {
+      @xpt.fail(
+        "csv",
+        "CSV contains more rows than metadata row_count",
+        offset~,
+        row=count,
+      )
+    }
+    writer.write_row(
+      @exchange.import_cells(
+        metadata.dataset,
+        cells.unwrap(),
+        metadata.encoding,
+        numeric_empty_missing=args.flags.contains("--numeric-empty-missing"),
+      ),
+    ) catch {
+      @xpt.XptError(d) =>
+        raise @xpt.XptError({
+          ..d,
+          offset: Some(d.offset.unwrap_or(offset)),
+          row: Some(d.row.unwrap_or(count)),
+          dataset: Some(@xpt.text_field(metadata.dataset.name, @xpt.Ascii)),
+        })
+      e => raise e
+    }
+    count = count + 1L
+  }
+  if count != metadata.row_count {
+    @xpt.fail("csv", "CSV row count differs from metadata row_count", row=count)
+  }
+  writer.finish()
+  @platform.commit_group([stage])
+  let report : Json = {
+    "output": output,
+    "row_count": @exchange.integer_json(count),
+    "member": @xpt.text_field(metadata.dataset.name, @xpt.Ascii),
+  }
+  println(report.stringify())
 }
 
 ///|

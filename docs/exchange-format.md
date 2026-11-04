@@ -5,8 +5,8 @@ is integer 1; unknown versions fail. JSON records target `encoding`, `library`,
 `dataset`, and `csv` conventions. Dataset has name, label, type, producer/time
 fields, row width, descriptor size, and ordered `variables` containing name,
 label, type (`numeric`/`character`), storage width, offset, number, hash,
-format and informat (name, width, decimals, justification). Original fixed
-metadata fields are also representable as byte arrays, avoiding text guessing.
+format and informat (name, width, decimals, justification). Text metadata is decoded with the declared encoding and header padding is
+normalized on reconstruction; the core API retains original fixed metadata bytes.
 No per-cell data belongs in JSON. Export records observed `row_count` after
 streaming, to resolve V5 tail ambiguity during reconstruction/verification.
 

@@ -25,3 +25,11 @@ C04 0b5d524；C05 df3dd87；C06 2404cf6。核心 reader 为拉取式，按物理
 C08 796fe45：验证 schema、确定性头部与 140 字节输出。writer 逐行写有限数值/缺失/字符，支持空成员和多个不同 schema，错误后不可继续/finish，原始行写入保留低位。输出字节上限在写入前检查。
 
 `moon test --target native --deny-warn` 15/15；examples/write 生成 NUMBERS(3)、WORDS(3)、TAGS(28)、EMPTY(0)。`tools/check_writer.py` 由独立 Python xport 3.6.1 读取全部成员和值；28 个标记用独立字节向量精确检查。pyreadstat 1.3.7 把该多成员文件后续头部误作数据，返回首成员 145 行，因此仅对单成员切片做 ReadStat 对照，绝不当作多成员证据。下一步 S4 CLI 与 CSV/JSON。
+
+## S4 完成
+
+C10 c46d08c；C11 fd72a23。inspect/export/write 三条 native 命令已贯通。C10 集成检查发现 Int64 默认 JSON 产生字符串，提交先于确认发生；C11 已显式输出精确十进制 JSON number，并重新通过 CLI 集成检查。
+
+检查：`moon test --target native --deny-warn` 20/20；tools/test_inspect.py、tools/test_export.py、tools/test_exchange.py 均通过。三份真实样本完成 inspect→CSV/JSON→write→pyreadstat 全列全值和全部已声明元数据比较（tools/validate_corpus.py），620612 单元格，实际 0 ULP 差异。
+
+平台采用同目录独占临时文件、同步和 no-replace 发布；普通错误对 CSV/JSON 成组回滚；--force 保留旧文件备份直至成组成功。进程退出清理临时文件，机器崩溃跨文件原子性不作保证；回滚遇并发外部改动时保留恢复备份并报错。核心/交换层不依赖文件系统或 oracle。下一步 S5 独立生成输入、异常、流式/RSS 和完整证据整理。

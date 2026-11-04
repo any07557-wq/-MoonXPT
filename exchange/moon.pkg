@@ -2,4 +2,9 @@ import {
   "any07557/moonxpt" @xpt,
   "moonbitlang/core/json",
   "moonbitlang/core/encoding/utf8",
+  "moonbitlang/core/string",
 }
+
+import {
+  "any07557/moonxpt",
+} for "test"
