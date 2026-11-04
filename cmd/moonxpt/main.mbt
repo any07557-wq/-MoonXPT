@@ -141,7 +141,7 @@ fn inspect_file(args : Args) -> Unit raise {
     members.push({
       "metadata": @exchange.dataset_json(meta, args.encoding),
       "row_count": if count {
-        @json.to_json(rows)
+        @exchange.integer_json(rows)
       } else {
         Json::null()
       },
@@ -180,6 +180,7 @@ fn main {
     let parsed = parse_args(args)
     match parsed.command {
       "inspect" => inspect_file(parsed)
+      "export" => export_file(parsed)
       _ =>
         @xpt.fail(
           "usage", "this command is being implemented in the next milestone",
@@ -199,4 +200,65 @@ fn main {
       @platform.exit(4)
     }
   }
+}
+
+///|
+fn required_option(args : Args, key : String) -> String raise @xpt.XptError {
+  args.opts
+  .get(key)
+  .unwrap_or_else(() => @xpt.fail("usage", "required option: \{key}"))
+}
+
+///|
+fn export_file(args : Args) -> Unit raise {
+  let selected = required_option(args, "--member")
+  let csv_path = required_option(args, "--csv")
+  let meta_path = required_option(args, "--metadata")
+  @platform.ensure_distinct(args.input, csv_path)
+  @platform.ensure_distinct(args.input, meta_path)
+  @platform.ensure_distinct(csv_path, meta_path)
+  let input = @platform.File::open(args.input)
+  defer input.cleanup()
+  let csv = @platform.Stage::new(csv_path, force=args.flags.contains("--force"))
+  defer csv.cleanup()
+  let metadata = @platform.Stage::new(
+    meta_path,
+    force=args.flags.contains("--force"),
+  )
+  defer metadata.cleanup()
+  let reader = @xpt.Reader::new(input.input(), options=args.read_options)
+  let mut found = false
+  let mut count = 0L
+  while reader.next_dataset() is Some(meta) {
+    if @xpt.text_field(meta.name, @xpt.Ascii) == selected {
+      found = true
+      csv.write(@exchange.csv_header(meta))
+      while reader.next_row() is Some(row) {
+        csv.write(@exchange.csv_record(@exchange.row_cells(row, args.encoding)))
+        count = count + 1L
+      }
+      let json = @exchange.metadata_json(
+        reader.library(),
+        meta,
+        args.encoding,
+        count,
+      )
+      metadata.write_text(json.stringify() + "\n")
+    } else {
+      while reader.next_raw() is Some(_) {
+        ()
+      }
+    }
+  }
+  if !found {
+    @xpt.fail("member", "member not found: \{selected}")
+  }
+  @platform.commit_group([csv, metadata])
+  let report : Json = {
+    "member": selected,
+    "row_count": @exchange.integer_json(count),
+    "csv": csv_path,
+    "metadata": meta_path,
+  }
+  println(report.stringify())
 }

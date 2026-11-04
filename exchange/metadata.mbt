@@ -87,10 +87,16 @@ pub fn library_json(meta : @xpt.LibraryMetadata) -> Json raise @xpt.XptError {
 pub fn diagnostic_json(d : @xpt.Diagnostic) -> Json {
   {
     "kind": d.kind,
-    "offset": @json.to_json(d.offset),
+    "offset": d.offset.map(integer_json).unwrap_or(Json::null()),
     "member": @json.to_json(d.dataset),
-    "row": @json.to_json(d.row),
+    "row": d.row.map(integer_json).unwrap_or(Json::null()),
     "variable": @json.to_json(d.variable),
     "reason": d.reason,
   }
+}
+
+///|
+/// Keep exact decimal JSON integers; core Int64 ToJson intentionally uses strings.
+pub fn integer_json(n : Int64) -> Json {
+  Json::number(n.to_double(), repr=n.to_string())
 }
