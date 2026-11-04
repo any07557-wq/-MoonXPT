@@ -88,9 +88,9 @@ pub fn diagnostic_json(d : @xpt.Diagnostic) -> Json {
   {
     "kind": d.kind,
     "offset": d.offset.map(integer_json).unwrap_or(Json::null()),
-    "member": @json.to_json(d.dataset),
+    "member": d.dataset.map(Json::string).unwrap_or(Json::null()),
     "row": d.row.map(integer_json).unwrap_or(Json::null()),
-    "variable": @json.to_json(d.variable),
+    "variable": d.variable.map(Json::string).unwrap_or(Json::null()),
     "reason": d.reason,
   }
 }

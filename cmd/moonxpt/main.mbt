@@ -92,6 +92,33 @@ fn parse_args(args : Array[String]) -> Args raise @xpt.XptError {
       @xpt.fail("usage", "unknown option: \{key}")
     }
   }
+  for key, _ in flags {
+    let allowed = match command {
+      "inspect" => key == "--json" || key == "--count-rows"
+      "export" => key == "--force"
+      _ => key == "--force" || key == "--numeric-empty-missing"
+    }
+    if !allowed {
+      @xpt.fail("usage", "\{key} is not valid for \{command}")
+    }
+  }
+  for key, _ in opts {
+    let allowed = match key {
+      "--member" | "--csv" => command == "export"
+      "--metadata" => command != "inspect"
+      "--output" => command == "write"
+      "--tail-policy" => command != "write"
+      _ => true
+    }
+    if !allowed {
+      @xpt.fail("usage", "\{key} is not valid for \{command}")
+    }
+  }
+  if command == "write" && !hints.is_empty() {
+    @xpt.fail(
+      "usage", "CSV write uses metadata row_count; --rows applies to XPT inputs",
+    )
+  }
   let encoding = @exchange.parse_encoding(
     opts.get("--encoding").unwrap_or("ascii"),
   )

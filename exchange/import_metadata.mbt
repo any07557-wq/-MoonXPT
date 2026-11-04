@@ -136,10 +136,6 @@ pub fn parse_metadata(
   if dataset.row_width == 0 && row_count != 0L {
     @xpt.fail("metadata", "zero-column dataset cannot have observations")
   }
-  if dataset.row_width > 0 &&
-    row_count > limits.max_input_bytes / dataset.row_width.to_int64() {
-    @xpt.fail("limit", "declared output exceeds byte limit")
-  }
   let options = { ..@xpt.WriteOptions::default(), limits, }
   ignore(@xpt.encode_library(library, options))
   ignore(@xpt.encode_dataset(dataset, options))

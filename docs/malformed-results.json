@@ -1,0 +1,8 @@
+{
+  "seed": 20261104,
+  "truncations": 79,
+  "mutations": 256,
+  "targeted": 8,
+  "result": "PASS",
+  "timeout_seconds": 5
+}

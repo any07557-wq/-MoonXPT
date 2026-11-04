@@ -1,6 +1,6 @@
 # 验证报告（2026-11-04）
 
-所有命令均已实际执行。核心与发布 CLI 不加载 Python、R 或其他统计解析器。S5 的异常/性能补充仍在进行，见进度文件。
+所有命令均已实际执行。核心与发布 CLI 不加载 Python、R 或其他统计解析器。S5 异常与性能证据已补齐。
 
 ## 真实数据全链路
 
@@ -12,7 +12,7 @@
 | BMX_J | 8704 | 21 | 182784 | 0 ULP |
 | GLU_J | 3036 | 4 | 12144 | 0 ULP |
 
-允许的一般 Double 语义比较规则为最多 1 ULP（ReadStat 读取会截断低位，本库最近舍入）；整数、缺失、标签、位置和编码精确比较。真实样本此轮实际没有使用容差。IBM 56 位到 IEEE 53 位可能丢低位；write_raw/raw API 可保留字段，CSV 不承诺文件 hash。
+允许的一般 Double 语义比较规则为最多 1 ULP（SAS/ReadStat 与本库均向零截断低位，原始 HFP 语义损失小于1 ULP）；整数、缺失、标签、位置和编码精确比较。真实样本此轮实际没有使用容差。IBM 56 位到 IEEE 53 位可能丢低位；write_raw/raw API 可保留字段，CSV 不承诺文件 hash。
 
 ## 独立实现及其边界
 
@@ -24,7 +24,7 @@
 
 ## 已执行的离线检查
 
-- `moon test --target native --deny-warn`：22 个测试组通过，包括 64 个 xport 独立编码常量 × 7 种宽度、128 个 Python Fraction 最近舍入解码常量、全部 28 个缺失、全部有定义 CP1252 字节双向测试。
+- `moon test --target native --deny-warn`：27 个测试组通过，包括 64 个 xport 独立编码常量 × 7 种宽度、128 个 Python Fraction 向零截断解码常量（独立精确有理数比较决定方向）、全部 28 个缺失、全部有定义 CP1252 字节双向测试。
 - `python3 tools/test_inspect.py`：稳定 JSON、未知行数、多成员计数、路径空格、stdout/stderr、2/3 退出码。
 - `python3 tools/test_export.py`：选成员、Python csv/json 对照、默认拒绝覆盖、force、同路径和失败清理。
 - `python3 tools/test_exchange.py`：四成员分别导出/重建；CSV/JSON 语义一致；缺失与字符 .A 分开；重复列、未知 schema、错误列数和引号失败。
@@ -34,3 +34,13 @@
 ## 关键失败与修复留痕
 
 真实输入揭示 MEMBER 的 160 字段偏移错误（65，合成探针曾误为63）；已修复。C10 最终集成检查前已提交，后发现 Int64 ToJson 是字符串；C11 显式 number+十进制 repr 修复并通过回归。未删除失败测试或调整期望掩盖产品缺陷。
+
+## 异常、资源与失败原子性
+
+`python3 tools/test_malformed.py`：seed 20261104，79 个截断位置、256 个1–4字节变异、8个定向结构错误；每次子进程5秒上限，均无崩溃、内部错误或超时。定向数值零指数错误准确关联 offset=1040、member=ORACLE、row=0、variable=VALUE。超大偏移/声明在行分配前失败。
+
+额外 MoonBit 回归：短全空白末行用 hints 保留；80字节全空白行为数据；不完整伪 MEMBER 作为数据回放；完整 polyglot 头默认报歧义。输入恰好等于上限允许 EOF，多出字节被拒绝且回放不吞字节；CSV 非零小数 underflow 不变零；未知行数提示成员拒绝；诊断 nullable context 为 string/null，修复了 core Option ToJson 的数组表示。
+
+platform/stage_wbtest.mbt 实际制造第二目标的竞争文件，验证第一个输出撤回且外部竞争文件不被删除；force 模式旧文件备份确实恢复。跨机器崩溃或回滚时第三方并发改动不承诺全文件事务，遇到恢复失败保留备份并明确报恢复路径。
+
+`tools/benchmark.py` 已测 export 和 write：合成1万/10万/100万行，无线性数据积累；数字、方法和边界见 benchmarks.md / benchmark-results.json。内存证据为 native release Linux，未外推平台。

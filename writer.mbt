@@ -17,7 +17,10 @@ pub fn Writer::new(
   library~ : LibraryMetadata = LibraryMetadata::new(),
   options~ : WriteOptions = WriteOptions::default(),
 ) -> Writer raise {
-  output.limit = output.limit.min(options.limits.max_input_bytes)
+  if options.max_output_bytes < 0L {
+    fail("limit", "negative output limit")
+  }
+  output.limit = output.limit.min(options.max_output_bytes)
   output.put(encode_library(library, options))
   {
     output,

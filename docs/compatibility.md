@@ -1,14 +1,26 @@
-# Compatibility evidence (milestone S1)
+# V5 兼容性矩阵（2026-11-04）
 
-| Capability | Status | Evidence/remaining work |
+本表区分规范/字节向量、独立实现与真实样本证据。唯一承诺运行后端是 Linux x86_64 native；其他平台未验证。代码不依赖 oracle 运行。
+
+| 能力 | 实现及验证状态 | 证据与边界 |
 |---|---|---|
-| Native backend | verified | moon check/test/build/run; 20261012 Linux |
-| Models, diagnostics, short-read I/O | implemented/tested | model_test.mbt |
-| V5 headers/136,140 descriptors | not implemented | S2 |
-| IBM numeric, 28 missing tags | model only | S2 codec vectors |
-| ASCII, Windows-1252 | not implemented | S2 |
-| Multi-member pull reader, tail policy | contract only | S2 |
-| Streaming writer | contract only | S3 |
-| inspect/export/write | build probe only | S4 |
-| Three real datasets | oracle read only | not yet product validation |
-| V8, SAS7BDAT, format execution | out of scope | reject distinctly |
+| V5 库头、成员、OBS | 已实现/已验证 | 3 份 NHANES；ReadStat/xport 独立输入；保留原始元数据字节 |
+| V8 | 明确拒绝 | version 诊断；不按 V5 解析 |
+| 136/140 NAMESTR | 读取两者已验证；写出140 | 独立 ReadStat 派生布局向量；跨块单字节短读 |
+| 名称、变量顺序与标签 | 已实现/已验证 | 8 字节名、40 字节标签；重复大小写名称拒绝；真实数据全列比较 |
+| format/informat/hash/number | 已实现/已验证 | 明确字段属性；ReadStat DATE9./BEST12. 输入；真实描述符独立字节比较；不执行格式 |
+| 存储位置/间隙/重排 | 已实现/向量已验证 | reordered-offsets.xpt；读写后所有物理字段字节比较；重叠/越界拒绝。常见 oracle 忽略 npos，不能证明非顺序布局互操作 |
+| IBM 数值宽度2–8 | 已实现/独立向量已验证 | 64×7 编码与128个有理数向零截断解码；缩短宽度按规范截断；正负0、分数、边界、NaN/Inf 错误 |
+| 数值范围与精度 | 已实现/已验证 | 正规化 HFP 非零最小2^-260，最大严格小于2^252；零写成正零。8字节 IEEE输入精确装入56位；读取按SAS/ReadStat向零截断，误差小于1 ULP；拒绝非规范未正规化fraction，原始读取仍可访问其字节。Python xport/SAS便利转换程序的高端编码限制更窄；本库保留原始 HFP 范围 |
+| 28 种缺失 | 已实现/已验证 | .、._、.A–.Z；规范字节+Python xport低层 tag 验证，DataFrame NaN 不作为标记证据 |
+| 原始字符与编码 | 已实现/已验证 | 全字段原始字节；ASCII/CP1252严格双向；未定义字节报编码错误；V5字符1–200字节；编码后超长拒绝 |
+| 单/多成员、空成员 | 已实现/独立验证 | xport独立读4个输出成员；独立双成员输入；库writer可多成员，CLI每次写一个 |
+| 物理对齐/截断/伪头 | 已实现/已验证 | 最后一块非80字节拒绝；失败候选有界回放；完整合法伪成员头默认诊断歧义 |
+| 尾部歧义 | 显式策略/已验证 | 默认 Reject；逐成员行数提示保留短全空白行；TrimPadding选择最大合法padding并按验证头切成员，可丢歧义空白行。严格多成员也可能需 hints，文件没有编码行数 |
+| 拉取/取消/资源限制 | 已实现/已验证 | 提前停止停止I/O，调用方关闭；字节/列/行/成员/分配限制；100倍合成行数导出和写入 RSS 证据 |
+| CSV+JSON v1 | 已实现/已验证 | UTF-8、逗号、引号、CRLF/LF、内嵌换行、空串/空格、类型化缺失；未知版本/重复列/列数失败 |
+| inspect/export/write | 已实现/完整链路验证 | 稳定JSON；未要求计数时null；stdout结果/stderr诊断；退出0/2/3/4；三份真实样本全链路 |
+| 输出失败语义 | 已实现/已验证 | 默认不覆盖、路径空格/别名、独占stage、冲突回滚及恢复旧文件测试；机器崩溃跨文件原子性不保证 |
+| 其他编码、SAS7BDAT、CPORT、外部值标签目录 | 不支持/不在本期范围 | 不猜测编码、日期或值标签；日期保留有限数值及format |
+
+确定性：相同 schema/值/选项产生同字节；无来源时间时使用可注入的固定 DATETIME16。保留来源时间时按实际字段写出。reserved字段与描述符尾部规范化，存储间隙填空格，元数据头部填充重建；CSV往返不保证整个文件hash或 IBM 低有效位。

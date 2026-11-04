@@ -272,6 +272,25 @@ pub fn import_cells(
           if n.is_nan() || n.is_inf() {
             @xpt.fail("numeric", "CSV value is not finite")
           }
+          if n == 0.0 {
+            let mut nonzero = false
+            for c in text {
+              if c == 'e' || c == 'E' {
+                break
+              }
+              if c >= '1' && c <= '9' {
+                nonzero = true
+              }
+            }
+            if nonzero {
+              @xpt.fail(
+                "numeric",
+                "numeric decimal underflows Double",
+                variable=@xpt.text_field(v.name, @xpt.Ascii),
+              )
+            }
+          }
+
           @xpt.Finite(n)
         }
         @xpt.Numeric(numeric)

@@ -31,7 +31,18 @@ pub fn Reader::new(
 ) -> Reader raise {
   ignore(validate_layout([], options.limits))
   input.limit = input.limit.min(options.limits.max_input_bytes)
-  let options = { ..options, row_hints: options.row_hints.copy(), }
+  let hints : Map[String, Int64] = Map([])
+  for name, n in options.row_hints {
+    let key = name.to_upper()
+    if hints.contains(key) ||
+      !valid_name(encode_text(name, Ascii)) ||
+      n < 0L ||
+      n > options.limits.max_rows {
+      fail("schema", "invalid or duplicate row hint")
+    }
+    hints[key] = n
+  }
+  let options = { ..options, row_hints: hints, }
   let library_meta = read_library(input)
   {
     input,
@@ -82,7 +93,7 @@ pub fn Reader::next_dataset(self : Reader) -> DatasetMetadata? raise {
       fail("schema", "duplicate dataset name", dataset=name)
     }
     self.seen[key] = true
-    if self.options.row_hints.get(name) is Some(n) {
+    if self.options.row_hints.get(key) is Some(n) {
       if n < 0L ||
         n > self.options.limits.max_rows ||
         (meta.row_width == 0 && n != 0L) ||
@@ -101,6 +112,17 @@ pub fn Reader::next_dataset(self : Reader) -> DatasetMetadata? raise {
     self.pending_at = 0
     self.final_rows = None
     self.done = false
+  }
+  if candidate is None {
+    for name, _ in self.options.row_hints {
+      if !self.seen.contains(name) {
+        fail(
+          "member",
+          "row hint refers to an absent member: \{name}",
+          offset=self.input.offset(),
+        )
+      }
+    }
   }
   candidate
 }
@@ -202,7 +224,7 @@ pub fn Reader::next_raw(self : Reader) -> (Int64, Bytes)? raise {
     fail("state", "call next_dataset before reading rows")
   })
   let name = text_field(meta.name, Ascii)
-  if self.options.row_hints.get(name) is Some(hint) {
+  if self.options.row_hints.get(name.to_upper()) is Some(hint) {
     if self.row_index < hint {
       while self.available() < meta.row_width {
         self.append(self.input.required(80))

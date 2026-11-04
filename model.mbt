@@ -111,11 +111,16 @@ pub fn ReadOptions::default() -> ReadOptions {
 pub(all) struct WriteOptions {
   limits : Limits
   timestamp : Bytes
+  max_output_bytes : Int64
 } derive(@debug.Debug)
 
 ///|
 pub fn WriteOptions::default() -> WriteOptions {
-  { limits: Limits::default(), timestamp: b"01JAN00:00:00:00", }
+  {
+    limits: Limits::default(),
+    timestamp: b"01JAN00:00:00:00",
+    max_output_bytes: 1099511627776L,
+  }
 }
 
 ///|
@@ -195,6 +200,23 @@ pub fn Input::exact(
   let mut n = 0
   while n < length {
     if self.offset >= self.limit {
+      // One-byte EOF probe distinguishes an exactly sized valid input from
+      // data exceeding the configured limit without accepting another byte.
+      if self.replay_at < self.replay.length() {
+        fail("limit", "input byte limit reached", offset=self.offset)
+      }
+      let probe = (self.read)(1)
+      if probe.length() > 1 {
+        fail("io", "source exceeded EOF probe request", offset=self.offset)
+      }
+      if probe.is_empty() {
+        if n == 0 && eof_ok {
+          return None
+        }
+        fail("truncated", "unexpected EOF at input limit", offset=self.offset)
+      }
+      self.replay = probe
+      self.replay_at = 0
       fail("limit", "input byte limit reached", offset=self.offset)
     }
     let wanted = (length - n).min(

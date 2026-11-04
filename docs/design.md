@@ -24,6 +24,6 @@ with descriptor validation; data matching a valid member structure is itself
 ambiguous and requires a row hint. Never scan the entire file for a marker.
 
 IBM values retain raw row bytes; Double is the semantic view (56-bit IBM fraction
-may require rounding to 53-bit IEEE). Encoding is explicit. No implicit date or
+is truncated toward zero to 53-bit IEEE, with error strictly below 1 ULP; see adr-002-numeric.md). Encoding is explicit. No implicit date or
 value-label conversions. Writer normalizes reserved header bytes and 140-byte
 descriptors; semantic CSV round trips do not promise original file hashes.

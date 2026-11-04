@@ -180,4 +180,27 @@ pub fn expect_header(
   if !header_is(bytes, kind) {
     fail("structure", "expected \{kind} header", offset~)
   }
+  for i = 48; i < 78; i = i + 1 {
+    if bytes[i] < b'0' || bytes[i] > b'9' {
+      fail(
+        "structure",
+        "non-decimal header payload",
+        offset=offset + i.to_int64(),
+      )
+    }
+    let used = (
+        kind == "MEMBER" && ((i >= 65 && i <= 67) || (i >= 74 && i <= 77))
+      ) ||
+      (kind == "NAMESTR" && i >= 54 && i <= 57)
+    if !used && bytes[i] != b'0' {
+      fail(
+        "structure",
+        "nonzero reserved V5 header attribute",
+        offset=offset + i.to_int64(),
+      )
+    }
+  }
+  if bytes[78] != b' ' || bytes[79] != b' ' {
+    fail("structure", "invalid header padding", offset=offset + 78L)
+  }
 }

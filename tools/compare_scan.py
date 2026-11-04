@@ -25,7 +25,7 @@ for path in sorted((ROOT/'.cache/corpus').glob('*.xpt')):
             else:
                 value=float(got)
                 # ReadStat truncates up to 3 low fraction bits when making IEEE;
-                # MoonXPT uses round-to-nearest. Bound the difference by 1 ULP.
+                # MoonXPT follows that rule; bound general semantic comparisons by 1 ULP.
                 delta=abs(value-want)/math.ulp(want)
                 assert delta<=1, (path,cells,value,want,delta)
                 if want.is_integer(): assert value==want

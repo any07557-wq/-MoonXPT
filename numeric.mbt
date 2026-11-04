@@ -29,9 +29,15 @@ pub fn decode_numeric(raw : Bytes) -> NumericValue raise XptError {
       "numeric", "zero fraction with nonzero exponent is neither zero nor missing",
     )
   }
+  if fraction < 0x0010000000000000UL {
+    fail("numeric", "non-normalized IBM fraction is not a supported V5 number")
+  }
   let exponent = (raw[0].to_int() & 127) - 64
-  let value = fraction.to_double() *
-    @math.pow(2.0, (4 * exponent - 56).to_double())
+  // Truncate toward zero like SAS/ReadStat so the largest HFP cannot round
+  // up to the unrepresentable IEEE value 2^252. Raw bytes retain all bits.
+  let shift = (64 - fraction.clz() - 53).max(0)
+  let value = (fraction >> shift).to_double() *
+    @math.pow(2.0, (4 * exponent - 56 + shift).to_double())
   Finite(if (raw[0].to_int() & 128) != 0 { -value } else { value })
 }
 

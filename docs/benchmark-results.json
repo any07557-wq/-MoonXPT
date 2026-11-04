@@ -1,0 +1,36 @@
+{
+  "backend": "native release",
+  "os": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "toolchain": "moon 0.1.20261012 (748b63c 2026-10-12) ~/.moon/bin/moon\nmoonc v0.10.15+943464bfa (2026-10-12) ~/.moon/bin/moonc\nmoonrun 0.1.20261012 (748b63c 2026-10-12) ~/.moon/bin/moonrun\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg",
+  "method": "/usr/bin/time GNU elapsed + maximum resident set; full CSV export including fsync; authored fixture row repetition",
+  "results": [
+    {
+      "synthetic_rows": 10000,
+      "input_bytes": 141040,
+      "csv_bytes": 90011,
+      "elapsed_seconds": 0.04,
+      "peak_rss_kib": 3112,
+      "write_elapsed_seconds": 0.03,
+      "write_peak_rss_kib": 3116
+    },
+    {
+      "synthetic_rows": 100000,
+      "input_bytes": 1401040,
+      "csv_bytes": 900011,
+      "elapsed_seconds": 0.38,
+      "peak_rss_kib": 2600,
+      "write_elapsed_seconds": 0.32,
+      "write_peak_rss_kib": 2832
+    },
+    {
+      "synthetic_rows": 1000000,
+      "input_bytes": 14001040,
+      "csv_bytes": 9000011,
+      "elapsed_seconds": 3.83,
+      "peak_rss_kib": 2744,
+      "write_elapsed_seconds": 3.19,
+      "write_peak_rss_kib": 2852
+    }
+  ],
+  "result": "PASS: 100x rows; RSS spread under 8 MiB"
+}

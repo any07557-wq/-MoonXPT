@@ -33,3 +33,11 @@ C10 c46d08c；C11 fd72a23。inspect/export/write 三条 native 命令已贯通�
 检查：`moon test --target native --deny-warn` 20/20；tools/test_inspect.py、tools/test_export.py、tools/test_exchange.py 均通过。三份真实样本完成 inspect→CSV/JSON→write→pyreadstat 全列全值和全部已声明元数据比较（tools/validate_corpus.py），620612 单元格，实际 0 ULP 差异。
 
 平台采用同目录独占临时文件、同步和 no-replace 发布；普通错误对 CSV/JSON 成组回滚；--force 保留旧文件备份直至成组成功。进程退出清理临时文件，机器崩溃跨文件原子性不作保证；回滚遇并发外部改动时保留恢复备份并报错。核心/交换层不依赖文件系统或 oracle。下一步 S5 独立生成输入、异常、流式/RSS 和完整证据整理。
+
+## S5 完成
+
+C13 49990b2；独立输入、数值/缺失、三真实语料对照已完整。异常阶段修复 exact-limit EOF、CSV 极小非零数 underflow、nullable诊断字段、未命中行数提示；加强头部保留字段校验和 CLI 选项作用域，写入输出字节上限与输入上限独立。27个测试组、79个截断、256个变异、8个定向错误通过；输出冲突回滚真实执行。
+
+release合成导出/写入1万、10万、100万行的 RSS 均约2.5–3.1MiB，原始统计已入 docs/benchmark-results.json；没有冒称生产负载。最终矩阵逐项有证据。下一步 S6 固定依赖、CI、干净检出复现、API/赛事交接与提交审计。官方历史工具链 URL 的 HEAD 请求403，安装脚本可读取；须公开安装验证边界，不把联网失败写成通过。
+
+S5 数值边界补充决策：最近舍入会将最大合法正规化 HFP 推成不可写的 2^252。采用 SAS/ReadStat 向零截断（小于1 ULP），所有原始字节仍可访问。ADR 002 和最大指数完整fraction读写回归固定此行为；独立向量由精确 Fraction 决定截断方向。此前最近舍入的进度记录是历史状态，本决策为最终契约。

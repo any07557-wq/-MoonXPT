@@ -8,7 +8,7 @@ test "typed missing tokens, finite decimals and explicit empty policy" {
     @moonxpt.Numeric(@moonxpt.Missing(b'A')),
     @moonxpt.Character(b".A"),
   ])
-  for raw in ["", "NaN", "Infinity", "1,2", " 1", "1 ", ".a", "1e999"] {
+  for raw in ["", "NaN", "Infinity", "1,2", " 1", "1 ", ".a", "1e999", "1e-999"] {
     try @exchange.import_cells(schema, [raw, ""], @moonxpt.Ascii) catch {
       _ => ()
     } noraise {

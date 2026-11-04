@@ -37,6 +37,11 @@ with tempfile.TemporaryDirectory(prefix='moonxpt independent ') as td:
         run('write',c,'--metadata',m,'--output',out)
         restored=run('inspect',out,'--rows','ORACLE=4','--json')
         assert restored['members'][0]['metadata']['descriptor_size']==140
+        expected_raw=src.read_bytes()
+        # All these fixtures have the same padded descriptor area; compare all
+        # physical field bytes to independently generated input, even reordered.
+        width=ds['row_width']
+        assert out.read_bytes()[1040:1040+4*width]==expected_raw[1040:1040+4*width]
     src=fixtures/'xport-multi.xpt'
     info=run('inspect',src,'--json','--count-rows','--encoding','windows-1252','--tail-policy','trim')
     assert [m['metadata']['name'] for m in info['members']]==['FIRST','SECOND']

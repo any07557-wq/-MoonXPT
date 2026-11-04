@@ -31,7 +31,15 @@ test "independent SAS numeric vectors and all 28 missing values" {
 
 ///|
 test "IBM precision and representable range are explicit" {
-  assert_eq(decode_numeric(b"\x40\xff\xff\xff\xff\xff\xff\xff"), Finite(1.0))
+  try decode_numeric(b"\x41\x01\x00\x00\x00\x00\x00\x00") catch {
+    XptError(d) => assert_eq(d.kind, "numeric")
+  } noraise {
+    _ => assert_true(false)
+  }
+  assert_eq(
+    decode_numeric(b"\x40\xff\xff\xff\xff\xff\xff\xff"),
+    Finite(0.9999999999999999),
+  )
   for x in [@math.pow(2.0, -261.0), @math.pow(2.0, 252.0), 0.0 / 0.0, 1.0 / 0.0] {
     try encode_numeric(Finite(x), 8) catch {
       XptError(d) => assert_eq(d.kind, "numeric")
@@ -41,6 +49,8 @@ test "IBM precision and representable range are explicit" {
   }
   assert_eq(encode_numeric(Finite(1.1), 2), b"\x41\x11")
   assert_eq(decode_numeric(b"\x41\x11"), Finite(1.0625))
+  let upper = decode_numeric(b"\x7f\xff\xff\xff\xff\xff\xff\xff")
+  assert_eq(decode_numeric(encode_numeric(upper, 8)), upper)
   // Last valid exponent bin extends to just below 2^252.
   assert_eq(
     decode_numeric(encode_numeric(Finite(@math.pow(2.0, 251.0)), 8)),

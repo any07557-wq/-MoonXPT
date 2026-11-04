@@ -5,7 +5,7 @@
 | 真实数值、行列、变量标签 | pyreadstat 1.3.7，全列全值 | 与 ReadStat 同一家族；关闭日期转换 |
 | 多成员、独立生成和读取 | Python xport 3.6.1 | pandas 构造器适配单独留痕；尾部字符 trim 不证明原始字节 |
 | 28 种缺失 | SAS 规范字节向量 + ReadStat C 回调适配器或独立数值解码入口 | pyreadstat read_xport 不暴露 user_missing，不以 NaN 相等证明标签保留 |
-| IBM 数值/短宽度 | 规范向量 + 独立编码结果 | 8 字节输入 Double 最多 0.5 ULP；短宽度编码截断有效位，误差按位宽界定 |
+| IBM 数值/短宽度 | 规范向量 + 独立编码结果 | 8 字节输入 Double 向零截断、误差小于 1 ULP；短宽度编码截断有效位，误差按位宽界定 |
 | 136/140 描述符与位置 | 独立构造向量 + 元数据比较 | oracle 不暴露的位置仍逐字节验证 |
 | ASCII/Windows-1252 | 独立 Python 编码向量 | 未定义字节严格报错，原始 API 不要求文本解码 |
 | CSV/JSON | RFC 风格用例 + Python csv/json 读取交叉验证 | 显式类型，字符 .A 保持字符串 |
