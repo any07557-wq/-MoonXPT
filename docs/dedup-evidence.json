@@ -1,0 +1,430 @@
+{
+  "access_date": "2026-11-04",
+  "github": {
+    "statistical-data": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    },
+    "readstat": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    },
+    "xport": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    },
+    "xpt": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    },
+    "sas-transport": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "mooncakes": {
+    "sas-transport": [],
+    "xpt": [
+      {
+        "name": "moonbit-community/graphviz",
+        "version": "0.1.10",
+        "repository": "https://github.com/moonbit-community/graphviz",
+        "description": "Graphviz rewrite in MoonBit",
+        "matched_packages": [
+          {
+            "package": "layout/dot/label_layout/label_attrs",
+            "summary": "Provides attribute helpers for Graphviz dot label layout, including node padding (NodePadding struct with pad_x_pt and pad_y_pt), label text extraction, simple label text, and root graph margin defaults (0 unless set). Used with cgraph Graph and Node types for label attribute handling.\n\nKeywords: label, padding, node padding, label text, graph margin, label attributes, dot layout, label layout, cgraph, Node, Graph"
+          }
+        ]
+      }
+    ],
+    "statistical-data": [
+      {
+        "name": "xingsiyi/moonsdmx",
+        "version": "0.1.0",
+        "repository": "https://github.com/xingsiyi/MoonSDMX",
+        "description": "Structure-aware multidimensional statistical data exchange for MoonBit",
+        "matched_packages": [
+          {
+            "package": "examples/open_data",
+            "summary": "This package is an example resource with no provided public API documentation or description in the sources."
+          },
+          {
+            "package": "",
+            "summary": "MoonSDMX is a MoonBit-native library for structure-aware SDMX data exchange. It decodes and encodes SDMX-CSV 2.0.0 and SDMX-JSON 2.0.0 messages, validates structures and code lists, and offers selection, period filtering, projection, recoding, revision comparison, coverage reporting, grouped totals, and keyset pagination while preserving units, quality statu\n\nKeywords: MoonSDMX, MoonBit, SDMX, SDMX-CSV, SDMX-JSON, structure validation, code list, Dataset, Observation, Structure, pagination, revision comparison, 数据交换, 结构校验, 分页"
+          },
+          {
+            "package": "cmd/moonsdmx",
+            "summary": "The package xingsiyi/moonsdmx/cmd/moonsdmx has no documented public API."
+          },
+          {
+            "package": "examples/department_kpi",
+            "summary": "This package provides no public API documentation or usage examples in the provided sources."
+          },
+          {
+            "package": "examples/energy_catalog",
+            "summary": "No public API documentation or README content is provided for xingsiyi/moonsdmx/examples/energy_catalog, so no functional summary can be generated."
+          }
+        ]
+      },
+      {
+        "name": "mwqcodex/moonbitSPC",
+        "version": "0.2.0",
+        "repository": "https://github.com/mwqcodex/moonbitSPC",
+        "description": "Statistical process control primitives for manufacturing quality data.",
+        "matched_packages": [
+          {
+            "package": "",
+            "summary": "Provides deterministic statistical process control (SPC) tools for manufacturing quality, including control charts (IMR, X-bar/R, X-bar/S, p, np, c, u, CUSUM, EWMA), process capability analysis, measurement cleaning, streaming monitors, simulation, Pareto analysis, and report generation.\n\nKeywords: 统计过程控制, statistical process control, SPC, control chart, process capability, capability analysis, Cpk, CUSUM, EWMA, measurement cleaning, Western Electric rules, forecast, quality report, manufacturing quality"
+          },
+          {
+            "package": "cmd/benchmark",
+            "summary": "This package does not provide any public types, functions, or traits according to its documentation.\n\nKeywords: no public API, undocumented, empty, MoonBit, package"
+          },
+          {
+            "package": "cmd/demo",
+            "summary": "The demo package provides command-line demonstration utilities for the moonbitSPC project, serving as an entry point for showcasing SPC functionality through executable commands.\n\nKeywords: demo, command-line, SPC, executable, entry point"
+          }
+        ]
+      },
+      {
+        "name": "hrwqe/cf_ocean",
+        "version": "0.1.4",
+        "repository": "https://github.com/hrwqe/moonbit-cf-ocean",
+        "description": "MoonBit CF Ocean Data Exchange and Slicing Tools for NetCDF Classic/64-bit Offset and Oceanographic Data Abstractions",
+        "matched_packages": [
+          {
+            "package": "src/analytics",
+            "summary": "Provides oceanographic analytics for quality control of vertical profiles (CTD data), physical property computation (density, salinity, temperature), interpolation, and basic statistics. Includes a profile scan with configurable limits, spatial bounding box checks, and engineering approximations of seawater density, sound speed, potential temperature, and ge\n\nKeywords: ocean profile quality control, CTD data QC, seawater density, CubicSpline interpolation, BoundingBox, ProfileQcConfig, ProfileQcFlag, scan_ocean_profile, geostrophic velocity, potential temperature, statistical functions, bilinear interpolation, oceanography analytics, 海水密度, 海洋剖面质量控制"
+          },
+          {
+            "package": "src/slice",
+            "summary": "This package provides tools for slicing oceanographic datasets, including lazy array views with deferred scaling and offset, masked arrays for missing value handling, and multi-dimensional slice specifications (SliceRange, Slice3D, Slice4D) for extracting sub-arrays from flat data. It supports computing statistics (mean, min, max, valid count) on masked data\n\nKeywords: ocean data slicing, hyperslab slice, lazy array, MaskedArray, SliceRange, Slice3D, Slice4D, scale factor, add offset, fill value, missing value, statistical computation, moonbit package, 海洋数据切片, 延迟数组"
+          }
+        ]
+      },
+      {
+        "name": "zmjknn/moon-stream-quality",
+        "version": "0.2.2",
+        "repository": "https://github.com/zmjknn/moon-stream-quality",
+        "description": "MoonBit Streaming Data Quality Rule Engine for logs, sensors, and event streams.",
+        "matched_packages": [
+          {
+            "package": "src/rules",
+            "summary": "Provides data quality rules and trackers for MoonBit stream processing, including completeness, range, regex, chronology, uniqueness, correlation, skewness, EMA anomaly, frequency, window aggregation, and cross-field comparison. Includes streaming health monitoring with latency percentiles, Bloom filter-based deduplication, and statistical distribution track\n\nKeywords: stream quality, data quality rules, MoonBit, stream processing, completeness rule, range rule, regex validation, chronology rule, uniqueness rule, Bloom filter, correlation tracker, skewness rule, EMA anomaly, window aggregation, stream health monitor"
+          },
+          {
+            "package": "src/engine",
+            "summary": "The zmjknn/moon-stream-quality/src/engine package provides stream quality pipeline components: StreamPipeline for processing events or batches through schema validation and registered quality rules, and RuleRegistry for registering and evaluating rules such as completeness, uniqueness, range, regex, chronology, cross-field, window aggregation, statistical, a\n\nKeywords: stream quality, pipeline, StreamPipeline, RuleRegistry, RuleItem, schema validation, rule evaluation, process_event, process_batch, PipelineEventResult, PipelineBatchSummary, PipelineObservationResult, 流质量, 规则引擎, 数据质量"
+          }
+        ]
+      },
+      {
+        "name": "Zy789kl/moonlabelkit",
+        "version": "0.1.4",
+        "repository": "https://github.com/Zy789kl/moonlabelkit",
+        "description": "标注数据一致性检查与质量治理工具箱 (MoonLabelKit: Annotation Data Consistency Checking & Quality Governance Toolkit)",
+        "matched_packages": [
+          {
+            "package": "stats",
+            "summary": "This package provides statistical analysis utilities for datasets from the moonlabelkit/core library. It computes label distribution metrics (including entropy and imbalance), sequence annotation statistics (span lengths and counts), per-split coverage metrics to detect train/test leakage, and cross-split duplicate rates.\n\nKeywords: 标签分布统计, label distribution, 序列标注统计, sequence annotation statistics, 数据泄露检测, train/test leakage, split statistics, moonlabelkit, MoonBit, 数据集分析, dataset statistics, 不平衡度, imbalance detection, 跨分割重复率, cross-split duplication"
+          },
+          {
+            "package": "agreement",
+            "summary": "Computes inter-rater agreement statistics (Cohen's Kappa, Fleiss' Kappa, Krippendorff's Alpha) and pairwise agreement matrices for annotation datasets. Provides structured result types with interpretation and a function to translate Kappa scores into standard description text.\n\nKeywords: Cohen's Kappa, Fleiss' Kappa, Krippendorff's Alpha, inter-rater agreement, annotation consistency, pairwise agreement, annotator, dataset, Kappa interpretation, Landis and Koch, 标注者一致性, 一致性系数"
+          },
+          {
+            "package": "report",
+            "summary": "Provides generate_html_report, which exports an HTML report of data governance status from a Dataset together with agreement results (FleissKappaResult, KrippendorffAlphaResult), LabelDistribution statistics, and arrays of OutlierReport and LabelConflictItem.\n\nKeywords: report, HTML report, generate_html_report, data governance, Dataset, FleissKappaResult, KrippendorffAlphaResult, LabelDistribution, OutlierReport, LabelConflictItem, 数据治理, 报告, 导出"
+          }
+        ]
+      },
+      {
+        "name": "Juwan-Hwang/moon-certified",
+        "version": "0.1.1",
+        "repository": "https://github.com/Juwan-Hwang/moon-certified",
+        "description": "Core algorithms and data structures for MoonBit — partially formally verified",
+        "matched_packages": [
+          {
+            "package": "finance/time_series",
+            "summary": "This package provides statistical tools for financial time series analysis, including AR, ARIMA, and GARCH model fitting, the Augmented Dickey-Fuller unit-root test, the Engle-Granger cointegration test, differencing, and multi-step forecasting.\n\nKeywords: time series, finance, AR, ARIMA, GARCH, ADF test, cointegration, forecasting, differencing, Augmented Dickey-Fuller, Engle-Granger, Hannan-Rissanen, stationarity, volatility, MoonBit"
+          },
+          {
+            "package": "stats/nonparametric",
+            "summary": "Provides nonparametric statistical hypothesis tests for comparing samples: Kruskal-Wallis H test (multiple independent groups), Mann-Whitney U test (two independent samples), and Wilcoxon signed-rank test (paired samples). Returns structured results with test statistics and p-values.\n\nKeywords: nonparametric, Kruskal-Wallis, Mann-Whitney, Wilcoxon, signed-rank, hypothesis test, statistics, MoonBit, rank test, independent samples, paired samples"
+          },
+          {
+            "package": "stats/anova",
+            "summary": "Provides one-way and two-way ANOVA (analysis of variance) statistical tests. one_way_anova tests for differences among group means with support for unequal sample sizes; two_way_anova_no_replication tests two factors without interaction and returns F-statistics and p-values for both factors.\n\nKeywords: ANOVA, one-way ANOVA, two-way ANOVA, one_way_anova, two_way_anova_no_replication, OneWayAnovaResult, TwoWayAnovaResult, F-statistic, p-value, sum of squares, degrees of freedom, analysis of variance, statistical test, hypothesis testing, ANOVA without replication"
+          },
+          {
+            "package": "stats/distributions",
+            "summary": "This MoonBit package provides probability density/mass functions (PDF/PMF) and cumulative distribution functions (CDF) for standard statistical distributions including beta, binomial, chi-square, exponential, F, gamma, normal, Poisson, and Student's t. It supports numeric stability via log-space computation and is intended for statistical modeling, hypothesi\n\nKeywords: beta distribution, binomial distribution, chi-square distribution, exponential distribution, F-distribution, gamma distribution, normal distribution, Poisson distribution, Student's t-distribution, probability density function, cumulative distribution function, statistical distributions, MoonBit, probability, stats"
+          },
+          {
+            "package": "random/mcmc",
+            "summary": "This package provides a Metropolis-Hastings Markov Chain Monte Carlo (MH-MCMC) sampler that generates samples from a specified target distribution, along with helper functions to compute the sample mean and sample standard deviation of the resulting sample array.\n\nKeywords: MCMC, Metropolis-Hastings, 马尔可夫链蒙特卡洛, 梅特罗波利斯-黑斯廷斯算法, sampling, sample mean, sample standard deviation, target distribution, proposal distribution, random number generator, burn-in, double array, statistical inference"
+          }
+        ]
+      },
+      {
+        "name": "myc1234567/moon_metric_lab",
+        "version": "0.1.3",
+        "repository": "https://github.com/myc1234567/moon_metric_lab.git",
+        "description": "A pure MoonBit machine learning evaluation metrics and experiment comparison framework supporting native, wasm-gc, and js backends.",
+        "matched_packages": [
+          {
+            "package": "core",
+            "summary": "Provides core data structures (Matrix, Vector) and numerical/statistical utilities (mean, variance, std_dev, argmax, argsort, safe_div, safe_log, weighted_mean, trapezoidal_area) for building metric evaluation frameworks in MoonBit, along with validation functions and error handling via MetricError.\n\nKeywords: metric evaluation, Matrix, Vector, mean, variance, standard deviation, argmax, argsort, safe division, weighted mean, trapezoidal area, confusion matrix, validation, EPSILON, MetricError"
+          },
+          {
+            "package": "hypothesis_testing",
+            "summary": "Provides hypothesis testing and descriptive statistics for metric vectors, including Welch t-test, Cohen's d, paired mean difference, mean, variance, standard error, and aggregation across folds or random seeds. Useful for comparing model performance on paired or independent samples.\n\nKeywords: hypothesis testing, Welch t-test, Cohen's d, paired mean difference, standard error, variance, mean, aggregate_folds_mean, metric vectors, folds, random seeds, model comparison, 假设检验, Welch t检验, 科恩d"
+          }
+        ]
+      },
+      {
+        "name": "JunJunTnT/moonchart",
+        "version": "0.1.2",
+        "repository": "https://github.com/JunJunTnT/moonchart",
+        "description": "A statistical chart SVG generation library for MoonBit. Supports bar charts, line charts, scatter plots with error bars and multi-series rendering.",
+        "matched_packages": [
+          {
+            "package": "examples/bar_chart",
+            "summary": "This package provides example code for creating bar charts using the moonchart library. It is intended as a reference for visualizing bar chart data.\n\nKeywords: bar chart, example, moonchart, charting, visualization, 示例, 柱状图, moonchart example, data visualization, bar chart example"
+          },
+          {
+            "package": "",
+            "summary": "MoonChart is an SVG charting library for MoonBit that produces bar charts, line charts, scatter plots, and box plots with error bars, multi-series rendering, and extensive style controls. Output is an SVG string for use in files or browser via WASM.\n\nKeywords: MoonChart, SVG charting library, MoonBit, bar charts, line charts, scatter plots, box plots, error bars, multi-series, WASM, Chart builder API, DataPoint, Series, colorblind-friendly palette"
+          }
+        ]
+      },
+      {
+        "name": "Luna-Flow/mare_mark",
+        "version": "0.4.1",
+        "repository": "https://github.com/Luna-Flow/mare_mark",
+        "description": "Reproducible benchmarking, statistical comparison, tuning, and self-contained reports for MoonBit payloads.",
+        "matched_packages": [
+          {
+            "package": "ir_model",
+            "summary": "This module defines various data structures for reporting and visualizing performance metrics, including plot definitions and differential analysis reports. It provides structures like PlotDocument, DifferentialReport, and ComparisonReport to organize measurement results and comparisons.\n\nKeywords: PlotDocument, DifferentialReport, ComparisonReport, PairedEstimate, PlotKind, AxisScale, Luna-Flow/mare_mark/ir_model"
+          },
+          {
+            "package": "model",
+            "summary": "This module defines data structures and functions for modeling experiment design, execution results, and protocol metadata in Luna-Flow. It provides types such as RunProtocol, Observation, and environment snapshots for auditing and re-analysis.\n\nKeywords: RunProtocol, RunSummary, Observation, ExecutionOutcome, CalibrationProtocol, EnvironmentSnapshot, protocol_identity, CalibrationEvent, Validation"
+          },
+          {
+            "package": "fixture",
+            "summary": "The Fixture structure provides methods for materializing input, preparing data, and managing setup policies within a generation context. It includes helper contexts like SampleContext and ResetContext to manage sample and implementation IDs during execution flow.\n\nKeywords: Fixture, materialize, prepare, GenerationContext, SampleContext, ResetContext, Luna-Flow/mare_mark/fixture"
+          },
+          {
+            "package": "stats",
+            "summary": "Luna-Flow/mare_mark/stats provides functions for calculating descriptive statistics, comparing paired data, and handling outliers. It includes functions like summarize for basic stats, compare_paired for direct comparison, and bootstrap_interval for probabilistic analysis.\n\nKeywords: descriptive statistics, paired comparison, percentile bootstrap intervals, outlier views, SummaryStats, Comparison, compare_paired"
+          }
+        ]
+      },
+      {
+        "name": "hzc-666-ai/moonseis",
+        "version": "0.1.0",
+        "repository": "https://github.com/hzc-666-ai/MoonSeis.git",
+        "description": "Pure MoonBit toolkit for seismic waveform data parsing, quality control, and STA/LTA event detection",
+        "matched_packages": [
+          {
+            "package": "signal",
+            "summary": "This package provides signal processing functions for seismic or time-series data, including demeaning, detrending, Hann tapering, normalization, linear-interpolation resampling, and statistical measures such as RMS, energy, peak, skewness, kurtosis, and standard deviation.\n\nKeywords: signal processing, seismic, time-series, demean, detrend, Hann taper, normalize, resample, linear interpolation, RMS, energy, peak, skewness, kurtosis, standard deviation"
+          }
+        ]
+      },
+      {
+        "name": "riantr/moonbit_dowhy",
+        "version": "0.0.33",
+        "repository": "https://gitee.com/ren-yongxiang/moonbit_doWhy",
+        "description": "MoonBit port of DoWhy 0.14 (PyWhy). Causal graph construction and analysis, effect identification (backdoor / frontdoor / complete adjustment), estimation (linear regression, generalized linear model, propensity score weighting / matching / stratification, doubly robust, instrumental variable, two stage, regression discontinuity), refutation (bootstrap, placebo treatment, data subset, dummy outcome, unobserved common cause, the assess overlap refuter that learns the rules of the support and of the overlap with boolean rules), intervention sampling (do samplers), temporal graphs, causal discovery (the PC algorithm with the Fisher-z test) and the portable core of the graphical causal models (the p-value merging, the bootstrap confidence intervals, the Kullback-Leibler divergences, the density estimators, the Shapley values, the independence tests, the prediction models, the causal mechanisms, the fitting of a causal model, the what-if queries (the interventional samples, the counterfactual samples and the average causal effect), the validation layer (the kernel based conditional independence test, the validation of a causal structure and the validation of an invertible model) and the falsification layer (the local Markov condition, the pairwise dependencies, the parental d-separations, the causal minimality and the permutation test of a graph) and the model evaluation layer (the normalised mean squared error, the continuous ranked probability score, the performance of the causal mechanisms, the test of the invertibility assumption and the report of the evaluation) and the distribution change layer (the test of the change of a mechanism, the attribution of the change of the distribution of a target node, the multiply-robust attribution of the change of the mean or of the variance of a target node and the scores of the change of the distribution of every node). Pure MoonBit with zero external runtime dependencies.",
+        "matched_packages": [
+          {
+            "package": "utils",
+            "summary": "The riantr/moonbit_dowhy/utils package provides numerical and statistical utilities for the DoWhy causal inference port, including a dense Matrix type, ordinary least squares and generalised linear model fitting, logistic regression, linear programming, deterministic random sampling, and distribution and summary functions such as correlations, percentiles, a\n\nKeywords: moonbit_dowhy, utils, Matrix, OlsFit, GlmFit, logistic_fit, glm_fit, solve_lp, Random, statistics, linear regression, generalised linear model, correlation, distribution, causal inference"
+          },
+          {
+            "package": "refuters",
+            "summary": "The riantr/moonbit_dowhy/refuters package provides various methods for causal refutation to test the validity of causal estimates. It includes refuters like `refute_add_unobserved_common_cause`, `refute_bootstrap`, and `refute_placebo_treatment` which return a `CausalRefutation` object containing statistical results.\n\nKeywords: CausalRefutation, refuter, refute_bootstrap, refute_placebo_treatment, SignificanceTestType, PlaceboType, RequiredVariables, test_significance"
+          }
+        ]
+      },
+      {
+        "name": "Zy789kl/moon-change-point",
+        "version": "0.3.1",
+        "repository": "https://github.com/Zy789kl/moon-change-point",
+        "description": "Production-oriented MoonBit change-point detection, streaming windows, multivariate monitoring, replay, SLO and alert routing",
+        "matched_packages": [
+          {
+            "package": "",
+            "summary": "Provides online and offline statistical change-point detection for time-series and telemetry pipelines, including algorithms like CUSUM, Page-Hinkley, Bayesian, EWMA, Robust-Z, IQR, trend, variance, and distribution shift detectors, plus streaming pipelines, alerting, multivariate monitoring, data quality validation, and export integrations.\n\nKeywords: CUSUM, Page-Hinkley, Bayesian online detection, EWMA, Robust-Z, IQR spike detector, time-series, streaming, multivariate, alerting, data quality, offline binary segmentation, canary rollout, MoonBit, 变化点检测"
+          }
+        ]
+      },
+      {
+        "name": "Lampese/mathplotlib",
+        "version": "0.18.0",
+        "repository": "https://github.com/moonbit-community/moonplot",
+        "description": "A MoonBit plotting library with SVG output.",
+        "matched_packages": []
+      },
+      {
+        "name": "ppyq882/moon-privacy-budget",
+        "version": "0.1.1",
+        "repository": "https://github.com/ppyq882/moon-privacy-budget",
+        "description": "A comprehensive, auditable Differential Privacy Budget Manager for MoonBit.",
+        "matched_packages": [
+          {
+            "package": "src/aggregators",
+            "summary": "This package provides differentially private (DP) aggregators for common statistical operations, including count, sum, mean, variance, histogram, quantile/median, and a 2D contingency table for chi-square independence testing. It supports Laplace and Gaussian noise mechanisms, domain clamping, and noise thresholding for privacy-preserving data analysis.\n\nKeywords: differential privacy, DP aggregator, Laplace mechanism, Gaussian mechanism, DPCount, DPSum, DPMean, DPHistogram, DPQuantile, DPVariance, DPContingencyTable, chi-square test, noisy count, noisy sum, domain clamping"
+          }
+        ]
+      },
+      {
+        "name": "walkzzz/moon-geometry",
+        "version": "0.251.0",
+        "repository": "https://github.com/walkzzz/moon-geometry",
+        "description": "Pure MoonBit computational geometry library: convex hull, Delaunay, Voronoi, polygon boolean ops, transforms, Minkowski",
+        "matched_packages": []
+      },
+      {
+        "name": "pla678889/moon-experiment",
+        "version": "0.2.3",
+        "repository": "https://github.com/pla678889/moon-experiment",
+        "description": "A mature A/B testing analysis library for MoonBit, supporting sample size estimation, sequential testing, metrics comparison and guardrails.",
+        "matched_packages": [
+          {
+            "package": "dataset",
+            "summary": "Provides types and functions for managing, validating, and analyzing experimental datasets, including assignments (Control/Treatment/Holdout), observations with metrics and covariates, data transformations (log, square root, rank, winsorize), aggregation, and group summary statistics.\n\nKeywords: experiment dataset, observation, assignment, metric, covariate, validation, group summary, transformation, sampling, aggregation, cumulative summary, daily summary, pooled statistics, data preprocessing, winsorization"
+          },
+          {
+            "package": "causal",
+            "summary": "This package provides data structures and functions for causal inference from observational or randomized experiments, including estimation of average treatment effects (ATE, ATT), propensity score modeling, inverse probability weighting, doubly robust estimation, and diagnostic tools for covariate balance and overlap.\n\nKeywords: causal inference, treatment effect, ATE, ATT, propensity score, IPW, AIPW, diff-in-diff, covariate balance, CausalDataset, CausalObservation, CausalEffect, TreatmentArm, 因果推断, 处理效应"
+          },
+          {
+            "package": "monitor",
+            "summary": "This package provides data structures and functions for monitoring time series in experiments, including anomaly detection (mean shift, variance shift, outliers, CUSUM), quality assessment, forecasting, and alert generation. It supports generating alerts in CSV and Markdown formats.\n\nKeywords: monitor, time series, anomaly detection, alert, 监控, 时序, 异常检测, 告警, CUSUM, mean shift, variance shift, outlier, forecast, quality, experiment"
+          },
+          {
+            "package": "pipeline",
+            "summary": "Provides a metric data processing pipeline in MoonBit: configure stages (ingest, validate, normalize, aggregate, export), run quality checks (missing rate, non-finite, duplicates), apply winsorization, gap filling, and rolling windows, and export issues/results as CSV or Markdown.\n\nKeywords: pipeline, 数据处理, 指标处理, 数据质量, validate_points, winsorize, deduplicate, missing_rate, rolling_window, window_aggregates, threshold_alerts, issues_to_csv, result_to_markdown, PipelineConfig, PipelineResult, WindowAggregate"
+          },
+          {
+            "package": "quality",
+            "summary": "This package provides data quality assessment and profiling for numerical datasets, including field profiles, quality checks (completeness, validity, uniqueness, range, freshness, distribution, drift, monotonicity), issue detection, and report generation in CSV and Markdown formats.\n\nKeywords: data quality, quality check, field profile, completeness, validity, uniqueness, range, freshness, distribution, drift, monotonicity, imputation, outlier detection, quality report, 数据质量"
+          }
+        ]
+      },
+      {
+        "name": "qzx-cyber/moonbit-tradeclass",
+        "version": "0.2.2",
+        "repository": "https://github.com/qzx-cyber/moonbit-tradeclass",
+        "description": "Version-aware trade classification concordances for MoonBit",
+        "matched_packages": [
+          {
+            "package": "src",
+            "summary": "Provides types and functions for importing, validating, normalizing, aggregating, and auditing trade classification data, including CSV parsing, code catalog management, concordance mapping, quality checks, and statistical summaries.\n\nKeywords: trade classification, trade record, classification catalog, audit, CSV parsing, normalization, concordance, mapping, code state, quality check, aggregation, benchmark, product code, import report, 统计摘要"
+          }
+        ]
+      },
+      {
+        "name": "lwq443/moonbit-ocean-qc",
+        "version": "0.3.0",
+        "repository": "https://github.com/lwq443/moonbit-ocean-qc",
+        "description": "Composable, explainable, and traceable quality control for ocean observations.",
+        "matched_packages": [
+          {
+            "package": "stats",
+            "summary": "Provides statistical utilities for Double arrays, including descriptive summaries, streaming accumulation, histograms, quantiles, correlation, normalization, clipping, and moving-window filters such as moving mean and median filter. Useful for analyzing, smoothing, and summarizing numeric data series.\n\nKeywords: stats, statistics, Accumulator, Histogram, Summary, quantile, percentiles, correlation, moving_mean, median_filter, normalize_minmax, clip, rate_of_change, 统计, 分位数"
+          },
+          {
+            "package": "aggregate",
+            "summary": "Provides aggregation utilities for ocean quality-control Observation data in the MoonBit ocean-qc package. It partitions observations by platform or variable, summarizes groups into GroupSummary statistics (counts, mean, minimum, maximum) using RuleConfig, buckets observations into timestamp windows, and renders summaries as a string. Public functions includ\n\nKeywords: aggregate, ocean-qc, Observation, GroupSummary, RuleConfig, summarize_by_platform, summarize_by_variable, partition_by_platform, partition_by_variable, window_by_timestamp, window_keys, render_summaries, quality control, 统计汇总, 海洋数据"
+          }
+        ]
+      },
+      {
+        "name": "zhaoyuanjuns/moonbit_extractor",
+        "version": "0.1.2",
+        "repository": "https://github.com/zhaoyuanjuns/moonbit-extractor",
+        "description": "Extraction process calculation toolkit for liquid-liquid extraction and solid-liquid leaching",
+        "matched_packages": [
+          {
+            "package": "data",
+            "summary": "Provides data structures and functions for managing experimental measurement tables, time-series, statistical aggregation, quality control, and CSV parsing, with support for equilibrium data, histograms, grouping, and feature extraction.\n\nKeywords: 测量数据, 时间序列, 质量控制, 统计聚合, 直方图, CSV解析, 数据规则, 分组汇总, 特征提取, 平衡数据, MeasurementTable, TimeSeries, DataRule, Histogram, DataQuality"
+          }
+        ]
+      },
+      {
+        "name": "ywz1314/sessionlog",
+        "version": "0.2.4",
+        "repository": "https://github.com/ywz1314/moonbit-sessionlog",
+        "description": "A deterministic MoonBit model and analytics library for rehabilitation session logs.",
+        "matched_packages": [
+          {
+            "package": "lib/statistics",
+            "summary": "Provides statistical analysis functions for numeric time-series data, including descriptive summaries, histograms, percentiles, correlation, covariance, linear regression, outlier detection, smoothing, rolling aggregates, scaling, and z-scores. It is intended for deterministic rehabilitation analytics and returns zero-valued summaries for empty inputs. Keywo\n\nKeywords: statistics, Summary, describe, histogram, percentile, correlation, covariance, fit_linear, LinearModel, outlier_indices, rolling_mean, z_score, exponential_smoothing, 时间序列"
+          },
+          {
+            "package": "lib/aggregation",
+            "summary": "Provides aggregate data structures and functions for grouping session logs by movement, time interval, or cohort comparison. Supports per-movement statistics, interval aggregation (day/week/month/quarter/year), baseline vs. current comparison with delta and effect size, and utility functions like sorting, text reporting, and sparse filtering.\n\nKeywords: sessionlog, aggregation, 训练日志聚合, 运动分析, 区间统计, movement aggregate, interval aggregate, cohort comparison, effect size, 对比分析, AggregateComparison, IntervalAggregate, MovementAggregate, session log, 分组统计"
+          },
+          {
+            "package": "lib/series",
+            "summary": "Provides time-series analysis over session log data (reps, work, pain, completion). Supports rolling-window statistics and anomaly detection, change-point detection, exponential smoothing, resampling, summaries, and CSV/JSON export.\n\nKeywords: 时间序列, 会话日志, SeriesPoint, SessionSeries, SeriesMetric, rolling window, change point detection, exponential smoothing, resample, CSV export, JSON export, anomaly detection, summary statistics, 滚动窗口, 变点检测"
+          },
+          {
+            "package": "lib/query",
+            "summary": "Provides query, filter, pagination, faceting, sorting, and statistics functions for session logs. Supports cursor/offset-based pagination, facet reports, histogram generation, and deduplication for use in search UIs and data-quality reporting.\n\nKeywords: session log query, facet bucket, cursor page, pagination, sort spec, session filtering, facets, query statistics, data aggregation, session query, search UI, 数据分面, 查询统计, 会话日志, ywz1314/sessionlog"
+          }
+        ]
+      }
+    ],
+    "readstat": [
+      {
+        "name": "moonbitstack/moonraft",
+        "version": "0.7.4",
+        "repository": "https://github.com/moonbitstack/moonraft",
+        "description": "Raft consensus in MoonBit.",
+        "matched_packages": [
+          {
+            "package": "examples/11-readindex",
+            "summary": "This example demonstrates a linearizable read operation in moonraft. It manually drives the Ready/Advance loop to observe the confirming ReadState on the leader's Ready object, ensuring the read is safe before serving data.\n\nKeywords: Net, ReadState, moonraft"
+          }
+        ]
+      },
+      {
+        "name": "mizchi/js_web",
+        "version": "0.13.1",
+        "repository": "https://github.com/mizchi/js.mbt",
+        "description": "web standard api bindings (fetch, Streams, Blob, URL, Crypto, ...)",
+        "matched_packages": [
+          {
+            "package": "event",
+            "summary": "Provides MoonBit bindings for DOM event APIs: Event, EventTarget (addEventListener/dispatchEvent/on/off), and EventSource for server-sent events, with helpers to read MessageEvent data, origin, and lastEventId from raw Any values.\n\nKeywords: Event, EventTarget, EventSource, Server-Sent Events, addEventListener, removeEventListener, dispatchEvent, onmessage, onerror, get_event_data, get_event_origin, lastEventId, readyState, DOM Events, 事件"
+          }
+        ]
+      },
+      {
+        "name": "XiLaiTL/moobile",
+        "version": "0.6.0",
+        "repository": "https://github.com/XiLaiTL/moobile.git",
+        "description": "MoonBit UI for mobile: Android, iOS and Web from one rabbita (TEA) app, rendered by React Native",
+        "matched_packages": [
+          {
+            "package": "vendor/rabbita/websocket",
+            "summary": "Provides managed browser WebSocket connections for the Rabbita framework in MoonBit, exposing connect, send, close, and state commands for named sockets and a listen subscription that opens and closes sockets with the subscription lifecycle. Inbound events, close information, outbound text or JSON payloads, and connection snapshots with ready states are mode\n\nKeywords: websocket, WebSocket, Rabbita, MoonBit, connect, send, close, listen, state, Event, CloseInfo, Payload, Snapshot, ReadyState, 浏览器 WebSocket"
+          }
+        ]
+      }
+    ],
+    "xport": []
+  }
+}
