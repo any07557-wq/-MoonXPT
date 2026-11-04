@@ -31,6 +31,7 @@ pub fn Reader::new(
 ) -> Reader raise {
   ignore(validate_layout([], options.limits))
   input.limit = input.limit.min(options.limits.max_input_bytes)
+  let options = { ..options, row_hints: options.row_hints.copy(), }
   let library_meta = read_library(input)
   {
     input,
@@ -93,7 +94,7 @@ pub fn Reader::next_dataset(self : Reader) -> DatasetMetadata? raise {
       }
     }
     self.count = self.count + 1
-    self.current = Some(meta)
+    self.current = Some({ ..meta, variables: meta.variables.copy(), })
     self.row_index = 0L
     self.data_start = self.input.offset()
     self.pending.clear()

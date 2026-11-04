@@ -19,3 +19,9 @@ C02 native 基线 7189a47。模型/流 I/O/诊断及交换契约已实现。`moo
 C04 0b5d524；C05 df3dd87；C06 2404cf6。核心 reader 为拉取式，按物理块验证候选成员，失败候选有界回放。严格策略拒绝短空白尾部及成员/数据双重解释；显式 trim 或逐成员行数提示可消除约定层歧义。完整行原始字节可访问。
 
 真实扫描发现并修复 MEMBER 的 160 字段起点应为 65（合成夹具起初也用了错误偏移），已补独立真实输入验证。三份样本扫描得到 9254×46、8704×21、3036×4；完整数值对照由 tools/compare_scan.py 执行，数值容差 1 ULP（ReadStat 截断与本库最近舍入差异），精确整数与缺失不使用容差。`moon test --target native --deny-warn` 12/12；检查和构建通过。下一步 S3 writer。
+
+## S3 完成
+
+C08 796fe45：验证 schema、确定性头部与 140 字节输出。writer 逐行写有限数值/缺失/字符，支持空成员和多个不同 schema，错误后不可继续/finish，原始行写入保留低位。输出字节上限在写入前检查。
+
+`moon test --target native --deny-warn` 15/15；examples/write 生成 NUMBERS(3)、WORDS(3)、TAGS(28)、EMPTY(0)。`tools/check_writer.py` 由独立 Python xport 3.6.1 读取全部成员和值；28 个标记用独立字节向量精确检查。pyreadstat 1.3.7 把该多成员文件后续头部误作数据，返回首成员 145 行，因此仅对单成员切片做 ReadStat 对照，绝不当作多成员证据。下一步 S4 CLI 与 CSV/JSON。

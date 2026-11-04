@@ -285,11 +285,12 @@ pub struct Output {
   write : (Bytes) -> Unit raise
   mut offset : Int64
   mut failed : Bool
+  mut limit : Int64
 }
 
 ///|
 pub fn Output::new(write : (Bytes) -> Unit raise) -> Output {
-  { write, offset: 0L, failed: false, }
+  { write, offset: 0L, failed: false, limit: 1099511627776L, }
 }
 
 ///|
@@ -305,6 +306,9 @@ pub fn Output::put(self : Output, bytes : Bytes) -> Unit raise {
   }
   errdefer {
     self.failed = true
+  }
+  if bytes.length().to_int64() > self.limit - self.offset {
+    fail("limit", "output byte limit exceeded", offset=self.offset)
   }
   (self.write)(bytes)
   self.offset = self.offset + bytes.length().to_int64()
