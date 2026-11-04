@@ -1,0 +1,11 @@
+import {
+  "any07557/moonxpt" @xpt,
+}
+
+pkgtype(kind: "executable")
+
+supported_targets = "native"
+
+options(
+  "native-stub": [ "io.c" ],
+)
