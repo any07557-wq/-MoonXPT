@@ -1,0 +1,12 @@
+{
+  "head": "d4d4af23636592c4d4b6d8fb9d8f5ed9cd7135a0",
+  "result": "PASS",
+  "scope": "format, static, 27 MoonBit test groups, native build, CLI, malformed inputs, independent consumer, both oracle families and 3 real full workflows",
+  "toolchain": "verified installed 0.1.20261012 / v0.10.15+943464bfa",
+  "build_cache_copied": false,
+  "oracle_environment_copied": false,
+  "corpus_inputs_copied_and_hash_verified": true,
+  "network_install_verified": false,
+  "elapsed_seconds": 11.455,
+  "recorded_date": "2026-11-05"
+}

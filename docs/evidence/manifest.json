@@ -1,0 +1,29 @@
+{
+  "archive_date": "2026-11-05",
+  "frozen_baseline": "1516dfd033d4ecee1bf0fd5cb35c9ec77762a774",
+  "c15": "d4d4af23636592c4d4b6d8fb9d8f5ed9cd7135a0",
+  "c16": "1516dfd033d4ecee1bf0fd5cb35c9ec77762a774",
+  "method": "verbatim archival; no test re-execution or reconstructed stdout",
+  "boundary": "clean source rebuild using previously installed toolchain and oracle interpreter; not an independent toolchain/dependency installation",
+  "c15_full_stdout_available": false,
+  "files": [
+    {
+      "file": "c15/clean-reproduction.json",
+      "bytes": 526,
+      "sha256": "faeb3a1261ded8192a475f3897e0605f3d8f6daff7f3f0ac787929f8e9bf7dba",
+      "source": "C16 Git tree: docs/clean-reproduction.json"
+    },
+    {
+      "file": "c16/clean-reproduction.json",
+      "bytes": 493,
+      "sha256": "6d9b3ac1085ae81e39407b1cf0c1a3da49d252bf76fb6808796dc195213293a0",
+      "source": ".cache/clean-reproduction.json"
+    },
+    {
+      "file": "c16/final-clean.log",
+      "bytes": 4020,
+      "sha256": "79ab1cb0a5ba03f2ae8347ec83e81f25069691b4778f20dca322fbe521850257",
+      "source": ".cache/final-clean.log"
+    }
+  ]
+}

@@ -12,6 +12,7 @@
 - 三份NHANES人口统计/体检/实验室输入，620612单元格和已声明元数据完整比较，0 ULP实际差异。
   ReadStat与Python xport两个独立家族；特殊缺失不靠DataFrame NaN判相等。
 - C15干净Git archive完整复现通过；代码无构建缓存拷贝，具体边界见 clean-reproduction.json。
+- C16最终HEAD的完整执行记录与摘要已在后续收尾中归档到 [evidence/](evidence/README.md)，保留C15原始摘要，不把环境复用当作独立安装。
   百万行合成导出与写入 RSS约2.5–3.1MiB，证据见 benchmarks.md。
 - MIT自有源码、第三方许可与来源、CI配置、固定依赖、公共接口签名、实测演示脚本和一页赛事说明。
 
@@ -36,8 +37,9 @@
 
 ## 实际提交审计
 
-15笔已完成提交加本报告所在的C16，共16笔实质性本地提交，未空提交、倒填日期或squash。
-最后一笔hash在最终对话回复提供，避免写入自身hash形成追加循环。
+首次本地交付C01—C16共16笔实质性提交，未空提交、倒填日期或squash。
+以下审计固定于C16基线；后续发布收尾使用追加提交另计，不改写这16笔历史。
+C16完整hash在本次证据归档修订中补齐，不要求任何提交写入其自身hash。
 
 | ID | 阶段 | 实际 hash | 主题 |
 |---|---|---|---|
@@ -56,7 +58,7 @@
 | C13 | S5 | `49990b2cb7907e503815aa498fb8333167f6d446` | test: validate public datasets against independent readers |
 | C14 | S5 | `1268113518ae69abc96246e0768d8b06bdef777a` | fix: harden malformed input and streaming boundaries |
 | C15 | S6 | `d4d4af23636592c4d4b6d8fb9d8f5ed9cd7135a0` | ci: add reproducible compatibility checks |
-| C16 | S6 | 本报告所在提交；hash见最终回复 | docs: deliver usage examples and contest handoff |
+| C16 | S6 | `1516dfd033d4ecee1bf0fd5cb35c9ec77762a774` | docs: deliver usage examples and contest handoff |
 
 ## 待发布步骤
 
