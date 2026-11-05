@@ -1,0 +1,222 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "any07557/moonxpt"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub const RECORD_SIZE : Int = 80
+
+pub fn decimal_field(Bytes, Int, Int) -> Int raise XptError
+
+pub fn decode_numeric(Bytes) -> NumericValue raise XptError
+
+pub fn decode_observation(DatasetMetadata, Bytes, Int64, Int64) -> Observation raise
+
+pub fn decode_text(Bytes, Encoding) -> String raise XptError
+
+pub fn encode_dataset(DatasetMetadata, WriteOptions) -> Bytes raise XptError
+
+pub fn encode_library(LibraryMetadata, WriteOptions) -> Bytes raise XptError
+
+pub fn encode_numeric(NumericValue, Int) -> Bytes raise XptError
+
+pub fn encode_observation(DatasetMetadata, Array[Value]) -> Bytes raise XptError
+
+pub fn encode_text(String, Encoding) -> Bytes raise XptError
+
+pub fn expect_header(Bytes, String, Int64) -> Unit raise XptError
+
+pub fn[T] fail(String, String, offset? : Int64, dataset? : String, row? : Int64, variable? : String) -> T raise XptError
+
+pub fn field(Bytes, Int, Int) -> Bytes raise XptError
+
+pub fn header(String) -> Bytes raise XptError
+
+pub fn header_is(Bytes, String) -> Bool
+
+pub fn input_from_bytes(Bytes, chunk_size? : Int) -> Input raise XptError
+
+pub fn is_spaces(Bytes) -> Bool
+
+pub fn missing_token(Byte) -> String raise XptError
+
+pub fn padding(Int) -> Int raise XptError
+
+pub fn read_dataset(Input, Bytes, Limits) -> DatasetMetadata raise
+
+pub fn read_library(Input) -> LibraryMetadata raise
+
+pub fn text_field(Bytes, Encoding) -> String raise XptError
+
+pub fn trim_field(Bytes) -> Bytes
+
+pub fn u16be(Bytes, Int) -> Int raise XptError
+
+pub fn u32be(Bytes, Int) -> Int64 raise XptError
+
+pub fn valid_missing(Byte) -> Bool
+
+pub fn valid_name(Bytes) -> Bool
+
+pub fn validate_layout(Array[VariableMetadata], Limits) -> Int raise XptError
+
+// Errors
+pub(all) suberror XptError {
+  XptError(Diagnostic)
+} derive(@debug.Debug)
+
+// Types and methods
+pub struct ByteBuilder {
+  // private fields
+}
+pub fn ByteBuilder::bytes(Self) -> Bytes
+pub fn ByteBuilder::new(Int, fill? : Byte) -> Self raise XptError
+pub fn ByteBuilder::put(Self, Int, Bytes) -> Unit raise XptError
+pub fn ByteBuilder::u16(Self, Int, Int) -> Unit raise XptError
+pub fn ByteBuilder::u32(Self, Int, Int64) -> Unit raise XptError
+
+pub(all) struct DatasetMetadata {
+  name : Bytes
+  label : Bytes
+  dataset_type : Bytes
+  version : Bytes
+  os : Bytes
+  created : Bytes
+  modified : Bytes
+  descriptor_size : Int
+  variables : Array[VariableMetadata]
+  row_width : Int
+} derive(Eq, @debug.Debug)
+pub fn DatasetMetadata::new(String, Array[VariableMetadata], label? : Bytes) -> Self raise XptError
+
+pub(all) struct Diagnostic {
+  kind : String
+  offset : Int64?
+  dataset : String?
+  row : Int64?
+  variable : String?
+  reason : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct DisplayFormat {
+  name : Bytes
+  width : Int
+  decimals : Int
+  justification : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) enum Encoding {
+  Ascii
+  Windows1252
+} derive(Eq, @debug.Debug)
+
+pub struct Input {
+  // private fields
+}
+pub fn Input::exact(Self, Int, eof_ok? : Bool) -> Bytes? raise
+pub fn Input::new((Int) -> Bytes raise, max_bytes? : Int64) -> Self raise XptError
+pub fn Input::offset(Self) -> Int64
+pub fn Input::required(Self, Int) -> Bytes raise
+
+pub(all) struct LibraryMetadata {
+  version : Bytes
+  os : Bytes
+  created : Bytes
+  modified : Bytes
+} derive(Eq, @debug.Debug)
+pub fn LibraryMetadata::new() -> Self
+
+pub(all) struct Limits {
+  max_variables : Int
+  max_row_bytes : Int
+  max_datasets : Int
+  max_rows : Int64
+  max_input_bytes : Int64
+} derive(Eq, @debug.Debug)
+pub fn Limits::default() -> Self
+
+pub(all) enum NumericValue {
+  Finite(Double)
+  Missing(Byte)
+} derive(Eq, @debug.Debug)
+
+pub(all) struct Observation {
+  index : Int64
+  offset : Int64
+  raw : Bytes
+  values : Array[Value]
+} derive(Eq, @debug.Debug)
+
+pub struct Output {
+  // private fields
+}
+pub fn Output::new((Bytes) -> Unit raise) -> Self
+pub fn Output::offset(Self) -> Int64
+pub fn Output::put(Self, Bytes) -> Unit raise
+
+pub(all) struct ReadOptions {
+  limits : Limits
+  tail_policy : TailPolicy
+  row_hints : Map[String, Int64]
+} derive(@debug.Debug)
+pub fn ReadOptions::default() -> Self
+
+pub struct Reader {
+  // private fields
+}
+pub fn Reader::library(Self) -> LibraryMetadata
+pub fn Reader::new(Input, options? : ReadOptions) -> Self raise
+pub fn Reader::next_dataset(Self) -> DatasetMetadata? raise
+pub fn Reader::next_raw(Self) -> (Int64, Bytes)? raise
+pub fn Reader::next_row(Self) -> Observation? raise
+
+pub(all) enum TailPolicy {
+  Reject
+  TrimPadding
+} derive(Eq, @debug.Debug)
+
+pub(all) enum Value {
+  Numeric(NumericValue)
+  Character(Bytes)
+} derive(Eq, @debug.Debug)
+
+pub(all) struct VariableMetadata {
+  name : Bytes
+  label : Bytes
+  kind : VariableType
+  width : Int
+  position : Int
+  number : Int
+  hash : Int
+  format : DisplayFormat
+  informat : DisplayFormat
+} derive(Eq, @debug.Debug)
+pub fn VariableMetadata::new(String, VariableType, Int, Int, label? : Bytes, number? : Int) -> Self raise XptError
+
+pub(all) enum VariableType {
+  Number
+  Text
+} derive(Eq, @debug.Debug)
+
+pub(all) struct WriteOptions {
+  limits : Limits
+  timestamp : Bytes
+  max_output_bytes : Int64
+} derive(@debug.Debug)
+pub fn WriteOptions::default() -> Self
+
+pub struct Writer {
+  // private fields
+}
+pub fn Writer::begin_dataset(Self, DatasetMetadata) -> Unit raise
+pub fn Writer::end_dataset(Self) -> Unit raise
+pub fn Writer::finish(Self) -> Unit raise
+pub fn Writer::new(Output, library? : LibraryMetadata, options? : WriteOptions) -> Self raise
+pub fn Writer::write_raw(Self, Bytes) -> Unit raise
+pub fn Writer::write_row(Self, Array[Value]) -> Unit raise
+
+// Type aliases
+
+// Traits

@@ -9,19 +9,19 @@ pub(all) struct Observation {
 ///|
 /// A pull reader keeps at most one row, tail lookahead and a bounded schema probe.
 pub struct Reader {
-  input : Input
-  options : ReadOptions
-  library_meta : LibraryMetadata
-  mut current : DatasetMetadata?
-  mut next_meta : DatasetMetadata?
-  mut count : Int32
-  mut row_index : Int64
-  mut data_start : Int64
-  pending : Array[Byte]
-  mut pending_at : Int32
-  mut final_rows : Int32?
-  mut done : Bool
-  seen : Map[String, Bool]
+  priv input : Input
+  priv options : ReadOptions
+  priv library_meta : LibraryMetadata
+  priv mut current : DatasetMetadata?
+  priv mut next_meta : DatasetMetadata?
+  priv mut count : Int32
+  priv mut row_index : Int64
+  priv mut data_start : Int64
+  priv pending : Array[Byte]
+  priv mut pending_at : Int32
+  priv mut final_rows : Int32?
+  priv mut done : Bool
+  priv seen : Map[String, Bool]
 }
 
 ///|

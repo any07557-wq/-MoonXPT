@@ -1,0 +1,8 @@
+_build/
+.cache/
+.git/
+.github/
+tools/
+docs/task-spec.md
+docs/dedup-evidence.json
+__pycache__/

@@ -1,0 +1,58 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "any07557/moonxpt/exchange"
+
+import {
+  "any07557/moonxpt",
+}
+
+// Values
+pub fn csv_contract() -> Json
+
+pub fn csv_header(@moonxpt.DatasetMetadata) -> Bytes raise @moonxpt.XptError
+
+pub fn csv_record(Array[String]) -> Bytes
+
+pub fn dataset_json(@moonxpt.DatasetMetadata, @moonxpt.Encoding) -> Json raise @moonxpt.XptError
+
+pub fn diagnostic_json(@moonxpt.Diagnostic) -> Json
+
+pub fn encoding_name(@moonxpt.Encoding) -> String
+
+pub fn format_json(@moonxpt.DisplayFormat, @moonxpt.Encoding) -> Json raise @moonxpt.XptError
+
+pub fn import_cells(@moonxpt.DatasetMetadata, Array[String], @moonxpt.Encoding, numeric_empty_missing? : Bool) -> Array[@moonxpt.Value] raise
+
+pub fn integer_json(Int64) -> Json
+
+pub fn library_json(@moonxpt.LibraryMetadata) -> Json raise @moonxpt.XptError
+
+pub fn metadata_json(@moonxpt.LibraryMetadata, @moonxpt.DatasetMetadata, @moonxpt.Encoding, Int64) -> Json raise @moonxpt.XptError
+
+pub fn parse_encoding(String) -> @moonxpt.Encoding raise @moonxpt.XptError
+
+pub fn parse_metadata(String, limits? : @moonxpt.Limits) -> ExchangeMetadata raise
+
+pub fn row_cells(@moonxpt.Observation, @moonxpt.Encoding) -> Array[String] raise @moonxpt.XptError
+
+pub fn variable_json(@moonxpt.VariableMetadata, @moonxpt.Encoding) -> Json raise @moonxpt.XptError
+
+// Errors
+
+// Types and methods
+pub struct CsvReader {
+  // private fields
+}
+pub fn CsvReader::new((Int) -> Bytes raise, max_record_bytes? : Int, max_columns? : Int, max_input_bytes? : Int64) -> Self raise @moonxpt.XptError
+pub fn CsvReader::next_record(Self) -> Array[String]? raise
+pub fn CsvReader::offset(Self) -> Int64
+
+pub struct ExchangeMetadata {
+  library : @moonxpt.LibraryMetadata
+  dataset : @moonxpt.DatasetMetadata
+  encoding : @moonxpt.Encoding
+  row_count : Int64
+}
+
+// Type aliases
+
+// Traits

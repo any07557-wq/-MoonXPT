@@ -15,8 +15,8 @@ extern "C" fn close_raw(fd : Int32) -> Int32 = "mx_close"
 
 ///|
 pub struct File {
-  fd : Int32
-  mut closed : Bool
+  priv fd : Int32
+  priv mut closed : Bool
 }
 
 ///|

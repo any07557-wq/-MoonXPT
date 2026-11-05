@@ -1,14 +1,14 @@
 ///|
 pub struct Writer {
-  output : Output
-  options : WriteOptions
-  mut active : DatasetMetadata?
-  mut start : Int64
-  mut rows : Int64
-  mut count : Int32
-  mut finished : Bool
-  mut failed : Bool
-  seen : Map[String, Bool]
+  priv output : Output
+  priv options : WriteOptions
+  priv mut active : DatasetMetadata?
+  priv mut start : Int64
+  priv mut rows : Int64
+  priv mut count : Int32
+  priv mut finished : Bool
+  priv mut failed : Bool
+  priv seen : Map[String, Bool]
 }
 
 ///|

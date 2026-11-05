@@ -1,0 +1,46 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "any07557/moonxpt/platform"
+
+import {
+  "any07557/moonxpt",
+}
+
+// Values
+pub fn commit_group(Array[Stage]) -> Unit raise
+
+pub fn ensure_distinct(String, String) -> Unit raise @moonxpt.XptError
+
+pub fn exit(Int) -> Unit
+
+pub fn read_text(String, max_bytes? : Int) -> String raise
+
+pub fn stderr(String) -> Unit
+
+// Errors
+
+// Types and methods
+pub struct File {
+  // private fields
+}
+pub fn File::cleanup(Self) -> Unit
+pub fn File::close(Self) -> Unit raise @moonxpt.XptError
+pub fn File::create(String) -> Self raise @moonxpt.XptError
+pub fn File::input(Self, max_bytes? : Int64) -> @moonxpt.Input raise @moonxpt.XptError
+pub fn File::open(String) -> Self raise @moonxpt.XptError
+pub fn File::output(Self) -> @moonxpt.Output
+pub fn File::read(Self, Int) -> Bytes raise @moonxpt.XptError
+pub fn File::sync(Self) -> Unit raise @moonxpt.XptError
+pub fn File::write(Self, Bytes) -> Unit raise @moonxpt.XptError
+
+pub struct Stage {
+  // private fields
+}
+pub fn Stage::cleanup(Self) -> Unit
+pub fn Stage::new(String, force? : Bool) -> Self raise
+pub fn Stage::output(Self) -> @moonxpt.Output
+pub fn Stage::write(Self, Bytes) -> Unit raise
+pub fn Stage::write_text(Self, String) -> Unit raise
+
+// Type aliases
+
+// Traits

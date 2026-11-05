@@ -1,15 +1,15 @@
 ///|
 /// A bounded UTF-8 CSV record parser. Source owns its file lifecycle.
 pub struct CsvReader {
-  read : (Int32) -> Bytes raise
-  max_record : Int32
-  max_columns : Int32
-  max_input : Int64
-  mut buffer : Bytes
-  mut at : Int32
-  mut offset : Int64
-  mut received : Int64
-  mut record : Int64
+  priv read : (Int32) -> Bytes raise
+  priv max_record : Int32
+  priv max_columns : Int32
+  priv max_input : Int64
+  priv mut buffer : Bytes
+  priv mut at : Int32
+  priv mut offset : Int64
+  priv mut received : Int64
+  priv mut record : Int64
 }
 
 ///|

@@ -1,0 +1,9 @@
+{
+  "moon": "0.1.20261012",
+  "moon_commit": "748b63c",
+  "moonc": "v0.10.15+943464bfa",
+  "archive_version": "0.1.20261012+748b63c",
+  "installer": "https://cli.moonbitlang.com/install/unix.sh",
+  "verified_platform": "Linux x86_64 native",
+  "archive_status": "2026-11-04 HEAD and Range GET returned HTTP 403; existing installed toolchain was used for all local checks; no successful remote reinstall claimed"
+}

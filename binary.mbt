@@ -81,7 +81,7 @@ pub fn decimal_field(
 ///|
 /// Mutable builder has explicit capacity bounds, never unchecked byte writes.
 pub struct ByteBuilder {
-  data : Array[Byte]
+  priv data : Array[Byte]
 }
 
 ///|

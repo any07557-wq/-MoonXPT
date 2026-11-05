@@ -155,12 +155,12 @@ pub fn[T] fail(
 ///|
 /// The caller owns the underlying source and must close it after cancellation.
 pub struct Input {
-  read : (Int32) -> Bytes raise
-  mut offset : Int64
-  mut limit : Int64
-  mut replay : Bytes
-  mut replay_at : Int32
-  mut capture : Array[Byte]?
+  priv read : (Int32) -> Bytes raise
+  priv mut offset : Int64
+  priv mut limit : Int64
+  priv mut replay : Bytes
+  priv mut replay_at : Int32
+  priv mut capture : Array[Byte]?
 }
 
 ///|
@@ -304,10 +304,10 @@ pub fn input_from_bytes(
 
 ///|
 pub struct Output {
-  write : (Bytes) -> Unit raise
-  mut offset : Int64
-  mut failed : Bool
-  mut limit : Int64
+  priv write : (Bytes) -> Unit raise
+  priv mut offset : Int64
+  priv mut failed : Bool
+  priv mut limit : Int64
 }
 
 ///|

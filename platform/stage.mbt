@@ -53,13 +53,13 @@ fn create_temp(path : String) -> (File, String) raise {
 
 ///|
 pub struct Stage {
-  file : File
-  path : String
-  temporary : String
-  force : Bool
-  mut backup : String?
-  mut published : Bool
-  mut completed : Bool
+  priv file : File
+  priv path : String
+  priv temporary : String
+  priv force : Bool
+  priv mut backup : String?
+  priv mut published : Bool
+  priv mut completed : Bool
 }
 
 ///|
@@ -156,6 +156,11 @@ fn Stage::rollback(self : Stage) -> Unit raise {
 // reporting a failed rollback; cleanup may replace that error with recovery paths.
 #warnings("-fragile_catch_all")
 pub fn commit_group(stages : Array[Stage]) -> Unit raise {
+  for stage in stages {
+    if stage.completed {
+      @xpt.fail("state", "output stage was already committed")
+    }
+  }
   for stage in stages {
     stage.file.sync()
     stage.file.close()

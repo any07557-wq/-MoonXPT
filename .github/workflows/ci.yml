@@ -1,0 +1,43 @@
+name: MoonXPT compatibility
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      real_corpus:
+        description: Download hash-pinned CDC corpus and run independent oracles
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install fixed MoonBit (HTTP failures are errors)
+        run: |
+          bash tools/install_toolchain.sh "$RUNNER_TEMP/moonxpt-toolchain"
+          echo "$RUNNER_TEMP/moonxpt-toolchain/bin" >> "$GITHUB_PATH"
+          echo "MOON_HOME=$RUNNER_TEMP/moonxpt-toolchain" >> "$GITHUB_ENV"
+      - run: python3 tools/check.py
+  public-corpus:
+    if: github.event_name == 'workflow_dispatch' && inputs.real_corpus
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: Install fixed MoonBit
+        run: |
+          bash tools/install_toolchain.sh "$RUNNER_TEMP/moonxpt-toolchain"
+          echo "$RUNNER_TEMP/moonxpt-toolchain/bin" >> "$GITHUB_PATH"
+          echo "MOON_HOME=$RUNNER_TEMP/moonxpt-toolchain" >> "$GITHUB_ENV"
+      - uses: actions/cache@v4
+        with:
+          path: .cache/corpus
+          key: nhanes-${{ hashFiles('tests/corpus.json') }}
+      - run: bash tools/setup_oracles.sh
+      - run: python3 tools/fetch_corpus.py
+      - run: .cache/venv/bin/python tools/check.py --oracle --corpus
