@@ -1,0 +1,68 @@
+# 最终交接（2026-11-05）
+
+项目路径：`/home/user/MoonBit_Program/MoonXPT`。开始状态为新建空目录，无基线 HEAD，
+没有已有用户代码；所有下列提交属于本任务，作者使用用户提供的本仓库身份。
+
+## 本地交付结果
+
+- MoonBit V5流式库及inspect/export/write完整CLI；单/多成员，136/140描述符，字段偏移，
+  28种缺失，ASCII/CP1252，原始字节与显式尾部策略，版本化CSV/JSON。
+- 27组测试与6项离线集成入口（inspect/export/exchange/fixtures/malformed/consumer）；
+  79截断、256变异、8定向结构错误，输出竞争回滚已实际验证。
+- 三份NHANES人口统计/体检/实验室输入，620612单元格和已声明元数据完整比较，0 ULP实际差异。
+  ReadStat与Python xport两个独立家族；特殊缺失不靠DataFrame NaN判相等。
+- C15干净Git archive完整复现通过；代码无构建缓存拷贝，具体边界见 clean-reproduction.json。
+  百万行合成导出与写入 RSS约2.5–3.1MiB，证据见 benchmarks.md。
+- MIT自有源码、第三方许可与来源、CI配置、固定依赖、公共接口签名、实测演示脚本和一页赛事说明。
+
+运行入口：`python3 tools/check.py`；真实验证：
+`.cache/venv/bin/python tools/check.py --oracle --corpus`；
+演示：`bash tools/demo.sh [--real]`；构建产物：
+`_build/native/release/build/cmd/moonxpt/moonxpt.exe`。
+本地源码zip由 `moon package` 生成于 `_build/publish/any07557-moonxpt-0.1.0.zip`。
+
+## 已知限制与未验证项
+
+- 唯一实测平台是Linux x86_64 native，其他后端不作支持声明。
+- V5本身无行数，默认严格拒绝不可区分的尾部/成员数据；提供精确hints或显式trim策略。
+  trim可能丢空白行；合法的伪成员头与多成员必须按公开策略处理。
+- Double语义向零截断，低位可能丢失，CSV不承诺文件hash；write_raw可保留原始字段。
+  reserved头字段、描述符尾部、间隙与缺少来源时间的头部会规范化。
+- ReadStat不用于证明多成员；xport DataFrame不用于证明特殊缺失；R未运行。证据边界逐项公开。
+- 输出成组发布支持进程内错误回滚，不承诺两文件跨机器崩溃原子性；遇并发外部更改会保留恢复备份。
+- 官方固定工具链归档HTTP403；远端重装和GitHub Actions首次安装没有验证。CI将明确失败，
+  不自动回退latest。干净源码构建使用本机已验证的固定版本，已通过。
+- 尚未创建远程仓库、push、发布Mooncakes、发布原生二进制或提交赛事表单。十一月赛程仍未可靠核实。
+
+## 实际提交审计
+
+15笔已完成提交加本报告所在的C16，共16笔实质性本地提交，未空提交、倒填日期或squash。
+最后一笔hash在最终对话回复提供，避免写入自身hash形成追加循环。
+
+| ID | 阶段 | 实际 hash | 主题 |
+|---|---|---|---|
+| C01 | S0 | `7aa806ee6cfeae096b8bcc47e1641da028496224` | docs: establish scope, dedup evidence and fixture plan |
+| C02 | S1 | `7189a4785f7ea7efe8af1096efd61a401c6f6141` | chore: bootstrap MoonBit package and native build workflow |
+| C03 | S1 | `596e59e1ab05ac7a9583e7a74676cfb9250ee3ec` | feat: define XPT data model and diagnostic contracts |
+| C04 | S2 | `0b5d52406fe83b8279ee931bbeefd1b7ed89f488` | feat: implement bounded binary record primitives |
+| C05 | S2 | `df3dd8707698bb3302b1a8c86e9eff9792b6cdf0` | feat: implement IBM numbers, missing values and text encodings |
+| C06 | S2 | `2404cf6361b5ecbd82c1fa4094fab0ffd61325b9` | feat: parse V5 library and variable metadata |
+| C07 | S2 | `f93a9b23c70433d2a9aa118c2f4a059ac8aa3ba2` | feat: stream observations across dataset members |
+| C08 | S3 | `796fe454a374c450299d4bf9bf01b505e39d903f` | feat: write validated V5 headers and schemas |
+| C09 | S3 | `e1bfbf11112cf7e964d5c6c157b059767e4fb291` | feat: stream V5 rows and verify writer interoperability |
+| C10 | S4 | `c46d08c359e5c4f67c7d2cd5e00600b20a9ffb32` | feat: add inspect CLI and structured diagnostics |
+| C11 | S4 | `fd72a23dea7ee484b495d94bf40c17be1af73c71` | feat: export CSV with versioned XPT metadata |
+| C12 | S4 | `c4e1d924f497cf5d069eb36f6a237647626bf7f4` | feat: rebuild XPT from CSV and metadata |
+| C13 | S5 | `49990b2cb7907e503815aa498fb8333167f6d446` | test: validate public datasets against independent readers |
+| C14 | S5 | `1268113518ae69abc96246e0768d8b06bdef777a` | fix: harden malformed input and streaming boundaries |
+| C15 | S6 | `d4d4af23636592c4d4b6d8fb9d8f5ed9cd7135a0` | ci: add reproducible compatibility checks |
+| C16 | S6 | 本报告所在提交；hash见最终回复 | docs: deliver usage examples and contest handoff |
+
+## 待发布步骤
+
+1. 在确认账号、仓库名与公开范围后创建远程仓库并push现有完整历史。
+2. 解决固定工具链归档访问或提供等效固定工具链runner，实际运行远端CI；保留失败日志。
+3. 确认Mooncakes命名空间和版本，设置真实repository字段、再核包清单后发布源码包。
+4. 核实当期赛事截止日期、队伍资料/群要求/表单；附公开仓库、本说明、测试和演示材料提交。
+
+本任务没有以上外部动作授权，均保持未执行状态；本地源码、演示与审核材料已经交付。

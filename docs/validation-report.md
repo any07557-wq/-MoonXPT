@@ -44,3 +44,21 @@
 platform/stage_wbtest.mbt 实际制造第二目标的竞争文件，验证第一个输出撤回且外部竞争文件不被删除；force 模式旧文件备份确实恢复。跨机器崩溃或回滚时第三方并发改动不承诺全文件事务，遇到恢复失败保留备份并明确报恢复路径。
 
 `tools/benchmark.py` 已测 export 和 write：合成1万/10万/100万行，无线性数据积累；数字、方法和边界见 benchmarks.md / benchmark-results.json。内存证据为 native release Linux，未外推平台。
+
+## 干净检出复现（2026-11-05）
+
+`.cache/venv/bin/python tools/reproduce_clean.py --corpus` 对 C15 d4d4af2 的 Git archive
+执行完整检查，11.455秒，PASS；结果见 clean-reproduction.json。
+没有复制 _build、虚拟环境或开发目录改动。固定已安装工具链和调用解释器中的
+固定 oracle 依赖被明确复用，三份输入复制后重验 hash。27组测试、6条离线集成入口、
+独立消费方和所有真实数据链路均通过。
+
+`bash tools/demo.sh` 与 `bash tools/demo.sh --real` 已实际成功；后者在本地演示目录
+得到9254行 DEMO_J CSV、metadata JSON和可重新inspect的XPT。代码分发包的清单已检查，
+不包含缓存、凭据、oracle程序或真实语料。CI YAML已解析，shell脚本语法检查通过；
+GitHub Actions未远端执行，官方固定归档403没有被计作通过。
+
+本地源码包检查：`moon package --list` 生成zip后，解压到独立临时目录，
+在无tools目录、无缓存/虚拟环境/真实语料的包内容下，`moon build --target native --deny-warn`
+和原生CLI inspect独立小夹具成功。目录清单含80项，缓存和凭据路径均不在包内。
+repository字段保留空值并出现打包警告，因为尚未创建真实远程地址；未用虚构URL消除警告。

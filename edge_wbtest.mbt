@@ -47,6 +47,24 @@ test "invalid pseudo-member headers are data; fully valid polyglots are diagnose
   ignore(reader.next_dataset())
   assert_eq(reader.next_row().unwrap().raw, header("MEMBER"))
   assert_eq(reader.next_row(), None)
+  // This candidate gets past MEMBER and DSCRPTR before its real header fails.
+  // The two probed physical records must be replayed as current observations.
+  let first = encode_dataset(character_schema("FAKE", 8), opts)[:80].to_owned()
+  let body = first + header("DSCRPTR") + Bytes::make(80, b'x')
+  let replay = Reader::new(
+    input_from_bytes(
+      encode_library(LibraryMetadata::new(), opts) +
+      encode_dataset(meta, opts) +
+      body,
+      chunk_size=1,
+    ),
+  )
+  ignore(replay.next_dataset())
+  assert_eq(replay.next_row().unwrap().raw, first)
+  assert_eq(replay.next_row().unwrap().raw, header("DSCRPTR"))
+  assert_eq(replay.next_row().unwrap().raw, Bytes::make(80, b'x'))
+  assert_eq(replay.next_row(), None)
+  assert_eq(replay.next_dataset(), None)
   let vars : Array[VariableMetadata] = []
   for i = 0; i < 4; i = i + 1 {
     vars.push(

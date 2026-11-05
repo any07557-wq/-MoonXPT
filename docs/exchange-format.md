@@ -29,3 +29,7 @@ reserved fields, and uses supplied timestamps (default 01JAN00:00:00:00).
 It does not execute SAS formats, reinterpret dates, infer encoding or invent
 external value labels. Numeric semantics and raw-field access are separate from
 whole-file byte identity.
+
+V5没有informat justification字段。统一DisplayFormat模型/JSON中的informat.justification=0
+是“该属性不在文件中”的固定schema哨兵，不代表从文件推断的左对齐；writer拒绝非0。
+format.justification则是描述符中实际存储的属性。

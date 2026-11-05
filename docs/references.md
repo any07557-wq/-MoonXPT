@@ -10,3 +10,11 @@
 - [NHANES 2017–2018](https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/overview.aspx?BeginYear=2017)：公开使用统计数据；[CDC 使用条件](https://www.cdc.gov/other/agencymaterials.html)、[NHANES 数据用户协议](https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/overview.aspx?BeginYear=2017)须遵守禁止识别个人及数据使用要求。语料仅下载到忽略的缓存，不打包再分发，来源页和 hash 见 tests/corpus.json。它们不受本项目代码许可证重新授权。
 - [MoonBit 构建文档](https://docs.moonbitlang.com/en/latest/toolchain/moon/tutorial.html)、[FFI](https://docs.moonbitlang.com/en/latest/language/ffi.html)：实际工具链 moon 0.1.20261012 (748b63c)、moonc v0.10.15+943464bfa；native 后端优先。一个猜测的 native-cli-quickstart URL 返回 404，未作为依据。
 - [2026 赛事](https://moonbitlang.github.io/Hackathon2026/)：没有核实十一月赛程，不编造截止时间。
+
+
+## 2026-11-05 交付复核
+
+- [NCHS Data User Agreement](https://www.cdc.gov/nchs/policy/data-user-agreement.html) 已实际打开；之前overview链接仅为来源入口。统计使用、禁止识别和可识别链接等约束由 README/THIRD_PARTY 明示。 [CDC materials policy](https://www.cdc.gov/other/agencymaterials.html) 的来源标注、免费可获取与不背书约定已列明，不再分发原始语料。
+- 已核对已安装 wheel 元数据：pyreadstat 1.3.7 为 Apache-2.0；ReadStat 为独立上游 MIT；xport 3.6.1 MIT。pandas 3.1.0 BSD-3-Clause；numpy 2.5.4 表达式 BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0；narwhals 2.28.0 MIT；python-dateutil 4.0.0 BSD-3-Clause；tzdata 2026.6 Apache-2.0；setuptools 80.10.2 MIT。这些开发工具不进入产品依赖。
+- MoonBit core LICENSE/NOTICE 和工具链 CREDITS 直接从已安装固定版本复制到 licenses/；没有捏造历史归档 hash。固定归档实际HTTP403，远端重装未验证；干净 Git archive 使用已验证安装版本，构建缓存未复制，结果见 clean-reproduction.json。
+- 赛事入口复访可达但未返回可读十一月规则；继续沿用“不声称十一月截止日期”的限制。
