@@ -62,6 +62,9 @@ WSL DNS 布局配置，其他宿主需核对 DNS 挂载。结果保存在 `.cach
 
 `.github/workflows/ci.yml` 配置 Linux 托管 runner：普通离线小夹具检查与手动
 触发的真实语料任务分开；语料缓存键绑定清单，使用时仍验 hash。
-上述安装验证为后续 CI 提供已实测入口；本次没有修改 CI 配置，也未运行远端 Actions。
+后续CI已接入 `tools/verify_release.py`，固定正确版本键与Python 3.14.4，按完整commit固定
+Actions，并在成功/失败后尝试保存逐阶段日志和回执。完整语料任务不复用语料或oracle缓存。
+第二台机器可使用同一入口与Git bundle移交；具体步骤及证据要求见
+[外部验收说明](external-verification.md)。尚未运行远端Actions。
 远程 runner、版本标签、两类源码制品的一致性仍待后续收尾。
 push、Release、Mooncakes 发布和赛事提交等待证据齐全及明确授权。

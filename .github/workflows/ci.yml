@@ -13,31 +13,42 @@ permissions:
 jobs:
   offline:
     runs-on: ubuntu-24.04
+    timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
-      - name: Install fixed MoonBit (HTTP failures are errors)
-        run: |
-          bash tools/install_toolchain.sh "$RUNNER_TEMP/moonxpt-toolchain"
-          echo "$RUNNER_TEMP/moonxpt-toolchain/bin" >> "$GITHUB_PATH"
-          echo "MOON_HOME=$RUNNER_TEMP/moonxpt-toolchain" >> "$GITHUB_ENV"
-      - run: python3 tools/check.py
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.14.4'
+      - name: Fresh SDK, build and offline tests
+        run: python3 tools/verify_release.py --mode offline --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"
+      - name: Preserve verification evidence including failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: offline-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/moonxpt-evidence/
+          if-no-files-found: error
+          retention-days: 30
   public-corpus:
     if: github.event_name == 'workflow_dispatch' && inputs.real_corpus
     runs-on: ubuntu-24.04
+    timeout-minutes: 35
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
-          python-version: '3.14'
-      - name: Install fixed MoonBit
-        run: |
-          bash tools/install_toolchain.sh "$RUNNER_TEMP/moonxpt-toolchain"
-          echo "$RUNNER_TEMP/moonxpt-toolchain/bin" >> "$GITHUB_PATH"
-          echo "MOON_HOME=$RUNNER_TEMP/moonxpt-toolchain" >> "$GITHUB_ENV"
-      - uses: actions/cache@v4
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
-          path: .cache/corpus
-          key: nhanes-${{ hashFiles('tests/corpus.json') }}
-      - run: bash tools/setup_oracles.sh
-      - run: python3 tools/fetch_corpus.py
-      - run: .cache/venv/bin/python tools/check.py --oracle --corpus
+          python-version: '3.14.4'
+      - name: Fresh SDK, oracles and hash-pinned public corpus
+        run: python3 tools/verify_release.py --mode full --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"
+      - name: Preserve verification evidence including failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: public-corpus-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/moonxpt-evidence/
+          if-no-files-found: error
+          retention-days: 30
