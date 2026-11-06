@@ -82,3 +82,9 @@ CI接入通用verify_release.py：提取已提交HEAD、全新SDK，offline/full
 官方Action发布commit已只读核对，Python固定3.14.4，移除语料缓存，失败也尝试上传证据。
 可用Git bundle移交完整提交历史后，在第二台机器执行同一入口，无需先push。
 工作流语法及本地预演另行记录；没有外部实际运行，不标作通过。P0和历史证据保持冻结。
+
+准备提交958f9fce15feeea0ee39f541faafad831af3db38已保存。actionlint1.7.12、工作流策略、
+Python语法与失败状态/双流日志/拒绝覆盖检查通过。Git bundle完整19笔历史的本地克隆验证通过。
+offline/full两次本地预演各自全新下载SDK，均在官方原生包传输阶段超过600秒上限，结果FAIL，
+未进入构建、测试、oracle或语料步骤。没有复用旧SDK或放宽限制，原样归档失败、源提交、
+环境、输入及hash；不能计为新CI入口完整成功，也不计为第二台机器/远端CI通过。

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "mode": "offline",
+  "result": "FAIL",
+  "exit_code": 1,
+  "started_utc": "2026-11-06T15:20:25.819833+00:00",
+  "steps": [],
+  "source_commit": "cba5e3a751abaa888e3b5d8953c3088f503ab9ae",
+  "host": {
+    "system": "Linux",
+    "architecture": "x86_64",
+    "kernel": "6.18.33.2-microsoft-standard-WSL2",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+  },
+  "fresh_sdk": false,
+  "fresh_oracles": false,
+  "fresh_corpus": false,
+  "build_cache_reused": false,
+  "source": "git archive of committed HEAD",
+  "isolation": "new temporary directories; host filesystem/kernel remain visible",
+  "github_actions": null,
+  "source_tree": "b528a638aefcb852d5fd8bc9f56037fcba39eff6",
+  "source_archive_sha256": "18817afa7c3a4deb8bea650fa168769ae0d879126ee542dc8091b2c34d70ebde",
+  "error": "commit the verification runner before testing its committed tree",
+  "completed_utc": "2026-11-06T15:20:25.958615+00:00"
+}

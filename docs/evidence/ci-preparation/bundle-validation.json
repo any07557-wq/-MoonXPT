@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "boundary": "local bundle transfer/clone only; not a second-machine test",
+  "commit": "958f9fce15feeea0ee39f541faafad831af3db38",
+  "commit_count": 19,
+  "frozen_baseline_is_ancestor": true,
+  "build_or_dependency_cache_present": false,
+  "verification_runner_sha256": "2768fdd08ac111e2dc7af5604765c1aee15116f5773829f111fd369e068fa7eb",
+  "clone_stderr": ""
+}

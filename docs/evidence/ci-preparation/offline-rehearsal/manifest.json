@@ -1,0 +1,64 @@
+{
+  "files": [
+    {
+      "file": "compiler.log",
+      "bytes": 238,
+      "sha256": "f6ab9d76ae8dcab3e133254944fbc77f41e0ba766287e289345c1ab77df09c45"
+    },
+    {
+      "file": "failure.log",
+      "bytes": 967,
+      "sha256": "99238d678564da72ad017e4c732006eab3e0f5f9b7077087f2b0f75df15d8cbd"
+    },
+    {
+      "file": "inputs/check.py",
+      "bytes": 1813,
+      "sha256": "37d5943f866faddd6c2dbe3f536e751f48d802b565229336477a333ecfd7aef4"
+    },
+    {
+      "file": "inputs/corpus.json",
+      "bytes": 1859,
+      "sha256": "b29bb58f35c62e558d240e8776c9cdedfc4fb4ee8ecfd8274d17d981b50a16c8"
+    },
+    {
+      "file": "inputs/install_toolchain.py",
+      "bytes": 4621,
+      "sha256": "599aacda853b243095ec1574e7ce0d92e23c2af5229ba2bdd99028bfe21f08ae"
+    },
+    {
+      "file": "inputs/install_toolchain.sh",
+      "bytes": 95,
+      "sha256": "15d846397812be4bf5715628f11a94b9fd2f1615405318755b82d5bfa7c13975"
+    },
+    {
+      "file": "inputs/requirements-oracle.txt",
+      "bytes": 189,
+      "sha256": "46fe57229548150a7e8da4561a10845e4c5a56b5ea89dffc177c06fa3dd0f1ec"
+    },
+    {
+      "file": "inputs/toolchain.json",
+      "bytes": 921,
+      "sha256": "802a2de35b84e7311ec59bea10bde9036a6553eaa9b78db7e42387d2586ad186"
+    },
+    {
+      "file": "install-sdk.log",
+      "bytes": 833,
+      "sha256": "cd509368759364735dd2ab997d2f1dda9c9c55e26664727008bc57b9067d1346"
+    },
+    {
+      "file": "os-release.txt",
+      "bytes": 402,
+      "sha256": "fb8b42d368e509d8b012d009dd626d0a1f860cccc105e8806da5c2ab9e59a237"
+    },
+    {
+      "file": "result.json",
+      "bytes": 1985,
+      "sha256": "10f78ff393e34e76d73f2fad3c5add003f619b0183e3ed0be35d6125eae87c7d"
+    },
+    {
+      "file": "runner.py",
+      "bytes": 8211,
+      "sha256": "2768fdd08ac111e2dc7af5604765c1aee15116f5773829f111fd369e068fa7eb"
+    }
+  ]
+}

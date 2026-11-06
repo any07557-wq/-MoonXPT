@@ -1,0 +1,11 @@
+{
+  "created_date": "2026-11-06",
+  "source_commit": "958f9fce15feeea0ee39f541faafad831af3db38",
+  "frozen_product_baseline": "1516dfd033d4ecee1bf0fd5cb35c9ec77762a774",
+  "file": "moonxpt-validation.bundle",
+  "bytes": 196009,
+  "sha256": "12d23b78e1bd2ac6bc083d7bb1708d5b921b757314b430db2b0e826ca405ae04",
+  "purpose": "local transfer to a separate machine; no remote repository/push required",
+  "history": "complete main history through source_commit; not a formal release zip",
+  "verification": "git bundle verify PASS; HEAD and refs/heads/main point to source_commit"
+}

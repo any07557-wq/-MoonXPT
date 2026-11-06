@@ -1,0 +1,6 @@
+actionlint exit: 0
++ /usr/bin/python3 -c import sys; print("out",flush=True); print("err",file=sys.stderr,flush=True); sys.exit(7)
+out
+err
++ /usr/bin/python3 -c print("ok")
+ok

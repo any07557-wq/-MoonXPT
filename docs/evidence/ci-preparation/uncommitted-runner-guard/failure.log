@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/user/MoonBit_Program/MoonXPT/tools/verify_release.py", line 102, in main
+    raise ValueError("commit the verification runner before testing its committed tree")
+ValueError: commit the verification runner before testing its committed tree

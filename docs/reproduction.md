@@ -66,5 +66,8 @@ WSL DNS 布局配置，其他宿主需核对 DNS 挂载。结果保存在 `.cach
 Actions，并在成功/失败后尝试保存逐阶段日志和回执。完整语料任务不复用语料或oracle缓存。
 第二台机器可使用同一入口与Git bundle移交；具体步骤及证据要求见
 [外部验收说明](external-verification.md)。尚未运行远端Actions。
+2026-11-06本地两类入口预演均因SDK下载超过600秒上限而失败，未进入新的构建/测试；
+静态与失败处理检查通过。完整记录见[CI准备证据](evidence/ci-preparation/README.md)，
+不能将本次配置或旧验收结果计作远端CI通过。
 远程 runner、版本标签、两类源码制品的一致性仍待后续收尾。
 push、Release、Mooncakes 发布和赛事提交等待证据齐全及明确授权。

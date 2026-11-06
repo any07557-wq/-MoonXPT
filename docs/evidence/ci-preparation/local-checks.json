@@ -1,0 +1,16 @@
+{
+  "checked_utc": "2026-11-06T15:24:14.660309+00:00",
+  "result": "PASS",
+  "scope": "local static and failure-capture checks only; not a remote workflow execution",
+  "workflow_sha256": "28d292b38c6a45606a3458739aa83cf51cea3eb7981cd4b91c9f6e93a913c64f",
+  "runner_sha256": "2768fdd08ac111e2dc7af5604765c1aee15116f5773829f111fd369e068fa7eb",
+  "checks": {
+    "actionlint": "PASS",
+    "stdout_stderr_and_failure_exit": "PASS",
+    "successful_step_status": "PASS",
+    "uncommitted_runner_rejected_before_download": "PASS",
+    "existing_evidence_directory_not_overwritten": "PASS",
+    "python_syntax": "PASS"
+  },
+  "log_sha256": "af7a5ae3a7bc948bfc69ccb1a7341273e1a785cfc2cd05195260cf1f8b91994a"
+}

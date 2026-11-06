@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "mode": "full",
+  "result": "FAIL",
+  "exit_code": 1,
+  "started_utc": "2026-11-06T15:20:46.018391+00:00",
+  "steps": [
+    {
+      "name": "compiler",
+      "command": [
+        "cc",
+        "--version"
+      ],
+      "started_utc": "2026-11-06T15:20:46.086722+00:00",
+      "result": "PASS",
+      "exit_code": 0,
+      "log": "compiler.log",
+      "completed_utc": "2026-11-06T15:20:46.099208+00:00"
+    },
+    {
+      "name": "install-sdk",
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/moonxpt-verify-trpekeai/source/tools/install_toolchain.py",
+        "/tmp/moonxpt-verify-trpekeai/sdk",
+        "--receipt",
+        "/home/user/MoonBit_Program/MoonXPT/.cache/ci-preparation/full-rehearsal/sdk-install.json"
+      ],
+      "started_utc": "2026-11-06T15:20:46.099286+00:00",
+      "result": "FAIL",
+      "exit_code": 1,
+      "log": "install-sdk.log",
+      "completed_utc": "2026-11-06T15:30:48.946841+00:00"
+    }
+  ],
+  "source_commit": "958f9fce15feeea0ee39f541faafad831af3db38",
+  "host": {
+    "system": "Linux",
+    "architecture": "x86_64",
+    "kernel": "6.18.33.2-microsoft-standard-WSL2",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+  },
+  "fresh_sdk": false,
+  "fresh_oracles": false,
+  "fresh_corpus": false,
+  "build_cache_reused": false,
+  "source": "git archive of committed HEAD",
+  "isolation": "new temporary directories; host filesystem/kernel remain visible",
+  "github_actions": null,
+  "source_tree": "4f18069996812260550f9e901d585a139d9d8cf1",
+  "source_archive_sha256": "b1984f5553cccadf5c2cecfba984978db14da7a60d55335b62fc0e5eb6cad9b5",
+  "error": "Command '['/usr/bin/python3', '/tmp/moonxpt-verify-trpekeai/source/tools/install_toolchain.py', '/tmp/moonxpt-verify-trpekeai/sdk', '--receipt', '/home/user/MoonBit_Program/MoonXPT/.cache/ci-preparation/full-rehearsal/sdk-install.json']' returned non-zero exit status 1.",
+  "completed_utc": "2026-11-06T15:30:48.957068+00:00"
+}

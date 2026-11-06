@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/user/MoonBit_Program/MoonXPT/tools/verify_release.py", line 113, in main
+    run_step(report, evidence, "install-sdk", [sys.executable,
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+             source / "tools/install_toolchain.py", sdk,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+             "--receipt", evidence / "sdk-install.json"], source, env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/MoonBit_Program/MoonXPT/tools/verify_release.py", line 53, in run_step
+    raise subprocess.CalledProcessError(step["exit_code"], command)
+subprocess.CalledProcessError: Command '['/usr/bin/python3', '/tmp/moonxpt-verify-mvxgr58i/source/tools/install_toolchain.py', '/tmp/moonxpt-verify-mvxgr58i/sdk', '--receipt', '/home/user/MoonBit_Program/MoonXPT/.cache/ci-preparation/offline-rehearsal/sdk-install.json']' returned non-zero exit status 1.

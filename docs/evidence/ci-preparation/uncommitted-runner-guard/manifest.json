@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "file": "failure.log",
+      "bytes": 288,
+      "sha256": "f41c57a8f6b01c295e00d4b37dd6609164bfe639a8b0e97e8b9b4bf822fd4712"
+    },
+    {
+      "file": "os-release.txt",
+      "bytes": 402,
+      "sha256": "fb8b42d368e509d8b012d009dd626d0a1f860cccc105e8806da5c2ab9e59a237"
+    },
+    {
+      "file": "result.json",
+      "bytes": 951,
+      "sha256": "d3390d4240881254b39596669831f394ec80aeceb6e652abc6949e83afc8993c"
+    },
+    {
+      "file": "runner.py",
+      "bytes": 8211,
+      "sha256": "2768fdd08ac111e2dc7af5604765c1aee15116f5773829f111fd369e068fa7eb"
+    }
+  ]
+}

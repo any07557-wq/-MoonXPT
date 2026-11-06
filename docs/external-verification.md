@@ -93,7 +93,8 @@ checks.log含27/27、三份语料及620,612单元格/元数据对照、无请求
 |---|---|---|
 | 原开发环境 | 通过 | [C15/C16记录](evidence/README.md) |
 | 同机隔离全新安装 | 通过 | [全新安装记录](evidence/independent-install/README.md) |
-| 新CI入口的本地检查/预演 | 进行中 | 完成后单独登记，不能计作远端通过 |
+| 新CI入口的静态/失败处理检查 | 通过 | [检查记录](evidence/ci-preparation/local-checks.json) |
+| 新CI入口的两类本地预演 | 未通过 | 均在SDK下载超过600秒时失败，未进入测试；[原始记录](evidence/ci-preparation/README.md) |
 | 第二台机器 | 待配置、未运行 | 尚无独立主机 |
 | 远端CI | 待配置、未运行 | 尚无GitHub仓库/run URL |
 

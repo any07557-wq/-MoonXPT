@@ -1,0 +1,12 @@
+Downloading: https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz.sha256
+Downloading: https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz
+Downloaded bytes: 16777216
+Downloaded bytes: 33554432
+Downloaded bytes: 50331648
+Traceback (most recent call last):
+  File "/tmp/moonxpt-verify-trpekeai/source/tools/install_toolchain.py", line 55, in <module>
+    native_info=download(native_url,native,300*1024*1024)
+  File "/tmp/moonxpt-verify-trpekeai/source/tools/install_toolchain.py", line 39, in download
+    if time.monotonic()-started>600:raise TimeoutError('download exceeded 600 second wall-clock limit')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: download exceeded 600 second wall-clock limit

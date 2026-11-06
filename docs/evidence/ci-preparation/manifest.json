@@ -1,0 +1,199 @@
+{
+  "archived_date": "2026-11-06",
+  "frozen_product_baseline": "1516dfd033d4ecee1bf0fd5cb35c9ec77762a774",
+  "boundary": "local static checks PASS; offline/full local rehearsals FAIL on SDK download deadline; no second host or remote Actions run",
+  "method": "verbatim cached evidence copies and checked workflow snapshot; Git bundle remains a local transfer artifact, not embedded",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 3078,
+      "sha256": "4add06f499b01602e8a53ceb67bd8abc528e788482659cd5334912aa0b083b6e"
+    },
+    {
+      "file": "bundle-receipt.json",
+      "bytes": 577,
+      "sha256": "4b4a3b1e4db9203fc426838b653e2b7b77e82c13f5669991a960a73326276592"
+    },
+    {
+      "file": "bundle-validation.json",
+      "bytes": 385,
+      "sha256": "9e12973264fc384eaeb5d6e88608ca8ee2dc1b454225a896ef61996fdc15f6bd"
+    },
+    {
+      "file": "full-rehearsal/compiler.log",
+      "bytes": 238,
+      "sha256": "f6ab9d76ae8dcab3e133254944fbc77f41e0ba766287e289345c1ab77df09c45"
+    },
+    {
+      "file": "full-rehearsal/failure.log",
+      "bytes": 964,
+      "sha256": "874b8bcab8f781295f9cd12aa1401f25375b79f333c5e78d0f49cd2ca1ec874d"
+    },
+    {
+      "file": "full-rehearsal/inputs/check.py",
+      "bytes": 1813,
+      "sha256": "37d5943f866faddd6c2dbe3f536e751f48d802b565229336477a333ecfd7aef4"
+    },
+    {
+      "file": "full-rehearsal/inputs/corpus.json",
+      "bytes": 1859,
+      "sha256": "b29bb58f35c62e558d240e8776c9cdedfc4fb4ee8ecfd8274d17d981b50a16c8"
+    },
+    {
+      "file": "full-rehearsal/inputs/install_toolchain.py",
+      "bytes": 4621,
+      "sha256": "599aacda853b243095ec1574e7ce0d92e23c2af5229ba2bdd99028bfe21f08ae"
+    },
+    {
+      "file": "full-rehearsal/inputs/install_toolchain.sh",
+      "bytes": 95,
+      "sha256": "15d846397812be4bf5715628f11a94b9fd2f1615405318755b82d5bfa7c13975"
+    },
+    {
+      "file": "full-rehearsal/inputs/requirements-oracle.txt",
+      "bytes": 189,
+      "sha256": "46fe57229548150a7e8da4561a10845e4c5a56b5ea89dffc177c06fa3dd0f1ec"
+    },
+    {
+      "file": "full-rehearsal/inputs/toolchain.json",
+      "bytes": 921,
+      "sha256": "802a2de35b84e7311ec59bea10bde9036a6553eaa9b78db7e42387d2586ad186"
+    },
+    {
+      "file": "full-rehearsal/install-sdk.log",
+      "bytes": 833,
+      "sha256": "9a83ce3867f82c36623faaf75debc6fa46b2bdd2d6a9babfacd3269d7d59bc58"
+    },
+    {
+      "file": "full-rehearsal/manifest.json",
+      "bytes": 1842,
+      "sha256": "06b93a9b48127233716e9986a930e5c02d96f21849decb0cee556b11368897eb"
+    },
+    {
+      "file": "full-rehearsal/os-release.txt",
+      "bytes": 402,
+      "sha256": "fb8b42d368e509d8b012d009dd626d0a1f860cccc105e8806da5c2ab9e59a237"
+    },
+    {
+      "file": "full-rehearsal/result.json",
+      "bytes": 1976,
+      "sha256": "4e4263dc7d05188bdc780c4de0c4d4fcc825005bf968bb5277928968ec77d3f9"
+    },
+    {
+      "file": "full-rehearsal/runner.py",
+      "bytes": 8211,
+      "sha256": "2768fdd08ac111e2dc7af5604765c1aee15116f5773829f111fd369e068fa7eb"
+    },
+    {
+      "file": "local-checks.json",
+      "bytes": 703,
+      "sha256": "09162eaf16544516ff3e56fa4fa8548b5199e963bd627016309659bcbf698f33"
+    },
+    {
+      "file": "local-checks.log",
+      "bytes": 176,
+      "sha256": "af7a5ae3a7bc948bfc69ccb1a7341273e1a785cfc2cd05195260cf1f8b91994a"
+    },
+    {
+      "file": "official-inputs.json",
+      "bytes": 6531,
+      "sha256": "22c46a12e67f87ee09e17ab8b46f3f291cfe82c4a34c112df47a8054dbc26bfd"
+    },
+    {
+      "file": "offline-rehearsal/compiler.log",
+      "bytes": 238,
+      "sha256": "f6ab9d76ae8dcab3e133254944fbc77f41e0ba766287e289345c1ab77df09c45"
+    },
+    {
+      "file": "offline-rehearsal/failure.log",
+      "bytes": 967,
+      "sha256": "99238d678564da72ad017e4c732006eab3e0f5f9b7077087f2b0f75df15d8cbd"
+    },
+    {
+      "file": "offline-rehearsal/inputs/check.py",
+      "bytes": 1813,
+      "sha256": "37d5943f866faddd6c2dbe3f536e751f48d802b565229336477a333ecfd7aef4"
+    },
+    {
+      "file": "offline-rehearsal/inputs/corpus.json",
+      "bytes": 1859,
+      "sha256": "b29bb58f35c62e558d240e8776c9cdedfc4fb4ee8ecfd8274d17d981b50a16c8"
+    },
+    {
+      "file": "offline-rehearsal/inputs/install_toolchain.py",
+      "bytes": 4621,
+      "sha256": "599aacda853b243095ec1574e7ce0d92e23c2af5229ba2bdd99028bfe21f08ae"
+    },
+    {
+      "file": "offline-rehearsal/inputs/install_toolchain.sh",
+      "bytes": 95,
+      "sha256": "15d846397812be4bf5715628f11a94b9fd2f1615405318755b82d5bfa7c13975"
+    },
+    {
+      "file": "offline-rehearsal/inputs/requirements-oracle.txt",
+      "bytes": 189,
+      "sha256": "46fe57229548150a7e8da4561a10845e4c5a56b5ea89dffc177c06fa3dd0f1ec"
+    },
+    {
+      "file": "offline-rehearsal/inputs/toolchain.json",
+      "bytes": 921,
+      "sha256": "802a2de35b84e7311ec59bea10bde9036a6553eaa9b78db7e42387d2586ad186"
+    },
+    {
+      "file": "offline-rehearsal/install-sdk.log",
+      "bytes": 833,
+      "sha256": "cd509368759364735dd2ab997d2f1dda9c9c55e26664727008bc57b9067d1346"
+    },
+    {
+      "file": "offline-rehearsal/manifest.json",
+      "bytes": 1842,
+      "sha256": "11fded4ea2fa85c70acca41e252df4b610c7aa689f6265dc201e7e0029edb149"
+    },
+    {
+      "file": "offline-rehearsal/os-release.txt",
+      "bytes": 402,
+      "sha256": "fb8b42d368e509d8b012d009dd626d0a1f860cccc105e8806da5c2ab9e59a237"
+    },
+    {
+      "file": "offline-rehearsal/result.json",
+      "bytes": 1985,
+      "sha256": "10f78ff393e34e76d73f2fad3c5add003f619b0183e3ed0be35d6125eae87c7d"
+    },
+    {
+      "file": "offline-rehearsal/runner.py",
+      "bytes": 8211,
+      "sha256": "2768fdd08ac111e2dc7af5604765c1aee15116f5773829f111fd369e068fa7eb"
+    },
+    {
+      "file": "uncommitted-runner-guard/failure.log",
+      "bytes": 288,
+      "sha256": "f41c57a8f6b01c295e00d4b37dd6609164bfe639a8b0e97e8b9b4bf822fd4712"
+    },
+    {
+      "file": "uncommitted-runner-guard/manifest.json",
+      "bytes": 602,
+      "sha256": "5f8e000cf3ee7d3d83f8c646a4f452c1a350d1c1c0ca84ab7ba9ccc05f6c81c2"
+    },
+    {
+      "file": "uncommitted-runner-guard/os-release.txt",
+      "bytes": 402,
+      "sha256": "fb8b42d368e509d8b012d009dd626d0a1f860cccc105e8806da5c2ab9e59a237"
+    },
+    {
+      "file": "uncommitted-runner-guard/result.json",
+      "bytes": 951,
+      "sha256": "d3390d4240881254b39596669831f394ec80aeceb6e652abc6949e83afc8993c"
+    },
+    {
+      "file": "uncommitted-runner-guard/runner.py",
+      "bytes": 8211,
+      "sha256": "2768fdd08ac111e2dc7af5604765c1aee15116f5773829f111fd369e068fa7eb"
+    },
+    {
+      "file": "workflow.yml",
+      "bytes": 2102,
+      "sha256": "28d292b38c6a45606a3458739aa83cf51cea3eb7981cd4b91c9f6e93a913c64f"
+    }
+  ],
+  "preparation_commit": "958f9fce15feeea0ee39f541faafad831af3db38"
+}
