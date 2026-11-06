@@ -1,5 +1,7 @@
 # 最终交接（2026-11-05）
 
+发布收尾状态更新：2026-11-06。原本地交付提交审计仍固定于C16。
+
 项目路径：`/home/user/MoonBit_Program/MoonXPT`。开始状态为新建空目录，无基线 HEAD，
 没有已有用户代码；所有下列提交属于本任务，作者使用用户提供的本仓库身份。
 
@@ -12,15 +14,19 @@
 - 三份NHANES人口统计/体检/实验室输入，620612单元格和已声明元数据完整比较，0 ULP实际差异。
   ReadStat与Python xport两个独立家族；特殊缺失不靠DataFrame NaN判相等。
 - C15干净Git archive完整复现通过；代码无构建缓存拷贝，具体边界见 clean-reproduction.json。
-- C16最终HEAD的完整执行记录与摘要已在后续收尾中归档到 [evidence/](evidence/README.md)，保留C15原始摘要，不把环境复用当作独立安装。
+- C16冻结基线的完整执行记录与摘要已在后续收尾中归档到 [evidence/](evidence/README.md)，保留C15原始摘要，不把环境复用当作独立安装。
   百万行合成导出与写入 RSS约2.5–3.1MiB，证据见 benchmarks.md。
+- 发布收尾另有[全新安装验收](evidence/independent-install/README.md)：冻结C16源码、
+  官方SDK/core、无缓存PyPI oracle与重新下载语料，完整检查通过且无跳过。
+  开发HOME不可见；共享宿主内核与基础OS，不计作第二台机器或远端CI。
 - MIT自有源码、第三方许可与来源、CI配置、固定依赖、公共接口签名、实测演示脚本和一页赛事说明。
 
 运行入口：`python3 tools/check.py`；真实验证：
 `.cache/venv/bin/python tools/check.py --oracle --corpus`；
 演示：`bash tools/demo.sh [--real]`；构建产物：
 `_build/native/release/build/cmd/moonxpt/moonxpt.exe`。
-本地源码zip由 `moon package` 生成于 `_build/publish/any07557-moonxpt-0.1.0.zip`。
+现有过滤版库zip由 `moon package` 生成于 `_build/publish/any07557-moonxpt-0.1.0.zip`。
+包含tools、CI和全部文档的完整评审源码包尚待生成，不能用该过滤包代替。
 
 ## 已知限制与未验证项
 
@@ -31,8 +37,9 @@
   reserved头字段、描述符尾部、间隙与缺少来源时间的头部会规范化。
 - ReadStat不用于证明多成员；xport DataFrame不用于证明特殊缺失；R未运行。证据边界逐项公开。
 - 输出成组发布支持进程内错误回滚，不承诺两文件跨机器崩溃原子性；遇并发外部更改会保留恢复备份。
-- 官方固定工具链归档HTTP403；远端重装和GitHub Actions首次安装没有验证。CI将明确失败，
-  不自动回退latest。干净源码构建使用本机已验证的固定版本，已通过。
+- 原工具链403已定位为安装器归档版本键错误并修复，官方固定版本全新安装通过。
+  [安装报告](toolchain-installation.md)保留HTTP调查及两次失败。第二台机器与远端Actions
+  尚未验证；本次未修改CI配置，不自动回退latest。
 - 尚未创建远程仓库、push、发布Mooncakes、发布原生二进制或提交赛事表单。十一月赛程仍未可靠核实。
 
 ## 实际提交审计
@@ -62,9 +69,9 @@ C16完整hash在本次证据归档修订中补齐，不要求任何提交写入�
 
 ## 待发布步骤
 
-1. 在确认账号、仓库名与公开范围后创建远程仓库并push现有完整历史。
-2. 解决固定工具链归档访问或提供等效固定工具链runner，实际运行远端CI；保留失败日志。
-3. 确认Mooncakes命名空间和版本，设置真实repository字段、再核包清单后发布源码包。
-4. 核实当期赛事截止日期、队伍资料/群要求/表单；附公开仓库、本说明、测试和演示材料提交。
+1. 基于已验证安装入口检查远端CI配置；取得真实runner运行证据。远程仓库地址与相关外部动作需确认授权。
+2. 统一CLI与模块版本，核查v0.1.0标签；分别生成使用者库包与包含tools、CI、文档的完整源码包。
+3. 核实Mooncakes命名空间、repository和赛事要求，准备可审查的Release及参赛材料。
+4. 证据齐全且取得明确授权后，再push、发布Release/Mooncakes并提交赛事表单。
 
-本任务没有以上外部动作授权，均保持未执行状态；本地源码、演示与审核材料已经交付。
+原16笔基线保持冻结，发布收尾追加提交。以上外部发布动作尚未执行。

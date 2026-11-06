@@ -1,0 +1,133 @@
+{
+  "probed_at_utc": "2026-11-05T14:53:29.937813+00:00",
+  "requests": [
+    {
+      "name": "compiler-native-key",
+      "url": "https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz",
+      "resolved_url": "https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz",
+      "http_status": 206,
+      "headers": {
+        "Content-Type": "application/x-tar",
+        "Content-Length": "512",
+        "Date": "Thu, 05 Nov 2026 14:53:21 GMT",
+        "Server": "AmazonS3",
+        "X-Cache": "Miss from cloudfront",
+        "Via": "1.1 2cad7b83f1a1ab449fa1f920dcdd250e.cloudfront.net (CloudFront)",
+        "Content-Range": "bytes 0-511/100080035"
+      },
+      "saved_bytes": 512,
+      "body_sha256": "fff079228a5e786efc37a1436831ca8d2932880023eeadcb74529a37d52bf7e4",
+      "prefix_only": true,
+      "body_file": "compiler-native-key.body",
+      "result": "received"
+    },
+    {
+      "name": "compiler-v-native-key",
+      "url": "https://cli.moonbitlang.com/binaries/v0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz",
+      "resolved_url": "https://cli.moonbitlang.com/binaries/v0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz",
+      "http_status": 403,
+      "headers": {
+        "Content-Type": "application/xml",
+        "Server": "AmazonS3",
+        "Date": "Thu, 05 Nov 2026 14:53:19 GMT",
+        "X-Cache": "Error from cloudfront",
+        "Via": "1.1 3774bc414b8d7ff1e04599d5c8b7cc36.cloudfront.net (CloudFront)"
+      },
+      "saved_bytes": 111,
+      "body_sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938",
+      "prefix_only": true,
+      "body_file": "compiler-v-native-key.body",
+      "result": "received"
+    },
+    {
+      "name": "compiler-assets-html",
+      "url": "https://github.com/moonbitlang/moonbit-compiler/releases/expanded_assets/v0.10.15%2B943464bfa",
+      "resolved_url": "https://github.com/moonbitlang/moonbit-compiler/releases/expanded_assets/v0.10.15%2B943464bfa",
+      "http_status": 200,
+      "headers": {
+        "Date": "Thu, 05 Nov 2026 14:53:19 GMT",
+        "Content-Type": "text/html; charset=utf-8",
+        "Server": "github.com",
+        "Content-Length": "8597"
+      },
+      "saved_bytes": 8597,
+      "body_sha256": "c8dc7e000c63219fd7e2a63588400c8607b041972a76d49c9626f1d4bcbc60fb",
+      "prefix_only": false,
+      "body_file": "compiler-assets-html.body",
+      "result": "received"
+    },
+    {
+      "name": "compiler-pinned-page",
+      "url": "https://github.com/moonbitlang/moonbit-compiler/releases/tag/v0.10.15%2B943464bfa",
+      "resolved_url": "https://github.com/moonbitlang/moonbit-compiler/releases/tag/v0.10.15%2B943464bfa",
+      "http_status": 200,
+      "headers": {
+        "Date": "Thu, 05 Nov 2026 14:53:21 GMT",
+        "Content-Type": "text/html; charset=utf-8",
+        "Server": "github.com"
+      },
+      "saved_bytes": 149372,
+      "body_sha256": "7e7326b2552bd66c9c140e3e60cdd3ac760c2cad38adc4e6eba9829c52bae82d",
+      "prefix_only": false,
+      "body_file": "compiler-pinned-page.body",
+      "result": "received"
+    },
+    {
+      "name": "compiler-key-checksum",
+      "url": "https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz.sha256",
+      "resolved_url": "https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz.sha256",
+      "http_status": 200,
+      "headers": {
+        "Content-Type": "binary/octet-stream",
+        "Content-Length": "94",
+        "Date": "Thu, 05 Nov 2026 14:53:22 GMT",
+        "Server": "AmazonS3",
+        "X-Cache": "Miss from cloudfront",
+        "Via": "1.1 2c78e8d1e7b600b99573e4dca9b119c0.cloudfront.net (CloudFront)"
+      },
+      "saved_bytes": 94,
+      "body_sha256": "ccb13f65e23a83d9322db0e6a03cf46382b29f50ab97ace289c83d97dfed9b3a",
+      "prefix_only": false,
+      "body_file": "compiler-key-checksum.body",
+      "result": "received"
+    },
+    {
+      "name": "compiler-v-key-checksum",
+      "url": "https://cli.moonbitlang.com/binaries/v0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz.sha256",
+      "resolved_url": "https://cli.moonbitlang.com/binaries/v0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz.sha256",
+      "http_status": 403,
+      "headers": {
+        "Content-Type": "application/xml",
+        "Date": "Thu, 05 Nov 2026 14:53:25 GMT",
+        "Server": "AmazonS3",
+        "X-Cache": "Error from cloudfront",
+        "Via": "1.1 84116bff0a26d7866b2386043fce704c.cloudfront.net (CloudFront)"
+      },
+      "saved_bytes": 111,
+      "body_sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938",
+      "prefix_only": false,
+      "body_file": "compiler-v-key-checksum.body",
+      "result": "received"
+    },
+    {
+      "name": "compiler-pinned-wasm",
+      "url": "https://github.com/moonbitlang/moonbit-compiler/releases/download/v0.10.15%2B943464bfa/moonbit-wasm.tar.gz",
+      "resolved_url": "https://release-assets.githubusercontent.com/github-production-release-asset/905028297/0bf66c50-7ac0-4740-bcaa-1878fd2b6082?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-11-05T15%3A31%3A37Z&rscd=attachment%3B+filename%3Dmoonbit-wasm.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-05T14%3A31%3A30Z&ske=2026-11-05T15%3A31%3A37Z&sks=b&skv=2018-11-09&sig=ltHQXeOTRuIOKWqPPFf2MUeARf%2BuBCfvt6n8TQoalo0%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5Mzg5MDcwNywibmJmIjoxNzkzODkwNDA3LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.wx9dq6WLGYqkDcrYxiVFVT8Wu0ZqY06SYU1h8lJ4dV4&response-content-disposition=attachment%3B%20filename%3Dmoonbit-wasm.tar.gz&response-content-type=application%2Foctet-stream",
+      "http_status": 206,
+      "headers": {
+        "Content-Length": "512",
+        "Server": "Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0",
+        "Via": "1.1 varnish, 1.1 varnish",
+        "Date": "Thu, 05 Nov 2026 14:53:29 GMT",
+        "X-Cache": "MISS, MISS",
+        "Content-Type": "application/octet-stream",
+        "Content-Range": "bytes 0-511/3500677"
+      },
+      "saved_bytes": 512,
+      "body_sha256": "4b4ee8469cc7c94741455153da3a9d0f8497228bb01cb834bb7a3c6a03b4b486",
+      "prefix_only": true,
+      "body_file": "compiler-pinned-wasm.body",
+      "result": "received"
+    }
+  ]
+}

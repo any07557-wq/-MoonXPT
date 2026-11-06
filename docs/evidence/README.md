@@ -17,4 +17,9 @@ C16包含27组MoonBit测试、6项离线集成、两个oracle家族和3份真实
 它们均复用此前安装的工具链与oracle解释器中的依赖，`network_install_verified=false`；
 不计为另一台干净机器从零安装通过。
 
-后续独立安装证据另行归档，不覆盖这两次历史记录。
+发布收尾新增材料分别归档，不覆盖这两次历史记录：
+
+- [官方工具链来源调查](toolchain-discovery/README.md)：原错误版本键、正确固定入口、HTTP状态和摘要。
+- [全新安装验收](independent-install/README.md)：同机隔离用户空间、全新SDK/oracle/语料，完整通过；两次前置失败另存。
+
+上述两个目录各有自己的SHA-256清单，原manifest.json继续只登记C15/C16历史材料。

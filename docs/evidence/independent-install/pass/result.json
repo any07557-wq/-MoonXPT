@@ -1,0 +1,21 @@
+{
+  "baseline": "1516dfd033d4ecee1bf0fd5cb35c9ec77762a774",
+  "result": "PASS",
+  "exit_code": 0,
+  "started_utc": "2026-11-05T15:05:14.951795+00:00",
+  "completed_utc": "2026-11-05T15:11:14.251498+00:00",
+  "environment": "bubblewrap isolated userspace; shared host Linux kernel and base /usr /etc",
+  "developer_home_visible": false,
+  "existing_sdk_reused": false,
+  "oracle_environment_reused": false,
+  "base_os_dns_and_proxy_forwarded": true,
+  "sdk_download_cache_reused": false,
+  "pip_cache_reused": false,
+  "source_build_cache_reused": false,
+  "corpus_downloaded_afresh": true,
+  "ci_run_claimed": false,
+  "execution_log_sha256": "5c2051a8019dd978ec4a8a835af691e5f24e4d5cd3b27237624d2c6a7a02cc81",
+  "installer_source_sha256": "599aacda853b243095ec1574e7ce0d92e23c2af5229ba2bdd99028bfe21f08ae",
+  "toolchain_lock_sha256": "5f1de9823be318d22f816995a8cdaa903bf3235fae2022fb5e66078476a033be",
+  "verification_runner_sha256": "f7ad5b55cffd790dd8ec813960726adaa0bde8f3eb58daa8a75007f2df2194d1"
+}

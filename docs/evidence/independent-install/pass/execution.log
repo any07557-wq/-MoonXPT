@@ -1,0 +1,89 @@
+PRECHECK: developer home hidden, no existing SDK or oracle modules
+Downloading: https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz.sha256
+Downloading: https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz
+Downloaded bytes: 16777216
+Downloaded bytes: 33554432
+Downloaded bytes: 50331648
+Downloaded bytes: 67108864
+Downloaded bytes: 83886080
+Downloading: https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz
+moon 0.1.20261012 (748b63c 2026-10-12) /run/sdk/bin/moon
+moonc v0.10.15+943464bfa (2026-10-12) /run/sdk/bin/moonc
+moonrun 0.1.20261012 (748b63c 2026-10-12) /run/sdk/bin/moonrun
+
+Feature flags enabled: rr_moon_mod,rr_moon_pkg
+
+Finished. moon: ran 82 tasks, now up to date
+{"result": "PASS", "started_utc": "2026-11-05T15:05:15.141455+00:00", "completed_utc": "2026-11-05T15:07:09.281365+00:00", "archive_version": "0.10.15+943464bfa", "prefix": "/run/sdk", "native": {"url": "https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz", "bytes": 100080035, "sha256": "24b93a5409d2a4fb8e3d1b84b473f27b63476cef4418094764df96cb26b03c09"}, "core": {"url": "https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz", "bytes": 1880333, "sha256": "96d30f4dbcc6a9e1736ef26fbdd0e8fb0e97cb01d50e55d2a0072208b8061ae5"}, "core_digest_provenance": "recorded from the official HTTPS core archive; detached core checksum endpoint returns 403, not claimed as an upstream-published digest", "version_output": "moon 0.1.20261012 (748b63c 2026-10-12) /run/sdk/bin/moon\nmoonc v0.10.15+943464bfa (2026-10-12) /run/sdk/bin/moonc\nmoonrun 0.1.20261012 (748b63c 2026-10-12) /run/sdk/bin/moonrun\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg\n", "download_cache_reused": false, "existing_sdk_read": false, "bundled_backend": "native"}
+Collecting pyreadstat==1.3.7 (from -r tools/requirements-oracle.txt (line 2))
+  Downloading pyreadstat-1.3.7-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (1.2 kB)
+Collecting pandas==3.1.0 (from -r tools/requirements-oracle.txt (line 3))
+  Downloading pandas-3.1.0-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (18 kB)
+Collecting numpy==2.5.4 (from -r tools/requirements-oracle.txt (line 4))
+  Downloading numpy-2.5.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting narwhals==2.28.0 (from -r tools/requirements-oracle.txt (line 5))
+  Downloading narwhals-2.28.0-py3-none-any.whl.metadata (15 kB)
+Collecting python-dateutil==4.0.0 (from -r tools/requirements-oracle.txt (line 6))
+  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting tzdata==2026.6 (from -r tools/requirements-oracle.txt (line 7))
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting setuptools==80.10.2 (from -r tools/requirements-oracle.txt (line 8))
+  Downloading setuptools-80.10.2-py3-none-any.whl.metadata (6.6 kB)
+Downloading pyreadstat-1.3.7-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (2.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 82.0 kB/s eta 0:00:00
+Downloading pandas-3.1.0-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 340.1 kB/s eta 0:00:00
+Downloading numpy-2.5.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 254.6 kB/s eta 0:00:00
+Downloading narwhals-2.28.0-py3-none-any.whl (490 kB)
+Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Downloading setuptools-80.10.2-py3-none-any.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 120.9 kB/s eta 0:00:00
+Installing collected packages: tzdata, setuptools, numpy, narwhals, python-dateutil, pyreadstat, pandas
+
+Successfully installed narwhals-2.28.0 numpy-2.5.4 pandas-3.1.0 pyreadstat-1.3.7 python-dateutil-4.0.0 setuptools-80.10.2 tzdata-2026.6
+Collecting xport==3.6.1
+  Downloading xport-3.6.1-py2.py3-none-any.whl.metadata (9.7 kB)
+Downloading xport-3.6.1-py2.py3-none-any.whl (29 kB)
+Installing collected packages: xport
+Successfully installed xport-3.6.1
+Fresh oracle dependencies installed from PyPI
+downloaded and verified DEMO_J
+downloaded and verified BMX_J
+downloaded and verified GLU_J
++ moon fmt --check
+Finished. moon: ran 42 tasks, now up to date
++ moon check --target native --deny-warn
+Finished. moon: ran 14 tasks, now up to date
++ moon test --target native --deny-warn
+Total tests: 27, passed: 27, failed: 0.
++ moon build --target native --deny-warn
+Finished. moon: ran 20 tasks, now up to date
++ /run/source/_build/native/debug/build/examples/write/write.exe /run/source/.cache/writer-example.xpt
+wrote NUMBERS(3), WORDS(3), TAGS(28), EMPTY(0)
++ /run/source/.cache/venv/bin/python /run/source/tools/test_inspect.py
+PASS: inspect JSON, counts, multi-member hints, spaces in paths, stderr, usage/I/O/format codes
++ /run/source/.cache/venv/bin/python /run/source/tools/test_export.py
+PASS: selected member export, independent CSV/JSON, no overwrite, force, aliases, failure cleanup
++ /run/source/.cache/venv/bin/python /run/source/tools/test_exchange.py
+PASS: four member CSV/JSON semantic roundtrips, stable writes, typed missing, versions, duplicate columns, malformed CSV and cleanup
++ /run/source/.cache/venv/bin/python /run/source/tools/test_fixtures.py
+PASS: independent ReadStat/xport inputs, format/informat, 136-byte descriptors, reordered offsets, CP1252 multi-member exchange
++ /run/source/.cache/venv/bin/python /run/source/tools/test_malformed.py
+{"seed": 20261104, "truncations": 79, "mutations": 256, "targeted": 8, "result": "PASS", "timeout_seconds": 5}
++ /run/source/.cache/venv/bin/python /run/source/tools/test_consumer.py
+public API consumer PASS
++ /run/source/.cache/venv/bin/python /run/source/tools/check_writer.py
+/run/source/.cache/venv/lib/python3.14/site-packages/xport/__about__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import DistributionNotFound, get_distribution
+PASS: xport reads all 4 members; ReadStat reads first; 28 missing byte vectors exact
++ /run/source/.cache/venv/bin/python /run/source/tools/compare_scan.py
+BMX_J: rows=8704 columns=21 compared_cells=182784 max_ulp=0; PASS
+DEMO_J: rows=9254 columns=46 compared_cells=425684 max_ulp=0; PASS
+GLU_J: rows=3036 columns=4 compared_cells=12144 max_ulp=0; PASS
++ /run/source/.cache/venv/bin/python /run/source/tools/validate_corpus.py
+{"member": "DEMO_J", "rows": 9254, "columns": 46, "cells": 425684, "sha256": "c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec", "max_ulp": 0, "metadata": "exact declared attributes", "result": "PASS"}
+{"member": "BMX_J", "rows": 8704, "columns": 21, "cells": 182784, "sha256": "8d675e42d8826ac98714b2c3dd4c5138a5e353fb4424f7eff5e6db4a01ce838a", "max_ulp": 0, "metadata": "exact declared attributes", "result": "PASS"}
+{"member": "GLU_J", "rows": 3036, "columns": 4, "cells": 12144, "sha256": "5b38897d0d7bfbc69dd9ca74ffdaf2f6a9bed5a91d4a7bf46e07f1332cc3379e", "max_ulp": 0, "metadata": "exact declared attributes", "result": "PASS"}
+PASS: all requested checks completed; none skipped

@@ -1,0 +1,62 @@
+{
+  "probed_at_utc": "2026-11-05T14:54:15.101179+00:00",
+  "requests": [
+    {
+      "name": "compiler-key-core",
+      "url": "https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz",
+      "resolved_url": "https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz",
+      "http_status": 206,
+      "headers": {
+        "Content-Type": "application/x-tar",
+        "Content-Length": "512",
+        "Date": "Thu, 05 Nov 2026 14:54:12 GMT",
+        "Server": "AmazonS3",
+        "X-Cache": "Miss from cloudfront",
+        "Via": "1.1 3774bc414b8d7ff1e04599d5c8b7cc36.cloudfront.net (CloudFront)",
+        "Content-Range": "bytes 0-511/1880333"
+      },
+      "saved_bytes": 512,
+      "body_sha256": "e110bbf9d6aea8b17d2797a9f58a716cffcf4f25231a20984346da03d25de75b",
+      "prefix_only": true,
+      "body_file": "compiler-key-core.body",
+      "result": "received"
+    },
+    {
+      "name": "compiler-key-core-checksum",
+      "url": "https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz.sha256",
+      "resolved_url": "https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz.sha256",
+      "http_status": 403,
+      "headers": {
+        "Content-Type": "application/xml",
+        "Date": "Thu, 05 Nov 2026 14:54:13 GMT",
+        "Server": "AmazonS3",
+        "X-Cache": "Error from cloudfront",
+        "Via": "1.1 0b1c9648687ba0cb353e184231f063b2.cloudfront.net (CloudFront)"
+      },
+      "saved_bytes": 111,
+      "body_sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938",
+      "prefix_only": false,
+      "body_file": "compiler-key-core-checksum.body",
+      "result": "received"
+    },
+    {
+      "name": "compiler-key-files-checksum",
+      "url": "https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.sha256",
+      "resolved_url": "https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.sha256",
+      "http_status": 200,
+      "headers": {
+        "Content-Type": "binary/octet-stream",
+        "Content-Length": "1335",
+        "Server": "AmazonS3",
+        "Date": "Thu, 05 Nov 2026 14:54:15 GMT",
+        "X-Cache": "Miss from cloudfront",
+        "Via": "1.1 e9b2729b7c54ce9fa3704f65bb5e3476.cloudfront.net (CloudFront)"
+      },
+      "saved_bytes": 1335,
+      "body_sha256": "95484caca6b1a357b49314b9af2552f99ff1670e63664569269988aa64fdef12",
+      "prefix_only": false,
+      "body_file": "compiler-key-files-checksum.body",
+      "result": "received"
+    }
+  ]
+}

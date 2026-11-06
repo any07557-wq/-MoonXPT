@@ -1,0 +1,84 @@
+{
+  "recorded_date": "2026-11-05",
+  "archived_date": "2026-11-06",
+  "boundary": "HTTP metadata, small checksum/error responses and selected release facts; no installation PASS inferred from probes",
+  "legacy_boundary": "initial retained body files have no complete first-pass HTTP report; later reports are independent per-run records",
+  "omitted_bodies": "body-retention.json records digests and retention decisions",
+  "files": [
+    {
+      "file": "20261105T145319206681Z/compiler-key-checksum.body",
+      "bytes": 94,
+      "sha256": "ccb13f65e23a83d9322db0e6a03cf46382b29f50ab97ace289c83d97dfed9b3a"
+    },
+    {
+      "file": "20261105T145319206681Z/compiler-v-key-checksum.body",
+      "bytes": 111,
+      "sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938"
+    },
+    {
+      "file": "20261105T145319206681Z/compiler-v-native-key.body",
+      "bytes": 111,
+      "sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938"
+    },
+    {
+      "file": "20261105T145319206681Z/sources.json",
+      "bytes": 6456,
+      "sha256": "4516aa8be40acde64e88b7c67d53bad3ca78191949ec7f8113e8e5cc67fa4542"
+    },
+    {
+      "file": "20261105T145411410227Z/compiler-key-core-checksum.body",
+      "bytes": 111,
+      "sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938"
+    },
+    {
+      "file": "20261105T145411410227Z/compiler-key-files-checksum.body",
+      "bytes": 1335,
+      "sha256": "95484caca6b1a357b49314b9af2552f99ff1670e63664569269988aa64fdef12"
+    },
+    {
+      "file": "20261105T145411410227Z/sources.json",
+      "bytes": 2501,
+      "sha256": "1ae30fdb406f0e44dd1df96b42fb3641cf3e97224ba1374613d39a147014946d"
+    },
+    {
+      "file": "README.md",
+      "bytes": 1142,
+      "sha256": "38503ac59a738f706f3779f4202619ac232bd6bfe5218e7ba7a475812e70b705"
+    },
+    {
+      "file": "body-retention.json",
+      "bytes": 4373,
+      "sha256": "73853629d270aa177a6faaca1e5ab94de9eba9a9f207fa33bbb362b0ee8c532c"
+    },
+    {
+      "file": "initial-readonly-responses/latest-archive-checksum.body",
+      "bytes": 94,
+      "sha256": "aeeed0aa9c6be20555111141ed500efecc7fb3357eb913676d59b66fc8f2cf32"
+    },
+    {
+      "file": "initial-readonly-responses/latest-checksums.body",
+      "bytes": 1417,
+      "sha256": "90c57b3040fce405309d1a8577efe91efa2b9a06e4f4738e3f4f3f32305cdc7e"
+    },
+    {
+      "file": "initial-readonly-responses/pinned-checksum.body",
+      "bytes": 111,
+      "sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938"
+    },
+    {
+      "file": "initial-readonly-responses/pinned-core.body",
+      "bytes": 111,
+      "sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938"
+    },
+    {
+      "file": "initial-readonly-responses/pinned-native.body",
+      "bytes": 111,
+      "sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938"
+    },
+    {
+      "file": "selected-release.json",
+      "bytes": 1116,
+      "sha256": "9a1f2fe64303c186476081f9b7f5074f215a4051788ceaeb465fa5b48cc99454"
+    }
+  ]
+}

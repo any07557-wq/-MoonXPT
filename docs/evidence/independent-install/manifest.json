@@ -1,0 +1,113 @@
+{
+  "archived_date": "2026-11-06",
+  "frozen_baseline": "1516dfd033d4ecee1bf0fd5cb35c9ec77762a774",
+  "boundary": "fresh SDK/oracles/corpus in bubblewrap isolated userspace on shared host OS, not a second machine or remote CI",
+  "method": "verbatim execution evidence and snapshots; file copies described in provenance.json",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 3096,
+      "sha256": "7b01dd7a453325e947c0400f53eb434b5ef9691d8d4c352debff6a392b4ef6fb"
+    },
+    {
+      "file": "fail-dns/execution.log",
+      "bytes": 3678,
+      "sha256": "8fff6e25b9ffdc46b47ba6a48e5e02379063371803a113824e07af21cff9afe4"
+    },
+    {
+      "file": "fail-dns/result.json",
+      "bytes": 862,
+      "sha256": "d9b192b42f57354b38a6a5695caa9341dde50da95362e53ef26d5803b6870eee"
+    },
+    {
+      "file": "fail-dns/verify.sh",
+      "bytes": 1346,
+      "sha256": "118f50518efc7315a6eeb2462fc701d863e40ad74217efc8c2865414f8d3d1a6"
+    },
+    {
+      "file": "fail-executable-mode/execution.log",
+      "bytes": 2326,
+      "sha256": "43b9481857c0bdbc382a942ec4d30adb43ce0ec343afb7dc2a4149f5700c7998"
+    },
+    {
+      "file": "fail-executable-mode/recovered-tools/install_toolchain.py",
+      "bytes": 4171,
+      "sha256": "b8d12b80f512b60ac70ba73f1b3f3ad931d8bf1bacb159f46ff5ca748af99476"
+    },
+    {
+      "file": "fail-executable-mode/recovered-tools/install_toolchain.sh",
+      "bytes": 95,
+      "sha256": "15d846397812be4bf5715628f11a94b9fd2f1615405318755b82d5bfa7c13975"
+    },
+    {
+      "file": "fail-executable-mode/recovered-tools/toolchain.json",
+      "bytes": 907,
+      "sha256": "5f1de9823be318d22f816995a8cdaa903bf3235fae2022fb5e66078476a033be"
+    },
+    {
+      "file": "fail-executable-mode/recovered-tools/verify_independent_install.py",
+      "bytes": 4846,
+      "sha256": "32c4d76fc92b4f716f0aabeca9d48537a94b1e4663944c808c8d4f3075bbb572"
+    },
+    {
+      "file": "fail-executable-mode/result.json",
+      "bytes": 905,
+      "sha256": "4aee843ce5f2a8e01d370d2f03ef0a791314f4d9eabffc1da577c564c8703cb1"
+    },
+    {
+      "file": "fail-executable-mode/verify.sh",
+      "bytes": 1346,
+      "sha256": "118f50518efc7315a6eeb2462fc701d863e40ad74217efc8c2865414f8d3d1a6"
+    },
+    {
+      "file": "pass/execution.log",
+      "bytes": 7813,
+      "sha256": "5c2051a8019dd978ec4a8a835af691e5f24e4d5cd3b27237624d2c6a7a02cc81"
+    },
+    {
+      "file": "pass/installer-tools/install_toolchain.py",
+      "bytes": 4621,
+      "sha256": "599aacda853b243095ec1574e7ce0d92e23c2af5229ba2bdd99028bfe21f08ae"
+    },
+    {
+      "file": "pass/installer-tools/install_toolchain.sh",
+      "bytes": 95,
+      "sha256": "15d846397812be4bf5715628f11a94b9fd2f1615405318755b82d5bfa7c13975"
+    },
+    {
+      "file": "pass/installer-tools/toolchain.json",
+      "bytes": 907,
+      "sha256": "5f1de9823be318d22f816995a8cdaa903bf3235fae2022fb5e66078476a033be"
+    },
+    {
+      "file": "pass/oracle-packages.json",
+      "bytes": 211,
+      "sha256": "1f1bc2fba3f255e903ee44d98ebe99052a00b8e5f9563b63136da2baa1d2f94a"
+    },
+    {
+      "file": "pass/result.json",
+      "bytes": 1004,
+      "sha256": "7dfc07e4faac883ebf5b7be257acef673abc1b9760fb486a9ed65e547daa2e55"
+    },
+    {
+      "file": "pass/sdk-install.json",
+      "bytes": 1136,
+      "sha256": "e79ff2c6f6146b3fbb835b783943278f2cfe74309992d4f37d5e997ab9567671"
+    },
+    {
+      "file": "pass/verification-runner.py",
+      "bytes": 5172,
+      "sha256": "f7ad5b55cffd790dd8ec813960726adaa0bde8f3eb58daa8a75007f2df2194d1"
+    },
+    {
+      "file": "pass/verify.sh",
+      "bytes": 1346,
+      "sha256": "118f50518efc7315a6eeb2462fc701d863e40ad74217efc8c2865414f8d3d1a6"
+    },
+    {
+      "file": "provenance.json",
+      "bytes": 5401,
+      "sha256": "310d8eefd686f12ff68f50b18b20e393ce28e05b1c5d4583ba0828bf2011c611"
+    }
+  ]
+}

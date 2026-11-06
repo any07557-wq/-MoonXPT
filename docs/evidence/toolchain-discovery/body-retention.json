@@ -1,0 +1,111 @@
+[
+  {
+    "file": "20261105T145319206681Z/compiler-v-native-key.body",
+    "bytes": 111,
+    "sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938",
+    "retained": true
+  },
+  {
+    "file": "20261105T145319206681Z/compiler-pinned-page.body",
+    "bytes": 149372,
+    "sha256": "7e7326b2552bd66c9c140e3e60cdd3ac760c2cad38adc4e6eba9829c52bae82d",
+    "retained": false,
+    "reason": "body omitted; preserve HTTP metadata/digest and extracted release facts instead of whole third-party HTML/source or archive prefixes"
+  },
+  {
+    "file": "20261105T145319206681Z/compiler-native-key.body",
+    "bytes": 512,
+    "sha256": "fff079228a5e786efc37a1436831ca8d2932880023eeadcb74529a37d52bf7e4",
+    "retained": false,
+    "reason": "body omitted; preserve HTTP metadata/digest and extracted release facts instead of whole third-party HTML/source or archive prefixes"
+  },
+  {
+    "file": "20261105T145319206681Z/compiler-assets-html.body",
+    "bytes": 8597,
+    "sha256": "c8dc7e000c63219fd7e2a63588400c8607b041972a76d49c9626f1d4bcbc60fb",
+    "retained": false,
+    "reason": "body omitted; preserve HTTP metadata/digest and extracted release facts instead of whole third-party HTML/source or archive prefixes"
+  },
+  {
+    "file": "20261105T145319206681Z/compiler-v-key-checksum.body",
+    "bytes": 111,
+    "sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938",
+    "retained": true
+  },
+  {
+    "file": "20261105T145319206681Z/compiler-pinned-wasm.body",
+    "bytes": 512,
+    "sha256": "4b4ee8469cc7c94741455153da3a9d0f8497228bb01cb834bb7a3c6a03b4b486",
+    "retained": false,
+    "reason": "body omitted; preserve HTTP metadata/digest and extracted release facts instead of whole third-party HTML/source or archive prefixes"
+  },
+  {
+    "file": "20261105T145319206681Z/compiler-key-checksum.body",
+    "bytes": 94,
+    "sha256": "ccb13f65e23a83d9322db0e6a03cf46382b29f50ab97ace289c83d97dfed9b3a",
+    "retained": true
+  },
+  {
+    "file": "initial-readonly-responses/pinned-checksum.body",
+    "bytes": 111,
+    "sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938",
+    "retained": true
+  },
+  {
+    "file": "initial-readonly-responses/compiler-readme.body",
+    "bytes": 5034,
+    "sha256": "5c59c680aa43e59fc2561cde473de6087d3975c0bc744df3463bd865f62840bc",
+    "retained": false,
+    "reason": "body omitted; preserve HTTP metadata/digest and extracted release facts instead of whole third-party HTML/source or archive prefixes"
+  },
+  {
+    "file": "initial-readonly-responses/compiler-tags.body",
+    "bytes": 32620,
+    "sha256": "6ac24c8584bc437294e131aa5d30aec8798fe859d54d1ed05ee19a86fc0864f6",
+    "retained": false,
+    "reason": "body omitted; preserve HTTP metadata/digest and extracted release facts instead of whole third-party HTML/source or archive prefixes"
+  },
+  {
+    "file": "initial-readonly-responses/pinned-core.body",
+    "bytes": 111,
+    "sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938",
+    "retained": true
+  },
+  {
+    "file": "initial-readonly-responses/latest-checksums.body",
+    "bytes": 1417,
+    "sha256": "90c57b3040fce405309d1a8577efe91efa2b9a06e4f4738e3f4f3f32305cdc7e",
+    "retained": true
+  },
+  {
+    "file": "initial-readonly-responses/latest-archive-checksum.body",
+    "bytes": 94,
+    "sha256": "aeeed0aa9c6be20555111141ed500efecc7fb3357eb913676d59b66fc8f2cf32",
+    "retained": true
+  },
+  {
+    "file": "initial-readonly-responses/pinned-native.body",
+    "bytes": 111,
+    "sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938",
+    "retained": true
+  },
+  {
+    "file": "20261105T145411410227Z/compiler-key-core-checksum.body",
+    "bytes": 111,
+    "sha256": "a824bc7739e226e1b40ea0f8c4e4f4c6f796fc3b4abfa6e9abe3bd119a30d938",
+    "retained": true
+  },
+  {
+    "file": "20261105T145411410227Z/compiler-key-core.body",
+    "bytes": 512,
+    "sha256": "e110bbf9d6aea8b17d2797a9f58a716cffcf4f25231a20984346da03d25de75b",
+    "retained": false,
+    "reason": "body omitted; preserve HTTP metadata/digest and extracted release facts instead of whole third-party HTML/source or archive prefixes"
+  },
+  {
+    "file": "20261105T145411410227Z/compiler-key-files-checksum.body",
+    "bytes": 1335,
+    "sha256": "95484caca6b1a357b49314b9af2552f99ff1670e63664569269988aa64fdef12",
+    "retained": true
+  }
+]

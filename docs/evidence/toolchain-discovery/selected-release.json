@@ -1,0 +1,20 @@
+{
+  "official_compiler_tag": [
+    {
+      "name": "v0.10.15+943464bfa",
+      "zipball_url": "https://api.github.com/repos/moonbitlang/moonbit-compiler/zipball/refs/tags/v0.10.15+943464bfa",
+      "tarball_url": "https://api.github.com/repos/moonbitlang/moonbit-compiler/tarball/refs/tags/v0.10.15+943464bfa",
+      "commit": {
+        "sha": "d4ada10d212b5376f7f8bf49cd2fbaa275a395df",
+        "url": "https://api.github.com/repos/moonbitlang/moonbit-compiler/commits/d4ada10d212b5376f7f8bf49cd2fbaa275a395df"
+      },
+      "node_id": "REF_kwDONfGiybxyZWZzL3RhZ3MvdjAuMTAuMTUrOTQzNDY0YmZh"
+    }
+  ],
+  "tags_source": "https://api.github.com/repos/moonbitlang/moonbit-compiler/tags?per_page=100",
+  "tags_body_sha256": "6ac24c8584bc437294e131aa5d30aec8798fe859d54d1ed05ee19a86fc0864f6",
+  "wasm_asset": "https://github.com/moonbitlang/moonbit-compiler/releases/download/v0.10.15%2B943464bfa/moonbit-wasm.tar.gz",
+  "selected_native_archive": "https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz",
+  "install_version_parameter": "0.10.15+943464bfa",
+  "no_latest_fallback": true
+}

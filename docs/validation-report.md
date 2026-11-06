@@ -56,9 +56,22 @@ platform/stage_wbtest.mbt 实际制造第二目标的竞争文件，验证第一
 `bash tools/demo.sh` 与 `bash tools/demo.sh --real` 已实际成功；后者在本地演示目录
 得到9254行 DEMO_J CSV、metadata JSON和可重新inspect的XPT。代码分发包的清单已检查，
 不包含缓存、凭据、oracle程序或真实语料。CI YAML已解析，shell脚本语法检查通过；
-GitHub Actions未远端执行，官方固定归档403没有被计作通过。
+GitHub Actions未远端执行；当时的固定归档403没有被计作通过，后续安装修复见下节。
 
 本地源码包检查：`moon package --list` 生成zip后，解压到独立临时目录，
 在无tools目录、无缓存/虚拟环境/真实语料的包内容下，`moon build --target native --deny-warn`
 和原生CLI inspect独立小夹具成功。目录清单含80项，缓存和凭据路径均不在包内。
 repository字段保留空值并出现打包警告，因为尚未创建真实远程地址；未用虚构URL消除警告。
+
+## 发布收尾：全新工具链与依赖（运行于2026-11-05，归档于2026-11-06）
+
+冻结C16 `1516dfd033d4ecee1bf0fd5cb35c9ec77762a774` 的源码由Git archive提取。
+同机bubblewrap隔离隐藏开发HOME，先检查SDK与四个oracle模块均不可见，再从官方HTTPS
+安装固定SDK/core、从PyPI向全新venv无缓存安装固定oracle，重新下载并校验三份语料。
+`tools/check.py --oracle --corpus` 全部通过且无跳过：27组、6项离线集成、两个oracle家族、
+三份文件620,612单元格及元数据，实际最大ULP为0。
+
+完整[验收结果、日志和安装器快照](evidence/independent-install/README.md)与原C15/C16
+复用环境的记录分别保存。首次DNS挂载失败和第二次缺少可执行位失败同样保留；通过的
+第三次运行没有复用失败运行的SDK。共享宿主内核、基础OS、DNS与代理，未验证第二台
+机器或新OS镜像，未执行远端CI。原403原因和官方摘要来源见[安装报告](toolchain-installation.md)。

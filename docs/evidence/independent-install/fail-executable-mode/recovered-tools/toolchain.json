@@ -1,0 +1,14 @@
+{
+  "moon": "0.1.20261012",
+  "moon_commit": "748b63c",
+  "moonc": "v0.10.15+943464bfa",
+  "archive_version": "0.10.15+943464bfa",
+  "installer": "https://cli.moonbitlang.com/install/unix.sh",
+  "verified_platform": "Linux x86_64 native",
+  "archive_status": "2026-11-05: correct compiler release key resolves native/core; original moon build-version key was incorrect; isolated fresh installation pending",
+  "previous_incorrect_archive_version": "0.1.20261012+748b63c",
+  "archive_sha256": "24b93a5409d2a4fb8e3d1b84b473f27b63476cef4418094764df96cb26b03c09",
+  "archive_sha256_provenance": "official HTTPS .tar.gz.sha256 at the same fixed release key",
+  "core_sha256": "96d30f4dbcc6a9e1736ef26fbdd0e8fb0e97cb01d50e55d2a0072208b8061ae5",
+  "core_sha256_provenance": "recorded from the official HTTPS core archive; detached core checksum endpoint returns 403, not claimed as an upstream-published digest"
+}

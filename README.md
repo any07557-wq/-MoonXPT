@@ -12,7 +12,8 @@ CSV + 版本化 JSON 元数据在程序间交换数据。核心解析、IBM 浮�
 ## 构建与使用
 
 工具链为 `moon 0.1.20261012 (748b63c)` / `moonc v0.10.15+943464bfa`，需要 C
-编译器。固定依赖、安装服务的 403 限制和 CI 状态见[复现说明](docs/reproduction.md)。
+编译器。固定版本全新安装已在同机隔离用户空间验证；安装步骤和 CI 状态见
+[复现说明](docs/reproduction.md)。
 
 ```sh
 moon build --target native --release --deny-warn
