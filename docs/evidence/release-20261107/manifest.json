@@ -1,0 +1,114 @@
+{
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 3425,
+      "sha256": "6d00f689053df67e2fdc7ce389845c24d04f9e255a41df4f7a658611b7d85df6"
+    },
+    {
+      "file": "contest-check.json",
+      "bytes": 6752,
+      "sha256": "c3cccf3d0880cf4bf5bebc6cb2121900364fc323f6645bcf770127e0918c128b"
+    },
+    {
+      "file": "documentation-checks.json",
+      "bytes": 495,
+      "sha256": "494c450bd88ee99367c95659e4f682e2920468130b72245c8b1c2f33c6b820e6"
+    },
+    {
+      "file": "main-ci-jobs.json",
+      "bytes": 3286,
+      "sha256": "b7db2e9debc5af57ef9f756700ef2c0b4352867f4fb39e1ab84d390d2ce8a36e"
+    },
+    {
+      "file": "main-ci-run.json",
+      "bytes": 12316,
+      "sha256": "9e9801e2ee7fbfc0a27b8681995ba7718514744282e16696a062fc401b75168f"
+    },
+    {
+      "file": "mooncakes/build.log",
+      "bytes": 45,
+      "sha256": "80b487f65e500f98b651ee9c2d3023d6bd32e176e63d2851c46410b31dbe99bb"
+    },
+    {
+      "file": "mooncakes/check.log",
+      "bytes": 45,
+      "sha256": "3296649e96d0c0dc1d62f6a57cbf27145972d10e1157048598931329062461a5"
+    },
+    {
+      "file": "mooncakes/consumer.log",
+      "bytes": 25,
+      "sha256": "8d07633a50cc130e7839e34b19b9280eff01620a1a5205cb7e74848c12ef2396"
+    },
+    {
+      "file": "mooncakes/mooncakes-package.json",
+      "bytes": 457,
+      "sha256": "83e425646d144f8439f7fe53a69aac03f0ce4733fa38d81a71b997044b3cbe26"
+    },
+    {
+      "file": "mooncakes/mooncakes-profile.json",
+      "bytes": 405,
+      "sha256": "e51cfc30e3bdcc5ca15be8f5eaf52eb0012c11568a6c7b91d85198fcbc2f4f5f"
+    },
+    {
+      "file": "mooncakes/mooncakes-target-package.json",
+      "bytes": 466,
+      "sha256": "05f84149841a3b173e638dd801dd000817522fd956f01e39db048b191cf1204f"
+    },
+    {
+      "file": "mooncakes/namespace-library-footprint.patch",
+      "bytes": 3762,
+      "sha256": "d24168eff711e1f4525b95603c99740393fb5bf2f101af331c744ff083bf9f99"
+    },
+    {
+      "file": "mooncakes/preparation.json",
+      "bytes": 1736,
+      "sha256": "1e674e6f0e16c47a12d586fc8ee879c5f65e62859d28997e319a56be4fde1e50"
+    },
+    {
+      "file": "mooncakes/tests.log",
+      "bytes": 40,
+      "sha256": "0ce8fd6ee95162fececffea244523de298b77559b16629fd72359dfcd3a9fdc7"
+    },
+    {
+      "file": "publication-preflight.json",
+      "bytes": 468,
+      "sha256": "16f4372c37f92573e3004e6dff7be67a09f7c69c295e80069284bb38a29bcd32"
+    },
+    {
+      "file": "release-assets.json",
+      "bytes": 1419,
+      "sha256": "9e1ab795edbf0e511e0e77199cad43c72c585478efdb62ebfaecb14e8cc704f2"
+    },
+    {
+      "file": "release-create.log",
+      "bytes": 60,
+      "sha256": "e709ae9734eabab1fa3009a7699f75c8699fecaee508bffe855a3c1a20cacf52"
+    },
+    {
+      "file": "release-notes.md",
+      "bytes": 3443,
+      "sha256": "2fe71f91800de869b475aea16d4f43b96052e1aa1f9262b36289b4aa653e58bd"
+    },
+    {
+      "file": "release-verification.json",
+      "bytes": 3394,
+      "sha256": "ffce23bc0966788a9e0d38d3ce1d185f07b2b690c5ee7f06f42d80f933b73520"
+    },
+    {
+      "file": "release.json",
+      "bytes": 15803,
+      "sha256": "cc1008d8ad0e7ed77ebfd7ec382cfeaa5806730b74a6e344e0d022fd10c14680"
+    },
+    {
+      "file": "remote-after-push.json",
+      "bytes": 196,
+      "sha256": "b964c8e6dd7b90e2d47b07d38b5ebf102006aa01905c6d12c15023edfa23bfb8"
+    },
+    {
+      "file": "tag-message.txt",
+      "bytes": 424,
+      "sha256": "7c9c14060afc4b908a309f116a14adbe4587de67a81e379737c6699b31c27302"
+    }
+  ]
+}

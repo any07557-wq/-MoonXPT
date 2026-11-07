@@ -26,5 +26,7 @@ C16包含27组MoonBit测试、6项离线集成、两个oracle家族和3份真实
 - [独立AI发布审查](release-review-20261107/independent-review.md)：审查归档提交9a45c6e；原文与来源记录单独保留，处理结果见[发布审查说明](../release-review-2026-11-07.md)。
 - [阶段A版本一致性](version-unification-20261107/README.md)：0.1.0源码、27/27、release横幅和两类解压候选包核对通过；不代替最终制品验收。
 - [阶段B最终制品](artifacts-20261107/README.md)：固定提交的完整源码/历史包与精简库包、新SDK/oracle隔离验证、逐文件清单及最终SHA-256。
+- [正式标签CI](github-actions/run-42361761773/README.md)：v0.1.0精确源码的两类云端job、原API/ZIP/日志及完整性核验。
+- [阶段C正式发布](release-20261107/README.md)：annotated tag、GitHub Release及7个附件回下载、Mooncakes独立准备和十一月规则复核。
 
 各后续目录有自己的SHA-256清单，原manifest.json继续只登记C15/C16历史材料。

@@ -1,7 +1,7 @@
 # MoonXPT
 
-当前产品版本：**0.1.0**。目标版本标签为 `v0.1.0`，正式发布尚未执行。
-版本约定见[版本一致性说明](docs/versioning.md)，待发布内容见[更新记录](CHANGELOG.md)。
+当前产品版本：**0.1.0**。[GitHub Release v0.1.0](https://github.com/any07557-wq/-MoonXPT/releases/tag/v0.1.0)
+已发布；版本约定见[版本一致性说明](docs/versioning.md)，发布内容见[更新记录](CHANGELOG.md)。
 
 用 MoonBit 逐行读写 **SAS XPORT V5**，查看 NHANES 等公开统计文件，并通过
 CSV + 版本化 JSON 元数据在程序间交换数据。核心解析、IBM 浮点、缺失标记、
@@ -9,13 +9,17 @@ CSV + 版本化 JSON 元数据在程序间交换数据。核心解析、IBM 浮�
 产品库和 CLI 运行不依赖 Python、R 或外部统计解析器。
 
 已验证 Linux x86_64 native。本地与GitHub托管Ubuntu 24.04均通过技术验收，
-[公开仓库](https://github.com/any07557-wq/-MoonXPT)已保留连续历史；正式Release和Mooncakes尚未发布。
-云端记录见[Run 42329267843归档](docs/evidence/github-actions/run-42329267843/README.md)。完整边界见[兼容矩阵](docs/compatibility.md)，
+[公开仓库](https://github.com/any07557-wq/-MoonXPT)已保留连续历史；Mooncakes尚未发布。
+正式标签的[完整CI与发布核验](docs/evidence/release-20261107/README.md)已归档。
+完整边界见[兼容矩阵](docs/compatibility.md)，
 证据见[验证报告](docs/validation-report.md)和[交接报告](docs/handoff.md)。
-正式发布前的版本与制品待办见[独立AI发布审查](docs/release-review-2026-11-07.md)。
+独立审查处理状态见[发布审查](docs/release-review-2026-11-07.md)。
 
 完整评审源码包与库包分别提供。本文面向完整源码；库包入口为[库使用说明](README.library.md)，
 模块readme字段指向该文件。制品内容与历史恢复方法见[打包说明](docs/artifacts.md)。
+标签及两个制品固定于 `2cddd31bb8b88648f619969dbb4fe195051735b4`；后续发布证据另行追加。
+已发布制品保留模块名 `any07557/moonxpt`；后续Mooncakes改用 `any07557-wq/moonxpt`，
+迁移准备与未完成项见[Mooncakes说明](docs/mooncakes-preparation.md)。
 
 ## 构建与使用
 

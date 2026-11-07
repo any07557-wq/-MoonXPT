@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "main": "aa56905542eac189c7d18753444d6eaa97ecf719",
+  "tag_object": "51ab97700bdaf15e225f432ec1bf27c94dc70a8f",
+  "tag_source": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+  "remote": [
+    "aa56905542eac189c7d18753444d6eaa97ecf719\trefs/heads/main",
+    "51ab97700bdaf15e225f432ec1bf27c94dc70a8f\trefs/tags/v0.1.0",
+    "2cddd31bb8b88648f619969dbb4fe195051735b4\trefs/tags/v0.1.0^{}"
+  ],
+  "assets_verified": 7,
+  "existing_release": false
+}

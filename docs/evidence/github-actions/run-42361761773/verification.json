@@ -1,0 +1,76 @@
+{
+  "result": "PASS",
+  "run_id": 42361761773,
+  "run_attempt": 1,
+  "run_url": "https://github.com/any07557-wq/-MoonXPT/actions/runs/42361761773",
+  "source_commit": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+  "source_archive_sha256": "d46339ed156e4a3ab6c81dfff4f44cd4d28eaadc3e001fa772705f18fa5c3c6e",
+  "jobs": [
+    {
+      "job": "public-corpus",
+      "job_url": "https://github.com/any07557-wq/-MoonXPT/actions/runs/42361761773/job/128371450019",
+      "artifact_id": 13570187375,
+      "artifact_name": "public-corpus-42361761773-1",
+      "zip_sha256": "308a3bf025305316be56ace78d3014cf47799de48b24cd3bf21f9e525766abe1",
+      "manifest_files_verified": 19,
+      "result": "PASS",
+      "unit_test_groups": 27,
+      "host": {
+        "system": "Linux",
+        "architecture": "x86_64",
+        "kernel": "7.0.0-1017-azure",
+        "python": "3.14.4 (main, Apr 29 2026, 14:14:57) [GCC 13.3.0]"
+      },
+      "corpus": [
+        {
+          "member": "DEMO_J",
+          "rows": 9254,
+          "columns": 46,
+          "cells": 425684,
+          "sha256": "c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec",
+          "max_ulp": 0,
+          "metadata": "exact declared attributes",
+          "result": "PASS"
+        },
+        {
+          "member": "BMX_J",
+          "rows": 8704,
+          "columns": 21,
+          "cells": 182784,
+          "sha256": "8d675e42d8826ac98714b2c3dd4c5138a5e353fb4424f7eff5e6db4a01ce838a",
+          "max_ulp": 0,
+          "metadata": "exact declared attributes",
+          "result": "PASS"
+        },
+        {
+          "member": "GLU_J",
+          "rows": 3036,
+          "columns": 4,
+          "cells": 12144,
+          "sha256": "5b38897d0d7bfbc69dd9ca74ffdaf2f6a9bed5a91d4a7bf46e07f1332cc3379e",
+          "max_ulp": 0,
+          "metadata": "exact declared attributes",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "job": "offline",
+      "job_url": "https://github.com/any07557-wq/-MoonXPT/actions/runs/42361761773/job/128371449904",
+      "artifact_id": 13569189232,
+      "artifact_name": "offline-42361761773-1",
+      "zip_sha256": "210c969f8c95bcecca786e2d8da6f0fffae8dc6da1643bf85f4c4c057cd0479a",
+      "manifest_files_verified": 13,
+      "result": "PASS",
+      "unit_test_groups": 27,
+      "host": {
+        "system": "Linux",
+        "architecture": "x86_64",
+        "kernel": "7.0.0-1017-azure",
+        "python": "3.14.4 (main, Apr 29 2026, 14:14:57) [GCC 13.3.0]"
+      },
+      "corpus": []
+    }
+  ],
+  "boundary": "archived GitHub API/ZIP manifests/source identities verified locally; no new workflow or product tests executed"
+}

@@ -1,0 +1,31 @@
+Collecting pyreadstat==1.3.7 (from -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt (line 2))
+  Downloading pyreadstat-1.3.7-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (1.2 kB)
+Collecting pandas==3.1.0 (from -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt (line 3))
+  Downloading pandas-3.1.0-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (18 kB)
+Collecting numpy==2.5.4 (from -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt (line 4))
+  Downloading numpy-2.5.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting narwhals==2.28.0 (from -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt (line 5))
+  Downloading narwhals-2.28.0-py3-none-any.whl.metadata (15 kB)
+Collecting python-dateutil==4.0.0 (from -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt (line 6))
+  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting tzdata==2026.6 (from -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt (line 7))
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting setuptools==80.10.2 (from -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt (line 8))
+  Downloading setuptools-80.10.2-py3-none-any.whl.metadata (6.6 kB)
+Downloading pyreadstat-1.3.7-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (2.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 143.5 MB/s  0:00:00
+Downloading pandas-3.1.0-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 403.7 MB/s  0:00:00
+Downloading numpy-2.5.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 700.9 MB/s  0:00:00
+Downloading narwhals-2.28.0-py3-none-any.whl (490 kB)
+Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Downloading setuptools-80.10.2-py3-none-any.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 830.6 MB/s  0:00:00
+Installing collected packages: tzdata, setuptools, numpy, narwhals, python-dateutil, pyreadstat, pandas
+
+Successfully installed narwhals-2.28.0 numpy-2.5.4 pandas-3.1.0 pyreadstat-1.3.7 python-dateutil-4.0.0 setuptools-80.10.2 tzdata-2026.6
+
+[notice] A new release of pip is available: 26.0.1 -> 26.3
+[notice] To update, run: /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python -m pip install --upgrade pip

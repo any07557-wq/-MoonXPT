@@ -45,8 +45,11 @@
 - 原工具链403已定位为安装器归档版本键错误并修复，官方固定版本全新安装通过。
   [安装报告](toolchain-installation.md)保留HTTP调查及两次失败。独立云端runner已通过，
   人工指定的第二台SSH主机没有另测；不自动回退latest。
-- [公开仓库](https://github.com/any07557-wq/-MoonXPT)与远端CI已存在。尚未创建正式Tag/Release、
-  发布Mooncakes或提交赛事表单；十一月赛程仍待核实。
+- [GitHub v0.1.0](https://github.com/any07557-wq/-MoonXPT/releases/tag/v0.1.0)已发布，
+  annotated tag固定于两类制品源码2cddd31；标签完整CI两类job及7个附件回下载均通过，
+  见[阶段C记录](evidence/release-20261107/README.md)。
+- Mooncakes尚未发布，后续命名空间已确认any07557-wq；[预备包与迁移边界](mooncakes-preparation.md)
+  单列。赛事表单未提交；[十一月实际要求](monthly-contest-202611.md)已复核，正式截止通知仍需关注。
 
 ## 实际提交审计
 
@@ -73,13 +76,14 @@ C16完整hash在本次证据归档修订中补齐，不要求任何提交写入�
 | C15 | S6 | `d4d4af23636592c4d4b6d8fb9d8f5ed9cd7135a0` | ci: add reproducible compatibility checks |
 | C16 | S6 | `1516dfd033d4ecee1bf0fd5cb35c9ec77762a774` | docs: deliver usage examples and contest handoff |
 
-## 待发布步骤
+## 发布状态与后续步骤
 
-1. 独立AI发布审查已完成：技术证据成立，版本与制品仍有缺口；按[审查说明](release-review-2026-11-07.md)关闭待办后再发布。
-2. 阶段A版本统一及阶段B两类最终制品验收已完成；正式v0.1.0标签与Release等待授权。
-3. 核实Mooncakes命名空间、repository和赛事要求，准备可审查的Release及参赛材料。
-4. 证据与制品齐全且取得明确授权后，创建正式Tag/Release，发布Mooncakes并提交赛事表单。
+1. 独立AI审查原文保留；R1版本、R2最终制品及GitHub正式发布已关闭，见[处理状态](release-review-2026-11-07.md)。
+2. 阶段A/B已验收；阶段C按用户明确授权完成push、精确制品标签、两类云端CI和正式Release。
+3. Mooncakes仅完成新命名空间的派生预备包与本地检查；完整仓库迁移、最终打包/验收及发布授权仍待处理。
+4. 十一月申报表要求参赛者本人撰写申报书；docs/contest.md仅技术事实材料，不能直接提交。
+   报名信息、私人材料、参赛方向及官方通知由参赛者确认，未代填表单或入群。
 
 原16笔基线保持冻结，发布收尾追加提交。云端成功与原失败材料分开归档，见
 [外部验收说明](external-verification.md)及[历史准备证据](evidence/ci-preparation/README.md)。
-本轮仅归档已有运行和发布审查，未触发CI、追加push、创建Tag或Release。
+历史失败与验收快照保持原样；后续发布文档提交不改变v0.1.0源码身份或附件。

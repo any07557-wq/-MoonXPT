@@ -104,6 +104,8 @@ checks.log含27/27、三份语料及620,612单元格/元数据对照、无请求
 | 人工指定的第二台SSH主机 | 未另行执行 | 不纳入本次云端结论 |
 
 以上成功严格绑定被测commit；后续文档归档提交不是该run验证的HEAD。
-[独立发布审查](release-review-2026-11-07.md)已完成，技术证据成立；版本统一、正式两类zip、
-v0.1.0标签与Mooncakes准备仍待推进；
-Tag/Release、Mooncakes及赛事提交按用户授权执行。
+[独立发布审查](release-review-2026-11-07.md)原文保留；阶段A/B已完成版本及两类制品验收。
+阶段C的[Run42361761773](https://github.com/any07557-wq/-MoonXPT/actions/runs/42361761773)
+已在正式标签源码2cddd31上完成两类job，下载artifact完整性与源码身份均复核通过，
+见[新归档](evidence/github-actions/run-42361761773/README.md)。
+GitHub Release已发布，Mooncakes仅准备、赛事表单未提交，见[发布证据](evidence/release-20261107/README.md)。

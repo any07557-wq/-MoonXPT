@@ -1,0 +1,367 @@
+﻿2026-11-07T09:55:42.4747030Z Current runner version: '2.338.2'
+2026-11-07T09:55:42.4775185Z ##[group]Runner Image Provisioner
+2026-11-07T09:55:42.4776179Z Hosted Compute Agent
+2026-11-07T09:55:42.4776841Z Version: 20261028.624
+2026-11-07T09:55:42.4777588Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-07T09:55:42.4778360Z Build Date: 2026-10-28T21:51:42Z
+2026-11-07T09:55:42.4779058Z Worker ID: {e367232b-3955-4016-aeba-95a0fc0375e4}
+2026-11-07T09:55:42.4779897Z Region: eastus2
+2026-11-07T09:55:42.4780859Z Cloud: Azure
+2026-11-07T09:55:42.4781795Z ##[endgroup]
+2026-11-07T09:55:42.4783681Z ##[group]Operating System
+2026-11-07T09:55:42.4784399Z Ubuntu
+2026-11-07T09:55:42.4785208Z 24.04.5
+2026-11-07T09:55:42.4786050Z LTS
+2026-11-07T09:55:42.4786679Z ##[endgroup]
+2026-11-07T09:55:42.4787291Z ##[group]Runner Image
+2026-11-07T09:55:42.4787923Z Image: ubuntu-24.04
+2026-11-07T09:55:42.4788555Z Version: 20261101.360.1
+2026-11-07T09:55:42.4789889Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-07T09:55:42.4791904Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-07T09:55:42.4792911Z ##[endgroup]
+2026-11-07T09:55:42.4794524Z ##[group]GITHUB_TOKEN Permissions
+2026-11-07T09:55:42.4796856Z Contents: read
+2026-11-07T09:55:42.4797531Z Metadata: read
+2026-11-07T09:55:42.4798196Z ##[endgroup]
+2026-11-07T09:55:42.4800552Z Secret source: Actions
+2026-11-07T09:55:42.4801715Z Cache mode: write
+2026-11-07T09:55:42.4802684Z Prepare workflow directory
+2026-11-07T09:55:42.5133964Z Prepare all required actions
+2026-11-07T09:55:42.5183736Z Getting action download info
+2026-11-07T09:55:42.7563516Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-11-07T09:55:42.8776886Z Download action repository 'actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0' (SHA:6d4fd22b20465ccc0f7354476588e8df7c9ca0e0)
+2026-11-07T09:55:43.1099014Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-11-07T09:55:43.3150076Z Complete job name: public-corpus
+2026-11-07T09:55:43.4059282Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-07T09:55:43.4060683Z with:
+2026-11-07T09:55:43.4061257Z   persist-credentials: false
+2026-11-07T09:55:43.4061791Z   repository: any07557-wq/-MoonXPT
+2026-11-07T09:55:43.4065724Z   token: ***
+2026-11-07T09:55:43.4066162Z   ssh-strict: true
+2026-11-07T09:55:43.4066600Z   ssh-user: git
+2026-11-07T09:55:43.4067012Z   clean: true
+2026-11-07T09:55:43.4067462Z   sparse-checkout-cone-mode: true
+2026-11-07T09:55:43.4067973Z   fetch-depth: 1
+2026-11-07T09:55:43.4068460Z   fetch-tags: false
+2026-11-07T09:55:43.4068903Z   show-progress: true
+2026-11-07T09:55:43.4069343Z   lfs: false
+2026-11-07T09:55:43.4069750Z   submodules: false
+2026-11-07T09:55:43.4070196Z   set-safe-directory: true
+2026-11-07T09:55:43.4071064Z   allow-unsafe-pr-checkout: false
+2026-11-07T09:55:43.4071965Z ##[endgroup]
+2026-11-07T09:55:43.9245202Z Syncing repository: any07557-wq/-MoonXPT
+2026-11-07T09:55:43.9248251Z ##[group]Getting Git version info
+2026-11-07T09:55:43.9249110Z Working directory is '/home/runner/work/-MoonXPT/-MoonXPT'
+2026-11-07T09:55:43.9250633Z [command]/usr/bin/git version
+2026-11-07T09:55:43.9522968Z git version 2.56.0
+2026-11-07T09:55:43.9555888Z ##[endgroup]
+2026-11-07T09:55:43.9569582Z Temporarily overriding HOME='/home/runner/work/_temp/05c9bfbc-02cb-44f1-8771-40fb368f9158' before making global git config changes
+2026-11-07T09:55:43.9572640Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-07T09:55:43.9576182Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/-MoonXPT/-MoonXPT
+2026-11-07T09:55:43.9638276Z Deleting the contents of '/home/runner/work/-MoonXPT/-MoonXPT'
+2026-11-07T09:55:43.9641532Z ##[group]Determining repository object format
+2026-11-07T09:55:43.9645947Z ##[endgroup]
+2026-11-07T09:55:43.9647424Z ##[group]Initializing the repository
+2026-11-07T09:55:43.9648986Z [command]/usr/bin/git init /home/runner/work/-MoonXPT/-MoonXPT
+2026-11-07T09:55:43.9771244Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-07T09:55:43.9773909Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-07T09:55:43.9775981Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-07T09:55:43.9777605Z hint: call:
+2026-11-07T09:55:43.9778565Z hint:
+2026-11-07T09:55:43.9779710Z hint: 	git config --global init.defaultBranch <name>
+2026-11-07T09:55:43.9781321Z hint:
+2026-11-07T09:55:43.9782609Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-07T09:55:43.9784579Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-07T09:55:43.9786188Z hint:
+2026-11-07T09:55:43.9787196Z hint: 	git branch -m <name>
+2026-11-07T09:55:43.9788315Z hint:
+2026-11-07T09:55:43.9789767Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-07T09:55:44.0086895Z Initialized empty Git repository in /home/runner/work/-MoonXPT/-MoonXPT/.git/
+2026-11-07T09:55:44.0100232Z [command]/usr/bin/git remote add origin https://github.com/any07557-wq/-MoonXPT
+2026-11-07T09:55:44.0172304Z ##[endgroup]
+2026-11-07T09:55:44.0174089Z ##[group]Disabling automatic garbage collection
+2026-11-07T09:55:44.0175728Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-07T09:55:44.0224425Z ##[endgroup]
+2026-11-07T09:55:44.0225530Z ##[group]Setting up auth
+2026-11-07T09:55:44.0226232Z Removing SSH command configuration
+2026-11-07T09:55:44.0231167Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T09:55:44.0282082Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T09:55:44.0819678Z Removing HTTP extra header
+2026-11-07T09:55:44.0825435Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T09:55:44.0870108Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T09:55:44.1108817Z Removing includeIf entries pointing to credentials config files
+2026-11-07T09:55:44.1114645Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T09:55:44.1160097Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T09:55:44.1402146Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-a7752a20-5e1c-4373-8cb6-ae7c46e4fa2f.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-07T09:55:44.1450877Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git.path /home/runner/work/_temp/git-credentials-a7752a20-5e1c-4373-8cb6-ae7c46e4fa2f.config
+2026-11-07T09:55:44.1493070Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-a7752a20-5e1c-4373-8cb6-ae7c46e4fa2f.config
+2026-11-07T09:55:44.1536838Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-a7752a20-5e1c-4373-8cb6-ae7c46e4fa2f.config
+2026-11-07T09:55:44.1580575Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-a7752a20-5e1c-4373-8cb6-ae7c46e4fa2f.config
+2026-11-07T09:55:44.1621196Z ##[endgroup]
+2026-11-07T09:55:44.1622177Z ##[group]Fetching the repository
+2026-11-07T09:55:44.1627722Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/tags/v0.1.0:refs/tags/v0.1.0
+2026-11-07T09:55:44.7170068Z From https://github.com/any07557-wq/-MoonXPT
+2026-11-07T09:55:44.7172900Z  * [new tag]         v0.1.0     -> v0.1.0
+2026-11-07T09:55:44.7180005Z [command]/usr/bin/git tag --list v0.1.0
+2026-11-07T09:55:44.7221561Z v0.1.0
+2026-11-07T09:55:44.7232064Z [command]/usr/bin/git rev-parse refs/tags/v0.1.0^{commit}
+2026-11-07T09:55:44.7269916Z 2cddd31bb8b88648f619969dbb4fe195051735b4
+2026-11-07T09:55:44.7276040Z ##[endgroup]
+2026-11-07T09:55:44.7278093Z ##[group]Determining the checkout info
+2026-11-07T09:55:44.7280327Z ##[endgroup]
+2026-11-07T09:55:44.7283342Z [command]/usr/bin/git sparse-checkout disable
+2026-11-07T09:55:44.7350251Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-07T09:55:44.7395832Z ##[group]Checking out the ref
+2026-11-07T09:55:44.7400068Z [command]/usr/bin/git checkout --progress --force refs/tags/v0.1.0
+2026-11-07T09:55:44.7606134Z Note: switching to 'refs/tags/v0.1.0'.
+2026-11-07T09:55:44.7607657Z 
+2026-11-07T09:55:44.7609097Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-07T09:55:44.7613033Z changes and commit them, and you can discard any commits you make in this
+2026-11-07T09:55:44.7615979Z state without impacting any branches by switching back to a branch.
+2026-11-07T09:55:44.7617253Z 
+2026-11-07T09:55:44.7618232Z If you want to create a new branch to retain commits you create, you may
+2026-11-07T09:55:44.7621150Z do so (now or later) by using -c with the switch command. Example:
+2026-11-07T09:55:44.7622363Z 
+2026-11-07T09:55:44.7623021Z   git switch -c <new-branch-name>
+2026-11-07T09:55:44.7623859Z 
+2026-11-07T09:55:44.7624426Z Or undo this operation with:
+2026-11-07T09:55:44.7625226Z 
+2026-11-07T09:55:44.7625743Z   git switch -
+2026-11-07T09:55:44.7626394Z 
+2026-11-07T09:55:44.7627399Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-07T09:55:44.7628786Z 
+2026-11-07T09:55:44.7629853Z HEAD is now at 2cddd31 build: prepare distinct source and library release artifacts
+2026-11-07T09:55:44.7634752Z ##[endgroup]
+2026-11-07T09:55:44.7681456Z [command]/usr/bin/git log -1 --format=%H
+2026-11-07T09:55:44.7721187Z 2cddd31bb8b88648f619969dbb4fe195051735b4
+2026-11-07T09:55:44.7731142Z ##[group]Removing auth
+2026-11-07T09:55:44.7733069Z Removing SSH command configuration
+2026-11-07T09:55:44.7735854Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T09:55:44.7782050Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T09:55:44.8027183Z Removing HTTP extra header
+2026-11-07T09:55:44.8031445Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T09:55:44.8080645Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T09:55:44.8331108Z Removing includeIf entries pointing to credentials config files
+2026-11-07T09:55:44.8346653Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T09:55:44.8463350Z includeif.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git.path
+2026-11-07T09:55:44.8465052Z includeif.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git/worktrees/*.path
+2026-11-07T09:55:44.8466520Z includeif.gitdir:/github/workspace/.git.path
+2026-11-07T09:55:44.8468067Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-07T09:55:44.8475418Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git.path
+2026-11-07T09:55:44.8511555Z /home/runner/work/_temp/git-credentials-a7752a20-5e1c-4373-8cb6-ae7c46e4fa2f.config
+2026-11-07T09:55:44.8523500Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-a7752a20\-5e1c\-4373\-8cb6\-ae7c46e4fa2f\.config
+2026-11-07T09:55:44.8573445Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git/worktrees/*.path
+2026-11-07T09:55:44.8608175Z /home/runner/work/_temp/git-credentials-a7752a20-5e1c-4373-8cb6-ae7c46e4fa2f.config
+2026-11-07T09:55:44.8617523Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-a7752a20\-5e1c\-4373\-8cb6\-ae7c46e4fa2f\.config
+2026-11-07T09:55:44.8667257Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-07T09:55:44.8703186Z /github/runner_temp/git-credentials-a7752a20-5e1c-4373-8cb6-ae7c46e4fa2f.config
+2026-11-07T09:55:44.8711215Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-a7752a20\-5e1c\-4373\-8cb6\-ae7c46e4fa2f\.config
+2026-11-07T09:55:44.8754897Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-07T09:55:44.8789533Z /github/runner_temp/git-credentials-a7752a20-5e1c-4373-8cb6-ae7c46e4fa2f.config
+2026-11-07T09:55:44.8798677Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-a7752a20\-5e1c\-4373\-8cb6\-ae7c46e4fa2f\.config
+2026-11-07T09:55:44.8845131Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T09:55:44.9087273Z Removing credentials config '/home/runner/work/_temp/git-credentials-a7752a20-5e1c-4373-8cb6-ae7c46e4fa2f.config'
+2026-11-07T09:55:44.9094982Z ##[endgroup]
+2026-11-07T09:55:44.9468109Z ##[group]Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+2026-11-07T09:55:44.9468689Z with:
+2026-11-07T09:55:44.9468992Z   python-version: 3.14.4
+2026-11-07T09:55:44.9469352Z   check-latest: false
+2026-11-07T09:55:44.9472825Z   token: ***
+2026-11-07T09:55:44.9473303Z   mirror: https://raw.githubusercontent.com/actions/python-versions/main
+2026-11-07T09:55:44.9473850Z   update-environment: true
+2026-11-07T09:55:44.9474203Z   allow-prereleases: false
+2026-11-07T09:55:44.9474539Z   freethreaded: false
+2026-11-07T09:55:44.9474855Z ##[endgroup]
+2026-11-07T09:55:45.0691243Z ##[group]Installed versions
+2026-11-07T09:55:45.0710603Z Version 3.14.4 was not found in the local cache
+2026-11-07T09:55:45.7454846Z Version 3.14.4 is available for downloading
+2026-11-07T09:55:45.7456070Z Download from "https://github.com/actions/python-versions/releases/download/3.14.4-25113653268/python-3.14.4-linux-24.04-x64.tar.gz"
+2026-11-07T09:55:46.3734684Z Extract downloaded archive
+2026-11-07T09:55:46.3895894Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/ce982908-39c7-4e55-b9ac-ed009cb5adf0 -f /home/runner/work/_temp/712f1eb9-e8b9-4116-875a-b74874aa6b9c
+2026-11-07T09:55:48.5953981Z Execute installation script
+2026-11-07T09:55:48.6072501Z Check if Python hostedtoolcache folder exist...
+2026-11-07T09:55:48.6073119Z Create Python 3.14.4 folder
+2026-11-07T09:55:48.6086009Z Copy Python binaries to hostedtoolcache folder
+2026-11-07T09:55:49.1042031Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+2026-11-07T09:55:49.1087649Z Upgrading pip...
+2026-11-07T09:55:51.7754136Z Looking in links: /tmp/tmp6fj6i968
+2026-11-07T09:55:51.7759118Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.14.4/x64/lib/python3.14/site-packages (26.0.1)
+2026-11-07T09:55:52.9656102Z Collecting pip
+2026-11-07T09:55:53.0323073Z Downloading pip-26.3-py3-none-any.whl.metadata (4.6 kB)
+2026-11-07T09:55:53.0440713Z Downloading pip-26.3-py3-none-any.whl (2.0 MB)
+2026-11-07T09:55:53.1640193Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 19.8 MB/s  0:00:00
+2026-11-07T09:55:53.1641499Z 
+2026-11-07T09:55:53.1809947Z Installing collected packages: pip
+2026-11-07T09:55:53.1811726Z Attempting uninstall: pip
+2026-11-07T09:55:53.1836591Z Found existing installation: pip 26.0.1
+2026-11-07T09:55:53.2180768Z Uninstalling pip-26.0.1:
+2026-11-07T09:55:53.2235761Z Successfully uninstalled pip-26.0.1
+2026-11-07T09:55:54.5161787Z Successfully installed pip-26.3
+2026-11-07T09:55:54.5709381Z Create complete file
+2026-11-07T09:55:54.5747815Z Successfully set up CPython (3.14.4)
+2026-11-07T09:55:54.5748989Z ##[endgroup]
+2026-11-07T09:55:54.5937319Z ##[group]Run python3 tools/verify_release.py --mode full --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"
+2026-11-07T09:55:54.5938153Z [36;1mpython3 tools/verify_release.py --mode full --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"[0m
+2026-11-07T09:55:54.5964459Z shell: /usr/bin/bash -e {0}
+2026-11-07T09:55:54.5964720Z env:
+2026-11-07T09:55:54.5964989Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T09:55:54.5965456Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.4/x64/lib/pkgconfig
+2026-11-07T09:55:54.5965905Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T09:55:54.5966301Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T09:55:54.5966699Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T09:55:54.5967073Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.4/x64/lib
+2026-11-07T09:55:54.5967387Z ##[endgroup]
+2026-11-07T09:55:54.7338146Z + cc --version
+2026-11-07T09:55:54.7402688Z cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+2026-11-07T09:55:54.7403229Z Copyright (C) 2023 Free Software Foundation, Inc.
+2026-11-07T09:55:54.7403816Z This is free software; see the source for copying conditions.  There is NO
+2026-11-07T09:55:54.7404536Z warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+2026-11-07T09:55:54.7405007Z 
+2026-11-07T09:55:54.7406158Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-oeg9e1a4/source/tools/install_toolchain.py /tmp/moonxpt-verify-oeg9e1a4/sdk --receipt /home/runner/work/_temp/moonxpt-evidence/sdk-install.json
+2026-11-07T09:55:54.8136482Z Downloading: https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz.sha256
+2026-11-07T09:55:55.3655846Z Downloading: https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz
+2026-11-07T09:55:55.4656578Z Downloaded bytes: 16777216
+2026-11-07T09:55:55.5040976Z Downloaded bytes: 33554432
+2026-11-07T09:55:55.5542017Z Downloaded bytes: 50331648
+2026-11-07T09:55:55.6060640Z Downloaded bytes: 67108864
+2026-11-07T09:55:55.6595902Z Downloaded bytes: 83886080
+2026-11-07T09:55:55.7178057Z Downloading: https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz
+2026-11-07T09:55:57.2643584Z moon 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-oeg9e1a4/sdk/bin/moon
+2026-11-07T09:55:57.2644420Z moonc v0.10.15+943464bfa (2026-10-12) /tmp/moonxpt-verify-oeg9e1a4/sdk/bin/moonc
+2026-11-07T09:55:57.2645437Z moonrun 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-oeg9e1a4/sdk/bin/moonrun
+2026-11-07T09:55:57.2646181Z 
+2026-11-07T09:55:57.2646469Z Feature flags enabled: rr_moon_mod,rr_moon_pkg
+2026-11-07T09:55:57.2646858Z 
+2026-11-07T09:55:58.7826759Z Finished. moon: ran 82 tasks, now up to date
+2026-11-07T09:55:58.7892802Z {"result": "PASS", "started_utc": "2026-11-07T09:55:54.812982+00:00", "completed_utc": "2026-11-07T09:55:58.788223+00:00", "archive_version": "0.10.15+943464bfa", "prefix": "/tmp/moonxpt-verify-oeg9e1a4/sdk", "native": {"url": "https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz", "bytes": 100080035, "sha256": "24b93a5409d2a4fb8e3d1b84b473f27b63476cef4418094764df96cb26b03c09"}, "core": {"url": "https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz", "bytes": 1880333, "sha256": "96d30f4dbcc6a9e1736ef26fbdd0e8fb0e97cb01d50e55d2a0072208b8061ae5"}, "core_digest_provenance": "recorded from the official HTTPS core archive; detached core checksum endpoint returns 403, not claimed as an upstream-published digest", "version_output": "moon 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-oeg9e1a4/sdk/bin/moon\nmoonc v0.10.15+943464bfa (2026-10-12) /tmp/moonxpt-verify-oeg9e1a4/sdk/bin/moonc\nmoonrun 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-oeg9e1a4/sdk/bin/moonrun\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg\n", "download_cache_reused": false, "existing_sdk_read": false, "bundled_backend": "native"}
+2026-11-07T09:55:58.8049903Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 -m venv /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv
+2026-11-07T09:56:01.7696009Z + /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python -m pip --isolated install --no-cache-dir --index-url https://pypi.org/simple -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt
+2026-11-07T09:56:02.2291857Z Collecting pyreadstat==1.3.7 (from -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt (line 2))
+2026-11-07T09:56:02.2884667Z   Downloading pyreadstat-1.3.7-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (1.2 kB)
+2026-11-07T09:56:02.4282668Z Collecting pandas==3.1.0 (from -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt (line 3))
+2026-11-07T09:56:02.4361713Z   Downloading pandas-3.1.0-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (18 kB)
+2026-11-07T09:56:02.6793309Z Collecting numpy==2.5.4 (from -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt (line 4))
+2026-11-07T09:56:02.6867627Z   Downloading numpy-2.5.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-11-07T09:56:02.7225800Z Collecting narwhals==2.28.0 (from -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt (line 5))
+2026-11-07T09:56:02.7298471Z   Downloading narwhals-2.28.0-py3-none-any.whl.metadata (15 kB)
+2026-11-07T09:56:02.7451896Z Collecting python-dateutil==4.0.0 (from -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt (line 6))
+2026-11-07T09:56:02.7520004Z   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+2026-11-07T09:56:02.7648578Z Collecting tzdata==2026.6 (from -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt (line 7))
+2026-11-07T09:56:02.7720686Z   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-07T09:56:02.8471289Z Collecting setuptools==80.10.2 (from -r /tmp/moonxpt-verify-oeg9e1a4/source/tools/requirements-oracle.txt (line 8))
+2026-11-07T09:56:02.8539693Z   Downloading setuptools-80.10.2-py3-none-any.whl.metadata (6.6 kB)
+2026-11-07T09:56:02.8735138Z Downloading pyreadstat-1.3.7-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (2.9 MB)
+2026-11-07T09:56:02.9063558Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 143.5 MB/s  0:00:00
+2026-11-07T09:56:02.9135223Z Downloading pandas-3.1.0-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.0 MB)
+2026-11-07T09:56:02.9448954Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 403.7 MB/s  0:00:00
+2026-11-07T09:56:02.9517779Z Downloading numpy-2.5.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+2026-11-07T09:56:02.9774884Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 700.9 MB/s  0:00:00
+2026-11-07T09:56:02.9842706Z Downloading narwhals-2.28.0-py3-none-any.whl (490 kB)
+2026-11-07T09:56:02.9916738Z Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+2026-11-07T09:56:02.9987429Z Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+2026-11-07T09:56:03.0059355Z Downloading setuptools-80.10.2-py3-none-any.whl (1.1 MB)
+2026-11-07T09:56:03.0089528Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 830.6 MB/s  0:00:00
+2026-11-07T09:56:03.0904810Z Installing collected packages: tzdata, setuptools, numpy, narwhals, python-dateutil, pyreadstat, pandas
+2026-11-07T09:56:13.6162199Z 
+2026-11-07T09:56:13.6178528Z Successfully installed narwhals-2.28.0 numpy-2.5.4 pandas-3.1.0 pyreadstat-1.3.7 python-dateutil-4.0.0 setuptools-80.10.2 tzdata-2026.6
+2026-11-07T09:56:13.7115649Z 
+2026-11-07T09:56:13.7116120Z [notice] A new release of pip is available: 26.0.1 -> 26.3
+2026-11-07T09:56:13.7117362Z [notice] To update, run: /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python -m pip install --upgrade pip
+2026-11-07T09:56:13.8352327Z + /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python -m pip --isolated install --no-cache-dir --index-url https://pypi.org/simple --no-deps xport==3.6.1
+2026-11-07T09:56:14.2120947Z Collecting xport==3.6.1
+2026-11-07T09:56:14.2725652Z   Downloading xport-3.6.1-py2.py3-none-any.whl.metadata (9.7 kB)
+2026-11-07T09:56:14.2839044Z Downloading xport-3.6.1-py2.py3-none-any.whl (29 kB)
+2026-11-07T09:56:14.2984328Z Installing collected packages: xport
+2026-11-07T09:56:14.3255430Z Successfully installed xport-3.6.1
+2026-11-07T09:56:14.4197264Z 
+2026-11-07T09:56:14.4197626Z [notice] A new release of pip is available: 26.0.1 -> 26.3
+2026-11-07T09:56:14.4198721Z [notice] To update, run: /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python -m pip install --upgrade pip
+2026-11-07T09:56:14.4658777Z + /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python -c import json,sys; from importlib.metadata import distributions; from pathlib import Path; Path(sys.argv[1]).write_text(json.dumps({d.metadata['Name']:d.version for d in distributions()},indent=2)+'\n') /home/runner/work/_temp/moonxpt-evidence/oracle-packages.json
+2026-11-07T09:56:14.5355998Z + /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python /tmp/moonxpt-verify-oeg9e1a4/source/tools/fetch_corpus.py
+2026-11-07T09:56:14.8131903Z downloaded and verified DEMO_J
+2026-11-07T09:56:14.9066500Z downloaded and verified BMX_J
+2026-11-07T09:56:14.9617337Z downloaded and verified GLU_J
+2026-11-07T09:56:14.9719530Z + /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python /tmp/moonxpt-verify-oeg9e1a4/source/tools/check.py --oracle --corpus
+2026-11-07T09:56:15.0346607Z + moon fmt --check
+2026-11-07T09:56:15.1780232Z Finished. moon: ran 42 tasks, now up to date
+2026-11-07T09:56:15.1783950Z + moon check --target native --deny-warn
+2026-11-07T09:56:15.3093327Z Finished. moon: ran 14 tasks, now up to date
+2026-11-07T09:56:15.3101755Z + moon test --target native --deny-warn
+2026-11-07T09:56:22.8402368Z Total tests: 27, passed: 27, failed: 0.
+2026-11-07T09:56:22.8412466Z + moon build --target native --deny-warn
+2026-11-07T09:56:24.0536501Z Finished. moon: ran 20 tasks, now up to date
+2026-11-07T09:56:24.0547178Z + /tmp/moonxpt-verify-oeg9e1a4/source/_build/native/debug/build/examples/write/write.exe /tmp/moonxpt-verify-oeg9e1a4/source/.cache/writer-example.xpt
+2026-11-07T09:56:24.0571856Z wrote NUMBERS(3), WORDS(3), TAGS(28), EMPTY(0)
+2026-11-07T09:56:24.0581432Z + /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python /tmp/moonxpt-verify-oeg9e1a4/source/tools/test_inspect.py
+2026-11-07T09:56:24.1072544Z PASS: inspect JSON, counts, multi-member hints, spaces in paths, stderr, usage/I/O/format codes
+2026-11-07T09:56:24.1153708Z + /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python /tmp/moonxpt-verify-oeg9e1a4/source/tools/test_export.py
+2026-11-07T09:56:24.1643610Z PASS: selected member export, independent CSV/JSON, no overwrite, force, aliases, failure cleanup
+2026-11-07T09:56:24.1710171Z + /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python /tmp/moonxpt-verify-oeg9e1a4/source/tools/test_exchange.py
+2026-11-07T09:56:24.2736907Z PASS: four member CSV/JSON semantic roundtrips, stable writes, typed missing, versions, duplicate columns, malformed CSV and cleanup
+2026-11-07T09:56:24.2815474Z + /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python /tmp/moonxpt-verify-oeg9e1a4/source/tools/test_fixtures.py
+2026-11-07T09:56:24.3533960Z PASS: independent ReadStat/xport inputs, format/informat, 136-byte descriptors, reordered offsets, CP1252 multi-member exchange
+2026-11-07T09:56:24.3613064Z + /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python /tmp/moonxpt-verify-oeg9e1a4/source/tools/test_malformed.py
+2026-11-07T09:56:24.9746457Z {"seed": 20261104, "truncations": 79, "mutations": 256, "targeted": 8, "result": "PASS", "timeout_seconds": 5}
+2026-11-07T09:56:24.9812234Z + /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python /tmp/moonxpt-verify-oeg9e1a4/source/tools/test_consumer.py
+2026-11-07T09:56:25.6888332Z public API consumer PASS
+2026-11-07T09:56:25.6999562Z + /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python /tmp/moonxpt-verify-oeg9e1a4/source/tools/check_writer.py
+2026-11-07T09:56:26.1346032Z /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/lib/python3.14/site-packages/xport/__about__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+2026-11-07T09:56:26.1348448Z   from pkg_resources import DistributionNotFound, get_distribution
+2026-11-07T09:56:26.1632056Z PASS: xport reads all 4 members; ReadStat reads first; 28 missing byte vectors exact
+2026-11-07T09:56:26.2458320Z + /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python /tmp/moonxpt-verify-oeg9e1a4/source/tools/compare_scan.py
+2026-11-07T09:56:28.1602593Z BMX_J: rows=8704 columns=21 compared_cells=182784 max_ulp=0; PASS
+2026-11-07T09:56:28.1603186Z DEMO_J: rows=9254 columns=46 compared_cells=425684 max_ulp=0; PASS
+2026-11-07T09:56:28.1603702Z GLU_J: rows=3036 columns=4 compared_cells=12144 max_ulp=0; PASS
+2026-11-07T09:56:28.2302616Z + /tmp/moonxpt-verify-oeg9e1a4/source/.cache/venv/bin/python /tmp/moonxpt-verify-oeg9e1a4/source/tools/validate_corpus.py
+2026-11-07T09:56:30.3407370Z {"member": "DEMO_J", "rows": 9254, "columns": 46, "cells": 425684, "sha256": "c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec", "max_ulp": 0, "metadata": "exact declared attributes", "result": "PASS"}
+2026-11-07T09:56:31.0850747Z {"member": "BMX_J", "rows": 8704, "columns": 21, "cells": 182784, "sha256": "8d675e42d8826ac98714b2c3dd4c5138a5e353fb4424f7eff5e6db4a01ce838a", "max_ulp": 0, "metadata": "exact declared attributes", "result": "PASS"}
+2026-11-07T09:56:31.1934299Z {"member": "GLU_J", "rows": 3036, "columns": 4, "cells": 12144, "sha256": "5b38897d0d7bfbc69dd9ca74ffdaf2f6a9bed5a91d4a7bf46e07f1332cc3379e", "max_ulp": 0, "metadata": "exact declared attributes", "result": "PASS"}
+2026-11-07T09:56:31.2702022Z PASS: all requested checks completed; none skipped
+2026-11-07T09:56:31.6547467Z Evidence: /home/runner/work/_temp/moonxpt-evidence result: PASS
+2026-11-07T09:56:31.6788761Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-11-07T09:56:31.6789200Z with:
+2026-11-07T09:56:31.6789430Z   name: public-corpus-42361761773-1
+2026-11-07T09:56:31.6789745Z   path: /home/runner/work/_temp/moonxpt-evidence/
+2026-11-07T09:56:31.6790077Z   if-no-files-found: error
+2026-11-07T09:56:31.6790333Z   retention-days: 30
+2026-11-07T09:56:31.6790867Z   compression-level: 6
+2026-11-07T09:56:31.6791092Z   overwrite: false
+2026-11-07T09:56:31.6791386Z   include-hidden-files: false
+2026-11-07T09:56:31.6791819Z   archive: true
+2026-11-07T09:56:31.6792132Z env:
+2026-11-07T09:56:31.6792537Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T09:56:31.6793244Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.4/x64/lib/pkgconfig
+2026-11-07T09:56:31.6793945Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T09:56:31.6794571Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T09:56:31.6795233Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T09:56:31.6795836Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.4/x64/lib
+2026-11-07T09:56:31.6796159Z ##[endgroup]
+2026-11-07T09:56:31.8316949Z With the provided path, there will be 20 files uploaded
+2026-11-07T09:56:31.8322986Z Artifact name is valid!
+2026-11-07T09:56:31.8323533Z Root directory input is valid!
+2026-11-07T09:56:32.0530571Z Uploading artifact: public-corpus-42361761773-1.zip
+2026-11-07T09:56:32.0573769Z Beginning upload of artifact content to blob storage
+2026-11-07T09:56:32.1708277Z Uploaded bytes 15855
+2026-11-07T09:56:32.1888110Z Finished uploading artifact content to blob storage!
+2026-11-07T09:56:32.1889025Z SHA256 digest of uploaded artifact is 308a3bf025305316be56ace78d3014cf47799de48b24cd3bf21f9e525766abe1
+2026-11-07T09:56:32.1889830Z Finalizing artifact upload
+2026-11-07T09:56:32.5921161Z Artifact public-corpus-42361761773-1 successfully finalized. Artifact ID 13570187375
+2026-11-07T09:56:32.5922543Z Artifact public-corpus-42361761773-1 has been successfully uploaded! Final size is 15855 bytes. Artifact ID is 13570187375
+2026-11-07T09:56:32.5925239Z Artifact download URL: https://github.com/any07557-wq/-MoonXPT/actions/runs/42361761773/artifacts/13570187375
+2026-11-07T09:56:32.6131859Z Post job cleanup.
+2026-11-07T09:56:32.7443232Z Post job cleanup.
+2026-11-07T09:56:32.8422022Z [command]/usr/bin/git version
+2026-11-07T09:56:32.8470061Z git version 2.56.0
+2026-11-07T09:56:32.8512400Z Temporarily overriding HOME='/home/runner/work/_temp/a9de225c-fec6-46bc-be2f-95e862a1c61b' before making global git config changes
+2026-11-07T09:56:32.8519016Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-07T09:56:32.8531522Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/-MoonXPT/-MoonXPT
+2026-11-07T09:56:32.8621172Z Removing SSH command configuration
+2026-11-07T09:56:32.8641437Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T09:56:32.8682565Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T09:56:32.9041442Z Removing HTTP extra header
+2026-11-07T09:56:32.9051415Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T09:56:32.9111246Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T09:56:32.9479815Z Removing includeIf entries pointing to credentials config files
+2026-11-07T09:56:32.9485112Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T09:56:32.9534495Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T09:56:32.9946360Z Cleaning up orphan processes

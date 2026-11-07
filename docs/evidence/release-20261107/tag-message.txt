@@ -1,0 +1,10 @@
+MoonXPT v0.1.0
+
+Source commit: 2cddd31bb8b88648f619969dbb4fe195051735b4
+
+Validated local source/library artifacts:
+93df9b777bdb075dab1213fdf71fdef3fc09b515dd1676b3d635d8205d9962f1  moonxpt-0.1.0.zip
+853064a112ad766635fc8521c18a2c5993fc09c7697cfb191a2523371e911b13  moonxpt-0.1.0-source.zip
+
+Main push CI passed: https://github.com/any07557-wq/-MoonXPT/actions/runs/42361511304
+Release assets retain the exact Stage B bytes.

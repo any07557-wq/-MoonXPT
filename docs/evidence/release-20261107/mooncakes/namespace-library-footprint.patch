@@ -1,0 +1,155 @@
+--- a/README.library.md
++++ b/README.library.md
+@@ -1,6 +1,6 @@
+ # MoonXPT 0.1.0
+ 
+-模块：`any07557/moonxpt@0.1.0`。MoonBit原生SAS XPORT V5流式读写库，附native CLI，
++模块：`any07557-wq/moonxpt@0.1.0`。MoonBit原生SAS XPORT V5流式读写库，附native CLI，
+ 支持CSV与版本化JSON元数据交换。运行不依赖Python、R或外部统计解析器。
+ 
+ 这是供用户集成的库源码包。完整复现、tools、CI、验收证据及Git历史位于独立的
+@@ -34,13 +34,13 @@
+ ```text
+ name = "consumer/example"
+ preferred_target = "native"
+-import { "any07557/moonxpt@0.1.0" }
++import { "any07557-wq/moonxpt@0.1.0" }
+ ```
+ 
+ consumer/moon.pkg：
+ 
+ ```text
+-import { "any07557/moonxpt" @xpt }
++import { "any07557-wq/moonxpt" @xpt }
+ pkgtype(kind: "executable")
+ ```
+ 
+--- a/cmd/moonxpt/moon.pkg
++++ b/cmd/moonxpt/moon.pkg
+@@ -1,7 +1,7 @@
+ import {
+-  "any07557/moonxpt" @xpt,
+-  "any07557/moonxpt/exchange",
+-  "any07557/moonxpt/platform",
++  "any07557-wq/moonxpt" @xpt,
++  "any07557-wq/moonxpt/exchange",
++  "any07557-wq/moonxpt/platform",
+   "moonbitlang/core/env",
+   "moonbitlang/core/debug",
+   "moonbitlang/core/string",
+--- a/cmd/moonxpt/pkg.generated.mbti
++++ b/cmd/moonxpt/pkg.generated.mbti
+@@ -1,5 +1,5 @@
+ // Generated using `moon info`, DON'T EDIT IT
+-package "any07557/moonxpt/cmd/moonxpt"
++package "any07557-wq/moonxpt/cmd/moonxpt"
+ 
+ // Values
+ 
+--- a/examples/scan/moon.pkg
++++ b/examples/scan/moon.pkg
+@@ -1,6 +1,6 @@
+ import {
+-  "any07557/moonxpt" @xpt,
+-  "any07557/moonxpt/platform",
++  "any07557-wq/moonxpt" @xpt,
++  "any07557-wq/moonxpt/platform",
+   "moonbitlang/core/env",
+ }
+ 
+--- a/examples/scan/pkg.generated.mbti
++++ b/examples/scan/pkg.generated.mbti
+@@ -1,5 +1,5 @@
+ // Generated using `moon info`, DON'T EDIT IT
+-package "any07557/moonxpt/examples/scan"
++package "any07557-wq/moonxpt/examples/scan"
+ 
+ // Values
+ 
+--- a/examples/write/moon.pkg
++++ b/examples/write/moon.pkg
+@@ -1,6 +1,6 @@
+ import {
+-  "any07557/moonxpt" @xpt,
+-  "any07557/moonxpt/platform",
++  "any07557-wq/moonxpt" @xpt,
++  "any07557-wq/moonxpt/platform",
+   "moonbitlang/core/env",
+ }
+ 
+--- a/examples/write/pkg.generated.mbti
++++ b/examples/write/pkg.generated.mbti
+@@ -1,5 +1,5 @@
+ // Generated using `moon info`, DON'T EDIT IT
+-package "any07557/moonxpt/examples/write"
++package "any07557-wq/moonxpt/examples/write"
+ 
+ // Values
+ 
+--- a/exchange/moon.pkg
++++ b/exchange/moon.pkg
+@@ -1,10 +1,10 @@
+ import {
+-  "any07557/moonxpt" @xpt,
++  "any07557-wq/moonxpt" @xpt,
+   "moonbitlang/core/json",
+   "moonbitlang/core/encoding/utf8",
+   "moonbitlang/core/string",
+ }
+ 
+ import {
+-  "any07557/moonxpt",
++  "any07557-wq/moonxpt",
+ } for "test"
+--- a/exchange/pkg.generated.mbti
++++ b/exchange/pkg.generated.mbti
+@@ -1,8 +1,8 @@
+ // Generated using `moon info`, DON'T EDIT IT
+-package "any07557/moonxpt/exchange"
++package "any07557-wq/moonxpt/exchange"
+ 
+ import {
+-  "any07557/moonxpt",
++  "any07557-wq/moonxpt",
+ }
+ 
+ // Values
+--- a/moon.mod
++++ b/moon.mod
+@@ -1,4 +1,4 @@
+-name = "any07557/moonxpt"
++name = "any07557-wq/moonxpt"
+ 
+ version = "0.1.0"
+ 
+--- a/pkg.generated.mbti
++++ b/pkg.generated.mbti
+@@ -1,5 +1,5 @@
+ // Generated using `moon info`, DON'T EDIT IT
+-package "any07557/moonxpt"
++package "any07557-wq/moonxpt"
+ 
+ import {
+   "moonbitlang/core/debug",
+--- a/platform/moon.pkg
++++ b/platform/moon.pkg
+@@ -1,5 +1,5 @@
+ import {
+-  "any07557/moonxpt" @xpt,
++  "any07557-wq/moonxpt" @xpt,
+   "moonbitlang/core/encoding/utf8",
+ }
+ 
+--- a/platform/pkg.generated.mbti
++++ b/platform/pkg.generated.mbti
+@@ -1,8 +1,8 @@
+ // Generated using `moon info`, DON'T EDIT IT
+-package "any07557/moonxpt/platform"
++package "any07557-wq/moonxpt/platform"
+ 
+ import {
+-  "any07557/moonxpt",
++  "any07557-wq/moonxpt",
+ }
+ 
+ // Values

@@ -1,0 +1,69 @@
+{
+  "files": [
+    {
+      "file": "checks.log",
+      "bytes": 1826,
+      "sha256": "1826a2ad95fd9c9c85f8ea70e8bc9567bd9c286e4e7de0d3328c94cf8dda070c"
+    },
+    {
+      "file": "compiler.log",
+      "bytes": 245,
+      "sha256": "3e8cc208c40f60832f67377aa1b03c3e7e858f20cd5d365464944700c0bd7ad1"
+    },
+    {
+      "file": "inputs/check.py",
+      "bytes": 1813,
+      "sha256": "37d5943f866faddd6c2dbe3f536e751f48d802b565229336477a333ecfd7aef4"
+    },
+    {
+      "file": "inputs/corpus.json",
+      "bytes": 1859,
+      "sha256": "b29bb58f35c62e558d240e8776c9cdedfc4fb4ee8ecfd8274d17d981b50a16c8"
+    },
+    {
+      "file": "inputs/install_toolchain.py",
+      "bytes": 4621,
+      "sha256": "599aacda853b243095ec1574e7ce0d92e23c2af5229ba2bdd99028bfe21f08ae"
+    },
+    {
+      "file": "inputs/install_toolchain.sh",
+      "bytes": 95,
+      "sha256": "15d846397812be4bf5715628f11a94b9fd2f1615405318755b82d5bfa7c13975"
+    },
+    {
+      "file": "inputs/requirements-oracle.txt",
+      "bytes": 189,
+      "sha256": "46fe57229548150a7e8da4561a10845e4c5a56b5ea89dffc177c06fa3dd0f1ec"
+    },
+    {
+      "file": "inputs/toolchain.json",
+      "bytes": 921,
+      "sha256": "802a2de35b84e7311ec59bea10bde9036a6553eaa9b78db7e42387d2586ad186"
+    },
+    {
+      "file": "install-sdk.log",
+      "bytes": 1934,
+      "sha256": "50f8b82617528998aeb2dab8bf2fd96d09f65d61f801faa244ddfaa54437e47d"
+    },
+    {
+      "file": "os-release.txt",
+      "bytes": 400,
+      "sha256": "87458b3b1f1ca0e5c693ade771de7007c3783bdc692fa6b39eb6414bf2af2763"
+    },
+    {
+      "file": "result.json",
+      "bytes": 2355,
+      "sha256": "67e1845484a2bf78d80839c4b7c1a31b3984b63f91c8ad2527ddf290a8c3ba91"
+    },
+    {
+      "file": "runner.py",
+      "bytes": 8211,
+      "sha256": "2768fdd08ac111e2dc7af5604765c1aee15116f5773829f111fd369e068fa7eb"
+    },
+    {
+      "file": "sdk-install.json",
+      "bytes": 1232,
+      "sha256": "a7b87344fee349a41420de56fde41774bdf938c73cf4d5b971b72fd92c85f893"
+    }
+  ]
+}

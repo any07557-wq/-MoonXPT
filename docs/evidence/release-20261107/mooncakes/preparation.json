@@ -1,0 +1,48 @@
+{
+  "prepared_at_utc": "2026-11-07T09:58:12.936865+00:00",
+  "status": "PREPARED_NOT_PUBLISHED",
+  "desired_module": "any07557-wq/moonxpt",
+  "version": "0.1.0",
+  "saved_login_username": "any07557-wq",
+  "derived_from_git_source": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+  "derived_from_library_zip_sha256": "93df9b777bdb075dab1213fdf71fdef3fc09b515dd1676b3d635d8205d9962f1",
+  "candidate_file": "any07557-wq-moonxpt-0.1.0-UNPUBLISHED.zip",
+  "candidate_sha256": "5286e6ac34c36cb829a2247e75e7bd9818c8158ff939359e9430aa8c1b0875eb",
+  "changed_files": [
+    "README.library.md",
+    "cmd/moonxpt/moon.pkg",
+    "cmd/moonxpt/pkg.generated.mbti",
+    "examples/scan/moon.pkg",
+    "examples/scan/pkg.generated.mbti",
+    "examples/write/moon.pkg",
+    "examples/write/pkg.generated.mbti",
+    "exchange/moon.pkg",
+    "exchange/pkg.generated.mbti",
+    "moon.mod",
+    "pkg.generated.mbti",
+    "platform/moon.pkg",
+    "platform/pkg.generated.mbti"
+  ],
+  "checks": [
+    {
+      "name": "check",
+      "exit_code": 0
+    },
+    {
+      "name": "tests",
+      "exit_code": 0
+    },
+    {
+      "name": "build",
+      "exit_code": 0
+    },
+    {
+      "name": "consumer",
+      "exit_code": 0
+    }
+  ],
+  "public_consumer_module": "any07557-wq/moonxpt",
+  "boundary": "local derived namespace candidate, not committed source or registry release. GitHub v0.1.0 original assets remain unchanged. Full-repository namespace migration/commit, final packaging/evidence and registry permission/version recheck are still required.",
+  "patch_scope": "library footprint only; original artifact identity/manifest removed rather than reused as proof for modified contents",
+  "sdk_scope": "existing fixed local SDK; not a fresh-install claim"
+}

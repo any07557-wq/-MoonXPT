@@ -1,18 +1,19 @@
 # MoonXPT 0.1.0版本一致性
 
 阶段A目标：当前产品版本统一为 **0.1.0**，标签命名为 **v0.1.0**。
-moon.mod的version字段是产品版本依据；当前阶段不创建标签、Release或Mooncakes版本。
+moon.mod的version字段是产品版本依据；阶段A原始证据保持不变。
+阶段C已创建v0.1.0标签及GitHub Release，Mooncakes尚未发布。
 
 | 检查对象 | 当前产品版本或规则 |
 |---|---|
 | 模块any07557/moonxpt | moon.mod：0.1.0 |
 | CLI帮助首行 | MoonXPT 0.1.0 — SAS XPORT V5 (native) |
-| README | 明确当前产品版本0.1.0，并链接待发布说明 |
+| README | 当前产品版本0.1.0，并链接正式Release |
 | 仓库内examples/scan、examples/write | 同一模块下的包，继承根moon.mod，无独立版本 |
 | 外部消费方示例 | docs/reproduction.md与tools/test_consumer.py均依赖any07557/moonxpt@0.1.0 |
 | 库候选ZIP | moonxpt-0.1.0.zip，包内根模块、CLI和说明使用0.1.0 |
 | 完整源码候选ZIP | moonxpt-0.1.0-source.zip，相同根版本，另含tools、CI、测试及文档 |
-| 发布与兼容性说明 | CHANGELOG.md的0.1.0待发布条目；docs/compatibility.md注明适用0.1.0 |
+| 发布与兼容性说明 | CHANGELOG.md的0.1.0发布条目；docs/compatibility.md注明适用0.1.0 |
 
 现有CLI集成检查会将实际--help首行与moon.mod比较，防止模块升级后遗漏CLI横幅。
 本次仅修正产品版本标识；SAS XPORT V5、CSV/JSON schema_version=1、输入文件中的SAS
@@ -44,3 +45,8 @@ repository与命名空间/版本确认由R3跟踪，原P0功能保持冻结。
 阶段B已完成[最终制品验收](evidence/artifacts-20261107/README.md)，不再使用阶段A候选包
 作为发布输入。最终库包入口为README.library.md，完整源码含全部已提交文件及Git历史；
 两包版本0.1.0，source_commit固定2cddd31bb8b88648f619969dbb4fe195051735b4。
+
+阶段C的annotated tag v0.1.0指向上述制品源码提交，而不是其后的证据文档提交。
+GitHub Release已发布且全部附件回下载校验通过，见[记录](evidence/release-20261107/README.md)。
+已发布ZIP中的README/CHANGELOG是打包时的历史快照，正文当时为待发布；正式状态以
+Release及本次追加证据为准，不为更新状态而替换附件字节。Mooncakes新命名空间迁移独立处理。

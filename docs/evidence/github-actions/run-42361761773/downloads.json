@@ -1,0 +1,17 @@
+[
+  {
+    "file": "public-corpus-42361761773-1.zip",
+    "bytes": 15855,
+    "sha256": "308a3bf025305316be56ace78d3014cf47799de48b24cd3bf21f9e525766abe1"
+  },
+  {
+    "file": "offline-42361761773-1.zip",
+    "bytes": 12759,
+    "sha256": "210c969f8c95bcecca786e2d8da6f0fffae8dc6da1643bf85f4c4c057cd0479a"
+  },
+  {
+    "file": "workflow-logs.zip",
+    "bytes": 17596,
+    "sha256": "c91041c8d3b98670e3d50e03e52f41613d8aa4a0b0d5f78acd5585aca3dd1245"
+  }
+]

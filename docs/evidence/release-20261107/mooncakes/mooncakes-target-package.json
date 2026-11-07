@@ -1,0 +1,11 @@
+{
+  "command": [
+    "moon",
+    "view",
+    "any07557-wq/moonxpt@0.1.0",
+    "--json"
+  ],
+  "exit_code": 255,
+  "stdout": "{\"version\":1,\"status\":\"failure\",\"result\":null,\"messages\":[{\"level\":\"error\",\"message\":\"registry module request failed at https://mooncakes.io/api/v0/manifest/any07557-wq/moonxpt@0.1.0: HTTP status client error (404 Not Found) for url (https://mooncakes.io/api/v0/manifest/any07557-wq/moonxpt@0.1.0)\"}]}\n",
+  "stderr": ""
+}

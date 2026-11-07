@@ -1,6 +1,8 @@
 # 0.1.0两类最终制品
 
-阶段B生成本地可交付制品，不执行push、创建Tag/Release、发布Mooncakes或提交赛事。
+阶段B生成本地可交付制品；阶段C已将保留的实际制品发布到
+[GitHub v0.1.0](https://github.com/any07557-wq/-MoonXPT/releases/tag/v0.1.0)，
+[发布核验](evidence/release-20261107/README.md)另行归档。Mooncakes及赛事均未提交。
 两类ZIP必须来自同一个已提交Git对象；源码提交、tree、文件清单与SHA-256随制品登记。
 每次使用新的输出目录，不覆盖阶段A候选包或任何历史证据。
 
@@ -64,8 +66,9 @@ python3 tools/verify_artifacts.py dist/0.1.0/selected-commit \
 SDK是本轮新安装，供这两个独立解压树使用；没有复用开发SDK、venv或源码构建缓存。
 失败退出非零并保留日志与结果，不将历史云端通过替代此轮制品验证。
 
-发布身份与最终制品分开：repository字段填写实际公开仓库，Mooncakes账号/命名空间及
-版本占用仍需发布前确认。SHA256SUMS与本地验证通过不表示已创建v0.1.0标签或Release。
+发布身份与最终制品分开：GitHub标签和附件均保持上述源码身份。Mooncakes后续目标已确认
+为any07557-wq/moonxpt，完整源码迁移、最终制品及registry权限/版本复核见
+[准备说明](mooncakes-preparation.md)，当前两个ZIP仍为any07557/moonxpt。
 
 实测同一提交再次打包时，库ZIP字节一致，但Git bundle的重新压缩导致源码ZIP字节不同；
 恢复的Git历史及源码内容一致。检查保留的具体制品时以其SHA256SUMS为准，不将源码身份

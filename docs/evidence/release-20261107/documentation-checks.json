@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "checks": [
+    "changed Markdown relative links resolve",
+    "archived tag CI passes full evidence verifier",
+    "release evidence 21-file manifest verified",
+    "new text evidence secret-pattern check passed",
+    "no new product source or workflow change"
+  ],
+  "changed_tracked_markdown": 10,
+  "new_evidence_files": 73,
+  "p0_boundary": "only the previously approved Stage A CLI banner change since frozen baseline; this commit is documentation/evidence only"
+}

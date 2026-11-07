@@ -5,7 +5,8 @@
 
 这是供用户集成的库源码包。完整复现、tools、CI、验收证据及Git历史位于独立的
 `moonxpt-0.1.0-source.zip`；也可查看[公开仓库](https://github.com/any07557-wq/-MoonXPT)。
-本地制品生成不代表已经发布到Mooncakes或创建了GitHub Release。
+[GitHub v0.1.0](https://github.com/any07557-wq/-MoonXPT/releases/tag/v0.1.0)已发布，Mooncakes尚未发布。
+本版本制品保留上述模块名；后续Mooncakes目标为any07557-wq/moonxpt，需另行完成迁移验收。
 
 ## 构建与运行
 

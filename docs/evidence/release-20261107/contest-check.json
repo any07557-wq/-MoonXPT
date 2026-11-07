@@ -1,0 +1,218 @@
+{
+  "checked_on": "2026-11-07",
+  "timezone": "Asia/Shanghai",
+  "official_site": "https://moonbitlang.github.io/Hackathon2026/",
+  "official_source": {
+    "commit": "2ca8a6440a5d6d1881104538852bf5f05c90c68e",
+    "url": "https://raw.githubusercontent.com/moonbitlang/Hackathon2026/2ca8a6440a5d6d1881104538852bf5f05c90c68e/src/App.tsx",
+    "sha256": "80180c2e83dbe19b089b119874e8d93b8ac03dd06b8653d972b6762ea3c61598"
+  },
+  "form": {
+    "url": "https://bxup9uklfcb.feishu.cn/share/base/form/shrcnWUMlgpbwHaXgzV7HmNhNhg",
+    "title": "2026 MoonBit 国产基础软件开源大赛-11月黑客松 项目申报",
+    "raw_html_sha256": "ce70672e31238e4bfdf1702a481fd6b9ac739426e9c95343c07793eb4c353857",
+    "configured_window": {
+      "submitStartTime": "2026-09-01T00:00:00+08:00",
+      "submitEndTime": "2026-11-30T23:59:59+08:00"
+    },
+    "configured_window_enabled": true,
+    "login_required": true,
+    "modification_enabled": true,
+    "field_inventory": [
+      {
+        "title": "是否参加过MoonBit黑客松",
+        "required": true,
+        "visibility_conditions": []
+      },
+      {
+        "title": "参赛方向",
+        "required": true,
+        "visibility_conditions": []
+      },
+      {
+        "title": "姓名",
+        "required": true,
+        "visibility_conditions": []
+      },
+      {
+        "title": "GitHub ID",
+        "required": true,
+        "visibility_conditions": [
+          {
+            "field": "是否参加过MoonBit黑客松",
+            "operator": "is",
+            "values": [
+              "否"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "联系方式（邮箱）",
+        "required": true,
+        "visibility_conditions": []
+      },
+      {
+        "title": "联系方式（电话）",
+        "required": true,
+        "visibility_conditions": []
+      },
+      {
+        "title": "身份证照片",
+        "required": true,
+        "visibility_conditions": [
+          {
+            "field": "是否参加过MoonBit黑客松",
+            "operator": "is",
+            "values": [
+              "否"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "身份证号码",
+        "required": true,
+        "visibility_conditions": [
+          {
+            "field": "是否参加过MoonBit黑客松",
+            "operator": "is",
+            "values": [
+              "否"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "项目名称",
+        "required": true,
+        "visibility_conditions": []
+      },
+      {
+        "title": "项目的GitHub仓库链接",
+        "required": true,
+        "visibility_conditions": []
+      },
+      {
+        "title": "项目申报书",
+        "required": true,
+        "visibility_conditions": [
+          {
+            "field": "参赛方向",
+            "operator": "contains",
+            "values": [
+              "新项目申报-参与季度评选",
+              "新项目申报-不参与季度评选"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "银行卡账号",
+        "required": true,
+        "visibility_conditions": []
+      },
+      {
+        "title": "银行卡所属分行",
+        "required": true,
+        "visibility_conditions": []
+      },
+      {
+        "title": "推荐人",
+        "required": false,
+        "visibility_conditions": []
+      },
+      {
+        "title": "所属高校/组织",
+        "required": true,
+        "visibility_conditions": [
+          {
+            "field": "是否参加过MoonBit黑客松",
+            "operator": "is",
+            "values": [
+              "否"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "学信网认证报告",
+        "required": true,
+        "visibility_conditions": [
+          {
+            "field": "是否参加过MoonBit黑客松",
+            "operator": "is",
+            "values": [
+              "否"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "《参赛诚信承诺书》",
+        "required": true,
+        "visibility_conditions": []
+      },
+      {
+        "title": "备注",
+        "required": false,
+        "visibility_conditions": []
+      },
+      {
+        "title": "你是通过什么渠道了解到本次比赛的？",
+        "required": false,
+        "visibility_conditions": []
+      }
+    ],
+    "derived_requirements": {
+      "proposal_author": "entrant personally; AI authorship prohibited",
+      "proposal_format": "Markdown, at most one page",
+      "minimum_complete_scenarios": 3,
+      "minimum_effective_commits": 10,
+      "proposal_contents": [
+        "project name and introduction",
+        "direction and general usefulness",
+        "complete expected use cases",
+        "core functionality",
+        "original/port/reference classification",
+        "applicable upstream sources and licenses",
+        "public GitHub repository"
+      ],
+      "submit_count_instruction": "at most three submissions; editing permitted",
+      "email_instruction": "use a domestic email service, not Gmail",
+      "acknowledgment_full_text_verified": false
+    }
+  },
+  "website_requirements": {
+    "current_round": "November",
+    "team_maximum": 3,
+    "entry_deadline": "official notices govern; no specific date published on website",
+    "major_language": "MoonBit",
+    "public_traceable_history": true,
+    "readme_examples_tests_required": true,
+    "opensource_attribution_required": true,
+    "substantial_current_round_work_for_existing_projects": true,
+    "join_official_group_with_github_nickname": true
+  },
+  "linked_pages": {
+    "checked_at_utc": "2026-11-07T15:11:03.741441+00:00",
+    "pages": [
+      {
+        "kind": "charter",
+        "url": "https://bxup9uklfcb.feishu.cn/wiki/Dx4Bwd6D1i3GfHkajQCcF7SznEd",
+        "error": "HTTPError",
+        "details": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound",
+        "readable_field_details_verified": false
+      },
+      {
+        "kind": "form",
+        "url": "https://bxup9uklfcb.feishu.cn/share/base/form/shrcnWUMlgpbwHaXgzV7HmNhNhg",
+        "status": 200,
+        "bytes": 787698,
+        "readable_field_details_verified": false
+      }
+    ],
+    "boundary": "GET only; no registration or form submitted. Dynamic form fields and full charter not verified."
+  },
+  "boundary": "Read-only public facts and field schema only. Form configuration is not an official acceptance-deadline notice. Full charter/pledge/template contents not verified. No participant records, credentials or personal/bank information stored; no form submitted or pledge accepted. No full third-party web source redistributed."
+}

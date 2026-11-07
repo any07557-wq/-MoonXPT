@@ -1,0 +1,44 @@
+[
+  {
+    "path": "dist/0.1.0/stage-b/moonxpt-0.1.0.zip",
+    "name": "moonxpt-0.1.0.zip",
+    "bytes": 78298,
+    "sha256": "93df9b777bdb075dab1213fdf71fdef3fc09b515dd1676b3d635d8205d9962f1"
+  },
+  {
+    "path": "dist/0.1.0/stage-b/moonxpt-0.1.0-source.zip",
+    "name": "moonxpt-0.1.0-source.zip",
+    "bytes": 837463,
+    "sha256": "853064a112ad766635fc8521c18a2c5993fc09c7697cfb191a2523371e911b13"
+  },
+  {
+    "path": "dist/0.1.0/stage-b/SHA256SUMS",
+    "name": "SHA256SUMS",
+    "bytes": 175,
+    "sha256": "21f7c2b858ad46cb12a6bb4f26b50eaa0f340f15fd40060aa081d9393d61e334"
+  },
+  {
+    "path": "dist/0.1.0/stage-b/release-manifest.json",
+    "name": "release-manifest.json",
+    "bytes": 1573,
+    "sha256": "08cd9689482189e36c9eb65f45a98b6229609e02f01dee9aa59cb7e519b14508"
+  },
+  {
+    "path": "dist/0.1.0/stage-b/library-inventory.json",
+    "name": "library-inventory.json",
+    "bytes": 10386,
+    "sha256": "aa9e88ced037676d1b2f38dddefcfe76001d6e39a219f3bed6f33182e1a5a619"
+  },
+  {
+    "path": "dist/0.1.0/stage-b/source-inventory.json",
+    "name": "source-inventory.json",
+    "bytes": 54816,
+    "sha256": "ab95657882950b1a14b72c65a1aa53d5851e8c99a7fd1af844b9ac1780250bb7"
+  },
+  {
+    "path": ".cache/release-stage-c/moonxpt-0.1.0-validation.zip",
+    "name": "moonxpt-0.1.0-validation.zip",
+    "bytes": 144199,
+    "sha256": "dd91a58de11fc15ab7316d708e0dd6a29b9c99d011e8271da38e0c3a5e3bda92"
+  }
+]
