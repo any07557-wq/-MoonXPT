@@ -40,3 +40,7 @@ moon.mod的version字段是产品版本依据；当前阶段不创建标签、Re
 Run42329267843仍只证明其原被测提交，不计为验证了此次版本整理。
 R1的产品版本标识在本阶段处理，最终候选及制品绑定验证继续由R2跟踪；Mooncakes的
 repository与命名空间/版本确认由R3跟踪，原P0功能保持冻结。
+
+阶段B已完成[最终制品验收](evidence/artifacts-20261107/README.md)，不再使用阶段A候选包
+作为发布输入。最终库包入口为README.library.md，完整源码含全部已提交文件及Git历史；
+两包版本0.1.0，source_commit固定2cddd31bb8b88648f619969dbb4fe195051735b4。

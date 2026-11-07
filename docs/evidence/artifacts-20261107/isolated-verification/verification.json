@@ -1,0 +1,344 @@
+{
+  "result": "PASS",
+  "started_utc": "2026-11-07T09:34:26.781011+00:00",
+  "steps": [
+    {
+      "name": "history-clone",
+      "command": [
+        "git",
+        "clone",
+        "--quiet",
+        "/work/source/history/moonxpt.bundle",
+        "/work/recovered-history"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:34:26.781742+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:34:26.926395+00:00"
+    },
+    {
+      "name": "history-bundle",
+      "command": [
+        "git",
+        "bundle",
+        "verify",
+        "/work/source/history/moonxpt.bundle"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:34:26.926484+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:34:26.929774+00:00"
+    },
+    {
+      "name": "history-frozen-base",
+      "command": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "1516dfd033d4ecee1bf0fd5cb35c9ec77762a774",
+        "HEAD"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:34:26.935791+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:34:26.939041+00:00"
+    },
+    {
+      "name": "install-sdk",
+      "command": [
+        "/usr/bin/python3",
+        "/work/source/tools/install_toolchain.py",
+        "/work/sdk",
+        "--receipt",
+        "/evidence/sdk-install.json"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:34:27.894606+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:36:38.135940+00:00"
+    },
+    {
+      "name": "create-venv",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "venv",
+        "/work/source/.cache/venv"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:36:38.136122+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:36:42.277322+00:00"
+    },
+    {
+      "name": "install-oracles",
+      "command": [
+        "/work/source/.cache/venv/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "install",
+        "--no-cache-dir",
+        "--index-url",
+        "https://pypi.org/simple",
+        "-r",
+        "/work/source/tools/requirements-oracle.txt"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:36:42.277416+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:37:53.158827+00:00"
+    },
+    {
+      "name": "install-xport",
+      "command": [
+        "/work/source/.cache/venv/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "install",
+        "--no-cache-dir",
+        "--index-url",
+        "https://pypi.org/simple",
+        "--no-deps",
+        "xport==3.6.1"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:37:53.158871+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:37:56.419809+00:00"
+    },
+    {
+      "name": "oracle-versions",
+      "command": [
+        "/work/source/.cache/venv/bin/python",
+        "-c",
+        "import json,sys;from importlib.metadata import distributions;from pathlib import Path;Path(sys.argv[1]).write_text(json.dumps({d.metadata['Name']:d.version for d in distributions()},indent=2)+'\\n')",
+        "/evidence/oracle-packages.json"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:37:56.419892+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:37:56.521096+00:00"
+    },
+    {
+      "name": "fetch-corpus",
+      "command": [
+        "/work/source/.cache/venv/bin/python",
+        "/work/source/tools/fetch_corpus.py"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:37:56.521172+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:38:12.343892+00:00"
+    },
+    {
+      "name": "source-checks",
+      "command": [
+        "/work/source/.cache/venv/bin/python",
+        "/work/source/tools/check.py",
+        "--oracle",
+        "--corpus"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:38:12.343975+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:38:26.075798+00:00"
+    },
+    {
+      "name": "library-check",
+      "command": [
+        "moon",
+        "check",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:38:26.076176+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:38:26.283598+00:00"
+    },
+    {
+      "name": "library-tests",
+      "command": [
+        "moon",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:38:26.283659+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:38:27.816318+00:00"
+    },
+    {
+      "name": "library-build",
+      "command": [
+        "moon",
+        "build",
+        "--target",
+        "native",
+        "--release",
+        "--deny-warn"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:38:27.816359+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:38:41.369204+00:00"
+    },
+    {
+      "name": "library-help",
+      "command": [
+        "/work/library/_build/native/release/build/cmd/moonxpt/moonxpt.exe",
+        "--help"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:38:41.369385+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:38:41.371771+00:00"
+    },
+    {
+      "name": "library-inspect",
+      "command": [
+        "/work/library/_build/native/release/build/cmd/moonxpt/moonxpt.exe",
+        "inspect",
+        "/work/library/tests/fixtures/readstat-v5.xpt",
+        "--json",
+        "--count-rows",
+        "--rows",
+        "ORACLE=4"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:38:41.372025+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:38:41.374779+00:00"
+    },
+    {
+      "name": "library-export",
+      "command": [
+        "/work/library/_build/native/release/build/cmd/moonxpt/moonxpt.exe",
+        "export",
+        "/work/library/tests/fixtures/readstat-v5.xpt",
+        "--member",
+        "ORACLE",
+        "--rows",
+        "ORACLE=4",
+        "--csv",
+        "/work/table.csv",
+        "--metadata",
+        "/work/table.json"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:38:41.374831+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:38:41.382776+00:00"
+    },
+    {
+      "name": "library-write",
+      "command": [
+        "/work/library/_build/native/release/build/cmd/moonxpt/moonxpt.exe",
+        "write",
+        "/work/table.csv",
+        "--metadata",
+        "/work/table.json",
+        "--output",
+        "/work/rebuilt.xpt"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:38:41.382818+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:38:41.388034+00:00"
+    },
+    {
+      "name": "library-reinspect",
+      "command": [
+        "/work/library/_build/native/release/build/cmd/moonxpt/moonxpt.exe",
+        "inspect",
+        "/work/rebuilt.xpt",
+        "--json",
+        "--count-rows",
+        "--rows",
+        "ORACLE=4"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:38:41.388060+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:38:41.390096+00:00"
+    },
+    {
+      "name": "library-consumer",
+      "command": [
+        "/usr/bin/python3",
+        "/work/source/tools/test_consumer.py",
+        "--library-dir",
+        "/work/library"
+      ],
+      "result": "PASS",
+      "started_utc": "2026-11-07T09:38:41.390272+00:00",
+      "exit_code": 0,
+      "completed_utc": "2026-11-07T09:38:42.318042+00:00"
+    }
+  ],
+  "fresh_sdk": true,
+  "fresh_oracles": true,
+  "fresh_corpus": true,
+  "environment": "same-host bubblewrap userspace; shared base OS/kernel; developer HOME hidden",
+  "host": {
+    "kernel": "6.18.33.2-microsoft-standard-WSL2",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+  },
+  "source_commit": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+  "precheck": "PASS: hidden developer HOME, no oracle modules or source build caches",
+  "history": {
+    "result": "PASS",
+    "head": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+    "commits": 29,
+    "all_tracked_files_match": true
+  },
+  "source": {
+    "result": "PASS",
+    "test_groups": 27,
+    "corpus": [
+      {
+        "member": "DEMO_J",
+        "rows": 9254,
+        "columns": 46,
+        "cells": 425684,
+        "sha256": "c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec",
+        "max_ulp": 0,
+        "metadata": "exact declared attributes",
+        "result": "PASS"
+      },
+      {
+        "member": "BMX_J",
+        "rows": 8704,
+        "columns": 21,
+        "cells": 182784,
+        "sha256": "8d675e42d8826ac98714b2c3dd4c5138a5e353fb4424f7eff5e6db4a01ce838a",
+        "max_ulp": 0,
+        "metadata": "exact declared attributes",
+        "result": "PASS"
+      },
+      {
+        "member": "GLU_J",
+        "rows": 3036,
+        "columns": 4,
+        "cells": 12144,
+        "sha256": "5b38897d0d7bfbc69dd9ca74ffdaf2f6a9bed5a91d4a7bf46e07f1332cc3379e",
+        "max_ulp": 0,
+        "metadata": "exact declared attributes",
+        "result": "PASS"
+      }
+    ]
+  },
+  "library": {
+    "result": "PASS",
+    "test_groups": 27,
+    "cli_roundtrip_rows": 4,
+    "public_consumer": "PASS",
+    "oracle_runtime_required": false
+  },
+  "completed_utc": "2026-11-07T09:38:42.318077+00:00"
+}

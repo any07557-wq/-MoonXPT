@@ -1,0 +1,180 @@
+{
+  "source_commit": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 1311,
+      "sha256": "364d448c6bf30eaf845f4029b0c0c21d13dc73b0b3986bf3a950f18da377c2b4"
+    },
+    {
+      "file": "SHA256SUMS",
+      "bytes": 175,
+      "sha256": "21f7c2b858ad46cb12a6bb4f26b50eaa0f340f15fd40060aa081d9393d61e334"
+    },
+    {
+      "file": "isolated-verification/console.log",
+      "bytes": 13066,
+      "sha256": "f01e211e23dcd3d847950c5a993ca953edc80bf18f547fe2a451372f48b85918"
+    },
+    {
+      "file": "isolated-verification/create-venv.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "isolated-verification/fetch-corpus.log",
+      "bytes": 91,
+      "sha256": "8fa9544cc88fb933b2c70900e29393c4a345da07fe52020da25fe74a73f1c8e9"
+    },
+    {
+      "file": "isolated-verification/history-bundle.log",
+      "bytes": 262,
+      "sha256": "f0b64e15f93512d0905a3acfc758dfb8836a6f615666c50c95505c5554a80515"
+    },
+    {
+      "file": "isolated-verification/history-clone.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "isolated-verification/history-frozen-base.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "isolated-verification/install-oracles.log",
+      "bytes": 2646,
+      "sha256": "a455e4a08567f05f607fca6d836eaa3d53fadb03fe73b21822a06f6e70f50a18"
+    },
+    {
+      "file": "isolated-verification/install-sdk.log",
+      "bytes": 1773,
+      "sha256": "dd4dda8de64aff44e5389f53476c176a145a156274426bfd76ad9130c8a11f7b"
+    },
+    {
+      "file": "isolated-verification/install-xport.log",
+      "bytes": 214,
+      "sha256": "59a8f5f7a4fd86b3c1e871a1ab1929ef5ba105cc4437a23b4b9bd7dfc43df433"
+    },
+    {
+      "file": "isolated-verification/integrity-and-licenses.json",
+      "bytes": 1829,
+      "sha256": "d965405ee96cdd78dd6efb6a001619296959ee49d9a352d86fc001033beb0874"
+    },
+    {
+      "file": "isolated-verification/library-build.log",
+      "bytes": 45,
+      "sha256": "80b487f65e500f98b651ee9c2d3023d6bd32e176e63d2851c46410b31dbe99bb"
+    },
+    {
+      "file": "isolated-verification/library-check.log",
+      "bytes": 45,
+      "sha256": "3296649e96d0c0dc1d62f6a57cbf27145972d10e1157048598931329062461a5"
+    },
+    {
+      "file": "isolated-verification/library-consumer.log",
+      "bytes": 25,
+      "sha256": "8d07633a50cc130e7839e34b19b9280eff01620a1a5205cb7e74848c12ef2396"
+    },
+    {
+      "file": "isolated-verification/library-export.log",
+      "bytes": 88,
+      "sha256": "5e8df6695270dec15711a0ecda1ce9066842eb8b4cd1724616151d02e7a67ca4"
+    },
+    {
+      "file": "isolated-verification/library-help.log",
+      "bytes": 869,
+      "sha256": "9511b6bad4f33697f04d0c311dbd747d48e34052c32aea064197dcc0f2eaaca6"
+    },
+    {
+      "file": "isolated-verification/library-inspect.log",
+      "bytes": 896,
+      "sha256": "35e11f648a99ceb7b873daf6ecdd98c917fd46a890ac805e8ea5c4ab81b20d4b"
+    },
+    {
+      "file": "isolated-verification/library-reinspect.log",
+      "bytes": 896,
+      "sha256": "35e11f648a99ceb7b873daf6ecdd98c917fd46a890ac805e8ea5c4ab81b20d4b"
+    },
+    {
+      "file": "isolated-verification/library-tests.log",
+      "bytes": 40,
+      "sha256": "0ce8fd6ee95162fececffea244523de298b77559b16629fd72359dfcd3a9fdc7"
+    },
+    {
+      "file": "isolated-verification/library-write.log",
+      "bytes": 63,
+      "sha256": "302d030aff7f86f427fd5c20d351496f35664fc7c0070a69be16871146c757ad"
+    },
+    {
+      "file": "isolated-verification/oracle-packages.json",
+      "bytes": 211,
+      "sha256": "1f1bc2fba3f255e903ee44d98ebe99052a00b8e5f9563b63136da2baa1d2f94a"
+    },
+    {
+      "file": "isolated-verification/oracle-versions.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "isolated-verification/process.json",
+      "bytes": 109,
+      "sha256": "0a57b3ffa9e0b99467da0ce6862bbf9623c8dacaa078ac263823ba87144ccfc1"
+    },
+    {
+      "file": "isolated-verification/sdk-install.json",
+      "bytes": 1140,
+      "sha256": "c035a31b9cbbca46e6242baa0e0c0e7f3810d7c7579194b1379b64b7900a211b"
+    },
+    {
+      "file": "isolated-verification/source-checks.log",
+      "bytes": 3092,
+      "sha256": "98efde9ef1628b881eefeba0c4a87d6c485129a1c9727906205b73016c901c98"
+    },
+    {
+      "file": "isolated-verification/verification.json",
+      "bytes": 9470,
+      "sha256": "bc4dfba3f11f7aa955ead6ee7b9e579492b6f43e4a06c419cadb74a21ea266fa"
+    },
+    {
+      "file": "library-inventory.json",
+      "bytes": 10386,
+      "sha256": "aa9e88ced037676d1b2f38dddefcfe76001d6e39a219f3bed6f33182e1a5a619"
+    },
+    {
+      "file": "moon-package.log",
+      "bytes": 163,
+      "sha256": "111a681c275174364fa7c1348fe9fc60903460c4bf6f175c91a3988c7288164a"
+    },
+    {
+      "file": "moonxpt-0.1.0-source.zip",
+      "bytes": 837463,
+      "sha256": "853064a112ad766635fc8521c18a2c5993fc09c7697cfb191a2523371e911b13"
+    },
+    {
+      "file": "moonxpt-0.1.0.zip",
+      "bytes": 78298,
+      "sha256": "93df9b777bdb075dab1213fdf71fdef3fc09b515dd1676b3d635d8205d9962f1"
+    },
+    {
+      "file": "rebuild-check.json",
+      "bytes": 1004,
+      "sha256": "db3b3f985ab88219a1390cb783dbb22b3f6af27d934e41d0ba4a97b7a9d9da6c"
+    },
+    {
+      "file": "release-manifest.json",
+      "bytes": 1573,
+      "sha256": "08cd9689482189e36c9eb65f45a98b6229609e02f01dee9aa59cb7e519b14508"
+    },
+    {
+      "file": "source-inventory.json",
+      "bytes": 54816,
+      "sha256": "ab95657882950b1a14b72c65a1aa53d5851e8c99a7fd1af844b9ac1780250bb7"
+    },
+    {
+      "file": "validation-receipt.json",
+      "bytes": 806,
+      "sha256": "39e94eda49c7285bba157503e4c24b0b0561590f4f9f8c24aeb2720a14bec0ec"
+    }
+  ]
+}

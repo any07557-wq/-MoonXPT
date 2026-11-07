@@ -1,0 +1,13 @@
+{
+  "recorded_at_utc": "2026-11-07T09:40:30.776815+00:00",
+  "source_commit": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+  "result": "PASS",
+  "build_manifest": "release-manifest.json",
+  "integrity_and_licenses": "isolated-verification/integrity-and-licenses.json",
+  "isolated_execution": "isolated-verification/verification.json",
+  "process": "isolated-verification/process.json",
+  "artifacts_directory": "dist/0.1.0/stage-b",
+  "archive_excludes_zip_bodies": true,
+  "boundary": "local final artifacts; fresh SDK/oracles/corpus in same-host bubblewrap; no new cloud CI, tag, Release or registry publish",
+  "rebuild_boundary": "library byte-identical on repeat; source Git bundle repacking changes bytes while restoring the same Git identity/history; checksums identify retained first-build ZIPs"
+}

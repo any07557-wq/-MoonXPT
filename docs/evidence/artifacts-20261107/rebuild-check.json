@@ -1,0 +1,22 @@
+{
+  "result": "CONTENT_MATCH_WITH_GIT_BUNDLE_REPACKING_VARIATION",
+  "source_commit": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+  "library_zip_byte_identical": true,
+  "source_zip_byte_identical": false,
+  "source_files_identical_except": [
+    "ARTIFACT.json",
+    "PACKAGE-MANIFEST.json",
+    "history/moonxpt.bundle"
+  ],
+  "second_bundle_recovered_head": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+  "second_bundle_recovered_commit_count": 29,
+  "first_build": {
+    "source_sha256": "853064a112ad766635fc8521c18a2c5993fc09c7697cfb191a2523371e911b13",
+    "bundle_sha256": "934ae0a464c7558541a3f3db9a53659c9bbd9299c655bb79f6a0d95ee69ffa14"
+  },
+  "second_build": {
+    "source_sha256": "08ad3243a8672bba4e7d767f551e6328c21bb1539a041c54105a876525bc4515",
+    "bundle_sha256": "f5aaa7d0f0312aa0015d60afd1457a582769d20f1463afb8cb33a0451f8e157c"
+  },
+  "scope": "Git bundle repacking changes stored bytes; no bit-identical rebuild claim. Published checksum must identify the retained original ZIP."
+}

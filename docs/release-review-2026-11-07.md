@@ -26,8 +26,8 @@ release性能结果仍属于先前的本地实验。人工指定的第二台SSH�
 | ID | 范围 | 事实及处理状态 | 下一步 |
 |---|---|---|---|
 | R1 | GitHub正式Release | 阶段A已统一为0.1.0；27/27、本地release及两个解压候选包的版本检查通过，见[证据](evidence/version-unification-20261107/README.md) | 最终候选与制品绑定验证继续在R2跟踪，原审查正文保留 |
-| R2 | GitHub正式Release | 现有80项库ZIP为旧制品，完整评审源码包未生成；未处理 | 从候选提交生成库包与完整源码包，登记清单、提交、大小、SHA-256，分别解压验证 |
-| R3 | 最终包元数据与Mooncakes | moon.mod缺repository，命名空间控制权及版本占用未确认；未处理 | 补真实仓库字段，确认发布账号/包名；workspace消费成功不能代替registry安装 |
+| R2 | GitHub正式Release | 阶段B已从2cddd31生成两类最终制品；新SDK/oracle/语料的隔离验证、库包消费及清单/hash通过，见[证据](evidence/artifacts-20261107/README.md) | 等待明确授权创建Tag/Release；原审查所见旧包不覆盖、不冒充最终制品 |
+| R3 | 最终包元数据与Mooncakes | repository已补；命名空间控制权及版本占用未确认 | 确认发布账号/包名；workspace消费成功不能代替registry安装 |
 | R4 | 文档，非阻断 | --rows与--member大小写规则措辞不清；本轮已澄清README | 没有改变CLI或P0行为 |
 | R5 | oracle长期复现，非阻断 | 固定版本而未锁wheel摘要；保留为后续改进 | 不否定本次已发生验收，也不增加产品运行依赖 |
 

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/user/MoonBit_Program/MoonXPT/tools/verify_artifacts.py", line 201, in <module>
+    raise SystemExit(outer(args.directory.resolve(), args.evidence_dir.resolve()))
+                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/MoonBit_Program/MoonXPT/tools/verify_artifacts.py", line 155, in outer
+    require(len(data) == record["bytes"] and sha(data) == record["sha256"], "payload manifest mismatch")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/MoonBit_Program/MoonXPT/tools/verify_artifacts.py", line 24, in require
+    raise ValueError(message)
+ValueError: payload manifest mismatch

@@ -30,7 +30,8 @@
 演示：`bash tools/demo.sh [--real]`；构建产物：
 `_build/native/release/build/cmd/moonxpt/moonxpt.exe`。
 现有过滤版库zip由 `moon package` 生成于 `_build/publish/any07557-moonxpt-0.1.0.zip`。
-包含tools、CI和全部文档的完整评审源码包尚待生成，不能用该过滤包代替。
+该旧包保留作历史，阶段B最终库包与含Git历史的完整源码包已生成到dist/0.1.0/stage-b/，
+来源提交2cddd31bb8b88648f619969dbb4fe195051735b4；[制品及干净验证证据](evidence/artifacts-20261107/README.md)。
 
 ## 已知限制与未验证项
 
@@ -75,7 +76,7 @@ C16完整hash在本次证据归档修订中补齐，不要求任何提交写入�
 ## 待发布步骤
 
 1. 独立AI发布审查已完成：技术证据成立，版本与制品仍有缺口；按[审查说明](release-review-2026-11-07.md)关闭待办后再发布。
-2. 阶段A统一产品版本为0.1.0，见[版本说明](versioning.md)；正式v0.1.0标签及两类最终制品仍待后续验收。
+2. 阶段A版本统一及阶段B两类最终制品验收已完成；正式v0.1.0标签与Release等待授权。
 3. 核实Mooncakes命名空间、repository和赛事要求，准备可审查的Release及参赛材料。
 4. 证据与制品齐全且取得明确授权后，创建正式Tag/Release，发布Mooncakes并提交赛事表单。
 

@@ -1,0 +1,35 @@
++ moon fmt --check
+Finished. moon: ran 42 tasks, now up to date
++ moon check --target native --deny-warn
+Finished. moon: ran 14 tasks, now up to date
++ moon test --target native --deny-warn
+Total tests: 27, passed: 27, failed: 0.
++ moon build --target native --deny-warn
+Finished. moon: ran 20 tasks, now up to date
++ /work/source/_build/native/debug/build/examples/write/write.exe /work/source/.cache/writer-example.xpt
+wrote NUMBERS(3), WORDS(3), TAGS(28), EMPTY(0)
++ /work/source/.cache/venv/bin/python /work/source/tools/test_inspect.py
+PASS: inspect JSON, counts, multi-member hints, spaces in paths, stderr, usage/I/O/format codes
++ /work/source/.cache/venv/bin/python /work/source/tools/test_export.py
+PASS: selected member export, independent CSV/JSON, no overwrite, force, aliases, failure cleanup
++ /work/source/.cache/venv/bin/python /work/source/tools/test_exchange.py
+PASS: four member CSV/JSON semantic roundtrips, stable writes, typed missing, versions, duplicate columns, malformed CSV and cleanup
++ /work/source/.cache/venv/bin/python /work/source/tools/test_fixtures.py
+PASS: independent ReadStat/xport inputs, format/informat, 136-byte descriptors, reordered offsets, CP1252 multi-member exchange
++ /work/source/.cache/venv/bin/python /work/source/tools/test_malformed.py
+{"seed": 20261104, "truncations": 79, "mutations": 256, "targeted": 8, "result": "PASS", "timeout_seconds": 5}
++ /work/source/.cache/venv/bin/python /work/source/tools/test_consumer.py
+public API consumer PASS
++ /work/source/.cache/venv/bin/python /work/source/tools/check_writer.py
+/work/source/.cache/venv/lib/python3.14/site-packages/xport/__about__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import DistributionNotFound, get_distribution
+PASS: xport reads all 4 members; ReadStat reads first; 28 missing byte vectors exact
++ /work/source/.cache/venv/bin/python /work/source/tools/compare_scan.py
+BMX_J: rows=8704 columns=21 compared_cells=182784 max_ulp=0; PASS
+DEMO_J: rows=9254 columns=46 compared_cells=425684 max_ulp=0; PASS
+GLU_J: rows=3036 columns=4 compared_cells=12144 max_ulp=0; PASS
++ /work/source/.cache/venv/bin/python /work/source/tools/validate_corpus.py
+{"member": "DEMO_J", "rows": 9254, "columns": 46, "cells": 425684, "sha256": "c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec", "max_ulp": 0, "metadata": "exact declared attributes", "result": "PASS"}
+{"member": "BMX_J", "rows": 8704, "columns": 21, "cells": 182784, "sha256": "8d675e42d8826ac98714b2c3dd4c5138a5e353fb4424f7eff5e6db4a01ce838a", "max_ulp": 0, "metadata": "exact declared attributes", "result": "PASS"}
+{"member": "GLU_J", "rows": 3036, "columns": 4, "cells": 12144, "sha256": "5b38897d0d7bfbc69dd9ca74ffdaf2f6a9bed5a91d4a7bf46e07f1332cc3379e", "max_ulp": 0, "metadata": "exact declared attributes", "result": "PASS"}
+PASS: all requested checks completed; none skipped

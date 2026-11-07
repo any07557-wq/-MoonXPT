@@ -1,0 +1,34 @@
+{
+  "source_commit": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+  "result": "PASS",
+  "artifacts": [
+    {
+      "kind": "library",
+      "zip_sha256": "93df9b777bdb075dab1213fdf71fdef3fc09b515dd1676b3d635d8205d9962f1",
+      "manifest_files_verified": 66,
+      "license_files": {
+        "LICENSE": "22f972b2ab3edaedffab05ab4b5f47d3b14d4f8af1cc91d33cfd16ba43e33ad1",
+        "THIRD_PARTY.md": "0b8fe2567b3fb05d334006fbc61d9effbbf4abf88d6bfa403a1447338f88a24f",
+        "licenses/MoonBit-core-Apache-2.0.txt": "86460c45017ffacb9aa9e18850fa9fdb036339dc8851125465f4a3f3442fc894",
+        "licenses/MoonBit-core-NOTICE.txt": "047a7cd5e93c10a8a753b7f152c371ef309b523c4d9b945ec5776321e7e602fb",
+        "licenses/MoonBit-toolchain-CREDITS.md": "7c60a54ee90099da44c35e4f4830c6cf32470f4749f0b508f4d98d592fece99a",
+        "tests/fixtures/manifest.json": "f439ef9d219f4d7deaaf95e69c4ffc8789faaf2c850c7274eb8a4901493ab68e"
+      },
+      "fixture_hashes": "PASS"
+    },
+    {
+      "kind": "source",
+      "zip_sha256": "853064a112ad766635fc8521c18a2c5993fc09c7697cfb191a2523371e911b13",
+      "manifest_files_verified": 293,
+      "license_files": {
+        "LICENSE": "22f972b2ab3edaedffab05ab4b5f47d3b14d4f8af1cc91d33cfd16ba43e33ad1",
+        "THIRD_PARTY.md": "0b8fe2567b3fb05d334006fbc61d9effbbf4abf88d6bfa403a1447338f88a24f",
+        "licenses/MoonBit-core-Apache-2.0.txt": "86460c45017ffacb9aa9e18850fa9fdb036339dc8851125465f4a3f3442fc894",
+        "licenses/MoonBit-core-NOTICE.txt": "047a7cd5e93c10a8a753b7f152c371ef309b523c4d9b945ec5776321e7e602fb",
+        "licenses/MoonBit-toolchain-CREDITS.md": "7c60a54ee90099da44c35e4f4830c6cf32470f4749f0b508f4d98d592fece99a",
+        "tests/fixtures/manifest.json": "f439ef9d219f4d7deaaf95e69c4ffc8789faaf2c850c7274eb8a4901493ab68e"
+      },
+      "fixture_hashes": "PASS"
+    }
+  ]
+}

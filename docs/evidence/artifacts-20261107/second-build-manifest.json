@@ -1,0 +1,46 @@
+{
+  "source_commit": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+  "source_tree": "f42ca4a10bce4b3fdce52becb6db726ec44799a2",
+  "source_archive_sha256": "d46339ed156e4a3ab6c81dfff4f44cd4d28eaadc3e001fa772705f18fa5c3c6e",
+  "source_commit_count": 29,
+  "builder_sha256": "ae94f78962e36e93523ad7f99935a00b36d4596d3d423d5b0d0fcce8424c0211",
+  "result": "PASS",
+  "artifacts": [
+    {
+      "kind": "library",
+      "file": "moonxpt-0.1.0.zip",
+      "bytes": 78298,
+      "sha256": "93df9b777bdb075dab1213fdf71fdef3fc09b515dd1676b3d635d8205d9962f1",
+      "files": 67,
+      "inventory": "library-inventory.json",
+      "license_files": [
+        "LICENSE",
+        "THIRD_PARTY.md",
+        "licenses/MoonBit-core-Apache-2.0.txt",
+        "licenses/MoonBit-core-NOTICE.txt",
+        "licenses/MoonBit-toolchain-CREDITS.md",
+        "tests/fixtures/manifest.json"
+      ]
+    },
+    {
+      "kind": "source",
+      "file": "moonxpt-0.1.0-source.zip",
+      "bytes": 841754,
+      "sha256": "08ad3243a8672bba4e7d767f551e6328c21bb1539a041c54105a876525bc4515",
+      "files": 294,
+      "inventory": "source-inventory.json",
+      "license_files": [
+        "LICENSE",
+        "THIRD_PARTY.md",
+        "licenses/MoonBit-core-Apache-2.0.txt",
+        "licenses/MoonBit-core-NOTICE.txt",
+        "licenses/MoonBit-toolchain-CREDITS.md",
+        "tests/fixtures/manifest.json"
+      ]
+    }
+  ],
+  "version": "0.1.0",
+  "module": "any07557/moonxpt",
+  "history_bundle_sha256": "f5aaa7d0f0312aa0015d60afd1457a582769d20f1463afb8cb33a0451f8e157c",
+  "license_bytes_match_git": true
+}

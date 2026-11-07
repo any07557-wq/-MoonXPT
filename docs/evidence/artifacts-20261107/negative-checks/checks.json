@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "cases": [
+    {
+      "case": "zip-digest",
+      "expected_rejection": "artifact ZIP checksum mismatch",
+      "exit_code": 1,
+      "result": "PASS: tamper rejected before SDK/network verification"
+    },
+    {
+      "case": "payload-manifest",
+      "expected_rejection": "payload manifest mismatch",
+      "exit_code": 1,
+      "result": "PASS: tamper rejected before SDK/network verification"
+    }
+  ]
+}
