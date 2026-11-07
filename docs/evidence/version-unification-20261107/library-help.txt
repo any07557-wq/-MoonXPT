@@ -1,0 +1,15 @@
+MoonXPT 0.1.0 — SAS XPORT V5 (native)
+Usage:
+  moonxpt inspect INPUT.xpt [--json] [--count-rows]
+  moonxpt export INPUT.xpt --member NAME --csv DATA.csv --metadata DATA.json
+  moonxpt write DATA.csv --metadata DATA.json --output OUTPUT.xpt
+Options:
+  --encoding ascii|windows-1252  Explicit source text encoding (default ascii)
+  --tail-policy strict|trim      Default strict; trim chooses maximal legal padding
+  --rows MEMBER=COUNT            Repeatable exact row hints for ambiguous V5 files
+  --max-input-bytes N            Default 1099511627776
+  --max-row-bytes N              Default 16777216
+  --force                        Replace outputs using staged files
+  --numeric-empty-missing        Treat empty numeric CSV fields as '.' on import
+  --help                         Show help
+Exit codes: 0 success, 2 usage/format/schema, 3 I/O, 4 unexpected failure.

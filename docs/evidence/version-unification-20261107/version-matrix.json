@@ -1,0 +1,31 @@
+{
+  "module_version": "0.1.0",
+  "debug_cli_banner": "MoonXPT 0.1.0 \u2014 SAS XPORT V5 (native)",
+  "release_cli_banner": "MoonXPT 0.1.0 \u2014 SAS XPORT V5 (native)",
+  "example_packages": "inherit root moon.mod; no separate example modules",
+  "consumer_dependency": "any07557/moonxpt@0.1.0",
+  "readme_product_version": "0.1.0",
+  "compatibility_product_version": "0.1.0",
+  "changelog_product_version": "0.1.0 (unreleased)",
+  "target_tag": "v0.1.0 (not created)",
+  "candidate_source_commit": "f1230b64e991ad94ba5455483665c6c4c387f77e",
+  "candidate_artifact_versions": [
+    {
+      "role": "library",
+      "module_version": "0.1.0",
+      "cli_banner": "MoonXPT 0.1.0 \u2014 SAS XPORT V5 (native)"
+    },
+    {
+      "role": "source",
+      "module_version": "0.1.0",
+      "cli_banner": "MoonXPT 0.1.0 \u2014 SAS XPORT V5 (native)"
+    }
+  ],
+  "result": "PASS",
+  "recorded_at_utc": "2026-11-07T09:22:34.927413+00:00",
+  "artifact_cache_directory": ".cache/version-unification/stage-a-1_yt_9pb",
+  "offline_checks": "PASS: 27/27 and offline integrations/public consumer",
+  "release_build": "PASS",
+  "scope": "Stage A product versions; candidate archives only, not final Release/Mooncakes publication",
+  "source_note": "root offline checks ran before source commit; checked CLI and test files match that commit; both archives were generated from the committed source"
+}

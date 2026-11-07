@@ -1,0 +1,37 @@
+{
+  "source_commit": "f1230b64e991ad94ba5455483665c6c4c387f77e",
+  "product_version": "0.1.0",
+  "result": "PASS",
+  "started_utc": "2026-11-07T09:20:34.992776+00:00",
+  "artifacts": [
+    {
+      "role": "library",
+      "file": "artifacts/moonxpt-0.1.0.zip",
+      "bytes": 352619,
+      "sha256": "3246f3088218bc72698db642711c6e76012884eb7b74758a93d830cb83a8567f",
+      "module_version": "0.1.0",
+      "cli_banner": "MoonXPT 0.1.0 \u2014 SAS XPORT V5 (native)",
+      "files": 236,
+      "result": "PASS",
+      "extracted_release_build": "PASS",
+      "fixture_inspect_rows": 4,
+      "inventory": "library-inventory.json"
+    },
+    {
+      "role": "source",
+      "file": "artifacts/moonxpt-0.1.0-source.zip",
+      "bytes": 425691,
+      "sha256": "359d83499209e2edf75beb91327ac077dfde368cbd8c76e8575b82063ea2f467",
+      "module_version": "0.1.0",
+      "cli_banner": "MoonXPT 0.1.0 \u2014 SAS XPORT V5 (native)",
+      "files": 268,
+      "result": "PASS",
+      "extracted_release_build": "PASS",
+      "fixture_inspect_rows": 4,
+      "inventory": "source-inventory.json"
+    }
+  ],
+  "scope": "stage A version candidates; not final Release artifacts",
+  "toolchain": "existing fixed local SDK; not independent installation or a new cloud run",
+  "completed_utc": "2026-11-07T09:21:02.865758+00:00"
+}

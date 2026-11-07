@@ -1,0 +1,94 @@
+{
+  "archived_date": "2026-11-07",
+  "source_commit": "f1230b64e991ad94ba5455483665c6c4c387f77e",
+  "product_version": "0.1.0",
+  "scope": "Stage A version consistency; existing fixed local SDK, no new cloud/independent-install claim; ZIPs remain local candidates",
+  "method": "verbatim output/log/script copies and derived version-matrix.json; candidate ZIP bytes not embedded",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 2946,
+      "sha256": "7738c4a6f10512a724121df0b65aaf6470ef563cfdca30160474c4edd71fdf30"
+    },
+    {
+      "file": "library-build.log",
+      "bytes": 45,
+      "sha256": "80b487f65e500f98b651ee9c2d3023d6bd32e176e63d2851c46410b31dbe99bb"
+    },
+    {
+      "file": "library-help.txt",
+      "bytes": 869,
+      "sha256": "9511b6bad4f33697f04d0c311dbd747d48e34052c32aea064197dcc0f2eaaca6"
+    },
+    {
+      "file": "library-inspect.json",
+      "bytes": 896,
+      "sha256": "35e11f648a99ceb7b873daf6ecdd98c917fd46a890ac805e8ea5c4ab81b20d4b"
+    },
+    {
+      "file": "library-inventory.json",
+      "bytes": 45056,
+      "sha256": "c701d8b38c14f9bd4959d52dda2a194115cb5cd1947c4cce1c8eefb8648c8266"
+    },
+    {
+      "file": "library-package.log",
+      "bytes": 238,
+      "sha256": "f3e4427ae1338e46b31585d2823ca6032eeb7afac1c0c43f7251fa4fae7d52ab"
+    },
+    {
+      "file": "offline-check.log",
+      "bytes": 1569,
+      "sha256": "0f580bdfe7cac0f02f0d24416b28443c2879850c314208f14f786601e1756113"
+    },
+    {
+      "file": "release-build.log",
+      "bytes": 44,
+      "sha256": "c79826b968ab80e4632fd7628b7c2b6b8300755d69c7d7c480e13ee010cac331"
+    },
+    {
+      "file": "release-help.txt",
+      "bytes": 869,
+      "sha256": "9511b6bad4f33697f04d0c311dbd747d48e34052c32aea064197dcc0f2eaaca6"
+    },
+    {
+      "file": "source-archive.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "source-build.log",
+      "bytes": 45,
+      "sha256": "80b487f65e500f98b651ee9c2d3023d6bd32e176e63d2851c46410b31dbe99bb"
+    },
+    {
+      "file": "source-help.txt",
+      "bytes": 869,
+      "sha256": "9511b6bad4f33697f04d0c311dbd747d48e34052c32aea064197dcc0f2eaaca6"
+    },
+    {
+      "file": "source-inspect.json",
+      "bytes": 896,
+      "sha256": "35e11f648a99ceb7b873daf6ecdd98c917fd46a890ac805e8ea5c4ab81b20d4b"
+    },
+    {
+      "file": "source-inventory.json",
+      "bytes": 50075,
+      "sha256": "0cd84c036c0ec3381ca9868f2762d10c481f31d4816fd8b9ab9f8bc663184076"
+    },
+    {
+      "file": "verify_packages.py",
+      "bytes": 4846,
+      "sha256": "a5be2fee5baf95f560acc22e6ce0d0bfa287d44403bddb25aeebe0388050fd90"
+    },
+    {
+      "file": "version-matrix.json",
+      "bytes": 1383,
+      "sha256": "811002254a3a40b904076a1cc0d5b6331621efefa78fc80641e0651b53bfe0bb"
+    },
+    {
+      "file": "version-report.json",
+      "bytes": 1314,
+      "sha256": "93f5bf07e99c1a04baff77f94b6f5012724692749fa67436a9b3cc1adf625e49"
+    }
+  ]
+}
