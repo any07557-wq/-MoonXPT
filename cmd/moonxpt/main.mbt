@@ -1,7 +1,7 @@
 ///|
 fn help() -> String {
   (
-    #|MoonXPT 0.1 — SAS XPORT V5 (native)
+    #|MoonXPT 0.1.0 — SAS XPORT V5 (native)
     #|Usage:
     #|  moonxpt inspect INPUT.xpt [--json] [--count-rows]
     #|  moonxpt export INPUT.xpt --member NAME --csv DATA.csv --metadata DATA.json

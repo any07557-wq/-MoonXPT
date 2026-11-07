@@ -3,6 +3,7 @@ import json
 import subprocess
 from pathlib import Path
 import tempfile
+import tomllib
 
 exe=Path('_build/native/debug/build/cmd/moonxpt/moonxpt.exe').resolve()
 def run(args,code=0):
@@ -13,7 +14,8 @@ def run(args,code=0):
         assert json.loads(p.stderr)['kind']
     return p
 
-assert 'SAS XPORT V5' in run(['--help']).stdout
+module=tomllib.loads(Path('moon.mod').read_text())
+assert run(['--help']).stdout.splitlines()[0]==f'MoonXPT {module["version"]} — SAS XPORT V5 (native)'
 run(['inspect'],2)
 run(['inspect','nonexistent-file.xpt'],3)
 with tempfile.TemporaryDirectory(prefix='moonxpt path ') as d:

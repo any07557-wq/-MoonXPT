@@ -12,7 +12,7 @@ CACHE.mkdir(exist_ok=True)
 def fetch(item):
     name, url = item
     try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'MoonXPT-research/0.1'})
+        req = urllib.request.Request(url, headers={'User-Agent': 'MoonXPT-research/0.1.0'})
         with urllib.request.urlopen(req, timeout=60) as response:
             data = response.read()
         path = CACHE / name

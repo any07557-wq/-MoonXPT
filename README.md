@@ -1,5 +1,8 @@
 # MoonXPT
 
+当前产品版本：**0.1.0**。目标版本标签为 `v0.1.0`，正式发布尚未执行。
+版本约定见[版本一致性说明](docs/versioning.md)，待发布内容见[更新记录](CHANGELOG.md)。
+
 用 MoonBit 逐行读写 **SAS XPORT V5**，查看 NHANES 等公开统计文件，并通过
 CSV + 版本化 JSON 元数据在程序间交换数据。核心解析、IBM 浮点、缺失标记、
 字符编码和 CSV/JSON 都由 MoonBit 实现；C 仅适配文件系统。

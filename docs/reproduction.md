@@ -1,5 +1,8 @@
 # 复现与 CI
 
+产品模块与CLI版本为 **0.1.0**；消费方依赖使用 `any07557/moonxpt@0.1.0`。
+下面的MoonBit SDK版本是构建依赖，独立于产品版本；完整约定见[版本说明](versioning.md)。
+
 固定版本：`tools/toolchain.json`。已验证 `moon 0.1.20261012 (748b63c)`、
 `moonc v0.10.15+943464bfa`，Linux x86_64 native，C 编译器与 Python 3.14.4。
 产品可执行文件和核心库运行不需要 Python。
