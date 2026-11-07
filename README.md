@@ -14,6 +14,9 @@ CSV + 版本化 JSON 元数据在程序间交换数据。核心解析、IBM 浮�
 证据见[验证报告](docs/validation-report.md)和[交接报告](docs/handoff.md)。
 正式发布前的版本与制品待办见[独立AI发布审查](docs/release-review-2026-11-07.md)。
 
+完整评审源码包与库包分别提供。本文面向完整源码；库包入口为[库使用说明](README.library.md)，
+模块readme字段指向该文件。制品内容与历史恢复方法见[打包说明](docs/artifacts.md)。
+
 ## 构建与使用
 
 工具链为 `moon 0.1.20261012 (748b63c)` / `moonc v0.10.15+943464bfa`，需要 C

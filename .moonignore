@@ -1,8 +1,15 @@
 _build/
+dist/
 .cache/
 .git/
 .github/
 tools/
-docs/task-spec.md
-docs/dedup-evidence.json
+README.md
+CHANGELOG.md
+history/
+docs/*
+!docs/compatibility.md
+!docs/exchange-format.md
+!docs/adr-002-numeric.md
+!docs/references.md
 __pycache__/

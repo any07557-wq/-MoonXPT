@@ -2,7 +2,9 @@ name = "any07557/moonxpt"
 
 version = "0.1.0"
 
-readme = "README.md"
+readme = "README.library.md"
+
+repository = "https://github.com/any07557-wq/-MoonXPT"
 
 license = "MIT"
 

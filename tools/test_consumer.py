@@ -1,9 +1,13 @@
 """Compile a separate module using only the public package, without publishing."""
 from pathlib import Path
+import argparse
 import subprocess
 import tempfile
 
-project=Path(__file__).resolve().parents[1]
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--library-dir',type=Path,help='consume an extracted library archive instead of this repository')
+args=parser.parse_args()
+project=(args.library_dir or Path(__file__).resolve().parents[1]).resolve()
 with tempfile.TemporaryDirectory(prefix='moonxpt-consumer-') as name:
     root=Path(name)
     (root/'library').symlink_to(project,target_is_directory=True)

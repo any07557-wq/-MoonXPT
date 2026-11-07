@@ -28,6 +28,8 @@ moon.mod的version字段是产品版本依据；当前阶段不创建标签、Re
 这些包用于阶段A版本核对。完整源码/库制品的最终清单、README链接、公共消费方、
 发布元数据及最终候选复现仍属于阶段B/R2；本次候选包不因此被声明为正式Release制品。
 标准库包过滤tools和.github，库包中的开发验证命令需使用完整仓库。
+阶段B模块readme指向README.library.md，库包只保留该入口与指定用户文档；完整源码
+仍保留README.md、CHANGELOG、全部工具/证据和Git历史，具体见[打包说明](artifacts.md)。
 
 ## 验证与后续状态
 

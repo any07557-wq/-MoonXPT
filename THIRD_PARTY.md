@@ -24,5 +24,6 @@ Source: CDC/NCHS。原始资料可免费从 CDC 网站取得；本项目及引�
 用于统计报告/分析，不尝试身份识别、识别信息链接或重识别方法研究。
 另见 [CDC materials policy](https://www.cdc.gov/other/agencymaterials.html)。
 
-访问记录与全部一手链接见 docs/references.md。开发依赖和数据不被本项目 MIT
+访问记录与全部一手链接见 docs/references.md；完整下载/安装记录和验证脚本位于完整源码包。
+开发依赖和数据不被本项目 MIT
 许可证重新授权；没有伪造来源、实测结果或外部许可证授权。
