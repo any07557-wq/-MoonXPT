@@ -1,7 +1,10 @@
 # 第二台机器与远端CI验收
 
-状态日期：2026-11-06。用户确认第二台机器与GitHub仓库均尚未配置。
-本阶段准备配置、可移交入口和本地检查，不把它们计为外部运行通过。
+状态日期：2026-11-07。[公开仓库](https://github.com/any07557-wq/-MoonXPT)已建立，
+[Run 42329267843](https://github.com/any07557-wq/-MoonXPT/actions/runs/42329267843)
+attempt1的offline和public-corpus均成功，被测commit为
+`0dc4b95e001bc86253926be66321eb0e0f71b4db`。原始ZIP与日志已[归档](evidence/github-actions/run-42329267843/README.md)。
+2026-11-06尚未配置及本地超时的记录继续保留；云端成功没有覆盖它们。
 P0与冻结基线 `1516dfd033d4ecee1bf0fd5cb35c9ec77762a774` 不变；既有证据不覆盖。
 
 ## 同一个验证入口
@@ -74,18 +77,18 @@ checks.log含27/27、三份语料及620,612单元格/元数据对照、无请求
 
 | Action | 固定版本 | commit |
 |---|---|---|
-| checkout | v4.4.0 | 11d5960a326750d5838078e36cf38b85af677262 |
-| setup-python | v5.6.0 | a26af69be951a213d495a4c3e4e4022e16d87065 |
-| upload-artifact | v4.6.2 | ea165f8d65b6e75b540449e92b4886f43607fa02 |
+| checkout | v7.0.1 | 3d3c42e5aac5ba805825da76410c181273ba90b1 |
+| setup-python | v7.1.0 | 6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 |
+| upload-artifact | v7.0.2 | cf430e030ddbb5b0abf93d22962f4752f3646cd9 |
 
-官方来源：[checkout](https://github.com/actions/checkout/releases/tag/v4.4.0)、
-[setup-python](https://github.com/actions/setup-python/releases/tag/v5.6.0)、
-[upload-artifact](https://github.com/actions/upload-artifact/tree/v4.6.2)、
+官方来源：[checkout](https://github.com/actions/checkout/releases/tag/v7.0.1)、
+[setup-python](https://github.com/actions/setup-python/releases/tag/v7.1.0)、
+[upload-artifact](https://github.com/actions/upload-artifact/releases/tag/v7.0.2)、
 [Python分发清单](https://github.com/actions/python-versions/blob/main/versions-manifest.json)。
 
-远程仓库尚无地址；push与外部执行的授权尚待确认。本次不创建仓库、不push、不发布。
-具备目标与授权后，先执行常规job，再手动选择real_corpus，保留两类job的实际run URL、
-完整源码commit、运行attempt、结论和下载的artifact，最后归档；本地预演不替代这些记录。
+本次运行已按上述两种模式完成。已保存实际run/job URL、完整源码commit、attempt、
+结论及下载artifact，核对13+19份包内manifest记录和GitHub ZIP摘要。
+本轮只读取已有运行并归档，没有修改或触发工作流，也没有追加push或发布。
 
 ## 当前验收状态
 
@@ -95,7 +98,11 @@ checks.log含27/27、三份语料及620,612单元格/元数据对照、无请求
 | 同机隔离全新安装 | 通过 | [全新安装记录](evidence/independent-install/README.md) |
 | 新CI入口的静态/失败处理检查 | 通过 | [检查记录](evidence/ci-preparation/local-checks.json) |
 | 新CI入口的两类本地预演 | 未通过 | 均在SDK下载超过600秒时失败，未进入测试；[原始记录](evidence/ci-preparation/README.md) |
-| 第二台机器 | 待配置、未运行 | 尚无独立主机 |
-| 远端CI | 待配置、未运行 | 尚无GitHub仓库/run URL |
+| 独立云端runner | 通过 | Ubuntu24.04/Azure，与开发机WSL/Ubuntu26.04不同；[云端证据](evidence/github-actions/run-42329267843/README.md) |
+| 远端offline CI | 通过 | Run42329267843/attempt1，27/27及离线集成 |
+| 远端public-corpus CI | 通过 | 同run，27/27、620612单元格及元数据，最大ULP0 |
+| 人工指定的第二台SSH主机 | 未另行执行 | 不纳入本次云端结论 |
 
-后续版本统一、正式两类zip、v0.1.0标签与Mooncakes准备另行推进；保留当前历史与失败材料。
+以上成功严格绑定被测commit；后续文档归档提交不是该run验证的HEAD。
+后续独立发布审查、版本统一、正式两类zip、v0.1.0标签与Mooncakes准备另行推进；
+Tag/Release、Mooncakes及赛事提交按用户授权执行。

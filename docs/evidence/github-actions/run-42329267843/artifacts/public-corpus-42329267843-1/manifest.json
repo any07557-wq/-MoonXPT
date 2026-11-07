@@ -1,0 +1,99 @@
+{
+  "files": [
+    {
+      "file": "checks.log",
+      "bytes": 3575,
+      "sha256": "5999b2e0c406292e1cd8254992dd7c2e0d189ca1d8a1627130634ebf26577f29"
+    },
+    {
+      "file": "compiler.log",
+      "bytes": 245,
+      "sha256": "3e8cc208c40f60832f67377aa1b03c3e7e858f20cd5d365464944700c0bd7ad1"
+    },
+    {
+      "file": "create-venv.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "fetch-corpus.log",
+      "bytes": 91,
+      "sha256": "8fa9544cc88fb933b2c70900e29393c4a345da07fe52020da25fe74a73f1c8e9"
+    },
+    {
+      "file": "inputs/check.py",
+      "bytes": 1813,
+      "sha256": "37d5943f866faddd6c2dbe3f536e751f48d802b565229336477a333ecfd7aef4"
+    },
+    {
+      "file": "inputs/corpus.json",
+      "bytes": 1859,
+      "sha256": "b29bb58f35c62e558d240e8776c9cdedfc4fb4ee8ecfd8274d17d981b50a16c8"
+    },
+    {
+      "file": "inputs/install_toolchain.py",
+      "bytes": 4621,
+      "sha256": "599aacda853b243095ec1574e7ce0d92e23c2af5229ba2bdd99028bfe21f08ae"
+    },
+    {
+      "file": "inputs/install_toolchain.sh",
+      "bytes": 95,
+      "sha256": "15d846397812be4bf5715628f11a94b9fd2f1615405318755b82d5bfa7c13975"
+    },
+    {
+      "file": "inputs/requirements-oracle.txt",
+      "bytes": 189,
+      "sha256": "46fe57229548150a7e8da4561a10845e4c5a56b5ea89dffc177c06fa3dd0f1ec"
+    },
+    {
+      "file": "inputs/toolchain.json",
+      "bytes": 921,
+      "sha256": "802a2de35b84e7311ec59bea10bde9036a6553eaa9b78db7e42387d2586ad186"
+    },
+    {
+      "file": "install-oracles.log",
+      "bytes": 2970,
+      "sha256": "e367fd418bc644a8d6c076f2501cb2a5a7bc97edce7c2875eec0d2a04020318e"
+    },
+    {
+      "file": "install-sdk.log",
+      "bytes": 1934,
+      "sha256": "ca6829c11a273ab5fa165a1c01b67aa877789f5ed5e9e994cd7ead93da7115b7"
+    },
+    {
+      "file": "install-xport.log",
+      "bytes": 387,
+      "sha256": "9acaa673ab9a3e572d74a572da3179bc83c436083aa92d45cbc2e9a8f76e6b8b"
+    },
+    {
+      "file": "oracle-packages.json",
+      "bytes": 211,
+      "sha256": "bcab5a3eb0f10973edf76a1ee47bb67e49fd8c4ded3215fa0493d35d08346c90"
+    },
+    {
+      "file": "oracle-versions.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "os-release.txt",
+      "bytes": 400,
+      "sha256": "87458b3b1f1ca0e5c693ade771de7007c3783bdc692fa6b39eb6414bf2af2763"
+    },
+    {
+      "file": "result.json",
+      "bytes": 4980,
+      "sha256": "4fa22193888ab1c29a8047facb8b98962397337d8140a7590fff861299e4895a"
+    },
+    {
+      "file": "runner.py",
+      "bytes": 8211,
+      "sha256": "2768fdd08ac111e2dc7af5604765c1aee15116f5773829f111fd369e068fa7eb"
+    },
+    {
+      "file": "sdk-install.json",
+      "bytes": 1232,
+      "sha256": "7e549b1350eb2a4fc9c4e2d9ae9a28ee940b78d484ab960e4a4f7fa0bd434b6f"
+    }
+  ]
+}

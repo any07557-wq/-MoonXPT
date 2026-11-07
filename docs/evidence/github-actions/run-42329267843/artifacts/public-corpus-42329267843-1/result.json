@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "mode": "full",
+  "result": "PASS",
+  "exit_code": 0,
+  "started_utc": "2026-11-07T02:26:47.894034+00:00",
+  "steps": [
+    {
+      "name": "compiler",
+      "command": [
+        "cc",
+        "--version"
+      ],
+      "started_utc": "2026-11-07T02:26:47.929509+00:00",
+      "result": "PASS",
+      "exit_code": 0,
+      "log": "compiler.log",
+      "completed_utc": "2026-11-07T02:26:47.935089+00:00"
+    },
+    {
+      "name": "install-sdk",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.14.4/x64/bin/python3",
+        "/tmp/moonxpt-verify-3phbs_fr/source/tools/install_toolchain.py",
+        "/tmp/moonxpt-verify-3phbs_fr/sdk",
+        "--receipt",
+        "/home/runner/work/_temp/moonxpt-evidence/sdk-install.json"
+      ],
+      "started_utc": "2026-11-07T02:26:47.935159+00:00",
+      "result": "PASS",
+      "exit_code": 0,
+      "log": "install-sdk.log",
+      "completed_utc": "2026-11-07T02:26:51.030821+00:00"
+    },
+    {
+      "name": "create-venv",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.14.4/x64/bin/python3",
+        "-m",
+        "venv",
+        "/tmp/moonxpt-verify-3phbs_fr/source/.cache/venv"
+      ],
+      "started_utc": "2026-11-07T02:26:51.030899+00:00",
+      "result": "PASS",
+      "exit_code": 0,
+      "log": "create-venv.log",
+      "completed_utc": "2026-11-07T02:26:53.391987+00:00"
+    },
+    {
+      "name": "install-oracles",
+      "command": [
+        "/tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "install",
+        "--no-cache-dir",
+        "--index-url",
+        "https://pypi.org/simple",
+        "-r",
+        "/tmp/moonxpt-verify-3phbs_fr/source/tools/requirements-oracle.txt"
+      ],
+      "started_utc": "2026-11-07T02:26:53.392064+00:00",
+      "result": "PASS",
+      "exit_code": 0,
+      "log": "install-oracles.log",
+      "completed_utc": "2026-11-07T02:27:03.904449+00:00"
+    },
+    {
+      "name": "install-xport",
+      "command": [
+        "/tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "install",
+        "--no-cache-dir",
+        "--index-url",
+        "https://pypi.org/simple",
+        "--no-deps",
+        "xport==3.6.1"
+      ],
+      "started_utc": "2026-11-07T02:27:03.904486+00:00",
+      "result": "PASS",
+      "exit_code": 0,
+      "log": "install-xport.log",
+      "completed_utc": "2026-11-07T02:27:04.589005+00:00"
+    },
+    {
+      "name": "oracle-versions",
+      "command": [
+        "/tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python",
+        "-c",
+        "import json,sys; from importlib.metadata import distributions; from pathlib import Path; Path(sys.argv[1]).write_text(json.dumps({d.metadata['Name']:d.version for d in distributions()},indent=2)+'\\n')",
+        "/home/runner/work/_temp/moonxpt-evidence/oracle-packages.json"
+      ],
+      "started_utc": "2026-11-07T02:27:04.589080+00:00",
+      "result": "PASS",
+      "exit_code": 0,
+      "log": "oracle-versions.log",
+      "completed_utc": "2026-11-07T02:27:04.645460+00:00"
+    },
+    {
+      "name": "fetch-corpus",
+      "command": [
+        "/tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python",
+        "/tmp/moonxpt-verify-3phbs_fr/source/tools/fetch_corpus.py"
+      ],
+      "started_utc": "2026-11-07T02:27:04.645516+00:00",
+      "result": "PASS",
+      "exit_code": 0,
+      "log": "fetch-corpus.log",
+      "completed_utc": "2026-11-07T02:27:05.758957+00:00"
+    },
+    {
+      "name": "checks",
+      "command": [
+        "/tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python",
+        "/tmp/moonxpt-verify-3phbs_fr/source/tools/check.py",
+        "--oracle",
+        "--corpus"
+      ],
+      "started_utc": "2026-11-07T02:27:05.759024+00:00",
+      "result": "PASS",
+      "exit_code": 0,
+      "log": "checks.log",
+      "completed_utc": "2026-11-07T02:27:15.927844+00:00"
+    }
+  ],
+  "source_commit": "0dc4b95e001bc86253926be66321eb0e0f71b4db",
+  "host": {
+    "system": "Linux",
+    "architecture": "x86_64",
+    "kernel": "7.0.0-1017-azure",
+    "python": "3.14.4 (main, Apr 29 2026, 14:14:57) [GCC 13.3.0]"
+  },
+  "fresh_sdk": true,
+  "fresh_oracles": true,
+  "fresh_corpus": true,
+  "build_cache_reused": false,
+  "source": "git archive of committed HEAD",
+  "isolation": "new temporary directories; host filesystem/kernel remain visible",
+  "github_actions": {
+    "GITHUB_SERVER_URL": "https://github.com",
+    "GITHUB_REPOSITORY": "any07557-wq/-MoonXPT",
+    "GITHUB_RUN_ID": "42329267843",
+    "GITHUB_RUN_ATTEMPT": "1",
+    "GITHUB_JOB": "public-corpus",
+    "GITHUB_EVENT_NAME": "workflow_dispatch",
+    "GITHUB_SHA": "0dc4b95e001bc86253926be66321eb0e0f71b4db"
+  },
+  "source_tree": "b37f1c4f91896ab370b9ee880eee25be774a8386",
+  "source_archive_sha256": "e1e9fa618952d05fd9f3728f481412666735f3e7fb569cfdcf8b1e0a3f628305",
+  "completed_utc": "2026-11-07T02:27:16.147555+00:00"
+}

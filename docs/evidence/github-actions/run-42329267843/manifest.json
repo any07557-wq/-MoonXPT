@@ -1,0 +1,337 @@
+{
+  "archived_date": "2026-11-07",
+  "run_id": 42329267843,
+  "run_attempt": 1,
+  "source_commit": "0dc4b95e001bc86253926be66321eb0e0f71b4db",
+  "frozen_product_baseline": "1516dfd033d4ecee1bf0fd5cb35c9ec77762a774",
+  "method": "verbatim gh api GET response/ZIP copies, unchanged extraction; verification.json and README are derived",
+  "boundary": "Ubuntu24.04 GitHub-hosted Linux x86_64; local WSL differs; manual SSH-host test not performed",
+  "verifier_sha256": "9b6e177bfc312c12f18b0c184871bdaf68fa366c5cabf14f4b039b7031076fe6",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 3769,
+      "sha256": "b39a8f7ce9242f46c0f8abd3d722f0edd47af238a7c3af02f09aac2aecf36883"
+    },
+    {
+      "file": "artifacts/offline-42329267843-1/checks.log",
+      "bytes": 1826,
+      "sha256": "8991630c470c89c6fb79ec66227b78d46895dea62f1da38f0486acc0cc2c29ec"
+    },
+    {
+      "file": "artifacts/offline-42329267843-1/compiler.log",
+      "bytes": 245,
+      "sha256": "3e8cc208c40f60832f67377aa1b03c3e7e858f20cd5d365464944700c0bd7ad1"
+    },
+    {
+      "file": "artifacts/offline-42329267843-1/inputs/check.py",
+      "bytes": 1813,
+      "sha256": "37d5943f866faddd6c2dbe3f536e751f48d802b565229336477a333ecfd7aef4"
+    },
+    {
+      "file": "artifacts/offline-42329267843-1/inputs/corpus.json",
+      "bytes": 1859,
+      "sha256": "b29bb58f35c62e558d240e8776c9cdedfc4fb4ee8ecfd8274d17d981b50a16c8"
+    },
+    {
+      "file": "artifacts/offline-42329267843-1/inputs/install_toolchain.py",
+      "bytes": 4621,
+      "sha256": "599aacda853b243095ec1574e7ce0d92e23c2af5229ba2bdd99028bfe21f08ae"
+    },
+    {
+      "file": "artifacts/offline-42329267843-1/inputs/install_toolchain.sh",
+      "bytes": 95,
+      "sha256": "15d846397812be4bf5715628f11a94b9fd2f1615405318755b82d5bfa7c13975"
+    },
+    {
+      "file": "artifacts/offline-42329267843-1/inputs/requirements-oracle.txt",
+      "bytes": 189,
+      "sha256": "46fe57229548150a7e8da4561a10845e4c5a56b5ea89dffc177c06fa3dd0f1ec"
+    },
+    {
+      "file": "artifacts/offline-42329267843-1/inputs/toolchain.json",
+      "bytes": 921,
+      "sha256": "802a2de35b84e7311ec59bea10bde9036a6553eaa9b78db7e42387d2586ad186"
+    },
+    {
+      "file": "artifacts/offline-42329267843-1/install-sdk.log",
+      "bytes": 1934,
+      "sha256": "13ea4acf8d1ffd90b3965cbc88ff5076528bb277001934cfb42f4dc62757eea6"
+    },
+    {
+      "file": "artifacts/offline-42329267843-1/manifest.json",
+      "bytes": 1994,
+      "sha256": "eaed75e3f4df419e92f5468cb086fe676b5a7409d4242793cea841409e0bcb8b"
+    },
+    {
+      "file": "artifacts/offline-42329267843-1/os-release.txt",
+      "bytes": 400,
+      "sha256": "87458b3b1f1ca0e5c693ade771de7007c3783bdc692fa6b39eb6414bf2af2763"
+    },
+    {
+      "file": "artifacts/offline-42329267843-1/result.json",
+      "bytes": 2355,
+      "sha256": "953e2145a4f400f66a5d494ef83e49a767fca570e922e3cd1d8adae4b0fabc47"
+    },
+    {
+      "file": "artifacts/offline-42329267843-1/runner.py",
+      "bytes": 8211,
+      "sha256": "2768fdd08ac111e2dc7af5604765c1aee15116f5773829f111fd369e068fa7eb"
+    },
+    {
+      "file": "artifacts/offline-42329267843-1/sdk-install.json",
+      "bytes": 1232,
+      "sha256": "1310bc5e7f3e11cff6ca2157e9118e68d9f0c341736ed5ec3fcf3808456f5f92"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/checks.log",
+      "bytes": 3575,
+      "sha256": "5999b2e0c406292e1cd8254992dd7c2e0d189ca1d8a1627130634ebf26577f29"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/compiler.log",
+      "bytes": 245,
+      "sha256": "3e8cc208c40f60832f67377aa1b03c3e7e858f20cd5d365464944700c0bd7ad1"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/create-venv.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/fetch-corpus.log",
+      "bytes": 91,
+      "sha256": "8fa9544cc88fb933b2c70900e29393c4a345da07fe52020da25fe74a73f1c8e9"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/inputs/check.py",
+      "bytes": 1813,
+      "sha256": "37d5943f866faddd6c2dbe3f536e751f48d802b565229336477a333ecfd7aef4"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/inputs/corpus.json",
+      "bytes": 1859,
+      "sha256": "b29bb58f35c62e558d240e8776c9cdedfc4fb4ee8ecfd8274d17d981b50a16c8"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/inputs/install_toolchain.py",
+      "bytes": 4621,
+      "sha256": "599aacda853b243095ec1574e7ce0d92e23c2af5229ba2bdd99028bfe21f08ae"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/inputs/install_toolchain.sh",
+      "bytes": 95,
+      "sha256": "15d846397812be4bf5715628f11a94b9fd2f1615405318755b82d5bfa7c13975"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/inputs/requirements-oracle.txt",
+      "bytes": 189,
+      "sha256": "46fe57229548150a7e8da4561a10845e4c5a56b5ea89dffc177c06fa3dd0f1ec"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/inputs/toolchain.json",
+      "bytes": 921,
+      "sha256": "802a2de35b84e7311ec59bea10bde9036a6553eaa9b78db7e42387d2586ad186"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/install-oracles.log",
+      "bytes": 2970,
+      "sha256": "e367fd418bc644a8d6c076f2501cb2a5a7bc97edce7c2875eec0d2a04020318e"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/install-sdk.log",
+      "bytes": 1934,
+      "sha256": "ca6829c11a273ab5fa165a1c01b67aa877789f5ed5e9e994cd7ead93da7115b7"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/install-xport.log",
+      "bytes": 387,
+      "sha256": "9acaa673ab9a3e572d74a572da3179bc83c436083aa92d45cbc2e9a8f76e6b8b"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/manifest.json",
+      "bytes": 2900,
+      "sha256": "c832c3dacffb68fa7d7826f6b77e4083630bec31c3ab28d0f363967b79a46f6c"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/oracle-packages.json",
+      "bytes": 211,
+      "sha256": "bcab5a3eb0f10973edf76a1ee47bb67e49fd8c4ded3215fa0493d35d08346c90"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/oracle-versions.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/os-release.txt",
+      "bytes": 400,
+      "sha256": "87458b3b1f1ca0e5c693ade771de7007c3783bdc692fa6b39eb6414bf2af2763"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/result.json",
+      "bytes": 4980,
+      "sha256": "4fa22193888ab1c29a8047facb8b98962397337d8140a7590fff861299e4895a"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/runner.py",
+      "bytes": 8211,
+      "sha256": "2768fdd08ac111e2dc7af5604765c1aee15116f5773829f111fd369e068fa7eb"
+    },
+    {
+      "file": "artifacts/public-corpus-42329267843-1/sdk-install.json",
+      "bytes": 1232,
+      "sha256": "7e549b1350eb2a4fc9c4e2d9ae9a28ee940b78d484ab960e4a4f7fa0bd434b6f"
+    },
+    {
+      "file": "artifacts.json",
+      "bytes": 1415,
+      "sha256": "1269def19b7ff275edb24d65a5ecedc05483681fc20591bd1f0c2f9a624a68c4"
+    },
+    {
+      "file": "downloads.json",
+      "bytes": 1189,
+      "sha256": "d91168e614d139828e29bc50d98b973b1f3b5cf0190133ff4eb86fe38effa274"
+    },
+    {
+      "file": "jobs.json",
+      "bytes": 4834,
+      "sha256": "544f152f50ac4e7dcfa3324ebc411f6841637fdd2e60f75bdcfff1bc7c43dd0d"
+    },
+    {
+      "file": "offline-42329267843-1.zip",
+      "bytes": 12753,
+      "sha256": "daf0f5f0b5942ae7d7b1aca3bbc687c95376c8a2c4bda891f62438fece48dd1e"
+    },
+    {
+      "file": "public-corpus-42329267843-1.zip",
+      "bytes": 15850,
+      "sha256": "4d110a02414a4839b1c88a31ff9aabe0d0098d17ff5dd75b0eea2fa29d59c7bd"
+    },
+    {
+      "file": "retrieval.json",
+      "bytes": 436,
+      "sha256": "da805828caba76b9083de5614655f59313ad7707c1b8bbf5f64358a250361bd5"
+    },
+    {
+      "file": "run.json",
+      "bytes": 12269,
+      "sha256": "8b7c6b4417f1ae15967fcc4efba0b3a2ee33f5b4ebc3427a1534434ad5a32b58"
+    },
+    {
+      "file": "verification.json",
+      "bytes": 2643,
+      "sha256": "70620d99978d02536478d800287438e942d2a0dd400a3fb928ac63a6f361a9f8"
+    },
+    {
+      "file": "workflow-logs/0_offline.txt",
+      "bytes": 26986,
+      "sha256": "90c3b3016602a6be52ae4b1dbaeb984bdfb87c7cd265307182a49a7bfae1accf"
+    },
+    {
+      "file": "workflow-logs/1_public-corpus.txt",
+      "bytes": 34865,
+      "sha256": "4ec8f98be80f475b005f48a21d15a253e707e8ada0c1708bd4bab8b86dcf6291"
+    },
+    {
+      "file": "workflow-logs/offline/10_Post Run actions_checkout@3d3c42e5aac5ba805825da76410c181273ba90b1.txt",
+      "bytes": 1743,
+      "sha256": "45ddebcec45205d48aad86b93f34027a18c7cd3c7d372d6b979a19d6b9546bdc"
+    },
+    {
+      "file": "workflow-logs/offline/11_Complete job.txt",
+      "bytes": 61,
+      "sha256": "67a4964599bbbec9b97ae4b87e75d0bc73fcad7d5c56d7ec2d133545c2f65129"
+    },
+    {
+      "file": "workflow-logs/offline/1_Set up job.txt",
+      "bytes": 2269,
+      "sha256": "8e23e63ca4d7915ae103ea9fbe2004ec49c1f1070143be635dcab91a571f7869"
+    },
+    {
+      "file": "workflow-logs/offline/2_Run actions_checkout@3d3c42e5aac5ba805825da76410c181273ba90b1.txt",
+      "bytes": 11007,
+      "sha256": "9068869db77b17ebda345f330f5064491e8c48ee9da1e0d5636b2344e04d4abc"
+    },
+    {
+      "file": "workflow-logs/offline/3_Run actions_setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0.txt",
+      "bytes": 2855,
+      "sha256": "943ac1b61811a063678f57bab3d478ed2273c44050f76cfaa96cb33f04ca9fc2"
+    },
+    {
+      "file": "workflow-logs/offline/4_Fresh SDK, build and offline tests.txt",
+      "bytes": 6744,
+      "sha256": "c451e4bf938b8b6b09dc283b6aebb27cdfcdd68ab138b2cfe5c5d467a228fb8b"
+    },
+    {
+      "file": "workflow-logs/offline/5_Preserve verification evidence including failures.txt",
+      "bytes": 2278,
+      "sha256": "101101c60973830d1e0d477193bbc6bcce7ee320be299809787a90afee9e9df2"
+    },
+    {
+      "file": "workflow-logs/offline/9_Post Run actions_setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0.txt",
+      "bytes": 50,
+      "sha256": "8fad50efe187f7adb71744262bebf683f22af1775bef74073c9e5a397cf88e18"
+    },
+    {
+      "file": "workflow-logs/offline/system.txt",
+      "bytes": 570,
+      "sha256": "3a6a42b1a18b2f9750c265e1f745ea68d1085bbf2f21ff348477a36fc2640508"
+    },
+    {
+      "file": "workflow-logs/public-corpus/10_Post Run actions_checkout@3d3c42e5aac5ba805825da76410c181273ba90b1.txt",
+      "bytes": 1743,
+      "sha256": "3806a9a0383938c3d14bb2227f4e79ba1fa10af5c8471789b8719dfaf7dc25e8"
+    },
+    {
+      "file": "workflow-logs/public-corpus/11_Complete job.txt",
+      "bytes": 61,
+      "sha256": "3c0ee9fb1b668c845ddb3e9f7c50e0ad11efd717db82104a2121663f4d41342e"
+    },
+    {
+      "file": "workflow-logs/public-corpus/1_Set up job.txt",
+      "bytes": 2274,
+      "sha256": "e2feba431e29aea15a0f4fa039ce5b77b481966a6873109acb2eb52e3d160414"
+    },
+    {
+      "file": "workflow-logs/public-corpus/2_Run actions_checkout@3d3c42e5aac5ba805825da76410c181273ba90b1.txt",
+      "bytes": 11007,
+      "sha256": "764042943a594f234e43fb6c6d987cdd1b51dcc4ec8a87b7d6bbd2ca682f0bfc"
+    },
+    {
+      "file": "workflow-logs/public-corpus/3_Run actions_setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0.txt",
+      "bytes": 2854,
+      "sha256": "310327115a61bb48a6a3b520d46b5c3d25abd0064cf0821d6805935f755045bb"
+    },
+    {
+      "file": "workflow-logs/public-corpus/4_Fresh SDK, oracles and hash-pinned public corpus.txt",
+      "bytes": 14595,
+      "sha256": "bc944868fda07f8b2660bd290fb67ae0b1c1684b61a2727e5fdc25185d6964db"
+    },
+    {
+      "file": "workflow-logs/public-corpus/5_Preserve verification evidence including failures.txt",
+      "bytes": 2302,
+      "sha256": "50d2833f8ecd668b20de2e137c497f4d80731625af0f5146dca8d88e9847cbc3"
+    },
+    {
+      "file": "workflow-logs/public-corpus/9_Post Run actions_setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0.txt",
+      "bytes": 50,
+      "sha256": "d6a0f41010358e4b22b86c095ce9e92d68e802ecf459598ef2ee2c693ee28558"
+    },
+    {
+      "file": "workflow-logs/public-corpus/system.txt",
+      "bytes": 754,
+      "sha256": "b7e582971244653193f759b1e8d5c3f740235526bfb193d4d7e043e3eb901d6b"
+    },
+    {
+      "file": "workflow-logs.zip",
+      "bytes": 38598,
+      "sha256": "facc22ba2f2866668059e561c7617c041805a04b4a63ac24073130b6e8d14020"
+    },
+    {
+      "file": "workflow.yml",
+      "bytes": 2102,
+      "sha256": "741955207a41cd34a6856399b2892e32127c095cdfd5e1099b366136939db294"
+    }
+  ]
+}

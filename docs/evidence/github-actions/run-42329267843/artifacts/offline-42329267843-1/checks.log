@@ -1,0 +1,23 @@
++ moon fmt --check
+Finished. moon: ran 42 tasks, now up to date
++ moon check --target native --deny-warn
+Finished. moon: ran 14 tasks, now up to date
++ moon test --target native --deny-warn
+Total tests: 27, passed: 27, failed: 0.
++ moon build --target native --deny-warn
+Finished. moon: ran 20 tasks, now up to date
++ /tmp/moonxpt-verify-ruy98q6k/source/_build/native/debug/build/examples/write/write.exe /tmp/moonxpt-verify-ruy98q6k/source/.cache/writer-example.xpt
+wrote NUMBERS(3), WORDS(3), TAGS(28), EMPTY(0)
++ /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_inspect.py
+PASS: inspect JSON, counts, multi-member hints, spaces in paths, stderr, usage/I/O/format codes
++ /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_export.py
+PASS: selected member export, independent CSV/JSON, no overwrite, force, aliases, failure cleanup
++ /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_exchange.py
+PASS: four member CSV/JSON semantic roundtrips, stable writes, typed missing, versions, duplicate columns, malformed CSV and cleanup
++ /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_fixtures.py
+PASS: independent ReadStat/xport inputs, format/informat, 136-byte descriptors, reordered offsets, CP1252 multi-member exchange
++ /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_malformed.py
+{"seed": 20261104, "truncations": 79, "mutations": 256, "targeted": 8, "result": "PASS", "timeout_seconds": 5}
++ /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_consumer.py
+public API consumer PASS
+PASS: all requested checks completed; none skipped

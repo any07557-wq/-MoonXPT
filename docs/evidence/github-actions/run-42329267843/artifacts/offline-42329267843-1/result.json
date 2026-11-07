@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "mode": "offline",
+  "result": "PASS",
+  "exit_code": 0,
+  "started_utc": "2026-11-07T02:26:49.735288+00:00",
+  "steps": [
+    {
+      "name": "compiler",
+      "command": [
+        "cc",
+        "--version"
+      ],
+      "started_utc": "2026-11-07T02:26:49.771253+00:00",
+      "result": "PASS",
+      "exit_code": 0,
+      "log": "compiler.log",
+      "completed_utc": "2026-11-07T02:26:49.777101+00:00"
+    },
+    {
+      "name": "install-sdk",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.14.4/x64/bin/python3",
+        "/tmp/moonxpt-verify-ruy98q6k/source/tools/install_toolchain.py",
+        "/tmp/moonxpt-verify-ruy98q6k/sdk",
+        "--receipt",
+        "/home/runner/work/_temp/moonxpt-evidence/sdk-install.json"
+      ],
+      "started_utc": "2026-11-07T02:26:49.777167+00:00",
+      "result": "PASS",
+      "exit_code": 0,
+      "log": "install-sdk.log",
+      "completed_utc": "2026-11-07T02:26:53.249930+00:00"
+    },
+    {
+      "name": "checks",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.14.4/x64/bin/python3",
+        "/tmp/moonxpt-verify-ruy98q6k/source/tools/check.py"
+      ],
+      "started_utc": "2026-11-07T02:26:53.250029+00:00",
+      "result": "PASS",
+      "exit_code": 0,
+      "log": "checks.log",
+      "completed_utc": "2026-11-07T02:26:58.670506+00:00"
+    }
+  ],
+  "source_commit": "0dc4b95e001bc86253926be66321eb0e0f71b4db",
+  "host": {
+    "system": "Linux",
+    "architecture": "x86_64",
+    "kernel": "7.0.0-1017-azure",
+    "python": "3.14.4 (main, Apr 29 2026, 14:14:57) [GCC 13.3.0]"
+  },
+  "fresh_sdk": true,
+  "fresh_oracles": false,
+  "fresh_corpus": false,
+  "build_cache_reused": false,
+  "source": "git archive of committed HEAD",
+  "isolation": "new temporary directories; host filesystem/kernel remain visible",
+  "github_actions": {
+    "GITHUB_SERVER_URL": "https://github.com",
+    "GITHUB_REPOSITORY": "any07557-wq/-MoonXPT",
+    "GITHUB_RUN_ID": "42329267843",
+    "GITHUB_RUN_ATTEMPT": "1",
+    "GITHUB_JOB": "offline",
+    "GITHUB_EVENT_NAME": "workflow_dispatch",
+    "GITHUB_SHA": "0dc4b95e001bc86253926be66321eb0e0f71b4db"
+  },
+  "source_tree": "b37f1c4f91896ab370b9ee880eee25be774a8386",
+  "source_archive_sha256": "e1e9fa618952d05fd9f3728f481412666735f3e7fb569cfdcf8b1e0a3f628305",
+  "completed_utc": "2026-11-07T02:26:58.710923+00:00"
+}

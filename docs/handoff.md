@@ -1,6 +1,6 @@
 # 最终交接（2026-11-05）
 
-发布收尾状态更新：2026-11-06。原本地交付提交审计仍固定于C16。
+发布收尾状态更新：2026-11-07。原本地交付提交审计仍固定于C16。
 
 项目路径：`/home/user/MoonBit_Program/MoonXPT`。开始状态为新建空目录，无基线 HEAD，
 没有已有用户代码；所有下列提交属于本任务，作者使用用户提供的本仓库身份。
@@ -20,6 +20,10 @@
   官方SDK/core、无缓存PyPI oracle与重新下载语料，完整检查通过且无跳过。
   开发HOME不可见；共享宿主内核与基础OS，不计作第二台机器或远端CI。
 - MIT自有源码、第三方许可与来源、CI配置、固定依赖、公共接口签名、实测演示脚本和一页赛事说明。
+- [GitHub Run42329267843](evidence/github-actions/run-42329267843/README.md)：托管Ubuntu24.04
+  的offline及public-corpus均成功。原始ZIP摘要、包内manifest、源提交与日志均重验通过；
+  27/27、620612单元格及元数据、最大ULP0。严格绑定源码commit
+  0dc4b95e001bc86253926be66321eb0e0f71b4db，原P0没有变化。
 
 运行入口：`python3 tools/check.py`；真实验证：
 `.cache/venv/bin/python tools/check.py --oracle --corpus`；
@@ -38,9 +42,10 @@
 - ReadStat不用于证明多成员；xport DataFrame不用于证明特殊缺失；R未运行。证据边界逐项公开。
 - 输出成组发布支持进程内错误回滚，不承诺两文件跨机器崩溃原子性；遇并发外部更改会保留恢复备份。
 - 原工具链403已定位为安装器归档版本键错误并修复，官方固定版本全新安装通过。
-  [安装报告](toolchain-installation.md)保留HTTP调查及两次失败。第二台机器与远端Actions
-  尚未验证；后续CI已接入新SDK/新依赖和证据归档入口，不自动回退latest。
-- 尚未创建远程仓库、push、发布Mooncakes、发布原生二进制或提交赛事表单。十一月赛程仍未可靠核实。
+  [安装报告](toolchain-installation.md)保留HTTP调查及两次失败。独立云端runner已通过，
+  人工指定的第二台SSH主机没有另测；不自动回退latest。
+- [公开仓库](https://github.com/any07557-wq/-MoonXPT)与远端CI已存在。尚未创建正式Tag/Release、
+  发布Mooncakes或提交赛事表单；十一月赛程仍待核实。
 
 ## 实际提交审计
 
@@ -69,13 +74,11 @@ C16完整hash在本次证据归档修订中补齐，不要求任何提交写入�
 
 ## 待发布步骤
 
-1. 基于已验证安装入口检查远端CI配置；取得真实runner运行证据。远程仓库地址与相关外部动作需确认授权。
+1. 基于已归档云端证据进行独立AI发布审查，记录具体缺口与处理结论。
 2. 统一CLI与模块版本，核查v0.1.0标签；分别生成使用者库包与包含tools、CI、文档的完整源码包。
 3. 核实Mooncakes命名空间、repository和赛事要求，准备可审查的Release及参赛材料。
-4. 证据齐全且取得明确授权后，再push、发布Release/Mooncakes并提交赛事表单。
+4. 证据与制品齐全且取得明确授权后，创建正式Tag/Release，发布Mooncakes并提交赛事表单。
 
-原16笔基线保持冻结，发布收尾追加提交。以上外部发布动作尚未执行。
-第二台机器与远程仓库经用户确认尚未配置，具体移交/执行步骤见
-[外部验收说明](external-verification.md)。本地CI检查不计为远端运行。
-新增CI入口静态检查通过，但两类本地预演均在SDK下载600秒上限失败，尚未进入新的测试。
-原始失败与移交材料见[CI准备证据](evidence/ci-preparation/README.md)。
+原16笔基线保持冻结，发布收尾追加提交。云端成功与原失败材料分开归档，见
+[外部验收说明](external-verification.md)及[历史准备证据](evidence/ci-preparation/README.md)。
+本轮仅归档已有运行和发布审查，未触发CI、追加push、创建Tag或Release。

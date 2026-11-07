@@ -5,8 +5,9 @@ CSV + 版本化 JSON 元数据在程序间交换数据。核心解析、IBM 浮�
 字符编码和 CSV/JSON 都由 MoonBit 实现；C 仅适配文件系统。
 产品库和 CLI 运行不依赖 Python、R 或外部统计解析器。
 
-已验证 Linux x86_64 native。当前交付是本地源码、可构建 CLI 和连续提交；
-尚未发布远程仓库或 Mooncakes。完整边界见[兼容矩阵](docs/compatibility.md)，
+已验证 Linux x86_64 native。本地与GitHub托管Ubuntu 24.04均通过技术验收，
+[公开仓库](https://github.com/any07557-wq/-MoonXPT)已保留连续历史；正式Release和Mooncakes尚未发布。
+云端记录见[Run 42329267843归档](docs/evidence/github-actions/run-42329267843/README.md)。完整边界见[兼容矩阵](docs/compatibility.md)，
 证据见[验证报告](docs/validation-report.md)和[交接报告](docs/handoff.md)。
 
 ## 构建与使用

@@ -61,13 +61,15 @@ WSL DNS 布局配置，其他宿主需核对 DNS 挂载。结果保存在 `.cach
 它共享宿主 Linux 内核、基础 OS、DNS 和网络代理，不代表第二台机器或新 OS 镜像验证。
 
 `.github/workflows/ci.yml` 配置 Linux 托管 runner：普通离线小夹具检查与手动
-触发的真实语料任务分开；语料缓存键绑定清单，使用时仍验 hash。
+触发的真实语料任务分开；完整验收每次重新下载并验证固定hash，不使用语料缓存。
 后续CI已接入 `tools/verify_release.py`，固定正确版本键与Python 3.14.4，按完整commit固定
 Actions，并在成功/失败后尝试保存逐阶段日志和回执。完整语料任务不复用语料或oracle缓存。
 第二台机器可使用同一入口与Git bundle移交；具体步骤及证据要求见
-[外部验收说明](external-verification.md)。尚未运行远端Actions。
+[外部验收说明](external-verification.md)。
 2026-11-06本地两类入口预演均因SDK下载超过600秒上限而失败，未进入新的构建/测试；
 静态与失败处理检查通过。完整记录见[CI准备证据](evidence/ci-preparation/README.md)，
-不能将本次配置或旧验收结果计作远端CI通过。
-远程 runner、版本标签、两类源码制品的一致性仍待后续收尾。
-push、Release、Mooncakes 发布和赛事提交等待证据齐全及明确授权。
+该历史失败没有改写。2026-11-07的Run42329267843/attempt1在GitHub托管Ubuntu24.04
+分别完成offline和public-corpus，均success：新SDK、新oracle/语料，27组及620612单元格
+全部通过，无跳过。原始记录和可离线重验的ZIP见[云端归档](evidence/github-actions/run-42329267843/README.md)。
+被测commit为0dc4b95e001bc86253926be66321eb0e0f71b4db，后续归档提交不属于该run的测试对象。
+版本标签、两类源码制品的一致性仍待后续收尾；Release、Mooncakes发布和赛事提交尚未执行。

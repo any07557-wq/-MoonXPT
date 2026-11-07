@@ -1,0 +1,30 @@
+﻿2026-11-07T02:26:58.7314319Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-11-07T02:26:58.7314736Z with:
+2026-11-07T02:26:58.7314950Z   name: offline-42329267843-1
+2026-11-07T02:26:58.7315245Z   path: /home/runner/work/_temp/moonxpt-evidence/
+2026-11-07T02:26:58.7315550Z   if-no-files-found: error
+2026-11-07T02:26:58.7315984Z   retention-days: 30
+2026-11-07T02:26:58.7316208Z   compression-level: 6
+2026-11-07T02:26:58.7316428Z   overwrite: false
+2026-11-07T02:26:58.7316651Z   include-hidden-files: false
+2026-11-07T02:26:58.7316888Z   archive: true
+2026-11-07T02:26:58.7317089Z env:
+2026-11-07T02:26:58.7317343Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:58.7317760Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.4/x64/lib/pkgconfig
+2026-11-07T02:26:58.7318188Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:58.7318554Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:58.7318913Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:58.7319332Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.4/x64/lib
+2026-11-07T02:26:58.7319639Z ##[endgroup]
+2026-11-07T02:26:58.8817530Z With the provided path, there will be 14 files uploaded
+2026-11-07T02:26:58.8818557Z Artifact name is valid!
+2026-11-07T02:26:58.8819040Z Root directory input is valid!
+2026-11-07T02:26:59.2832514Z Uploading artifact: offline-42329267843-1.zip
+2026-11-07T02:26:59.2870464Z Beginning upload of artifact content to blob storage
+2026-11-07T02:26:59.5550861Z Uploaded bytes 12753
+2026-11-07T02:26:59.6102870Z Finished uploading artifact content to blob storage!
+2026-11-07T02:26:59.6104503Z SHA256 digest of uploaded artifact is daf0f5f0b5942ae7d7b1aca3bbc687c95376c8a2c4bda891f62438fece48dd1e
+2026-11-07T02:26:59.6106365Z Finalizing artifact upload
+2026-11-07T02:27:00.1731598Z Artifact offline-42329267843-1 successfully finalized. Artifact ID 13556537196
+2026-11-07T02:27:00.1732560Z Artifact offline-42329267843-1 has been successfully uploaded! Final size is 12753 bytes. Artifact ID is 13556537196
+2026-11-07T02:27:00.1736960Z Artifact download URL: https://github.com/any07557-wq/-MoonXPT/actions/runs/42329267843/artifacts/13556537196

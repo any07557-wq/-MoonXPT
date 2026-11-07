@@ -1,0 +1,38 @@
+﻿2026-11-07T02:26:39.6229498Z ##[group]Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+2026-11-07T02:26:39.6230887Z with:
+2026-11-07T02:26:39.6231923Z   python-version: 3.14.4
+2026-11-07T02:26:39.6232780Z   check-latest: false
+2026-11-07T02:26:39.6240740Z   token: ***
+2026-11-07T02:26:39.6241992Z   mirror: https://raw.githubusercontent.com/actions/python-versions/main
+2026-11-07T02:26:39.6243345Z   update-environment: true
+2026-11-07T02:26:39.6244221Z   allow-prereleases: false
+2026-11-07T02:26:39.6245085Z   freethreaded: false
+2026-11-07T02:26:39.6245891Z ##[endgroup]
+2026-11-07T02:26:39.7186749Z ##[group]Installed versions
+2026-11-07T02:26:39.7201542Z Version 3.14.4 was not found in the local cache
+2026-11-07T02:26:40.3682961Z Version 3.14.4 is available for downloading
+2026-11-07T02:26:40.3686165Z Download from "https://github.com/actions/python-versions/releases/download/3.14.4-25113653268/python-3.14.4-linux-24.04-x64.tar.gz"
+2026-11-07T02:26:41.1161725Z Extract downloaded archive
+2026-11-07T02:26:41.1278003Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/90d73372-68ed-4e3a-95c6-10e9e625c116 -f /home/runner/work/_temp/a892e086-9b5f-4f31-82d1-842daef0eef8
+2026-11-07T02:26:43.0080445Z Execute installation script
+2026-11-07T02:26:43.0175835Z Check if Python hostedtoolcache folder exist...
+2026-11-07T02:26:43.0176668Z Create Python 3.14.4 folder
+2026-11-07T02:26:43.0188926Z Copy Python binaries to hostedtoolcache folder
+2026-11-07T02:26:43.4088505Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+2026-11-07T02:26:43.4124899Z Upgrading pip...
+2026-11-07T02:26:45.4285340Z Looking in links: /tmp/tmpr3zbn0lr
+2026-11-07T02:26:45.4288278Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.14.4/x64/lib/python3.14/site-packages (26.0.1)
+2026-11-07T02:26:46.4105735Z Collecting pip
+2026-11-07T02:26:46.5058020Z Downloading pip-26.3-py3-none-any.whl.metadata (4.6 kB)
+2026-11-07T02:26:46.5328121Z Downloading pip-26.3-py3-none-any.whl (2.0 MB)
+2026-11-07T02:26:46.6691850Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 26.7 MB/s  0:00:00
+2026-11-07T02:26:46.6692416Z 
+2026-11-07T02:26:46.6964509Z Installing collected packages: pip
+2026-11-07T02:26:46.6965032Z Attempting uninstall: pip
+2026-11-07T02:26:46.6986579Z Found existing installation: pip 26.0.1
+2026-11-07T02:26:46.7223092Z Uninstalling pip-26.0.1:
+2026-11-07T02:26:46.7266925Z Successfully uninstalled pip-26.0.1
+2026-11-07T02:26:47.7668923Z Successfully installed pip-26.3
+2026-11-07T02:26:47.8191109Z Create complete file
+2026-11-07T02:26:47.8222639Z Successfully set up CPython (3.14.4)
+2026-11-07T02:26:47.8223594Z ##[endgroup]

@@ -1,0 +1,9 @@
+{
+  "retrieved_at_utc": "2026-11-07T02:34:09.724660+00:00",
+  "method": "gh api GET; response bodies saved verbatim; no workflow dispatch or mutations",
+  "endpoints": {
+    "run.json": "repos/any07557-wq/-MoonXPT/actions/runs/42329267843",
+    "jobs.json": "repos/any07557-wq/-MoonXPT/actions/runs/42329267843/jobs?per_page=100",
+    "artifacts.json": "repos/any07557-wq/-MoonXPT/actions/runs/42329267843/artifacts?per_page=100"
+  }
+}

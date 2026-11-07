@@ -21,6 +21,7 @@ C16包含27组MoonBit测试、6项离线集成、两个oracle家族和3份真实
 
 - [官方工具链来源调查](toolchain-discovery/README.md)：原错误版本键、正确固定入口、HTTP状态和摘要。
 - [全新安装验收](independent-install/README.md)：同机隔离用户空间、全新SDK/oracle/语料，完整通过；两次前置失败另存。
-- [外部验收准备](ci-preparation/README.md)：CI配置、可移交Git bundle和本地入口检查；第二台机器/远端CI仍待配置。
+- [外部验收准备](ci-preparation/README.md)：2026-11-06的CI配置、可移交Git bundle、本地入口检查及两次下载超时，保留历史结果。
+- [GitHub Run 42329267843](github-actions/run-42329267843/README.md)：2026-11-07两类云端job成功；原始API、ZIP、日志及完整性重验。
 
 各后续目录有自己的SHA-256清单，原manifest.json继续只登记C15/C16历史材料。

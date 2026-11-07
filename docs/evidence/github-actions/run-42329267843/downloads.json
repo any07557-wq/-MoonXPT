@@ -1,0 +1,30 @@
+{
+  "retrieved_at_utc": "2026-11-07T02:34:55.850341+00:00",
+  "downloads": [
+    {
+      "file": "workflow-logs.zip",
+      "url": "https://api.github.com/repos/any07557-wq/-MoonXPT/actions/runs/42329267843/logs",
+      "bytes": 38598,
+      "sha256": "facc22ba2f2866668059e561c7617c041805a04b4a63ac24073130b6e8d14020",
+      "github_digest_verified": false,
+      "extracted_files": 20
+    },
+    {
+      "file": "offline-42329267843-1.zip",
+      "url": "https://api.github.com/repos/any07557-wq/-MoonXPT/actions/artifacts/13556537196/zip",
+      "bytes": 12753,
+      "sha256": "daf0f5f0b5942ae7d7b1aca3bbc687c95376c8a2c4bda891f62438fece48dd1e",
+      "github_digest_verified": true,
+      "extracted_files": 14
+    },
+    {
+      "file": "public-corpus-42329267843-1.zip",
+      "url": "https://api.github.com/repos/any07557-wq/-MoonXPT/actions/artifacts/13556427438/zip",
+      "bytes": 15850,
+      "sha256": "4d110a02414a4839b1c88a31ff9aabe0d0098d17ff5dd75b0eea2fa29d59c7bd",
+      "github_digest_verified": true,
+      "extracted_files": 20
+    }
+  ],
+  "boundary": "artifact ZIP hashes match GitHub API digest; workflow logs ZIP has locally observed HTTPS-download digest only"
+}

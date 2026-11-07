@@ -88,3 +88,15 @@ Python语法与失败状态/双流日志/拒绝覆盖检查通过。Git bundle�
 offline/full两次本地预演各自全新下载SDK，均在官方原生包传输阶段超过600秒上限，结果FAIL，
 未进入构建、测试、oracle或语料步骤。没有复用旧SDK或放宽限制，原样归档失败、源提交、
 环境、输入及hash；不能计为新CI入口完整成功，也不计为第二台机器/远端CI通过。
+
+## 发布收尾：远端CI验收归档（2026-11-07）
+
+只读取得GitHub Run42329267843/attempt1的原始run/jobs/artifacts、两个ZIP与完整日志。
+被测commit0dc4b95e001bc86253926be66321eb0e0f71b4db，offline与public-corpus均success，
+托管Ubuntu24.04/Azure与开发机WSL不同；新SDK、完整任务新oracle/语料均有回执。
+27/27、620612单元格及声明元数据全部通过，实际最大ULP0，无请求项跳过。
+ZIP与GitHub SHA-256匹配，13+19份包内manifest记录及Git源码身份核验通过。
+
+归档到evidence/github-actions/run-42329267843/，增加只读离线重验工具。
+旧C15/C16、两次安装失败和两次SDK下载超时不改写。原16笔基线与P0保持冻结。
+本轮没有触发/修改工作流或追加push；接下来做独立AI发布审查，正式Tag/Release尚未创建。

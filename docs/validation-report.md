@@ -1,5 +1,7 @@
 # 验证报告（2026-11-04）
 
+2026-11-07更新：本地与独立云端技术验收均有原始证据；最新云端结论见文末。
+
 所有命令均已实际执行。核心与发布 CLI 不加载 Python、R 或其他统计解析器。S5 异常与性能证据已补齐。
 
 ## 真实数据全链路
@@ -83,3 +85,20 @@ repository字段保留空值并出现打包警告，因为尚未创建真实远�
 预演均因官方SDK下载超过600秒而FAIL，未进入新的构建与测试，不将旧的27/27对照替代它们。
 原始材料见[CI准备证据](evidence/ci-preparation/README.md)。第二台机器及GitHub仓库尚未配置，
 没有外部实际运行记录，验收保持未完成。原C15/C16及2026-11-05安装证据不修改。
+
+## 云端技术验收（2026-11-07）
+
+[Run42329267843](https://github.com/any07557-wq/-MoonXPT/actions/runs/42329267843)，
+attempt1，源码0dc4b95e001bc86253926be66321eb0e0f71b4db，offline与public-corpus均success。
+GitHub托管Ubuntu24.04/Linux x86_64分别全新安装固定SDK，完整任务另建venv并无缓存
+安装oracle、重新下载hash固定语料；27/27、6项离线集成、两家oracle和620612单元格/声明
+元数据全部通过，实际最大ULP0，无请求项跳过。源码及原P0与C16冻结基线一致。
+
+[原始归档](evidence/github-actions/run-42329267843/README.md)包含API、两个原ZIP和解压
+材料、完整工作流日志。ZIP摘要与GitHub API相符，13+19份包内manifest记录及源码快照
+逐一核验；两个source_archive_sha256与本地被测commit的Git archive一致。
+workflow logs ZIP摘要仅是本次HTTPS下载的观察值，不宣称为GitHub独立发布摘要。
+可用tools/verify_ci_evidence.py离线重验，无须重新触发工作流。
+
+先前本地超时/安装失败保持原样。独立云端runner不同于开发机；未另行执行人工指定SSH
+主机。技术验收通过不代表正式Release制品/标签、Mooncakes或赛事提交已完成。

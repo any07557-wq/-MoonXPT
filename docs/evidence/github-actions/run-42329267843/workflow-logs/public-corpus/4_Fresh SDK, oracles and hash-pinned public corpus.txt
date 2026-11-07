@@ -1,0 +1,118 @@
+﻿2026-11-07T02:26:47.8389216Z ##[group]Run python3 tools/verify_release.py --mode full --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"
+2026-11-07T02:26:47.8389859Z [36;1mpython3 tools/verify_release.py --mode full --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"[0m
+2026-11-07T02:26:47.8413248Z shell: /usr/bin/bash -e {0}
+2026-11-07T02:26:47.8413480Z env:
+2026-11-07T02:26:47.8413899Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:47.8414277Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.4/x64/lib/pkgconfig
+2026-11-07T02:26:47.8414624Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:47.8414980Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:47.8415277Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:47.8415570Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.4/x64/lib
+2026-11-07T02:26:47.8415823Z ##[endgroup]
+2026-11-07T02:26:47.9296710Z + cc --version
+2026-11-07T02:26:47.9350427Z cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+2026-11-07T02:26:47.9351145Z Copyright (C) 2023 Free Software Foundation, Inc.
+2026-11-07T02:26:47.9351710Z This is free software; see the source for copying conditions.  There is NO
+2026-11-07T02:26:47.9352366Z warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+2026-11-07T02:26:47.9352788Z 
+2026-11-07T02:26:47.9353997Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-3phbs_fr/source/tools/install_toolchain.py /tmp/moonxpt-verify-3phbs_fr/sdk --receipt /home/runner/work/_temp/moonxpt-evidence/sdk-install.json
+2026-11-07T02:26:47.9931992Z Downloading: https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz.sha256
+2026-11-07T02:26:48.3003442Z Downloading: https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz
+2026-11-07T02:26:48.3869178Z Downloaded bytes: 16777216
+2026-11-07T02:26:48.4484513Z Downloaded bytes: 33554432
+2026-11-07T02:26:48.5071314Z Downloaded bytes: 50331648
+2026-11-07T02:26:48.5703755Z Downloaded bytes: 67108864
+2026-11-07T02:26:48.6235460Z Downloaded bytes: 83886080
+2026-11-07T02:26:48.6670231Z Downloading: https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz
+2026-11-07T02:26:49.8712742Z moon 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-3phbs_fr/sdk/bin/moon
+2026-11-07T02:26:49.8713550Z moonc v0.10.15+943464bfa (2026-10-12) /tmp/moonxpt-verify-3phbs_fr/sdk/bin/moonc
+2026-11-07T02:26:49.8714037Z moonrun 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-3phbs_fr/sdk/bin/moonrun
+2026-11-07T02:26:49.8714294Z 
+2026-11-07T02:26:49.8714399Z Feature flags enabled: rr_moon_mod,rr_moon_pkg
+2026-11-07T02:26:49.8714557Z 
+2026-11-07T02:26:51.0127116Z Finished. moon: ran 82 tasks, now up to date
+2026-11-07T02:26:51.0184022Z {"result": "PASS", "started_utc": "2026-11-07T02:26:47.992647+00:00", "completed_utc": "2026-11-07T02:26:51.017819+00:00", "archive_version": "0.10.15+943464bfa", "prefix": "/tmp/moonxpt-verify-3phbs_fr/sdk", "native": {"url": "https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz", "bytes": 100080035, "sha256": "24b93a5409d2a4fb8e3d1b84b473f27b63476cef4418094764df96cb26b03c09"}, "core": {"url": "https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz", "bytes": 1880333, "sha256": "96d30f4dbcc6a9e1736ef26fbdd0e8fb0e97cb01d50e55d2a0072208b8061ae5"}, "core_digest_provenance": "recorded from the official HTTPS core archive; detached core checksum endpoint returns 403, not claimed as an upstream-published digest", "version_output": "moon 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-3phbs_fr/sdk/bin/moon\nmoonc v0.10.15+943464bfa (2026-10-12) /tmp/moonxpt-verify-3phbs_fr/sdk/bin/moonc\nmoonrun 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-3phbs_fr/sdk/bin/moonrun\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg\n", "download_cache_reused": false, "existing_sdk_read": false, "bundled_backend": "native"}
+2026-11-07T02:26:51.0310291Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 -m venv /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv
+2026-11-07T02:26:53.3923185Z + /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python -m pip --isolated install --no-cache-dir --index-url https://pypi.org/simple -r /tmp/moonxpt-verify-3phbs_fr/source/tools/requirements-oracle.txt
+2026-11-07T02:26:53.8074771Z Collecting pyreadstat==1.3.7 (from -r /tmp/moonxpt-verify-3phbs_fr/source/tools/requirements-oracle.txt (line 2))
+2026-11-07T02:26:53.9065935Z   Downloading pyreadstat-1.3.7-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (1.2 kB)
+2026-11-07T02:26:54.0208766Z Collecting pandas==3.1.0 (from -r /tmp/moonxpt-verify-3phbs_fr/source/tools/requirements-oracle.txt (line 3))
+2026-11-07T02:26:54.0441954Z   Downloading pandas-3.1.0-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (18 kB)
+2026-11-07T02:26:54.2206733Z Collecting numpy==2.5.4 (from -r /tmp/moonxpt-verify-3phbs_fr/source/tools/requirements-oracle.txt (line 4))
+2026-11-07T02:26:54.2420214Z   Downloading numpy-2.5.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-11-07T02:26:54.2817816Z Collecting narwhals==2.28.0 (from -r /tmp/moonxpt-verify-3phbs_fr/source/tools/requirements-oracle.txt (line 5))
+2026-11-07T02:26:54.3031295Z   Downloading narwhals-2.28.0-py3-none-any.whl.metadata (15 kB)
+2026-11-07T02:26:54.3324970Z Collecting python-dateutil==4.0.0 (from -r /tmp/moonxpt-verify-3phbs_fr/source/tools/requirements-oracle.txt (line 6))
+2026-11-07T02:26:54.3530184Z   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+2026-11-07T02:26:54.3781753Z Collecting tzdata==2026.6 (from -r /tmp/moonxpt-verify-3phbs_fr/source/tools/requirements-oracle.txt (line 7))
+2026-11-07T02:26:54.3999475Z   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-07T02:26:54.4605726Z Collecting setuptools==80.10.2 (from -r /tmp/moonxpt-verify-3phbs_fr/source/tools/requirements-oracle.txt (line 8))
+2026-11-07T02:26:54.4818120Z   Downloading setuptools-80.10.2-py3-none-any.whl.metadata (6.6 kB)
+2026-11-07T02:26:54.5166290Z Downloading pyreadstat-1.3.7-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (2.9 MB)
+2026-11-07T02:26:54.6286706Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 40.9 MB/s  0:00:00
+2026-11-07T02:26:54.6495836Z Downloading pandas-3.1.0-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.0 MB)
+2026-11-07T02:26:54.8667750Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 56.0 MB/s  0:00:00
+2026-11-07T02:26:54.8873971Z Downloading numpy-2.5.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+2026-11-07T02:26:54.9623217Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 225.0 MB/s  0:00:00
+2026-11-07T02:26:55.0168498Z Downloading narwhals-2.28.0-py3-none-any.whl (490 kB)
+2026-11-07T02:26:55.0458558Z Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+2026-11-07T02:26:55.0705720Z Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+2026-11-07T02:26:55.0936428Z Downloading setuptools-80.10.2-py3-none-any.whl (1.1 MB)
+2026-11-07T02:26:55.1000416Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 181.7 MB/s  0:00:00
+2026-11-07T02:26:55.1648345Z Installing collected packages: tzdata, setuptools, numpy, narwhals, python-dateutil, pyreadstat, pandas
+2026-11-07T02:27:03.7183659Z 
+2026-11-07T02:27:03.7195855Z Successfully installed narwhals-2.28.0 numpy-2.5.4 pandas-3.1.0 pyreadstat-1.3.7 python-dateutil-4.0.0 setuptools-80.10.2 tzdata-2026.6
+2026-11-07T02:27:03.7860167Z 
+2026-11-07T02:27:03.7860681Z [notice] A new release of pip is available: 26.0.1 -> 26.3
+2026-11-07T02:27:03.7861592Z [notice] To update, run: /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python -m pip install --upgrade pip
+2026-11-07T02:27:03.9047034Z + /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python -m pip --isolated install --no-cache-dir --index-url https://pypi.org/simple --no-deps xport==3.6.1
+2026-11-07T02:27:04.2590596Z Collecting xport==3.6.1
+2026-11-07T02:27:04.3530148Z   Downloading xport-3.6.1-py2.py3-none-any.whl.metadata (9.7 kB)
+2026-11-07T02:27:04.3857218Z Downloading xport-3.6.1-py2.py3-none-any.whl (29 kB)
+2026-11-07T02:27:04.4021253Z Installing collected packages: xport
+2026-11-07T02:27:04.4240251Z Successfully installed xport-3.6.1
+2026-11-07T02:27:04.5477435Z 
+2026-11-07T02:27:04.5477874Z [notice] A new release of pip is available: 26.0.1 -> 26.3
+2026-11-07T02:27:04.5478745Z [notice] To update, run: /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python -m pip install --upgrade pip
+2026-11-07T02:27:04.5893329Z + /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python -c import json,sys; from importlib.metadata import distributions; from pathlib import Path; Path(sys.argv[1]).write_text(json.dumps({d.metadata['Name']:d.version for d in distributions()},indent=2)+'\n') /home/runner/work/_temp/moonxpt-evidence/oracle-packages.json
+2026-11-07T02:27:04.6456471Z + /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python /tmp/moonxpt-verify-3phbs_fr/source/tools/fetch_corpus.py
+2026-11-07T02:27:05.1208485Z downloaded and verified DEMO_J
+2026-11-07T02:27:05.5645832Z downloaded and verified BMX_J
+2026-11-07T02:27:05.7498399Z downloaded and verified GLU_J
+2026-11-07T02:27:05.7592180Z + /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python /tmp/moonxpt-verify-3phbs_fr/source/tools/check.py --oracle --corpus
+2026-11-07T02:27:05.8113575Z + moon fmt --check
+2026-11-07T02:27:05.9291673Z Finished. moon: ran 42 tasks, now up to date
+2026-11-07T02:27:05.9294565Z + moon check --target native --deny-warn
+2026-11-07T02:27:06.0402316Z Finished. moon: ran 14 tasks, now up to date
+2026-11-07T02:27:06.0409711Z + moon test --target native --deny-warn
+2026-11-07T02:27:08.0764974Z Total tests: 27, passed: 27, failed: 0.
+2026-11-07T02:27:08.0774396Z + moon build --target native --deny-warn
+2026-11-07T02:27:09.0272970Z Finished. moon: ran 20 tasks, now up to date
+2026-11-07T02:27:09.0281756Z + /tmp/moonxpt-verify-3phbs_fr/source/_build/native/debug/build/examples/write/write.exe /tmp/moonxpt-verify-3phbs_fr/source/.cache/writer-example.xpt
+2026-11-07T02:27:09.0315008Z wrote NUMBERS(3), WORDS(3), TAGS(28), EMPTY(0)
+2026-11-07T02:27:09.0315794Z + /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python /tmp/moonxpt-verify-3phbs_fr/source/tools/test_inspect.py
+2026-11-07T02:27:09.0706245Z PASS: inspect JSON, counts, multi-member hints, spaces in paths, stderr, usage/I/O/format codes
+2026-11-07T02:27:09.0761318Z + /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python /tmp/moonxpt-verify-3phbs_fr/source/tools/test_export.py
+2026-11-07T02:27:09.1202097Z PASS: selected member export, independent CSV/JSON, no overwrite, force, aliases, failure cleanup
+2026-11-07T02:27:09.1244264Z + /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python /tmp/moonxpt-verify-3phbs_fr/source/tools/test_exchange.py
+2026-11-07T02:27:09.2069684Z PASS: four member CSV/JSON semantic roundtrips, stable writes, typed missing, versions, duplicate columns, malformed CSV and cleanup
+2026-11-07T02:27:09.2130114Z + /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python /tmp/moonxpt-verify-3phbs_fr/source/tools/test_fixtures.py
+2026-11-07T02:27:09.2707119Z PASS: independent ReadStat/xport inputs, format/informat, 136-byte descriptors, reordered offsets, CP1252 multi-member exchange
+2026-11-07T02:27:09.2769073Z + /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python /tmp/moonxpt-verify-3phbs_fr/source/tools/test_malformed.py
+2026-11-07T02:27:09.7989166Z {"seed": 20261104, "truncations": 79, "mutations": 256, "targeted": 8, "result": "PASS", "timeout_seconds": 5}
+2026-11-07T02:27:09.8051421Z + /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python /tmp/moonxpt-verify-3phbs_fr/source/tools/test_consumer.py
+2026-11-07T02:27:10.3400637Z public API consumer PASS
+2026-11-07T02:27:10.3478781Z + /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python /tmp/moonxpt-verify-3phbs_fr/source/tools/check_writer.py
+2026-11-07T02:27:10.6878207Z /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/lib/python3.14/site-packages/xport/__about__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+2026-11-07T02:27:10.6882692Z   from pkg_resources import DistributionNotFound, get_distribution
+2026-11-07T02:27:10.7091206Z PASS: xport reads all 4 members; ReadStat reads first; 28 missing byte vectors exact
+2026-11-07T02:27:10.7861784Z + /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python /tmp/moonxpt-verify-3phbs_fr/source/tools/compare_scan.py
+2026-11-07T02:27:12.2700888Z BMX_J: rows=8704 columns=21 compared_cells=182784 max_ulp=0; PASS
+2026-11-07T02:27:12.2701603Z DEMO_J: rows=9254 columns=46 compared_cells=425684 max_ulp=0; PASS
+2026-11-07T02:27:12.2702076Z GLU_J: rows=3036 columns=4 compared_cells=12144 max_ulp=0; PASS
+2026-11-07T02:27:12.3366515Z + /tmp/moonxpt-verify-3phbs_fr/source/.cache/venv/bin/python /tmp/moonxpt-verify-3phbs_fr/source/tools/validate_corpus.py
+2026-11-07T02:27:14.5185848Z {"member": "DEMO_J", "rows": 9254, "columns": 46, "cells": 425684, "sha256": "c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec", "max_ulp": 0, "metadata": "exact declared attributes", "result": "PASS"}
+2026-11-07T02:27:15.4303020Z {"member": "BMX_J", "rows": 8704, "columns": 21, "cells": 182784, "sha256": "8d675e42d8826ac98714b2c3dd4c5138a5e353fb4424f7eff5e6db4a01ce838a", "max_ulp": 0, "metadata": "exact declared attributes", "result": "PASS"}
+2026-11-07T02:27:15.8363630Z {"member": "GLU_J", "rows": 3036, "columns": 4, "cells": 12144, "sha256": "5b38897d0d7bfbc69dd9ca74ffdaf2f6a9bed5a91d4a7bf46e07f1332cc3379e", "max_ulp": 0, "metadata": "exact declared attributes", "result": "PASS"}
+2026-11-07T02:27:15.9201380Z PASS: all requested checks completed; none skipped
+2026-11-07T02:27:16.1488604Z Evidence: /home/runner/work/_temp/moonxpt-evidence result: PASS

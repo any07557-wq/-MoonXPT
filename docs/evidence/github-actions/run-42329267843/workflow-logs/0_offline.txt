@@ -1,0 +1,292 @@
+﻿2026-11-07T02:26:38.0710314Z Current runner version: '2.338.2'
+2026-11-07T02:26:38.0734609Z ##[group]Runner Image Provisioner
+2026-11-07T02:26:38.0735434Z Hosted Compute Agent
+2026-11-07T02:26:38.0736207Z Version: 20261028.624
+2026-11-07T02:26:38.0736784Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-07T02:26:38.0737446Z Build Date: 2026-10-28T21:51:42Z
+2026-11-07T02:26:38.0738134Z Worker ID: {d3aea21b-a0bf-4ec2-a092-c49ba365f865}
+2026-11-07T02:26:38.0738789Z Region: westus3
+2026-11-07T02:26:38.0739329Z Cloud: Azure
+2026-11-07T02:26:38.0739839Z ##[endgroup]
+2026-11-07T02:26:38.0741249Z ##[group]Operating System
+2026-11-07T02:26:38.0741895Z Ubuntu
+2026-11-07T02:26:38.0742393Z 24.04.5
+2026-11-07T02:26:38.0742923Z LTS
+2026-11-07T02:26:38.0743414Z ##[endgroup]
+2026-11-07T02:26:38.0743928Z ##[group]Runner Image
+2026-11-07T02:26:38.0744512Z Image: ubuntu-24.04
+2026-11-07T02:26:38.0745029Z Version: 20261101.360.1
+2026-11-07T02:26:38.0746584Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-07T02:26:38.0747976Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-07T02:26:38.0748854Z ##[endgroup]
+2026-11-07T02:26:38.0749891Z ##[group]GITHUB_TOKEN Permissions
+2026-11-07T02:26:38.0751789Z Contents: read
+2026-11-07T02:26:38.0752359Z Metadata: read
+2026-11-07T02:26:38.0753269Z ##[endgroup]
+2026-11-07T02:26:38.0755303Z Secret source: Actions
+2026-11-07T02:26:38.0756417Z Cache mode: write
+2026-11-07T02:26:38.0757073Z Prepare workflow directory
+2026-11-07T02:26:38.1063478Z Prepare all required actions
+2026-11-07T02:26:38.1111281Z Getting action download info
+2026-11-07T02:26:38.4389174Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-11-07T02:26:38.5145948Z Download action repository 'actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0' (SHA:6d4fd22b20465ccc0f7354476588e8df7c9ca0e0)
+2026-11-07T02:26:39.1023558Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-11-07T02:26:39.2668754Z Complete job name: offline
+2026-11-07T02:26:39.3640587Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-07T02:26:39.3641734Z with:
+2026-11-07T02:26:39.3642432Z   persist-credentials: false
+2026-11-07T02:26:39.3643187Z   repository: any07557-wq/-MoonXPT
+2026-11-07T02:26:39.3647709Z   token: ***
+2026-11-07T02:26:39.3648193Z   ssh-strict: true
+2026-11-07T02:26:39.3648688Z   ssh-user: git
+2026-11-07T02:26:39.3649155Z   clean: true
+2026-11-07T02:26:39.3649664Z   sparse-checkout-cone-mode: true
+2026-11-07T02:26:39.3650248Z   fetch-depth: 1
+2026-11-07T02:26:39.3650953Z   fetch-tags: false
+2026-11-07T02:26:39.3651453Z   show-progress: true
+2026-11-07T02:26:39.3651975Z   lfs: false
+2026-11-07T02:26:39.3652456Z   submodules: false
+2026-11-07T02:26:39.3652966Z   set-safe-directory: true
+2026-11-07T02:26:39.3653860Z   allow-unsafe-pr-checkout: false
+2026-11-07T02:26:39.3654905Z ##[endgroup]
+2026-11-07T02:26:39.6137952Z Syncing repository: any07557-wq/-MoonXPT
+2026-11-07T02:26:39.6141037Z ##[group]Getting Git version info
+2026-11-07T02:26:39.6142077Z Working directory is '/home/runner/work/-MoonXPT/-MoonXPT'
+2026-11-07T02:26:39.6143451Z [command]/usr/bin/git version
+2026-11-07T02:26:39.6197838Z git version 2.56.0
+2026-11-07T02:26:39.6225089Z ##[endgroup]
+2026-11-07T02:26:39.6234802Z Temporarily overriding HOME='/home/runner/work/_temp/00b5e100-9122-49af-b180-a6abb5a861c8' before making global git config changes
+2026-11-07T02:26:39.6237688Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-07T02:26:39.6240065Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/-MoonXPT/-MoonXPT
+2026-11-07T02:26:39.6290975Z Deleting the contents of '/home/runner/work/-MoonXPT/-MoonXPT'
+2026-11-07T02:26:39.6305416Z ##[group]Determining repository object format
+2026-11-07T02:26:39.6312360Z ##[endgroup]
+2026-11-07T02:26:39.6314767Z ##[group]Initializing the repository
+2026-11-07T02:26:39.6316803Z [command]/usr/bin/git init /home/runner/work/-MoonXPT/-MoonXPT
+2026-11-07T02:26:39.6422843Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-07T02:26:39.6425633Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-07T02:26:39.6428366Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-07T02:26:39.6430460Z hint: call:
+2026-11-07T02:26:39.6431808Z hint:
+2026-11-07T02:26:39.6433329Z hint: 	git config --global init.defaultBranch <name>
+2026-11-07T02:26:39.6435190Z hint:
+2026-11-07T02:26:39.6436983Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-07T02:26:39.6439338Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-07T02:26:39.6441410Z hint:
+2026-11-07T02:26:39.6442667Z hint: 	git branch -m <name>
+2026-11-07T02:26:39.6444093Z hint:
+2026-11-07T02:26:39.6446297Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-07T02:26:39.6449025Z Initialized empty Git repository in /home/runner/work/-MoonXPT/-MoonXPT/.git/
+2026-11-07T02:26:39.6452320Z [command]/usr/bin/git remote add origin https://github.com/any07557-wq/-MoonXPT
+2026-11-07T02:26:39.6492502Z ##[endgroup]
+2026-11-07T02:26:39.6493426Z ##[group]Disabling automatic garbage collection
+2026-11-07T02:26:39.6496406Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-07T02:26:39.6527833Z ##[endgroup]
+2026-11-07T02:26:39.6529409Z ##[group]Setting up auth
+2026-11-07T02:26:39.6530706Z Removing SSH command configuration
+2026-11-07T02:26:39.6534345Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T02:26:39.6570052Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T02:26:39.6907291Z Removing HTTP extra header
+2026-11-07T02:26:39.6915298Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T02:26:39.6963479Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T02:26:39.7159199Z Removing includeIf entries pointing to credentials config files
+2026-11-07T02:26:39.7163890Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T02:26:39.7203592Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T02:26:39.7389388Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-e0c13019-8abe-4225-b963-e02be039dcc0.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-07T02:26:39.7426734Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git.path /home/runner/work/_temp/git-credentials-e0c13019-8abe-4225-b963-e02be039dcc0.config
+2026-11-07T02:26:39.7460354Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-e0c13019-8abe-4225-b963-e02be039dcc0.config
+2026-11-07T02:26:39.7492697Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-e0c13019-8abe-4225-b963-e02be039dcc0.config
+2026-11-07T02:26:39.7523693Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-e0c13019-8abe-4225-b963-e02be039dcc0.config
+2026-11-07T02:26:39.7550273Z ##[endgroup]
+2026-11-07T02:26:39.7551129Z ##[group]Fetching the repository
+2026-11-07T02:26:39.7557755Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0dc4b95e001bc86253926be66321eb0e0f71b4db:refs/remotes/origin/main
+2026-11-07T02:26:40.3312936Z From https://github.com/any07557-wq/-MoonXPT
+2026-11-07T02:26:40.3314335Z  * [new ref]         0dc4b95e001bc86253926be66321eb0e0f71b4db -> origin/main
+2026-11-07T02:26:40.3321464Z [command]/usr/bin/git branch --list --remote origin/main
+2026-11-07T02:26:40.3347698Z   origin/main
+2026-11-07T02:26:40.3357700Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-11-07T02:26:40.3380886Z 0dc4b95e001bc86253926be66321eb0e0f71b4db
+2026-11-07T02:26:40.3384852Z ##[endgroup]
+2026-11-07T02:26:40.3386559Z ##[group]Determining the checkout info
+2026-11-07T02:26:40.3388100Z ##[endgroup]
+2026-11-07T02:26:40.3391908Z [command]/usr/bin/git sparse-checkout disable
+2026-11-07T02:26:40.3436649Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-07T02:26:40.3462966Z ##[group]Checking out the ref
+2026-11-07T02:26:40.3467210Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-11-07T02:26:40.3576891Z Switched to a new branch 'main'
+2026-11-07T02:26:40.3581144Z branch 'main' set up to track 'origin/main'.
+2026-11-07T02:26:40.3585867Z ##[endgroup]
+2026-11-07T02:26:40.3622957Z [command]/usr/bin/git log -1 --format=%H
+2026-11-07T02:26:40.3645573Z 0dc4b95e001bc86253926be66321eb0e0f71b4db
+2026-11-07T02:26:40.3653438Z ##[group]Removing auth
+2026-11-07T02:26:40.3653993Z Removing SSH command configuration
+2026-11-07T02:26:40.3657460Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T02:26:40.3685121Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T02:26:40.3877442Z Removing HTTP extra header
+2026-11-07T02:26:40.3880855Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T02:26:40.3909558Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T02:26:40.4085364Z Removing includeIf entries pointing to credentials config files
+2026-11-07T02:26:40.4087519Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T02:26:40.4124080Z includeif.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git.path
+2026-11-07T02:26:40.4125410Z includeif.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git/worktrees/*.path
+2026-11-07T02:26:40.4126882Z includeif.gitdir:/github/workspace/.git.path
+2026-11-07T02:26:40.4127659Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-07T02:26:40.4132762Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git.path
+2026-11-07T02:26:40.4155404Z /home/runner/work/_temp/git-credentials-e0c13019-8abe-4225-b963-e02be039dcc0.config
+2026-11-07T02:26:40.4172817Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-e0c13019\-8abe\-4225\-b963\-e02be039dcc0\.config
+2026-11-07T02:26:40.4204647Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git/worktrees/*.path
+2026-11-07T02:26:40.4224961Z /home/runner/work/_temp/git-credentials-e0c13019-8abe-4225-b963-e02be039dcc0.config
+2026-11-07T02:26:40.4232600Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/-MoonXPT/-MoonXPT/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-e0c13019\-8abe\-4225\-b963\-e02be039dcc0\.config
+2026-11-07T02:26:40.4264952Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-07T02:26:40.4286043Z /github/runner_temp/git-credentials-e0c13019-8abe-4225-b963-e02be039dcc0.config
+2026-11-07T02:26:40.4295950Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-e0c13019\-8abe\-4225\-b963\-e02be039dcc0\.config
+2026-11-07T02:26:40.4327136Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-07T02:26:40.4347368Z /github/runner_temp/git-credentials-e0c13019-8abe-4225-b963-e02be039dcc0.config
+2026-11-07T02:26:40.4355910Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-e0c13019\-8abe\-4225\-b963\-e02be039dcc0\.config
+2026-11-07T02:26:40.4388517Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T02:26:40.4563244Z Removing credentials config '/home/runner/work/_temp/git-credentials-e0c13019-8abe-4225-b963-e02be039dcc0.config'
+2026-11-07T02:26:40.4572203Z ##[endgroup]
+2026-11-07T02:26:40.4817831Z ##[group]Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+2026-11-07T02:26:40.4818577Z with:
+2026-11-07T02:26:40.4818961Z   python-version: 3.14.4
+2026-11-07T02:26:40.4819405Z   check-latest: false
+2026-11-07T02:26:40.4823075Z   token: ***
+2026-11-07T02:26:40.4823640Z   mirror: https://raw.githubusercontent.com/actions/python-versions/main
+2026-11-07T02:26:40.4824325Z   update-environment: true
+2026-11-07T02:26:40.4824782Z   allow-prereleases: false
+2026-11-07T02:26:40.4825225Z   freethreaded: false
+2026-11-07T02:26:40.4825759Z ##[endgroup]
+2026-11-07T02:26:40.5933142Z ##[group]Installed versions
+2026-11-07T02:26:40.5950751Z Version 3.14.4 was not found in the local cache
+2026-11-07T02:26:41.7452348Z Version 3.14.4 is available for downloading
+2026-11-07T02:26:41.7455953Z Download from "https://github.com/actions/python-versions/releases/download/3.14.4-25113653268/python-3.14.4-linux-24.04-x64.tar.gz"
+2026-11-07T02:26:42.4767442Z Extract downloaded archive
+2026-11-07T02:26:42.4894322Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/7a947350-9efd-4bb9-a1cd-3375509d4f71 -f /home/runner/work/_temp/4ad6f574-a04e-42c9-8a97-2692864f52e7
+2026-11-07T02:26:44.6390253Z Execute installation script
+2026-11-07T02:26:44.6474522Z Check if Python hostedtoolcache folder exist...
+2026-11-07T02:26:44.6475298Z Create Python 3.14.4 folder
+2026-11-07T02:26:44.6489340Z Copy Python binaries to hostedtoolcache folder
+2026-11-07T02:26:44.9421633Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+2026-11-07T02:26:44.9459609Z Upgrading pip...
+2026-11-07T02:26:47.2485159Z Looking in links: /tmp/tmpgdtselzo
+2026-11-07T02:26:47.2489845Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.14.4/x64/lib/python3.14/site-packages (26.0.1)
+2026-11-07T02:26:48.3357889Z Collecting pip
+2026-11-07T02:26:48.3955954Z Downloading pip-26.3-py3-none-any.whl.metadata (4.6 kB)
+2026-11-07T02:26:48.4038993Z Downloading pip-26.3-py3-none-any.whl (2.0 MB)
+2026-11-07T02:26:48.4445995Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 109.7 MB/s  0:00:00
+2026-11-07T02:26:48.4446654Z 
+2026-11-07T02:26:48.4600937Z Installing collected packages: pip
+2026-11-07T02:26:48.4607557Z Attempting uninstall: pip
+2026-11-07T02:26:48.4625587Z Found existing installation: pip 26.0.1
+2026-11-07T02:26:48.4859206Z Uninstalling pip-26.0.1:
+2026-11-07T02:26:48.4902755Z Successfully uninstalled pip-26.0.1
+2026-11-07T02:26:49.5929365Z Successfully installed pip-26.3
+2026-11-07T02:26:49.6573454Z Create complete file
+2026-11-07T02:26:49.6604972Z Successfully set up CPython (3.14.4)
+2026-11-07T02:26:49.6605962Z ##[endgroup]
+2026-11-07T02:26:49.6739712Z ##[group]Run python3 tools/verify_release.py --mode offline --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"
+2026-11-07T02:26:49.6740501Z [36;1mpython3 tools/verify_release.py --mode offline --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"[0m
+2026-11-07T02:26:49.6760662Z shell: /usr/bin/bash -e {0}
+2026-11-07T02:26:49.6760967Z env:
+2026-11-07T02:26:49.6761459Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:49.6761919Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.4/x64/lib/pkgconfig
+2026-11-07T02:26:49.6762334Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:49.6762767Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:49.6763135Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:49.6763598Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.4/x64/lib
+2026-11-07T02:26:49.6763931Z ##[endgroup]
+2026-11-07T02:26:49.7716557Z + cc --version
+2026-11-07T02:26:49.7770737Z cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+2026-11-07T02:26:49.7771128Z Copyright (C) 2023 Free Software Foundation, Inc.
+2026-11-07T02:26:49.7771560Z This is free software; see the source for copying conditions.  There is NO
+2026-11-07T02:26:49.7772220Z warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+2026-11-07T02:26:49.7772525Z 
+2026-11-07T02:26:49.7773559Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/install_toolchain.py /tmp/moonxpt-verify-ruy98q6k/sdk --receipt /home/runner/work/_temp/moonxpt-evidence/sdk-install.json
+2026-11-07T02:26:49.8433865Z Downloading: https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz.sha256
+2026-11-07T02:26:49.9074354Z Downloading: https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz
+2026-11-07T02:26:50.0173347Z Downloaded bytes: 16777216
+2026-11-07T02:26:50.0937321Z Downloaded bytes: 33554432
+2026-11-07T02:26:50.1608106Z Downloaded bytes: 50331648
+2026-11-07T02:26:50.2297570Z Downloaded bytes: 67108864
+2026-11-07T02:26:50.2983434Z Downloaded bytes: 83886080
+2026-11-07T02:26:50.3623065Z Downloading: https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz
+2026-11-07T02:26:51.8290534Z moon 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-ruy98q6k/sdk/bin/moon
+2026-11-07T02:26:51.8291838Z moonc v0.10.15+943464bfa (2026-10-12) /tmp/moonxpt-verify-ruy98q6k/sdk/bin/moonc
+2026-11-07T02:26:51.8292736Z moonrun 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-ruy98q6k/sdk/bin/moonrun
+2026-11-07T02:26:51.8293302Z 
+2026-11-07T02:26:51.8293741Z Feature flags enabled: rr_moon_mod,rr_moon_pkg
+2026-11-07T02:26:51.8294415Z 
+2026-11-07T02:26:53.2306672Z Finished. moon: ran 82 tasks, now up to date
+2026-11-07T02:26:53.2354624Z {"result": "PASS", "started_utc": "2026-11-07T02:26:49.842778+00:00", "completed_utc": "2026-11-07T02:26:53.234545+00:00", "archive_version": "0.10.15+943464bfa", "prefix": "/tmp/moonxpt-verify-ruy98q6k/sdk", "native": {"url": "https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz", "bytes": 100080035, "sha256": "24b93a5409d2a4fb8e3d1b84b473f27b63476cef4418094764df96cb26b03c09"}, "core": {"url": "https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz", "bytes": 1880333, "sha256": "96d30f4dbcc6a9e1736ef26fbdd0e8fb0e97cb01d50e55d2a0072208b8061ae5"}, "core_digest_provenance": "recorded from the official HTTPS core archive; detached core checksum endpoint returns 403, not claimed as an upstream-published digest", "version_output": "moon 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-ruy98q6k/sdk/bin/moon\nmoonc v0.10.15+943464bfa (2026-10-12) /tmp/moonxpt-verify-ruy98q6k/sdk/bin/moonc\nmoonrun 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-ruy98q6k/sdk/bin/moonrun\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg\n", "download_cache_reused": false, "existing_sdk_read": false, "bundled_backend": "native"}
+2026-11-07T02:26:53.2502694Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/check.py
+2026-11-07T02:26:53.3054627Z + moon fmt --check
+2026-11-07T02:26:53.4348670Z Finished. moon: ran 42 tasks, now up to date
+2026-11-07T02:26:53.4350991Z + moon check --target native --deny-warn
+2026-11-07T02:26:53.5548881Z Finished. moon: ran 14 tasks, now up to date
+2026-11-07T02:26:53.5556045Z + moon test --target native --deny-warn
+2026-11-07T02:26:56.0324480Z Total tests: 27, passed: 27, failed: 0.
+2026-11-07T02:26:56.0338956Z + moon build --target native --deny-warn
+2026-11-07T02:26:57.2264119Z Finished. moon: ran 20 tasks, now up to date
+2026-11-07T02:26:57.2273163Z + /tmp/moonxpt-verify-ruy98q6k/source/_build/native/debug/build/examples/write/write.exe /tmp/moonxpt-verify-ruy98q6k/source/.cache/writer-example.xpt
+2026-11-07T02:26:57.2291067Z wrote NUMBERS(3), WORDS(3), TAGS(28), EMPTY(0)
+2026-11-07T02:26:57.2293567Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_inspect.py
+2026-11-07T02:26:57.2710331Z PASS: inspect JSON, counts, multi-member hints, spaces in paths, stderr, usage/I/O/format codes
+2026-11-07T02:26:57.2774814Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_export.py
+2026-11-07T02:26:57.3203516Z PASS: selected member export, independent CSV/JSON, no overwrite, force, aliases, failure cleanup
+2026-11-07T02:26:57.3275281Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_exchange.py
+2026-11-07T02:26:57.4141649Z PASS: four member CSV/JSON semantic roundtrips, stable writes, typed missing, versions, duplicate columns, malformed CSV and cleanup
+2026-11-07T02:26:57.4206882Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_fixtures.py
+2026-11-07T02:26:57.4833647Z PASS: independent ReadStat/xport inputs, format/informat, 136-byte descriptors, reordered offsets, CP1252 multi-member exchange
+2026-11-07T02:26:57.4902292Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_malformed.py
+2026-11-07T02:26:57.9854422Z {"seed": 20261104, "truncations": 79, "mutations": 256, "targeted": 8, "result": "PASS", "timeout_seconds": 5}
+2026-11-07T02:26:57.9917432Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_consumer.py
+2026-11-07T02:26:58.6539881Z public API consumer PASS
+2026-11-07T02:26:58.6624612Z PASS: all requested checks completed; none skipped
+2026-11-07T02:26:58.7120636Z Evidence: /home/runner/work/_temp/moonxpt-evidence result: PASS
+2026-11-07T02:26:58.7314336Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-11-07T02:26:58.7314739Z with:
+2026-11-07T02:26:58.7314960Z   name: offline-42329267843-1
+2026-11-07T02:26:58.7315248Z   path: /home/runner/work/_temp/moonxpt-evidence/
+2026-11-07T02:26:58.7315553Z   if-no-files-found: error
+2026-11-07T02:26:58.7315987Z   retention-days: 30
+2026-11-07T02:26:58.7316210Z   compression-level: 6
+2026-11-07T02:26:58.7316430Z   overwrite: false
+2026-11-07T02:26:58.7316654Z   include-hidden-files: false
+2026-11-07T02:26:58.7316891Z   archive: true
+2026-11-07T02:26:58.7317091Z env:
+2026-11-07T02:26:58.7317346Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:58.7317763Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.4/x64/lib/pkgconfig
+2026-11-07T02:26:58.7318191Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:58.7318557Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:58.7318964Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:58.7319334Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.4/x64/lib
+2026-11-07T02:26:58.7319642Z ##[endgroup]
+2026-11-07T02:26:58.8817586Z With the provided path, there will be 14 files uploaded
+2026-11-07T02:26:58.8818563Z Artifact name is valid!
+2026-11-07T02:26:58.8819045Z Root directory input is valid!
+2026-11-07T02:26:59.2832547Z Uploading artifact: offline-42329267843-1.zip
+2026-11-07T02:26:59.2870488Z Beginning upload of artifact content to blob storage
+2026-11-07T02:26:59.5550907Z Uploaded bytes 12753
+2026-11-07T02:26:59.6102920Z Finished uploading artifact content to blob storage!
+2026-11-07T02:26:59.6104517Z SHA256 digest of uploaded artifact is daf0f5f0b5942ae7d7b1aca3bbc687c95376c8a2c4bda891f62438fece48dd1e
+2026-11-07T02:26:59.6106376Z Finalizing artifact upload
+2026-11-07T02:27:00.1731635Z Artifact offline-42329267843-1 successfully finalized. Artifact ID 13556537196
+2026-11-07T02:27:00.1732597Z Artifact offline-42329267843-1 has been successfully uploaded! Final size is 12753 bytes. Artifact ID is 13556537196
+2026-11-07T02:27:00.1736969Z Artifact download URL: https://github.com/any07557-wq/-MoonXPT/actions/runs/42329267843/artifacts/13556537196
+2026-11-07T02:27:00.1910995Z Post job cleanup.
+2026-11-07T02:27:00.3273590Z Post job cleanup.
+2026-11-07T02:27:00.4194905Z [command]/usr/bin/git version
+2026-11-07T02:27:00.4249950Z git version 2.56.0
+2026-11-07T02:27:00.4282045Z Temporarily overriding HOME='/home/runner/work/_temp/4fbfbc0a-fd09-4843-9e93-0f916445fd03' before making global git config changes
+2026-11-07T02:27:00.4283488Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-07T02:27:00.4288580Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/-MoonXPT/-MoonXPT
+2026-11-07T02:27:00.4322580Z Removing SSH command configuration
+2026-11-07T02:27:00.4331427Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T02:27:00.4373244Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T02:27:00.4578159Z Removing HTTP extra header
+2026-11-07T02:27:00.4583852Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T02:27:00.4626500Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T02:27:00.4836157Z Removing includeIf entries pointing to credentials config files
+2026-11-07T02:27:00.4866911Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T02:27:00.4903506Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T02:27:00.5283000Z Cleaning up orphan processes

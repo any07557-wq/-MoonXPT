@@ -1,0 +1,59 @@
+﻿2026-11-07T02:26:49.6739696Z ##[group]Run python3 tools/verify_release.py --mode offline --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"
+2026-11-07T02:26:49.6740497Z [36;1mpython3 tools/verify_release.py --mode offline --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"[0m
+2026-11-07T02:26:49.6760647Z shell: /usr/bin/bash -e {0}
+2026-11-07T02:26:49.6760964Z env:
+2026-11-07T02:26:49.6761455Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:49.6761916Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.4/x64/lib/pkgconfig
+2026-11-07T02:26:49.6762331Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:49.6762764Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:49.6763132Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.4/x64
+2026-11-07T02:26:49.6763593Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.4/x64/lib
+2026-11-07T02:26:49.6763928Z ##[endgroup]
+2026-11-07T02:26:49.7716513Z + cc --version
+2026-11-07T02:26:49.7770618Z cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+2026-11-07T02:26:49.7771124Z Copyright (C) 2023 Free Software Foundation, Inc.
+2026-11-07T02:26:49.7771557Z This is free software; see the source for copying conditions.  There is NO
+2026-11-07T02:26:49.7772217Z warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+2026-11-07T02:26:49.7772521Z 
+2026-11-07T02:26:49.7773554Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/install_toolchain.py /tmp/moonxpt-verify-ruy98q6k/sdk --receipt /home/runner/work/_temp/moonxpt-evidence/sdk-install.json
+2026-11-07T02:26:49.8433834Z Downloading: https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz.sha256
+2026-11-07T02:26:49.9074310Z Downloading: https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz
+2026-11-07T02:26:50.0173317Z Downloaded bytes: 16777216
+2026-11-07T02:26:50.0937278Z Downloaded bytes: 33554432
+2026-11-07T02:26:50.1608039Z Downloaded bytes: 50331648
+2026-11-07T02:26:50.2297527Z Downloaded bytes: 67108864
+2026-11-07T02:26:50.2983395Z Downloaded bytes: 83886080
+2026-11-07T02:26:50.3623018Z Downloading: https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz
+2026-11-07T02:26:51.8290491Z moon 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-ruy98q6k/sdk/bin/moon
+2026-11-07T02:26:51.8291830Z moonc v0.10.15+943464bfa (2026-10-12) /tmp/moonxpt-verify-ruy98q6k/sdk/bin/moonc
+2026-11-07T02:26:51.8292732Z moonrun 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-ruy98q6k/sdk/bin/moonrun
+2026-11-07T02:26:51.8293296Z 
+2026-11-07T02:26:51.8293735Z Feature flags enabled: rr_moon_mod,rr_moon_pkg
+2026-11-07T02:26:51.8294412Z 
+2026-11-07T02:26:53.2306633Z Finished. moon: ran 82 tasks, now up to date
+2026-11-07T02:26:53.2354566Z {"result": "PASS", "started_utc": "2026-11-07T02:26:49.842778+00:00", "completed_utc": "2026-11-07T02:26:53.234545+00:00", "archive_version": "0.10.15+943464bfa", "prefix": "/tmp/moonxpt-verify-ruy98q6k/sdk", "native": {"url": "https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/moonbit-linux-x86_64.tar.gz", "bytes": 100080035, "sha256": "24b93a5409d2a4fb8e3d1b84b473f27b63476cef4418094764df96cb26b03c09"}, "core": {"url": "https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz", "bytes": 1880333, "sha256": "96d30f4dbcc6a9e1736ef26fbdd0e8fb0e97cb01d50e55d2a0072208b8061ae5"}, "core_digest_provenance": "recorded from the official HTTPS core archive; detached core checksum endpoint returns 403, not claimed as an upstream-published digest", "version_output": "moon 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-ruy98q6k/sdk/bin/moon\nmoonc v0.10.15+943464bfa (2026-10-12) /tmp/moonxpt-verify-ruy98q6k/sdk/bin/moonc\nmoonrun 0.1.20261012 (748b63c 2026-10-12) /tmp/moonxpt-verify-ruy98q6k/sdk/bin/moonrun\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg\n", "download_cache_reused": false, "existing_sdk_read": false, "bundled_backend": "native"}
+2026-11-07T02:26:53.2502241Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/check.py
+2026-11-07T02:26:53.3054575Z + moon fmt --check
+2026-11-07T02:26:53.4348626Z Finished. moon: ran 42 tasks, now up to date
+2026-11-07T02:26:53.4350975Z + moon check --target native --deny-warn
+2026-11-07T02:26:53.5548836Z Finished. moon: ran 14 tasks, now up to date
+2026-11-07T02:26:53.5556025Z + moon test --target native --deny-warn
+2026-11-07T02:26:56.0324442Z Total tests: 27, passed: 27, failed: 0.
+2026-11-07T02:26:56.0338923Z + moon build --target native --deny-warn
+2026-11-07T02:26:57.2264074Z Finished. moon: ran 20 tasks, now up to date
+2026-11-07T02:26:57.2273129Z + /tmp/moonxpt-verify-ruy98q6k/source/_build/native/debug/build/examples/write/write.exe /tmp/moonxpt-verify-ruy98q6k/source/.cache/writer-example.xpt
+2026-11-07T02:26:57.2291044Z wrote NUMBERS(3), WORDS(3), TAGS(28), EMPTY(0)
+2026-11-07T02:26:57.2293555Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_inspect.py
+2026-11-07T02:26:57.2710259Z PASS: inspect JSON, counts, multi-member hints, spaces in paths, stderr, usage/I/O/format codes
+2026-11-07T02:26:57.2774784Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_export.py
+2026-11-07T02:26:57.3203482Z PASS: selected member export, independent CSV/JSON, no overwrite, force, aliases, failure cleanup
+2026-11-07T02:26:57.3275247Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_exchange.py
+2026-11-07T02:26:57.4141594Z PASS: four member CSV/JSON semantic roundtrips, stable writes, typed missing, versions, duplicate columns, malformed CSV and cleanup
+2026-11-07T02:26:57.4206852Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_fixtures.py
+2026-11-07T02:26:57.4833604Z PASS: independent ReadStat/xport inputs, format/informat, 136-byte descriptors, reordered offsets, CP1252 multi-member exchange
+2026-11-07T02:26:57.4902228Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_malformed.py
+2026-11-07T02:26:57.9854377Z {"seed": 20261104, "truncations": 79, "mutations": 256, "targeted": 8, "result": "PASS", "timeout_seconds": 5}
+2026-11-07T02:26:57.9917392Z + /opt/hostedtoolcache/Python/3.14.4/x64/bin/python3 /tmp/moonxpt-verify-ruy98q6k/source/tools/test_consumer.py
+2026-11-07T02:26:58.6539829Z public API consumer PASS
+2026-11-07T02:26:58.6624574Z PASS: all requested checks completed; none skipped
+2026-11-07T02:26:58.7120590Z Evidence: /home/runner/work/_temp/moonxpt-evidence result: PASS
