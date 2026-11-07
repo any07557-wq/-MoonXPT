@@ -1,0 +1,17 @@
+{
+  "archived_date": "2026-11-07",
+  "audited_commit": "9a45c6ea28cfbfba1d6c9508b2d2b634ef04a8f0",
+  "boundary": "independent-context AI review; original reviewer conclusion and parent handling kept separate",
+  "files": [
+    {
+      "file": "independent-review.md",
+      "bytes": 8583,
+      "sha256": "2f73a205241104f4031f70b2600850560b008d0c28f62a0266392508691b3023"
+    },
+    {
+      "file": "review.json",
+      "bytes": 1766,
+      "sha256": "8007513ef41f30ce75dc711460850a19f475b1cc6da08b5180d01db50bd0ebcf"
+    }
+  ]
+}

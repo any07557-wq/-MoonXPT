@@ -100,3 +100,14 @@ ZIP与GitHub SHA-256匹配，13+19份包内manifest记录及Git源码身份核�
 归档到evidence/github-actions/run-42329267843/，增加只读离线重验工具。
 旧C15/C16、两次安装失败和两次SDK下载超时不改写。原16笔基线与P0保持冻结。
 本轮没有触发/修改工作流或追加push；接下来做独立AI发布审查，正式Tag/Release尚未创建。
+
+## 发布收尾：独立AI审查完成（2026-11-07）
+
+云端证据先归档到提交9a45c6ea28cfbfba1d6c9508b2d2b634ef04a8f0，再交独立上下文AI
+只读审查。审查者另外读取GitHub API、重验ZIP和20份工作流日志，确认技术验收证据成立，
+未确认支持范围内的核心实现阻断缺陷；正式Release仍需统一CLI/模块版本并生成验证两类制品。
+repository及Mooncakes身份为包发布待办，wheel摘要固定属于非阻断的长期复现改进。
+
+原审查正文与来源登记evidence/release-review-20261107/，处理表见release-review-2026-11-07.md。
+已澄清README：只有--rows提示NAME不区分大小写，--member仍精确匹配；P0行为不变。
+未生成正式制品、未创建Tag/Release、未push或触发CI，没有发布Mooncakes或提交赛事。

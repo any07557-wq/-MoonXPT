@@ -9,6 +9,7 @@ CSV + 版本化 JSON 元数据在程序间交换数据。核心解析、IBM 浮�
 [公开仓库](https://github.com/any07557-wq/-MoonXPT)已保留连续历史；正式Release和Mooncakes尚未发布。
 云端记录见[Run 42329267843归档](docs/evidence/github-actions/run-42329267843/README.md)。完整边界见[兼容矩阵](docs/compatibility.md)，
 证据见[验证报告](docs/validation-report.md)和[交接报告](docs/handoff.md)。
+正式发布前的版本与制品待办见[独立AI发布审查](docs/release-review-2026-11-07.md)。
 
 ## 构建与使用
 
@@ -78,7 +79,8 @@ while reader.next_dataset() is Some(schema) {
 ## 交换与兼容策略
 
 - V5 没有行数。默认严格策略拒绝有多种行数解释的空白尾部，以及成员头与行数据的
-  双重解释。重复的 `--rows NAME=COUNT` 给出精确提示；成员名大小写不敏感。
+  双重解释。重复的 `--rows NAME=COUNT` 给出精确提示，其中NAME大小写不敏感；
+  `export --member NAME` 按成员原名精确匹配，使用inspect显示的大小写。
   `--tail-policy trim` 显式选择最大合法填充和结构验证后的成员边界，可能丢弃歧义空白行。
 - 数值宽度 2–8 字节；IBM→Double 按 SAS/ReadStat 向零截断，误差小于 1 ULP；
   短宽度写入按规范截断。原始字节可访问，CSV 数值语义往返不承诺文件 hash。
