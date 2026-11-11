@@ -1,0 +1,33 @@
+{
+  "stage": "C05",
+  "status": "blocked",
+  "reason": "User explicitly confirmed no legally available SAS environment or runner on 2026-11-11",
+  "sas_executable": null,
+  "sas_version": null,
+  "sas_execution_performed": false,
+  "program_status": "prepared_not_verified",
+  "test_ids": {
+    "S01": "blocked",
+    "S02": "blocked",
+    "S03": "blocked",
+    "S04": "blocked",
+    "S05": "blocked",
+    "S06": "blocked",
+    "S07": "blocked",
+    "S08": "blocked",
+    "S09": "blocked",
+    "S10": "blocked",
+    "S11": "blocked",
+    "S12": "blocked",
+    "S13": "blocked",
+    "S14": "blocked"
+  },
+  "preparation": {
+    "MoonXPT_fixture_generator": "passed",
+    "six_single_and_one_multi_member_inputs": "passed",
+    "MoonXPT_readback_counts": "passed",
+    "unit_groups": 78,
+    "Python_runner_static_compile": "passed"
+  },
+  "boundary": "Generated XPTs are produced by MoonXPT, not SAS. SAS programs have not been compiled or executed by SAS. No mock/CPORT/oracle substitution. S13 needs an actual encoding-specific extension before it can pass."
+}

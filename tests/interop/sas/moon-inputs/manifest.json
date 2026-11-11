@@ -1,0 +1,54 @@
+{
+  "producer": "MoonXPT 0.2.0 development interop driver, NOT SAS",
+  "source_file": "tests/interop/driver/main.mbt",
+  "source_sha256": "8056c29fb12d801545720afd7690afe0ccf82e6d81571d1372c41198abe041e8",
+  "fixture_license": "MIT, synthetic project data",
+  "personal_data": false,
+  "timestamp_policy": "fixed 01JAN00:00:00:00",
+  "known_risk_opt_in": "SHORT has an all-space last observation and is explicitly allowed; actual SAS outcome not known from execution",
+  "member_rows": {
+    "TEST_A": 3,
+    "TEST_B": 2,
+    "EMPTY": 0,
+    "SHORT": 2,
+    "FULLBL": 1,
+    "TAGS": 28
+  },
+  "files": [
+    {
+      "file": "EMPTY.xpt",
+      "bytes": 880,
+      "sha256": "fbc57dd3ca18f223c496b6b372833168fd9114f0a6115d4a7ada57b3767f9ed7"
+    },
+    {
+      "file": "FULLBL.xpt",
+      "bytes": 960,
+      "sha256": "e0916c2fecb04d231cba599e6a4ad49e279d523a54c4cad504b3e4c52dcae873"
+    },
+    {
+      "file": "SHORT.xpt",
+      "bytes": 960,
+      "sha256": "71b7ba8008dcfa5c94c497f002940d1962bc411d5bebb5348aad7f81f2936754"
+    },
+    {
+      "file": "TAGS.xpt",
+      "bytes": 1120,
+      "sha256": "8f80cf998013924d5fad9c28d629afc1dba33a0f9d56f16921eab4589fdce6d9"
+    },
+    {
+      "file": "TEST_A.xpt",
+      "bytes": 1120,
+      "sha256": "f58a1118a13152153dd202bf25bd23a84272d63e294fa605215f5db26a7e2d2b"
+    },
+    {
+      "file": "TEST_B.xpt",
+      "bytes": 1120,
+      "sha256": "928635c30042563a2d4beafb77ebbf8f032c7586d03f1118d6524938858c32cd"
+    },
+    {
+      "file": "moon_multi.xpt",
+      "bytes": 4960,
+      "sha256": "6391fabd8c4b77ba79d89422b5cfb3cc7195fb71d908efce99c6c4bf21bac4e2"
+    }
+  ]
+}
