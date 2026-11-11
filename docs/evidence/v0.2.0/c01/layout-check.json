@@ -1,0 +1,81 @@
+{
+  "result": "passed",
+  "fixtures": [
+    {
+      "file": "tests/fixtures/namestr-136.xpt",
+      "descriptor_size": 136,
+      "variables": [
+        {
+          "name": "VALUE",
+          "width": 8,
+          "position": 0
+        },
+        {
+          "name": "TEXT",
+          "width": 6,
+          "position": 8
+        }
+      ],
+      "row_width": 14,
+      "obs_start": 1040,
+      "sha256": "f361e899d73607c444ca243809a609bc85461943cf97a1ea310987c0165e3a5b"
+    },
+    {
+      "file": "tests/fixtures/readstat-v5.xpt",
+      "descriptor_size": 140,
+      "variables": [
+        {
+          "name": "VALUE",
+          "width": 8,
+          "position": 0
+        },
+        {
+          "name": "TEXT",
+          "width": 6,
+          "position": 8
+        }
+      ],
+      "row_width": 14,
+      "obs_start": 1040,
+      "sha256": "42fb9bd94739b74f00be8efe59bba628d5d383c5d4cab158126a7d3699375f43"
+    },
+    {
+      "file": "tests/fixtures/reordered-offsets.xpt",
+      "descriptor_size": 140,
+      "variables": [
+        {
+          "name": "VALUE",
+          "width": 8,
+          "position": 6
+        },
+        {
+          "name": "TEXT",
+          "width": 6,
+          "position": 0
+        }
+      ],
+      "row_width": 14,
+      "obs_start": 1040,
+      "sha256": "ebddcdfd0f41d22ea382b5374943ecd01935bc6338cecb39bc3a215d8fbafd1a"
+    },
+    {
+      "file": "tests/fixtures/xport-multi.xpt",
+      "descriptor_size": 140,
+      "variables": [
+        {
+          "name": "ID",
+          "width": 8,
+          "position": 0
+        },
+        {
+          "name": "TEXT",
+          "width": 4,
+          "position": 8
+        }
+      ],
+      "row_width": 12,
+      "obs_start": 1040,
+      "sha256": "171254f9ddaff70f02a160f68c4438bfab9ffef3398da5b256dd669422260bab"
+    }
+  ]
+}

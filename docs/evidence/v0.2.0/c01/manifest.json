@@ -1,0 +1,29 @@
+{
+  "files": [
+    {
+      "file": "c00-offline.zip",
+      "bytes": 801,
+      "sha256": "890f7fcaf5c1a68e8982fafd038a546d468973460e9da9bbbbf66fce60fb59ef"
+    },
+    {
+      "file": "c00-repository.json",
+      "bytes": 4075,
+      "sha256": "12891e16b4d3d23d5caeb37e3e0cd8840df68092e444f4e97e048511da860829"
+    },
+    {
+      "file": "layout-check.json",
+      "bytes": 1800,
+      "sha256": "c212d7b1f1ea3989879e1b57339688489a187cdab18f81fde506267a3afb64a0"
+    },
+    {
+      "file": "protected-baseline.json",
+      "bytes": 55422,
+      "sha256": "ce177c03bde8fe3f79774b5faff9a7faaa5240e3e0ff2778f5210c6368c94c7d"
+    },
+    {
+      "file": "sources.json",
+      "bytes": 1582,
+      "sha256": "a06f1c3ec9916cb64d049523234f5e2225f89d273e1f2653caaadd92eb4bb636"
+    }
+  ]
+}

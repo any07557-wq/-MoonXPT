@@ -1,0 +1,36 @@
+[
+  {
+    "file": "readstat-read.c",
+    "url": "https://github.com/WizardMac/ReadStat/blob/8ce32a11c248225dd4ccaccbcadd24214c5da46f/src/sas/readstat_xport_read.c",
+    "git_blob": "d3959619a53470811e4ee11eb2fe84f482c7d586",
+    "sha256": "e75127c3df69e050607f56fe87e239a5bd230e937a3c4881121ad9d98928555e",
+    "access_date": "2026-11-11"
+  },
+  {
+    "file": "readstat-write.c",
+    "url": "https://github.com/WizardMac/ReadStat/blob/8ce32a11c248225dd4ccaccbcadd24214c5da46f/src/sas/readstat_xport_write.c",
+    "git_blob": "b550b545abb3587bc973f90f20bee6af976b9c86",
+    "sha256": "5d565f95d8ae8c6d10700c4f93a32b5eb8933ae578baf9ad849b57c1cf50f245",
+    "access_date": "2026-11-11"
+  },
+  {
+    "file": "ts140.pdf",
+    "url": "https://support.sas.com/techsup/technote/ts140.pdf",
+    "access_date": "2026-11-11",
+    "verification": "official PDF opened with web reader, 28 pages, last update October 2021; direct download failed TLS; no new file SHA claimed"
+  },
+  {
+    "file": "sas-eof.html",
+    "url": "https://www.sas.com/zh_tw/industry/government/accessibility/accessibility-compliance.html",
+    "access_date": "2026-11-11",
+    "sha256": "7a9e53bb144c24846daf658edfd357015c8bce45ffb2811a224a0523d6b06ced"
+  },
+  {
+    "file": "xport-v56.py",
+    "version": "3.6.1",
+    "url": "https://github.com/selik/xport/blob/v3.6.1/xport/v56.py",
+    "sha256": "20b5e2dd8cba9fb57f4a785933ec4fcf8668807e8d828f6b9c4803c1611085ba",
+    "access_date": "2026-11-11",
+    "verification": "installed distribution metadata and unmodified v56.py; pandas constructor adapter separate"
+  }
+]

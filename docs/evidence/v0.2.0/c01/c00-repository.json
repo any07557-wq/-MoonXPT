@@ -1,0 +1,91 @@
+{
+  "audit_date": "2026-11-11",
+  "timezone": "Asia/Shanghai",
+  "commands": [
+    {
+      "command": [
+        "pwd"
+      ],
+      "stdout": "/home/user/MoonBit_Program/MoonXPT\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "stdout": "## main...origin/main\n?? docs/project-application.md\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "stdout": "bad7ec0158c5585b3a2ba1b0fe99528cfa1ffd7a\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "log",
+        "--oneline",
+        "--decorate",
+        "-25"
+      ],
+      "stdout": "bad7ec0 (HEAD -> main, origin/main) docs: archive v0.1.0 release and independent publication requirements\naa56905 docs: record final artifact integrity and clean verification\n2cddd31 (tag: v0.1.0) build: prepare distinct source and library release artifacts\n9fd8d2e docs: verify 0.1.0 versions in candidate archives\nf1230b6 fix: unify MoonXPT product version at 0.1.0\na2c3473 docs: record independent release readiness review\n9a45c6e docs: archive verified GitHub compatibility run 42329267843\n0dc4b95 ci: upgrade all jobs to Node 24 actions\nffb07d1 ci: upgrade GitHub Actions to Node 24\nab49c4f docs: correct MoonBit archive verification history\n1c231aa docs: clarify corrected MoonBit archive installation\n584087c docs: retain CI preparation and download timeout evidence\n958f9fc ci: preserve fresh verification evidence for both jobs\ncba5e3a fix: verify fresh installation of frozen toolchain\ne8de248 docs: archive frozen C16 acceptance evidence\n1516dfd docs: deliver usage examples and contest handoff\nd4d4af2 ci: add reproducible compatibility checks\n1268113 fix: harden malformed input and streaming boundaries\n49990b2 test: validate public datasets against independent readers\nc4e1d92 feat: rebuild XPT from CSV and metadata\nfd72a23 feat: export CSV with versioned XPT metadata\nc46d08c feat: add inspect CLI and structured diagnostics\ne1bfbf1 feat: stream V5 rows and verify writer interoperability\n796fe45 feat: write validated V5 headers and schemas\nf93a9b2 feat: stream observations across dataset members\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "tag",
+        "--list",
+        "--sort=version:refname"
+      ],
+      "stdout": "v0.1.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "show",
+        "--no-patch",
+        "--format=fuller",
+        "v0.1.0"
+      ],
+      "stdout": "tag v0.1.0\nTagger:     any07557-wq <any07557@gmail.com>\nTaggerDate: Sat Nov 7 17:55:01 2026 +0800\n\nMoonXPT v0.1.0\n\nSource commit: 2cddd31bb8b88648f619969dbb4fe195051735b4\n\nValidated local source/library artifacts:\n93df9b777bdb075dab1213fdf71fdef3fc09b515dd1676b3d635d8205d9962f1  moonxpt-0.1.0.zip\n853064a112ad766635fc8521c18a2c5993fc09c7697cfb191a2523371e911b13  moonxpt-0.1.0-source.zip\n\nMain push CI passed: https://github.com/any07557-wq/-MoonXPT/actions/runs/42361511304\nRelease assets retain the exact Stage B bytes.\n\ncommit 2cddd31bb8b88648f619969dbb4fe195051735b4\nAuthor:     any07557-wq <any07557@gmail.com>\nAuthorDate: Sat Nov 7 17:34:10 2026 +0800\nCommit:     any07557-wq <any07557@gmail.com>\nCommitDate: Sat Nov 7 17:34:10 2026 +0800\n\n    build: prepare distinct source and library release artifacts\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--stat"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--stat"
+      ],
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "tag_object": "51ab97700bdaf15e225f432ec1bf27c94dc70a8f",
+  "tag_source": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+  "user_untracked_file": {
+    "path": "docs/project-application.md",
+    "bytes": 3570,
+    "sha256": "abaa7cfe029c8067551560659dbda596f84040d3e06946e9dfd0f85acd291c38"
+  },
+  "sas_on_path": null
+}
