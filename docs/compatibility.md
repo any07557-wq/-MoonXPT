@@ -26,3 +26,20 @@
 | 其他编码、SAS7BDAT、CPORT、外部值标签目录 | 不支持/不在本期范围 | 不猜测编码、日期或值标签；日期保留有限数值及format |
 
 确定性：相同 schema/值/选项产生同字节；无来源时间时使用可注入的固定 DATETIME16。保留来源时间时按实际字段写出。reserved字段与描述符尾部规范化，存储间隙填空格，元数据头部填充重建；CSV往返不保证整个文件hash或 IBM 低有效位。
+
+## v0.2.0开发阶段新增边界（2026-11-11）
+
+上表保留v0.1.0历史结果。本节为未发布开发版本，不将旧云端run算作新版本CI。
+
+| 能力 | 状态 | 证据/限制 |
+|---|---|---|
+| 单成员候选N/P与hint验证 | passed | B01–B20；共享resolver，字段间隙/重排及溢出检查 |
+| 全局成员链 | passed | M01–M23；完整头/EOF图、候选缓存、成员/搜索/回放预算 |
+| 新策略与报告 | passed | A01–A18；旧选项record与finish调用兼容，错误stdout保持空 |
+| Writer已知短空白末行风险 | passed | 默认拒绝，显式allow及报告；宽空白行/空成员不误拒绝 |
+| 非标准NUL兼容 | passed（本地合成fixture） | 默认不允许；仅opt-in，不声称SAS规范；独立工具结果在C06另验 |
+| 非seekable结构分叉 | passed（限额内） | 小chunk通过，回放超限明确失败；不承诺任意长分叉常量内存成功 |
+| ReadStat/Python xport新双向矩阵 | not_run | C06完成后追加实际证据；旧结果不替代 |
+| SAS XPORT Engine双向 | blocked | 用户确认无合法环境/runner；C05仅准备，不以mock替代 |
+
+API、CLI、JSON状态及迁移说明见[新边界契约](boundary-v0.2.0.md)。

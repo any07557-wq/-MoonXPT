@@ -12,4 +12,7 @@ docs/*
 !docs/exchange-format.md
 !docs/adr-002-numeric.md
 !docs/references.md
+!docs/boundary-v0.2.0.md
+!docs/adr-003-v5-boundary-resolution.md
+tests/boundary/generators/
 __pycache__/

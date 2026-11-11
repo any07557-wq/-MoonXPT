@@ -1,7 +1,7 @@
 ///|
 fn help() -> String {
   (
-    #|MoonXPT 0.1.0 — SAS XPORT V5 (native)
+    #|MoonXPT 0.2.0 — SAS XPORT V5 (native)
     #|Usage:
     #|  moonxpt inspect INPUT.xpt [--json] [--count-rows]
     #|  moonxpt export INPUT.xpt --member NAME --csv DATA.csv --metadata DATA.json
@@ -10,6 +10,13 @@ fn help() -> String {
     #|  --encoding ascii|windows-1252  Explicit source text encoding (default ascii)
     #|  --tail-policy strict|trim      Default strict; trim chooses maximal legal padding
     #|  --rows MEMBER=COUNT            Repeatable exact row hints for ambiguous V5 files
+    #|  --require-row-count            Require a named hint for each member
+    #|  --padding-policy strict|nul    Default strict; nul is nonstandard compatibility
+    #|  --max-boundary-candidates N     Limit header probes (default 64)
+    #|  --max-boundary-replay-bytes N   Nonseekable replay/header budget (default 16777216)
+    #|  --max-members N                Limit member count (default 1024)
+    #|  --header-only                  Inspect first schema without scanning observations
+    #|  --allow-ambiguous-tail         Write opt-in for known short blank-tail risk
     #|  --max-input-bytes N            Default 1099511627776
     #|  --max-row-bytes N              Default 16777216
     #|  --force                        Replace outputs using staged files
@@ -27,6 +34,12 @@ struct Args {
   flags : Map[String, Bool]
   read_options : @xpt.ReadOptions
   encoding : @xpt.Encoding
+  boundary_options : @xpt.BoundaryOptions
+}
+
+///|
+priv struct RunContext {
+  mut reader : @xpt.Reader?
 }
 
 ///|
@@ -55,9 +68,10 @@ fn parse_args(args : Array[String]) -> Args raise @xpt.XptError {
   let mut i = 3
   while i < args.length() {
     let key = args[i]
-    if ["--json", "--count-rows", "--force", "--numeric-empty-missing"].contains(
-        key,
-      ) {
+    if [
+        "--json", "--count-rows", "--force", "--numeric-empty-missing", "--require-row-count",
+        "--header-only", "--allow-ambiguous-tail",
+      ].contains(key) {
       if flags.contains(key) {
         @xpt.fail("usage", "duplicate option: \{key}")
       }
@@ -65,7 +79,8 @@ fn parse_args(args : Array[String]) -> Args raise @xpt.XptError {
       i = i + 1
     } else if [
         "--member", "--csv", "--metadata", "--output", "--encoding", "--tail-policy",
-        "--rows", "--max-input-bytes", "--max-row-bytes",
+        "--rows", "--max-input-bytes", "--max-row-bytes", "--padding-policy", "--max-boundary-candidates",
+        "--max-boundary-replay-bytes", "--max-members",
       ].contains(key) {
       if i + 1 >= args.length() {
         @xpt.fail("usage", "option requires a value: \{key}")
@@ -73,7 +88,7 @@ fn parse_args(args : Array[String]) -> Args raise @xpt.XptError {
       if key == "--rows" {
         match args[i + 1].split_once("=") {
           Some((name, count)) => {
-            let name = name.to_owned()
+            let name = name.to_owned().to_upper()
             if name.is_empty() || hints.contains(name) {
               @xpt.fail("usage", "invalid or duplicate member row hint")
             }
@@ -94,9 +109,15 @@ fn parse_args(args : Array[String]) -> Args raise @xpt.XptError {
   }
   for key, _ in flags {
     let allowed = match command {
-      "inspect" => key == "--json" || key == "--count-rows"
-      "export" => key == "--force"
-      _ => key == "--force" || key == "--numeric-empty-missing"
+      "inspect" =>
+        ["--json", "--count-rows", "--header-only", "--require-row-count"].contains(
+          key,
+        )
+      "export" => key == "--force" || key == "--require-row-count"
+      _ =>
+        ["--force", "--numeric-empty-missing", "--allow-ambiguous-tail"].contains(
+          key,
+        )
     }
     if !allowed {
       @xpt.fail("usage", "\{key} is not valid for \{command}")
@@ -108,6 +129,9 @@ fn parse_args(args : Array[String]) -> Args raise @xpt.XptError {
       "--metadata" => command != "inspect"
       "--output" => command == "write"
       "--tail-policy" => command != "write"
+      "--padding-policy"
+      | "--max-boundary-candidates"
+      | "--max-boundary-replay-bytes" => command != "write"
       _ => true
     }
     if !allowed {
@@ -128,6 +152,46 @@ fn parse_args(args : Array[String]) -> Args raise @xpt.XptError {
     _ => @xpt.fail("usage", "tail policy must be strict or trim")
   }
   let mut limits = @xpt.Limits::default()
+  let mut boundary_options = @xpt.BoundaryOptions::default()
+  if flags.contains("--header-only") && flags.contains("--count-rows") {
+    @xpt.fail("usage", "--header-only cannot count observations")
+  }
+  if flags.contains("--require-row-count") {
+    boundary_options = {
+      ..boundary_options,
+      row_count_policy: @xpt.RequireExplicitCount,
+    }
+  }
+  let pad = match opts.get("--padding-policy").unwrap_or("strict") {
+    "strict" => @xpt.StrictSpec
+    "nul" => @xpt.CompatibilityNulPadding
+    _ => @xpt.fail("usage", "padding policy must be strict or nul")
+  }
+  boundary_options = { ..boundary_options, padding_policy: pad, }
+  for
+    key in [
+      "--max-boundary-candidates", "--max-boundary-replay-bytes", "--max-members",
+    ] {
+    if opts.get(key) is Some(raw) {
+      let n = positive_integer(raw)
+      if n > 2147483647L {
+        @xpt.fail("usage", "boundary resource setting exceeds Int32")
+      }
+      match key {
+        "--max-boundary-candidates" =>
+          boundary_options = {
+            ..boundary_options,
+            max_boundary_candidates: n.to_int(),
+          }
+        "--max-boundary-replay-bytes" =>
+          boundary_options = {
+            ..boundary_options,
+            max_replay_bytes: n.to_int(),
+          }
+        _ => limits = { ..limits, max_datasets: n.to_int(), }
+      }
+    }
+  }
   if opts.get("--max-input-bytes") is Some(raw) {
     limits = { ..limits, max_input_bytes: positive_integer(raw), }
   }
@@ -145,11 +209,12 @@ fn parse_args(args : Array[String]) -> Args raise @xpt.XptError {
     flags,
     encoding,
     read_options: { limits, tail_policy, row_hints: hints, },
+    boundary_options,
   }
 }
 
 ///|
-fn inspect_file(args : Args) -> Unit raise {
+fn inspect_file(args : Args, context : RunContext) -> Unit raise {
   for key in ["--member", "--csv", "--metadata", "--output"] {
     if args.opts.contains(key) {
       @xpt.fail("usage", "\{key} is not valid for inspect")
@@ -157,10 +222,27 @@ fn inspect_file(args : Args) -> Unit raise {
   }
   let file = @platform.File::open(args.input)
   defer file.cleanup()
-  let reader = @xpt.Reader::new(file.input(), options=args.read_options)
+  let reader = @xpt.Reader::new(
+    file.input(),
+    options=args.read_options,
+    boundary_options=args.boundary_options,
+  )
+  context.reader = Some(reader)
   let members : Array[Json] = []
   let count = args.flags.contains("--count-rows")
   while reader.next_dataset() is Some(meta) {
+    if args.flags.contains("--header-only") {
+      members.push({
+        "metadata": @exchange.dataset_json(meta, args.encoding),
+        "row_count": Json::null(),
+        "row_count_status": "not_scanned",
+        "boundary_status": "unverified",
+        "candidate_counts": [],
+        "padding_bytes": Json::null(),
+        "diagnostics": [],
+      })
+      break
+    }
     let mut rows = 0L
     while reader.next_raw() is Some(_) {
       rows = rows + 1L
@@ -172,6 +254,15 @@ fn inspect_file(args : Args) -> Unit raise {
       } else {
         Json::null()
       },
+      "row_count_status": reader.boundary_report().unwrap().row_count_status,
+      "boundary_status": reader.boundary_report().unwrap().boundary_status,
+      "boundary": @exchange.boundary_json(reader.boundary_report().unwrap()),
+      "candidate_counts": reader.boundary_report().unwrap().candidate_counts.map(
+        @exchange.integer_json,
+      ),
+      "padding_bytes": reader.boundary_report().unwrap().padding_bytes
+      .map(n => Json::number(n.to_double()))
+      .unwrap_or(Json::null()),
     })
   }
   let report : Json = {
@@ -185,6 +276,8 @@ fn inspect_file(args : Args) -> Unit raise {
     },
     "library": @exchange.library_json(reader.library()),
     "members": members,
+    "boundary_schema_version": 1,
+    "scan_complete": !args.flags.contains("--header-only"),
   }
   if args.flags.contains("--json") {
     println(report.stringify())
@@ -203,17 +296,24 @@ fn main {
     println(help())
     return
   }
+  let context = RunContext::{ reader: None, }
   try {
     let parsed = parse_args(args)
     match parsed.command {
-      "inspect" => inspect_file(parsed)
-      "export" => export_file(parsed)
+      "inspect" => inspect_file(parsed, context)
+      "export" => export_file(parsed, context)
       "write" => write_file(parsed)
       _ => @xpt.fail("usage", "unsupported command")
     }
   } catch {
     @xpt.XptError(d) => {
-      @platform.stderr(@exchange.diagnostic_json(d).stringify() + "\n")
+      let report = match context.reader {
+        Some(r) => r.boundary_report()
+        None => None
+      }
+      @platform.stderr(
+        @exchange.boundary_diagnostic_json(d, report).stringify() + "\n",
+      )
       @platform.exit(if d.kind == "io" { 3 } else { 2 })
     }
     error => {
@@ -259,10 +359,19 @@ fn write_file(args : Args) -> Unit raise {
   }
   let stage = @platform.Stage::new(output, force=args.flags.contains("--force"))
   defer stage.cleanup()
-  let writer = @xpt.Writer::new(stage.output(), library=metadata.library, options={
-    ..@xpt.WriteOptions::default(),
-    limits: args.read_options.limits,
-  })
+  let writer = @xpt.Writer::new(
+    stage.output(),
+    library=metadata.library,
+    options={
+      ..@xpt.WriteOptions::default(),
+      limits: args.read_options.limits,
+    },
+    tail_policy=if args.flags.contains("--allow-ambiguous-tail") {
+      @xpt.AllowAmbiguousTail
+    } else {
+      @xpt.RejectAmbiguousTail
+    },
+  )
   writer.begin_dataset(metadata.dataset)
   let mut count = 0L
   while true {
@@ -301,12 +410,28 @@ fn write_file(args : Args) -> Unit raise {
   if count != metadata.row_count {
     @xpt.fail("csv", "CSV row count differs from metadata row_count", row=count)
   }
-  writer.finish()
+  let finished = writer.finish_report()
+  let warnings : Array[Json] = []
+  for entry in finished.members {
+    if entry.code is Some(code) {
+      warnings.push({
+        "code": code,
+        "member": entry.member_name,
+        "row_count": @exchange.integer_json(entry.row_count),
+      })
+    }
+  }
   @platform.commit_group([stage])
+  if !warnings.is_empty() {
+    let diagnostic : Json = { "kind": "warning", "diagnostics": warnings }
+    @platform.stderr(diagnostic.stringify() + "\n")
+  }
   let report : Json = {
     "output": output,
     "row_count": @exchange.integer_json(count),
     "member": @xpt.text_field(metadata.dataset.name, @xpt.Ascii),
+    "member_count": finished.member_count,
+    "diagnostics": warnings,
   }
   println(report.stringify())
 }
@@ -319,7 +444,7 @@ fn required_option(args : Args, key : String) -> String raise @xpt.XptError {
 }
 
 ///|
-fn export_file(args : Args) -> Unit raise {
+fn export_file(args : Args, context : RunContext) -> Unit raise {
   let selected = required_option(args, "--member")
   let csv_path = required_option(args, "--csv")
   let meta_path = required_option(args, "--metadata")
@@ -335,7 +460,12 @@ fn export_file(args : Args) -> Unit raise {
     force=args.flags.contains("--force"),
   )
   defer metadata.cleanup()
-  let reader = @xpt.Reader::new(input.input(), options=args.read_options)
+  let reader = @xpt.Reader::new(
+    input.input(),
+    options=args.read_options,
+    boundary_options=args.boundary_options,
+  )
+  context.reader = Some(reader)
   let mut found = false
   let mut count = 0L
   while reader.next_dataset() is Some(meta) {

@@ -1,0 +1,91 @@
+{
+  "stage": "C04",
+  "status": "passed",
+  "product_version": "0.2.0",
+  "released": false,
+  "test_groups": 78,
+  "api_cli_test_ids": {
+    "A01": "passed",
+    "A02": "passed",
+    "A03": "passed",
+    "A04": "passed",
+    "A05": "passed",
+    "A06": "passed",
+    "A07": "passed",
+    "A08": "passed",
+    "A09": "passed",
+    "A10": "passed",
+    "A11": "passed",
+    "A12": "passed",
+    "A13": "passed",
+    "A14": "passed",
+    "A15": "passed",
+    "A16": "passed",
+    "A17": "passed",
+    "A18": "passed"
+  },
+  "commands": [
+    "python3 tools/check.py",
+    "python3 tests/boundary/generators/generate.py --check tests/boundary/fixtures",
+    "python3 tools/test_boundary_cli.py",
+    "moon info --target native"
+  ],
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "protected_files_verified": 300,
+  "source_files": [
+    {
+      "file": "boundary_api_wbtest.mbt",
+      "sha256": "e2261a48dc9970955d289cdc5486a2f961477b8e91a656c319352f6a9889d9e1"
+    },
+    {
+      "file": "reader_report.mbt",
+      "sha256": "cffdeb3fcb94b1a8d1f1e0736bee09831cddcf0a1cbf3468e4b4e3a3e0f3365b"
+    },
+    {
+      "file": "writer_report.mbt",
+      "sha256": "294f0f8ebbe269140bc813fd8ede388ea10b518a8fd4ff89519b01ecf7272175"
+    },
+    {
+      "file": "writer.mbt",
+      "sha256": "c325f4df425ff38e365007f29bb58ea26355b2a622c8b9b38d9e68e12ca2bc4f"
+    },
+    {
+      "file": "reader.mbt",
+      "sha256": "17063c6440f3a85edcab41b43208be52a747959bf5fa29860377a87a36e0616a"
+    },
+    {
+      "file": "boundary.mbt",
+      "sha256": "270c8eb13ea4e857618ef9f65b001ed7d3c6d65a9ed2091f7c11dd7328a5c360"
+    },
+    {
+      "file": "member_chain.mbt",
+      "sha256": "33ac8a96dfe8bfa99fb26f90836173cc0423454905c009d053fbc333cea8c57b"
+    },
+    {
+      "file": "cmd/moonxpt/main.mbt",
+      "sha256": "2d7f895b8e589040d974f3f77a02be12c98177c8349f488e4666a34e334c1cd7"
+    },
+    {
+      "file": "exchange/boundary.mbt",
+      "sha256": "516697f70508927299371e4876d282bf7ee4ff36cfa844c1054605805c7b12dc"
+    },
+    {
+      "file": "tools/test_boundary_cli.py",
+      "sha256": "85180fb53e115e5a923f3a284539183b1c9a36bc0fbf8f57e20edb1a74ca7c63"
+    },
+    {
+      "file": "tests/boundary/generators/generate.py",
+      "sha256": "de503ea9a6cf311e671b3a13c061ad05089e23726b82bced84c4ab2b73a3cf60"
+    },
+    {
+      "file": "moon.mod",
+      "sha256": "634c441c5c26889b325da97f362c7272f7767c0b9d8dd47e29856a3a9953bfbf"
+    }
+  ],
+  "boundaries": [
+    "finish Unit preserved; finish_report is additive",
+    "writer known-risk default intentionally tightened with opt-in",
+    "old option/Diagnostic record constructors compile",
+    "no remote CI triggered or release created"
+  ]
+}

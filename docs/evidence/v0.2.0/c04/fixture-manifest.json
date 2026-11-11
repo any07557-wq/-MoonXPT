@@ -1,0 +1,193 @@
+[
+  {
+    "file": "short-unique.xpt",
+    "bytes": 960,
+    "sha256": "5158ded91e0cb3e6d3520eb33210630f1ba9c29c79c7ee4a0ac94fda9e8a0176",
+    "test_ids": [
+      "B03",
+      "A02"
+    ],
+    "producer": "Python stdlib TS-140 layout vector, generate.py",
+    "tool": "Python 3 stdlib",
+    "license": "MIT, synthetic MoonXPT test data",
+    "personal_data": false,
+    "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+  },
+  {
+    "file": "short-ambiguous.xpt",
+    "bytes": 960,
+    "sha256": "0a320867f9015aee9fdf0fdb12d6b5428e98c9ff607fcc5cd1cec4eeb60e4482",
+    "test_ids": [
+      "B19",
+      "A04",
+      "A06"
+    ],
+    "producer": "Python stdlib TS-140 layout vector, generate.py",
+    "tool": "Python 3 stdlib",
+    "license": "MIT, synthetic MoonXPT test data",
+    "personal_data": false,
+    "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+  },
+  {
+    "file": "wide-unique.xpt",
+    "bytes": 1040,
+    "sha256": "81798b3fe49d9a82e843b1c00f90e4c8ecafa7e88d268d31d66ab62b2575f801",
+    "test_ids": [
+      "B07",
+      "A03"
+    ],
+    "producer": "Python stdlib TS-140 layout vector, generate.py",
+    "tool": "Python 3 stdlib",
+    "license": "MIT, synthetic MoonXPT test data",
+    "personal_data": false,
+    "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+  },
+  {
+    "file": "multi-unique.xpt",
+    "bytes": 1760,
+    "sha256": "80837eb03aac4cc6878f9b8ebb076a00a5cd955961a6d4956d738dabcd1ddc18",
+    "test_ids": [
+      "M01",
+      "A07"
+    ],
+    "producer": "Python stdlib TS-140 layout vector, generate.py",
+    "tool": "Python 3 stdlib",
+    "license": "MIT, synthetic MoonXPT test data",
+    "personal_data": false,
+    "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+  },
+  {
+    "file": "multi-ambiguous-rows.xpt",
+    "bytes": 1680,
+    "sha256": "34897403ce73de41ae969dee813be80b3aa7df0b35cc4a198bc92c9711967f2f",
+    "test_ids": [
+      "M07"
+    ],
+    "producer": "Python stdlib TS-140 layout vector, generate.py",
+    "tool": "Python 3 stdlib",
+    "license": "MIT, synthetic MoonXPT test data",
+    "personal_data": false,
+    "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+  },
+  {
+    "file": "polyglot.xpt",
+    "bytes": 1920,
+    "sha256": "47e0e2d95172126cda317d4d6807ec3d70a25d5888d800e37ecf1393dd66ed1f",
+    "test_ids": [
+      "M18"
+    ],
+    "producer": "Python stdlib TS-140 layout vector, generate.py",
+    "tool": "Python 3 stdlib",
+    "license": "MIT, synthetic MoonXPT test data",
+    "personal_data": false,
+    "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+  },
+  {
+    "file": "invalid-padding.xpt",
+    "bytes": 1040,
+    "sha256": "4519a5955c75780407c37732fbd1d4bb128578e4eaaf52c9e162d9b52887a5a5",
+    "test_ids": [
+      "B11",
+      "A05"
+    ],
+    "producer": "Python stdlib TS-140 layout vector, generate.py",
+    "tool": "Python 3 stdlib",
+    "license": "MIT, synthetic MoonXPT test data",
+    "personal_data": false,
+    "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+  },
+  {
+    "file": "nul-padding.xpt",
+    "bytes": 1040,
+    "sha256": "c6b2691ca7ad63e35e9b673b7ee02b77907c1b17f8c245bf45bc41e1e9f08b58",
+    "test_ids": [
+      "B11",
+      "R10"
+    ],
+    "producer": "Python stdlib TS-140 layout vector, generate.py",
+    "tool": "Python 3 stdlib",
+    "license": "MIT, synthetic MoonXPT test data",
+    "personal_data": false,
+    "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+  },
+  {
+    "file": "truncated-padding.xpt",
+    "bytes": 1039,
+    "sha256": "ebee8e23021c2536a81defb0ee8670b0bfb220a34e783b8ec62f7b0edce2321b",
+    "test_ids": [
+      "B13"
+    ],
+    "producer": "Python stdlib TS-140 layout vector, generate.py",
+    "tool": "Python 3 stdlib",
+    "license": "MIT, synthetic MoonXPT test data",
+    "personal_data": false,
+    "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+  },
+  {
+    "file": "truncated-observation.xpt",
+    "bytes": 960,
+    "sha256": "d13dfdb1f1cce4e5674e2e39518b4eac4285a2a4ce52ad8ae48e80758563d82b",
+    "test_ids": [
+      "B12"
+    ],
+    "producer": "Python stdlib TS-140 layout vector, generate.py",
+    "tool": "Python 3 stdlib",
+    "license": "MIT, synthetic MoonXPT test data",
+    "personal_data": false,
+    "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+  },
+  {
+    "file": "truncated-member-header.xpt",
+    "bytes": 1140,
+    "sha256": "40ee70714b26479d7c755da5e7216052c5242dd654f9687145483c97fdbacd55",
+    "test_ids": [
+      "M16"
+    ],
+    "producer": "Python stdlib TS-140 layout vector, generate.py",
+    "tool": "Python 3 stdlib",
+    "license": "MIT, synthetic MoonXPT test data",
+    "personal_data": false,
+    "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+  },
+  {
+    "file": "trailing-garbage.xpt",
+    "bytes": 1120,
+    "sha256": "8aaeb9c2ae9c4de3193d31ebec6c8d79b6c48018bbed6759a3093d4853374bc8",
+    "test_ids": [
+      "M17"
+    ],
+    "producer": "Python stdlib TS-140 layout vector, generate.py",
+    "tool": "Python 3 stdlib",
+    "license": "MIT, synthetic MoonXPT test data",
+    "personal_data": false,
+    "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+  },
+  {
+    "file": "wide-blank.xpt",
+    "bytes": 960,
+    "sha256": "b1cea50bfcffb6f806f49c5522353edaef0a564aca4cab46c9cb75209d5aecdf",
+    "test_ids": [
+      "B06",
+      "A15"
+    ],
+    "producer": "Python stdlib TS-140 layout vector, generate.py",
+    "tool": "Python 3 stdlib",
+    "license": "MIT, synthetic MoonXPT test data",
+    "personal_data": false,
+    "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+  },
+  {
+    "file": "zero-row.xpt",
+    "bytes": 880,
+    "sha256": "5f7eabfce50b4ee7fb757323a6fbf209b43314fcbdcc33714b270eabf47325ad",
+    "test_ids": [
+      "B01",
+      "A16"
+    ],
+    "producer": "Python stdlib TS-140 layout vector, generate.py",
+    "tool": "Python 3 stdlib",
+    "license": "MIT, synthetic MoonXPT test data",
+    "personal_data": false,
+    "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+  }
+]

@@ -21,3 +21,11 @@ MoonXPT的首个产品版本，[annotated tag及GitHub Release v0.1.0](https://g
 制品：`moonxpt-0.1.0.zip`（使用者库包）、`moonxpt-0.1.0-source.zip`（完整评审源码及29次Git历史）。
 另附验证证据ZIP、SHA256SUMS和外部清单。两个原始制品保持阶段B字节与模块名any07557/moonxpt；
 后续any07557-wq/moonxpt的Mooncakes迁移独立处理，不覆盖本次附件或移动标签。
+
+## 0.2.0开发中（2026-11-11追加，尚未发布）
+
+- 共享尾部resolver与完整合法成员链图；严格区分行数和成员边界歧义。
+- 逐成员hint继续完整验证，新增计数/填充策略、候选及回放资源限额、状态和机器诊断。
+- Writer新增已知短全字符空白末行风险默认拒绝、显式allow和finish_report；旧finish调用保留。
+- 原27组及已有验收证据保留；新增边界/API测试与独立布局fixture。SAS验证因无合法环境blocked。
+- 本地开发版本不代表新Release、Mooncakes发布或远端CI通过。

@@ -274,6 +274,10 @@ fn Reader::resolve_chain(self : Reader, first : Bytes) -> Unit raise {
       observation_start: self.data_start,
       boundary_offset: fork,
       code: Some("E_V5_MEMBER_BOUNDARY_AMBIGUOUS"),
+      hint: None,
+      expected_bytes: None,
+      actual_bytes: fork - self.data_start,
+      policy: "strict_auto",
     })
     v5_fail(
       "ambiguous",

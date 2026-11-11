@@ -205,10 +205,7 @@ test "M15 candidate headers across small chunks and nonseekable replay" {
 test "M16 truncated next header is not EOF" {
   let bytes = unique_multi()
   try
-    mread(bytes[:bytes.length() - 13].to_owned(), hints={
-      "FIRST": 1L,
-      "SECOND": 1L,
-    })
+    mread(bytes[:1140].to_owned(), hints={ "FIRST": 1L, "SECOND": 1L })
   catch {
     XptError(d) => assert_eq(d.kind, "truncated")
     e => raise e

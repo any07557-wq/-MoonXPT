@@ -50,3 +50,10 @@ repository与命名空间/版本确认由R3跟踪，原P0功能保持冻结。
 GitHub Release已发布且全部附件回下载校验通过，见[记录](evidence/release-20261107/README.md)。
 已发布ZIP中的README/CHANGELOG是打包时的历史快照，正文当时为待发布；正式状态以
 Release及本次追加证据为准，不为更新状态而替换附件字节。Mooncakes新命名空间迁移独立处理。
+
+## v0.2.0开发目标（2026-11-11追加）
+
+上述表格与证据保留0.1.0历史。当前开发分支模块与CLI横幅改为0.2.0，README注明未发布，
+不创建同名tag或制品发布。SAS来源version、JSON schema_version、SDK版本不随产品版本改写。
+命名空间继续any07557/moonxpt，既定Mooncakes迁移在另一任务处理。本次原公共消费方工具
+保留0.1.0依赖声明并通过workspace编译，用于证明调用签名兼容，不声称registry存在0.2.0。

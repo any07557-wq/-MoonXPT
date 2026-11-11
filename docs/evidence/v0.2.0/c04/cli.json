@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "test_ids": {
+    "A01": "passed",
+    "A02": "passed",
+    "A03": "passed",
+    "A04": "passed",
+    "A05": "passed",
+    "A06": "passed",
+    "A07": "passed",
+    "A08": "passed",
+    "A09": "passed",
+    "A10": "passed",
+    "A11": "passed",
+    "A12": "passed",
+    "A13": "passed",
+    "A14": "passed",
+    "A15": "passed",
+    "A16": "passed",
+    "A17": "passed",
+    "A18": "passed"
+  },
+  "fixtures": 14,
+  "boundary": "CLI assertions plus source compatibility exercised by the original tools/check.py consumer and A17 MoonBit unit test"
+}

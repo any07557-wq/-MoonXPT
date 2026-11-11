@@ -1,7 +1,9 @@
 # MoonXPT
 
-当前产品版本：**0.1.0**。[GitHub Release v0.1.0](https://github.com/any07557-wq/-MoonXPT/releases/tag/v0.1.0)
-已发布；版本约定见[版本一致性说明](docs/versioning.md)，发布内容见[更新记录](CHANGELOG.md)。
+当前开发目标：**0.2.0（尚未发布）**，本轮增强V5尾部与成员边界。
+API、CLI及迁移变化见[新边界契约](docs/boundary-v0.2.0.md)。
+已发布稳定版仍为[GitHub Release v0.1.0](https://github.com/any07557-wq/-MoonXPT/releases/tag/v0.1.0)，
+其标签和原始制品保持不变；下述云端验收记录属于v0.1.0。
 
 用 MoonBit 逐行读写 **SAS XPORT V5**，查看 NHANES 等公开统计文件，并通过
 CSV + 版本化 JSON 元数据在程序间交换数据。核心解析、IBM 浮点、缺失标记、

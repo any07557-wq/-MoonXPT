@@ -25,6 +25,8 @@ pub struct Reader {
   priv boundary_options : BoundaryOptions
   priv mut last_boundary : BoundaryReport?
   priv resolved : Map[Int64, BoundaryReport]
+  priv mut phase : String
+  priv mut failed : Bool
   priv header_cache : Map[Int64, (DatasetMetadata, Int64)?]
 }
 
@@ -75,6 +77,8 @@ pub fn Reader::new(
     last_boundary: None,
     resolved: Map([]),
     header_cache: Map([]),
+    failed: false,
+    phase: "observation",
   }
 }
 
@@ -84,7 +88,10 @@ pub fn Reader::library(self : Reader) -> LibraryMetadata {
 }
 
 ///|
-pub fn Reader::next_dataset(self : Reader) -> DatasetMetadata? raise {
+fn Reader::pull_dataset(self : Reader) -> DatasetMetadata? raise {
+  if self.failed {
+    fail("state", "reader previously failed", offset=self.input.offset())
+  }
   if !self.done {
     fail("state", "consume the current member or stop reading before advancing")
   }
@@ -268,7 +275,8 @@ fn Reader::emit(
 }
 
 ///|
-pub fn Reader::next_raw(self : Reader) -> (Int64, Bytes)? raise {
+fn Reader::pull_raw(self : Reader) -> (Int64, Bytes)? raise {
+  self.phase = "observation"
   if self.done {
     return None
   }
@@ -324,7 +332,7 @@ pub fn Reader::next_raw(self : Reader) -> (Int64, Bytes)? raise {
     if self.available() != expected_padding {
       fail(
         "structure",
-        "row hint does not end at legal blank padding",
+        "E_V5_ROW_COUNT_HINT_MISMATCH: row hint does not end at legal padding",
         offset=self.data_start + hint * meta.row_width.to_int64(),
         dataset=name,
       )
@@ -342,6 +350,7 @@ pub fn Reader::next_raw(self : Reader) -> (Int64, Bytes)? raise {
       Some(report) => Some(report)
       None => Some(checked)
     }
+    self.phase = "member_header"
     match self.input.exact(80, eof_ok=true) {
       None => ()
       Some(first) => {
@@ -432,6 +441,9 @@ pub fn decode_observation(
 
 ///|
 pub fn Reader::next_row(self : Reader) -> Observation? raise {
+  errdefer {
+    self.failed = true
+  }
   let index = self.row_index
   match self.next_raw() {
     None => None

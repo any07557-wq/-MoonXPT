@@ -1,10 +1,11 @@
-# MoonXPT 0.1.0
+# MoonXPT 0.2.0开发版本
 
-模块：`any07557/moonxpt@0.1.0`。MoonBit原生SAS XPORT V5流式读写库，附native CLI，
+模块：`any07557/moonxpt@0.2.0`（尚未发布）。MoonBit原生SAS XPORT V5流式读写库，附native CLI，
 支持CSV与版本化JSON元数据交换。运行不依赖Python、R或外部统计解析器。
 
-这是供用户集成的库源码包。完整复现、tools、CI、验收证据及Git历史位于独立的
-`moonxpt-0.1.0-source.zip`；也可查看[公开仓库](https://github.com/any07557-wq/-MoonXPT)。
+当前0.2.0以完整开发仓库为准，尚未生成正式发布制品。稳定版0.1.0的tools、CI、证据与
+Git历史位于其独立源码包；[公开仓库](https://github.com/any07557-wq/-MoonXPT)中的远端main
+尚未包含本次未push的开发分支。
 [GitHub v0.1.0](https://github.com/any07557-wq/-MoonXPT/releases/tag/v0.1.0)已发布，Mooncakes尚未发布。
 本版本制品保留上述模块名；后续Mooncakes目标为any07557-wq/moonxpt，需另行完成迁移验收。
 
@@ -35,7 +36,7 @@ consumer/moon.mod：
 ```text
 name = "consumer/example"
 preferred_target = "native"
-import { "any07557/moonxpt@0.1.0" }
+import { "any07557/moonxpt@0.2.0" }
 ```
 
 consumer/moon.pkg：
@@ -65,3 +66,6 @@ pkgtype(kind: "executable")
 
 许可证：[MIT](LICENSE)。第三方来源与再分发边界见[THIRD_PARTY](THIRD_PARTY.md)、
 [参考记录](docs/references.md)及licenses目录中的core LICENSE/NOTICE与工具链CREDITS。
+
+v0.2.0开发中的尾部/成员链策略、计数及边界报告、Writer风险默认拒绝和opt-in、非seek回放
+资源限制见[新边界契约](docs/boundary-v0.2.0.md)。本版没有创建Tag、GitHub Release或Mooncakes版本。

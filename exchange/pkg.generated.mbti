@@ -6,6 +6,10 @@ import {
 }
 
 // Values
+pub fn boundary_diagnostic_json(@moonxpt.Diagnostic, @moonxpt.BoundaryReport?) -> Json
+
+pub fn boundary_json(@moonxpt.BoundaryReport) -> Json
+
 pub fn csv_contract() -> Json
 
 pub fn csv_header(@moonxpt.DatasetMetadata) -> Bytes raise @moonxpt.XptError

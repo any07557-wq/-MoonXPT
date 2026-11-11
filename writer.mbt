@@ -9,6 +9,9 @@ pub struct Writer {
   priv mut finished : Bool
   priv mut failed : Bool
   priv seen : Map[String, Bool]
+  priv tail_policy : WriterTailPolicy
+  priv mut last_blank : Bool
+  priv reports : Array[WriteMemberReport]
 }
 
 ///|
@@ -16,6 +19,7 @@ pub fn Writer::new(
   output : Output,
   library~ : LibraryMetadata = LibraryMetadata::new(),
   options~ : WriteOptions = WriteOptions::default(),
+  tail_policy~ : WriterTailPolicy = RejectAmbiguousTail,
 ) -> Writer raise {
   if options.max_output_bytes < 0L {
     fail("limit", "negative output limit")
@@ -32,6 +36,9 @@ pub fn Writer::new(
     finished: false,
     failed: false,
     seen: Map([]),
+    tail_policy,
+    last_blank: false,
+    reports: [],
   }
 }
 
@@ -52,9 +59,33 @@ pub fn Writer::end_dataset(self : Writer) -> Unit raise {
   errdefer {
     self.failed = true
   }
-  if self.active is Some(_) {
+  if self.active is Some(meta) {
+    let risky = self.rows > 0L &&
+      meta.row_width < 80 &&
+      self.last_blank &&
+      meta.variables.iter().all(v => v.kind == Text)
+    if risky && self.tail_policy == RejectAmbiguousTail {
+      v5_fail(
+        "ambiguous",
+        "E_V5_WRITER_AMBIGUOUS_TAIL",
+        "short all-character blank last observation may be lost by XPORT readers; explicit allow required",
+        offset=self.output.offset(),
+        dataset=text_field(meta.name, Ascii),
+        row=self.rows - 1L,
+      )
+    }
     let pad = ((80L - (self.output.offset() - self.start) % 80L) % 80L).to_int()
     self.output.put(Bytes::make(pad, b' '))
+    self.reports.push({
+      member_name: text_field(meta.name, Ascii),
+      row_count: self.rows,
+      padding_bytes: pad,
+      code: if risky {
+        Some("E_V5_WRITER_AMBIGUOUS_TAIL")
+      } else {
+        None
+      },
+    })
     self.active = None
   }
 }
@@ -84,6 +115,7 @@ pub fn Writer::begin_dataset(
   self.active = Some(snapshot)
   self.start = self.output.offset()
   self.rows = 0L
+  self.last_blank = false
 }
 
 ///|
@@ -143,6 +175,7 @@ pub fn Writer::write_row(self : Writer, values : Array[Value]) -> Unit raise {
     row=self.rows,
   )
   self.output.put(raw)
+  self.last_blank = is_spaces(raw)
   self.rows = self.rows + 1L
 }
 
@@ -161,12 +194,11 @@ pub fn Writer::write_raw(self : Writer, raw : Bytes) -> Unit raise {
   }
   ignore(decode_observation(meta, raw, self.rows, self.output.offset()))
   self.output.put(raw)
+  self.last_blank = is_spaces(raw)
   self.rows = self.rows + 1L
 }
 
 ///|
 pub fn Writer::finish(self : Writer) -> Unit raise {
-  self.check()
-  self.end_dataset()
-  self.finished = true
+  ignore(self.finish_report())
 }

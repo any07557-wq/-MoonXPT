@@ -90,6 +90,10 @@ pub(all) struct BoundaryReport {
   observation_start : Int64
   boundary_offset : Int64
   code : String?
+  hint : Int64?
+  expected_bytes : Int64?
+  actual_bytes : Int64
+  policy : String
 } derive(Eq, @debug.Debug)
 
 pub struct ByteBuilder {
@@ -236,6 +240,13 @@ pub(all) enum VariableType {
   Text
 } derive(Eq, @debug.Debug)
 
+pub(all) struct WriteMemberReport {
+  member_name : String
+  row_count : Int64
+  padding_bytes : Int
+  code : String?
+} derive(Eq, @debug.Debug)
+
 pub(all) struct WriteOptions {
   limits : Limits
   timestamp : Bytes
@@ -243,15 +254,27 @@ pub(all) struct WriteOptions {
 } derive(@debug.Debug)
 pub fn WriteOptions::default() -> Self
 
+pub(all) struct WriteReport {
+  member_count : Int
+  row_count : Int64
+  members : Array[WriteMemberReport]
+} derive(Eq, @debug.Debug)
+
 pub struct Writer {
   // private fields
 }
 pub fn Writer::begin_dataset(Self, DatasetMetadata) -> Unit raise
 pub fn Writer::end_dataset(Self) -> Unit raise
 pub fn Writer::finish(Self) -> Unit raise
-pub fn Writer::new(Output, library? : LibraryMetadata, options? : WriteOptions) -> Self raise
+pub fn Writer::finish_report(Self) -> WriteReport raise
+pub fn Writer::new(Output, library? : LibraryMetadata, options? : WriteOptions, tail_policy? : WriterTailPolicy) -> Self raise
 pub fn Writer::write_raw(Self, Bytes) -> Unit raise
 pub fn Writer::write_row(Self, Array[Value]) -> Unit raise
+
+pub(all) enum WriterTailPolicy {
+  RejectAmbiguousTail
+  AllowAmbiguousTail
+} derive(Eq, @debug.Debug)
 
 // Type aliases
 

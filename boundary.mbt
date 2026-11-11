@@ -43,6 +43,10 @@ pub(all) struct BoundaryReport {
   observation_start : Int64
   boundary_offset : Int64
   code : String?
+  hint : Int64?
+  expected_bytes : Int64?
+  actual_bytes : Int64
+  policy : String
 } derive(Eq, @debug.Debug)
 
 ///|
@@ -215,6 +219,14 @@ pub fn resolve_v5_boundary(
     alignment_ok: true,
     observation_start,
     boundary_offset: boundary,
+    hint,
+    expected_bytes: hint.map(n => n * width.to_int64()),
+    actual_bytes: length,
+    policy: if row_policy == StrictAuto {
+      "strict_auto"
+    } else {
+      "require_explicit_count"
+    },
     code: if unique {
       None
     } else {
