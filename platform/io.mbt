@@ -14,6 +14,12 @@ extern "C" fn read_raw(
 extern "C" fn close_raw(fd : Int32) -> Int32 = "mx_close"
 
 ///|
+extern "C" fn seekable_raw(fd : Int32) -> Int32 = "mx_seekable"
+
+///|
+extern "C" fn seek_raw(fd : Int32, offset : Int64) -> Int32 = "mx_seek"
+
+///|
 pub struct File {
   priv fd : Int32
   priv mut closed : Bool
@@ -57,7 +63,23 @@ pub fn File::input(
   self : File,
   max_bytes~ : Int64 = 1099511627776L,
 ) -> @xpt.Input raise @xpt.XptError {
-  @xpt.Input::new(n => self.read(n), max_bytes~)
+  @xpt.Input::new(
+    n => self.read(n),
+    max_bytes~,
+    reposition=if seekable_raw(self.fd) == 1 {
+      Some(offset => {
+        if self.closed {
+          @xpt.fail("io", "seek on closed file")
+        }
+        let status = seek_raw(self.fd, offset)
+        if status < 0 {
+          @xpt.fail("io", "seek failed: errno \{-status}", offset~)
+        }
+      })
+    } else {
+      None
+    },
+  )
 }
 
 ///|

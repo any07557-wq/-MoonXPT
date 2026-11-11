@@ -1,0 +1,76 @@
+{
+  "stage": "C03",
+  "status": "passed",
+  "test_groups": 70,
+  "test_ids": {
+    "M01": "passed",
+    "M02": "passed",
+    "M03": "passed",
+    "M04": "passed",
+    "M05": "passed",
+    "M06": "passed",
+    "M07": "passed",
+    "M08": "passed",
+    "M09": "passed",
+    "M10": "passed",
+    "M11": "passed",
+    "M12": "passed",
+    "M13": "passed",
+    "M14": "passed",
+    "M15": "passed",
+    "M16": "passed",
+    "M17": "passed",
+    "M18": "passed",
+    "M19": "passed",
+    "M20": "passed",
+    "M21": "passed",
+    "M22": "passed",
+    "M23": "passed"
+  },
+  "commands": [
+    "python3 tools/check.py",
+    "moon info --target native"
+  ],
+  "protected_files_verified": 300,
+  "source_files": [
+    {
+      "file": "member_chain.mbt",
+      "sha256": "488b23c9a8da4f8eb44298b125dad883c253e63106f36a1879d04bc420deb758"
+    },
+    {
+      "file": "member_chain_wbtest.mbt",
+      "sha256": "83989446f02f41c3f29d348daee73e0c8484d40dab305b7111dbef7b4a080aba"
+    },
+    {
+      "file": "boundary_wbtest.mbt",
+      "sha256": "5ea37eacf27c97e57388bdd583f5c7e46fdf842334cbd3da4cee4912c6445c6d"
+    },
+    {
+      "file": "model.mbt",
+      "sha256": "0b0527824d9c135dbddaae307dcbf66dd110116402ae672ababf478d4aa7e32d"
+    },
+    {
+      "file": "reader.mbt",
+      "sha256": "fa60c4104e203cd307a55479a2497177794390772afc14aef5d0f6aefe879d89"
+    },
+    {
+      "file": "platform/io.mbt",
+      "sha256": "ebf56631516e7f51c24d074a6f934f74ff6fb5bcce959c0aefb36a1910cdebf3"
+    },
+    {
+      "file": "platform/io.c",
+      "sha256": "0c4d17d1ded692884d752b8c624190f2fce8e1450b0b0c0e9456fb2b3249e525"
+    },
+    {
+      "file": "pkg.generated.mbti",
+      "sha256": "bbcc46044c53699a036534ccc81794382d032c239e33407b033b4cadd96ea4d6"
+    }
+  ],
+  "resource_checks": [
+    "seekable fork succeeds without observation replay under 640-byte header budget",
+    "nonseekable same fork rejects 640-byte replay overflow",
+    "candidate/member/search limits tested"
+  ],
+  "compatibility": "legacy explicit TrimPadding chooses first globally valid path with ambiguous status; default strict never guesses",
+  "initial_regression": "old trim integration failed before compatibility adjustment; raw failed log retained, original tests unmodified"
+}

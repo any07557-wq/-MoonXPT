@@ -141,7 +141,7 @@ pub struct Input {
   // private fields
 }
 pub fn Input::exact(Self, Int, eof_ok? : Bool) -> Bytes? raise
-pub fn Input::new((Int) -> Bytes raise, max_bytes? : Int64) -> Self raise XptError
+pub fn Input::new((Int) -> Bytes raise, max_bytes? : Int64, reposition? : ((Int64) -> Unit raise)?) -> Self raise XptError
 pub fn Input::offset(Self) -> Int64
 pub fn Input::required(Self, Int) -> Bytes raise
 

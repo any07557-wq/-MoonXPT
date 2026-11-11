@@ -11,12 +11,10 @@ fn bmeta(width : Int32) -> DatasetMetadata raise XptError {
 }
 
 ///|
-fn boundary_raises(
-  action : () -> Unit raise XptError,
-  code : String,
-) -> Unit raise {
+fn boundary_raises(action : () -> Unit raise, code : String) -> Unit raise {
   try action() catch {
     XptError(d) => assert_eq(d.code(), code)
+    e => raise e
   } noraise {
     _ => assert_true(false)
   }

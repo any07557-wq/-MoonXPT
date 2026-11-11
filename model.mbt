@@ -161,12 +161,14 @@ pub struct Input {
   priv mut replay : Bytes
   priv mut replay_at : Int32
   priv mut capture : Array[Byte]?
+  priv reposition : ((Int64) -> Unit raise)?
 }
 
 ///|
 pub fn Input::new(
   read : (Int32) -> Bytes raise,
   max_bytes~ : Int64 = 1099511627776L,
+  reposition~ : ((Int64) -> Unit raise)? = None,
 ) -> Input raise XptError {
   if max_bytes < 0 {
     fail("limit", "negative input limit")
@@ -178,6 +180,7 @@ pub fn Input::new(
     replay: b"",
     replay_at: 0,
     capture: None,
+    reposition,
   }
 }
 
@@ -294,12 +297,20 @@ pub fn input_from_bytes(
     fail("limit", "chunk size must be positive")
   }
   let mut at = 0
-  Input::new(fn(n) {
-    let end = (at + n.min(chunk_size)).min(bytes.length())
-    let out = bytes[at:end].to_owned()
-    at = end
-    out
-  })
+  Input::new(
+    fn(n) {
+      let end = (at + n.min(chunk_size)).min(bytes.length())
+      let out = bytes[at:end].to_owned()
+      at = end
+      out
+    },
+    reposition=Some(offset => {
+      if offset < 0L || offset > bytes.length().to_int64() {
+        fail("io", "invalid byte-buffer seek", offset~)
+      }
+      at = offset.to_int()
+    }),
+  )
 }
 
 ///|

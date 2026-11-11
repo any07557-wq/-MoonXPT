@@ -24,6 +24,8 @@ pub struct Reader {
   priv seen : Map[String, Bool]
   priv boundary_options : BoundaryOptions
   priv mut last_boundary : BoundaryReport?
+  priv resolved : Map[Int64, BoundaryReport]
+  priv header_cache : Map[Int64, (DatasetMetadata, Int64)?]
 }
 
 ///|
@@ -33,6 +35,14 @@ pub fn Reader::new(
   boundary_options~ : BoundaryOptions = BoundaryOptions::default(),
 ) -> Reader raise {
   ignore(validate_layout([], options.limits))
+  if boundary_options.max_boundary_candidates < 1 ||
+    boundary_options.max_boundary_candidates > 4096 ||
+    boundary_options.max_replay_bytes < 80 ||
+    boundary_options.max_replay_bytes > 67108864 ||
+    boundary_options.max_search_steps < 1 ||
+    boundary_options.max_search_steps > 1000000 {
+    v5_fail("limit", "E_V5_RESOURCE_LIMIT", "invalid boundary resource options")
+  }
   input.limit = input.limit.min(options.limits.max_input_bytes)
   let hints : Map[String, Int64] = Map([])
   for name, n in options.row_hints {
@@ -63,6 +73,8 @@ pub fn Reader::new(
     seen: Map([]),
     boundary_options,
     last_boundary: None,
+    resolved: Map([]),
+    header_cache: Map([]),
   }
 }
 
@@ -185,7 +197,10 @@ fn Reader::tail_counts(
 
 ///|
 pub fn Reader::boundary_report(self : Reader) -> BoundaryReport? {
-  self.last_boundary
+  self.last_boundary.map(r => {
+    ..r,
+    candidate_counts: r.candidate_counts.copy(),
+  })
 }
 
 ///|
@@ -271,7 +286,34 @@ pub fn Reader::next_raw(self : Reader) -> (Int64, Bytes)? raise {
       dataset=name,
     )
   }
-  if self.options.row_hints.get(name.to_upper()) is Some(hint) {
+  let explicit = self.options.row_hints.get(name.to_upper())
+  let plan = self.resolved.get(self.data_start)
+  if plan is Some(report) {
+    self.last_boundary = Some(report)
+    if report.row_count is None && self.options.tail_policy == Reject {
+      v5_fail(
+        "ambiguous",
+        "E_V5_ROW_COUNT_AMBIGUOUS",
+        "multiple row counts on the unique member chain",
+        offset=report.boundary_offset,
+        dataset=name,
+      )
+    }
+  }
+  let goal = match explicit {
+    Some(_) => explicit
+    None =>
+      match plan {
+        Some(report) =>
+          Some(
+            report.row_count.unwrap_or_else(() => {
+              report.candidate_counts[report.candidate_counts.length() - 1]
+            }),
+          )
+        None => None
+      }
+  }
+  if goal is Some(hint) {
     if self.row_index < hint {
       while self.available() < meta.row_width {
         self.append(self.input.required(80))
@@ -287,18 +329,39 @@ pub fn Reader::next_raw(self : Reader) -> (Int64, Bytes)? raise {
         dataset=name,
       )
     }
-    self.done = true
-    self.last_boundary = Some(
-      resolve_v5_boundary(
-        meta,
-        self.data_start,
-        self.input.offset(),
-        Bytes::from_array(self.pending[self.pending_at:]),
-        hint~,
-        padding_policy=self.boundary_options.padding_policy,
-        limits=self.options.limits,
-      ),
+    let checked = resolve_v5_boundary(
+      meta,
+      self.data_start,
+      self.input.offset(),
+      Bytes::from_array(self.pending[self.pending_at:]),
+      hint~,
+      padding_policy=self.boundary_options.padding_policy,
+      limits=self.options.limits,
     )
+    self.last_boundary = match plan {
+      Some(report) => Some(report)
+      None => Some(checked)
+    }
+    match self.input.exact(80, eof_ok=true) {
+      None => ()
+      Some(first) => {
+        let offset = self.input.offset() - 80L
+        self.next_meta = Some(
+          read_dataset(self.input, first, self.options.limits) catch {
+            XptError(d) =>
+              v5_fail(
+                d.kind,
+                "E_V5_INVALID_MEMBER_HEADER",
+                d.reason,
+                offset~,
+                dataset=name,
+              )
+            e => raise e
+          },
+        )
+      }
+    }
+    self.done = true
     return None
   }
   while true {
@@ -319,35 +382,12 @@ pub fn Reader::next_raw(self : Reader) -> (Int64, Bytes)? raise {
       None => self.finish_tail(self.tail_counts(meta.row_width), meta)
       Some(block) =>
         if header_is(block, "MEMBER") {
-          self.input.start_capture()
-          let candidate = Some(
-            read_dataset(self.input, block, self.options.limits),
-          ) catch {
-            XptError(_) => None
-            e => {
-              self.input.capture = None
-              raise e
-            }
+          if self.probe_member(block) is Some(_) &&
+            !self.tail_counts(meta.row_width).is_empty() {
+            self.resolve_chain(block)
+            return self.next_raw()
           }
-          let counts = self.tail_counts(meta.row_width)
-          if candidate is Some(next) && !counts.is_empty() {
-            if self.options.tail_policy == Reject {
-              fail(
-                "ambiguous",
-                "structurally valid MEMBER can also be observation bytes; supply a row hint or explicit trim policy",
-                offset=self.input.offset() -
-                  self.input.capture.unwrap().length().to_int64() -
-                  80L,
-                dataset=name,
-              )
-            }
-            self.input.capture = None
-            self.next_meta = Some(next)
-            self.finish_tail(counts, meta)
-          } else {
-            self.input.rollback_capture()
-            self.append(block)
-          }
+          self.append(block)
         } else {
           self.append(block)
         }

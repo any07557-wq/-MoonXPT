@@ -65,3 +65,11 @@ Writer保留finish()->Unit调用，并另提供finish_report返回逐成员实�
 
 C01检查：现有fixture的W与npos已审计，原27组离线通过；设计没有把工具裁剪行为当规范。
 实现不更换既有数值容差，不移除旧测试，不改旧报告。后续发现假设错误先追加修订本ADR。
+
+## C03回归发现与兼容修订
+
+原tools/test_fixtures.py明确要求--tail-policy trim对xport-multi.xpt选择两个成员并得到3/2行。
+完整图证明该文件还存在把后续头当数据的合法结构路径；默认StrictAuto仍必须拒绝。
+为保留v0.1.0显式兼容行为，TrimPadding可选择最早的**完整合法**路径并取最大合法padding，
+报告boundary_status=ambiguous和相应诊断，不能标为唯一推断。它不再依赖未经验证的单个头。
+这项有损opt-in例外不适用于默认严格策略；旧测试保持原样，初次回归失败日志单独保留。

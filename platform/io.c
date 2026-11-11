@@ -20,6 +20,11 @@ int32_t mx_read(int32_t fd, uint8_t *buffer, int32_t n) {
   return got < 0 ? -errno : (int32_t)got;
 }
 int32_t mx_close(int32_t fd) { return close(fd) < 0 ? -errno : 0; }
+int32_t mx_seekable(int32_t fd) { return lseek(fd, 0, SEEK_CUR) < 0 ? 0 : 1; }
+int32_t mx_seek(int32_t fd, int64_t offset) {
+  if (offset < 0 || (int64_t)(off_t)offset != offset) return -EOVERFLOW;
+  return lseek(fd, (off_t)offset, SEEK_SET) < 0 ? -errno : 0;
+}
 int32_t mx_create(const uint8_t *path) {
   int fd;
   do { fd = open((const char *)path, O_WRONLY|O_CREAT|O_EXCL, 0600); }
