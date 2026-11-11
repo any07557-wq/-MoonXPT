@@ -22,12 +22,15 @@ pub struct Reader {
   priv mut final_rows : Int32?
   priv mut done : Bool
   priv seen : Map[String, Bool]
+  priv boundary_options : BoundaryOptions
+  priv mut last_boundary : BoundaryReport?
 }
 
 ///|
 pub fn Reader::new(
   input : Input,
   options~ : ReadOptions = ReadOptions::default(),
+  boundary_options~ : BoundaryOptions = BoundaryOptions::default(),
 ) -> Reader raise {
   ignore(validate_layout([], options.limits))
   input.limit = input.limit.min(options.limits.max_input_bytes)
@@ -58,6 +61,8 @@ pub fn Reader::new(
     final_rows: None,
     done: true,
     seen: Map([]),
+    boundary_options,
+    last_boundary: None,
   }
 }
 
@@ -112,6 +117,7 @@ pub fn Reader::next_dataset(self : Reader) -> DatasetMetadata? raise {
     self.pending_at = 0
     self.final_rows = None
     self.done = false
+    self.last_boundary = None
   }
   if candidate is None {
     for name, _ in self.options.row_hints {
@@ -147,24 +153,39 @@ fn Reader::append(self : Reader, bytes : Bytes) -> Unit {
 
 ///|
 /// and the preceding bytes form complete rows. Never assume blank means EOF.
-fn Reader::tail_counts(self : Reader, width : Int32) -> Array[Int32] {
-  let length = self.available()
-  let counts : Array[Int32] = []
-  if width == 0 {
-    if length == 0 {
-      counts.push(0)
+fn Reader::tail_counts(
+  self : Reader,
+  width : Int32,
+) -> Array[Int32] raise XptError {
+  let meta = self.current.unwrap()
+  let boundary = self.data_start +
+    self.row_index * width.to_int64() +
+    self.available().to_int64()
+  let suffix = Bytes::from_array(
+    self.pending[(self.pending.length() - 79).max(self.pending_at):],
+  )
+  let report = resolve_v5_boundary(
+    meta,
+    self.data_start,
+    boundary,
+    suffix,
+    row_policy=self.boundary_options.row_count_policy,
+    padding_policy=self.boundary_options.padding_policy,
+    limits=self.options.limits,
+  ) catch {
+    XptError(d) => {
+      if d.code() == "E_V5_INVALID_PADDING" {
+        return []
+      }
+      raise XptError(d)
     }
-    return counts
   }
-  for pad = 0; pad < 80 && pad <= length; pad = pad + 1 {
-    if pad > 0 && self.pending[self.pending.length() - pad] != b' ' {
-      break
-    }
-    if (length - pad) % width == 0 {
-      counts.push((length - pad) / width)
-    }
-  }
-  counts
+  report.candidate_counts.map(n => (n - self.row_index).to_int())
+}
+
+///|
+pub fn Reader::boundary_report(self : Reader) -> BoundaryReport? {
+  self.last_boundary
 }
 
 ///|
@@ -173,6 +194,21 @@ fn Reader::finish_tail(
   counts : Array[Int32],
   meta : DatasetMetadata,
 ) -> Unit raise XptError {
+  let suffix = Bytes::from_array(
+    self.pending[(self.pending.length() - 79).max(self.pending_at):],
+  )
+  let report = resolve_v5_boundary(
+    meta,
+    self.data_start,
+    self.data_start +
+    self.row_index * meta.row_width.to_int64() +
+    self.available().to_int64(),
+    suffix,
+    row_policy=self.boundary_options.row_count_policy,
+    padding_policy=self.boundary_options.padding_policy,
+    limits=self.options.limits,
+  )
+  self.last_boundary = Some(report)
   if counts.is_empty() {
     fail(
       "truncated",
@@ -182,8 +218,9 @@ fn Reader::finish_tail(
     )
   }
   if counts.length() > 1 && self.options.tail_policy == Reject {
-    fail(
+    v5_fail(
       "ambiguous",
+      "E_V5_ROW_COUNT_AMBIGUOUS",
       "V5 has no row count: trailing spaces permit multiple row counts; supply a member row hint or explicit trim policy",
       offset=self.data_start + self.row_index * meta.row_width.to_int64(),
       dataset=text_field(meta.name, Ascii),
@@ -224,6 +261,16 @@ pub fn Reader::next_raw(self : Reader) -> (Int64, Bytes)? raise {
     fail("state", "call next_dataset before reading rows")
   })
   let name = text_field(meta.name, Ascii)
+  if self.options.row_hints.get(name.to_upper()) is None &&
+    self.boundary_options.row_count_policy == RequireExplicitCount {
+    v5_fail(
+      "policy",
+      "E_V5_ROW_COUNT_REQUIRED",
+      "explicit member row count required",
+      offset=self.data_start,
+      dataset=name,
+    )
+  }
   if self.options.row_hints.get(name.to_upper()) is Some(hint) {
     if self.row_index < hint {
       while self.available() < meta.row_width {
@@ -232,8 +279,7 @@ pub fn Reader::next_raw(self : Reader) -> (Int64, Bytes)? raise {
       return Some(self.emit(meta))
     }
     let expected_padding = ((80L - hint * meta.row_width.to_int64() % 80L) % 80L).to_int()
-    if self.available() != expected_padding ||
-      !is_spaces(Bytes::from_array(self.pending[self.pending_at:])) {
+    if self.available() != expected_padding {
       fail(
         "structure",
         "row hint does not end at legal blank padding",
@@ -242,6 +288,17 @@ pub fn Reader::next_raw(self : Reader) -> (Int64, Bytes)? raise {
       )
     }
     self.done = true
+    self.last_boundary = Some(
+      resolve_v5_boundary(
+        meta,
+        self.data_start,
+        self.input.offset(),
+        Bytes::from_array(self.pending[self.pending_at:]),
+        hint~,
+        padding_policy=self.boundary_options.padding_policy,
+        limits=self.options.limits,
+      ),
+    )
     return None
   }
   while true {

@@ -48,6 +48,8 @@ pub fn read_dataset(Input, Bytes, Limits) -> DatasetMetadata raise
 
 pub fn read_library(Input) -> LibraryMetadata raise
 
+pub fn resolve_v5_boundary(DatasetMetadata, Int64, Int64, Bytes, hint? : Int64, row_policy? : RowCountPolicy, padding_policy? : PaddingPolicy, limits? : Limits) -> BoundaryReport raise XptError
+
 pub fn text_field(Bytes, Encoding) -> String raise XptError
 
 pub fn trim_field(Bytes) -> Bytes
@@ -68,6 +70,28 @@ pub(all) suberror XptError {
 } derive(@debug.Debug)
 
 // Types and methods
+pub(all) struct BoundaryOptions {
+  row_count_policy : RowCountPolicy
+  padding_policy : PaddingPolicy
+  max_boundary_candidates : Int
+  max_replay_bytes : Int
+  max_search_steps : Int
+} derive(Eq, @debug.Debug)
+pub fn BoundaryOptions::default() -> Self
+
+pub(all) struct BoundaryReport {
+  row_count : Int64?
+  row_count_status : String
+  boundary_status : String
+  candidate_counts : Array[Int64]
+  padding_bytes : Int?
+  padding_kind : String
+  alignment_ok : Bool
+  observation_start : Int64
+  boundary_offset : Int64
+  code : String?
+} derive(Eq, @debug.Debug)
+
 pub struct ByteBuilder {
   // private fields
 }
@@ -99,6 +123,7 @@ pub(all) struct Diagnostic {
   variable : String?
   reason : String
 } derive(Eq, @debug.Debug)
+pub fn Diagnostic::code(Self) -> String
 
 pub(all) struct DisplayFormat {
   name : Bytes
@@ -156,6 +181,11 @@ pub fn Output::new((Bytes) -> Unit raise) -> Self
 pub fn Output::offset(Self) -> Int64
 pub fn Output::put(Self, Bytes) -> Unit raise
 
+pub(all) enum PaddingPolicy {
+  StrictSpec
+  CompatibilityNulPadding
+} derive(Eq, @debug.Debug)
+
 pub(all) struct ReadOptions {
   limits : Limits
   tail_policy : TailPolicy
@@ -166,11 +196,17 @@ pub fn ReadOptions::default() -> Self
 pub struct Reader {
   // private fields
 }
+pub fn Reader::boundary_report(Self) -> BoundaryReport?
 pub fn Reader::library(Self) -> LibraryMetadata
-pub fn Reader::new(Input, options? : ReadOptions) -> Self raise
+pub fn Reader::new(Input, options? : ReadOptions, boundary_options? : BoundaryOptions) -> Self raise
 pub fn Reader::next_dataset(Self) -> DatasetMetadata? raise
 pub fn Reader::next_raw(Self) -> (Int64, Bytes)? raise
 pub fn Reader::next_row(Self) -> Observation? raise
+
+pub(all) enum RowCountPolicy {
+  StrictAuto
+  RequireExplicitCount
+} derive(Eq, @debug.Debug)
 
 pub(all) enum TailPolicy {
   Reject

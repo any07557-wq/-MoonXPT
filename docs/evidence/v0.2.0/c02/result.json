@@ -1,0 +1,53 @@
+{
+  "stage": "C02",
+  "status": "passed",
+  "commands": [
+    "moon test --target native --deny-warn",
+    "python3 tools/check.py",
+    "moon info --target native"
+  ],
+  "test_groups": 47,
+  "legacy_groups_preserved": 27,
+  "test_ids": {
+    "B01": "passed",
+    "B02": "passed",
+    "B03": "passed",
+    "B04": "passed",
+    "B05": "passed",
+    "B06": "passed",
+    "B07": "passed",
+    "B08": "passed",
+    "B09": "passed",
+    "B10": "passed",
+    "B11": "passed",
+    "B12": "passed",
+    "B13": "passed",
+    "B14": "passed",
+    "B15": "passed",
+    "B16": "passed",
+    "B17": "passed",
+    "B18": "passed",
+    "B19": "passed",
+    "B20": "passed"
+  },
+  "protected_files_verified": 300,
+  "source_files": [
+    {
+      "file": "boundary.mbt",
+      "sha256": "e7a0097fc3e041a7403f7ee1cffdcfee0cfeffb201b6b89c057bddedbabbb779"
+    },
+    {
+      "file": "boundary_wbtest.mbt",
+      "sha256": "564e6db40640f065f1fe9a7b7b6c667ede0353530dabcaee9b49df9380f4c0f4"
+    },
+    {
+      "file": "reader.mbt",
+      "sha256": "7568e788be68580b82b53a9fb1d56f98637f84a111431939d1c6b4614c6fe157"
+    },
+    {
+      "file": "pkg.generated.mbti",
+      "sha256": "6a2b2f2272aa6bbaabcb6bf4b39c0793b92efcc1405d4a2a4affc7aa351ed361"
+    }
+  ],
+  "boundary": "new single-member resolver and Reader integration; global member-chain resolution is C03, not claimed here"
+}
