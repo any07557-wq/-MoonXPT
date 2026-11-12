@@ -1,0 +1,205 @@
+{
+  "schema": "moonxpt-v020-remote-ci-evidence/1",
+  "archived_at_utc": "2026-11-12T06:28:35.166950+00:00",
+  "status": "PASSED_NON_SAS_REMOTE_CI",
+  "project_verdict": "READY_WITH_SAS_VALIDATION_BLOCKED",
+  "repository": "https://github.com/any07557-wq/-MoonXPT.git",
+  "branch": "work/v0.2.0-boundary",
+  "source_commit": "b0d622d7f1e555b9c32cebf991682d9a7d25de0f",
+  "dispatch_inputs": {
+    "real_corpus": true,
+    "sas_interop": false
+  },
+  "remote_ci_jobs_passed": [
+    "offline-core",
+    "fixtures-interop",
+    "public-corpus",
+    "release-repro"
+  ],
+  "sas": {
+    "stage": "C05",
+    "status": "blocked",
+    "job_conclusion": "skipped",
+    "reason": "No legally usable real SAS XPORT Engine executable or runner is available",
+    "directions": {
+      "SAS_to_MoonXPT": "blocked",
+      "MoonXPT_to_SAS": "blocked"
+    }
+  },
+  "unit_tests": {
+    "total": 81,
+    "passed": 81,
+    "failed": 0,
+    "observed_in": "both offline-core and both release-repro offline logs"
+  },
+  "public_corpus": {
+    "files": [
+      {
+        "member": "DEMO_J",
+        "rows": 9254,
+        "columns": 46,
+        "cells": 425684,
+        "sha256": "c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec",
+        "max_ulp": 0,
+        "metadata": "exact declared attributes",
+        "result": "PASS"
+      },
+      {
+        "member": "BMX_J",
+        "rows": 8704,
+        "columns": 21,
+        "cells": 182784,
+        "sha256": "8d675e42d8826ac98714b2c3dd4c5138a5e353fb4424f7eff5e6db4a01ce838a",
+        "max_ulp": 0,
+        "metadata": "exact declared attributes",
+        "result": "PASS"
+      },
+      {
+        "member": "GLU_J",
+        "rows": 3036,
+        "columns": 4,
+        "cells": 12144,
+        "sha256": "5b38897d0d7bfbc69dd9ca74ffdaf2f6a9bed5a91d4a7bf46e07f1332cc3379e",
+        "max_ulp": 0,
+        "metadata": "exact declared attributes",
+        "result": "PASS"
+      }
+    ],
+    "total_cells": 620612,
+    "max_observed_ulp": 0
+  },
+  "interop": {
+    "ReadStat_via_pyreadstat": "passed within declared single-member scope",
+    "Python_xport": "passed within declared single/multi-member scope",
+    "limitations": "Unsupported short/blank tails, character raw bytes, and ReadStat multi-member results remain explicitly unsupported; no SAS substitution"
+  },
+  "fresh_sdk_installs_verified": 7,
+  "artifact_archives_verified": 7,
+  "source_identity": "95 recorded implementation/configuration files in each artifact match Git blobs at source_commit",
+  "reproduction_scope": "Separate GitHub-hosted ubuntu-24.04 jobs; new official pinned SDK/core per job; release-repro additionally clones exact source without project build/cache reuse. This does not establish a distinct physical machine for every job.",
+  "receipt_scope_note": "Raw release-repro receipt describes its inner local clone as sharing an existing SDK/host. Within remote CI that SDK was freshly installed by the preceding step; offline/sdk-install.json and raw Actions logs prove the enclosing remote job context. Raw receipts are preserved verbatim.",
+  "main_preserved": "bad7ec0158c5585b3a2ba1b0fe99528cfa1ffd7a",
+  "v010_tag_object_preserved": "51ab97700bdaf15e225f432ec1bf27c94dc70a8f",
+  "v010_source_preserved": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+  "publication": {
+    "main_merged": false,
+    "v020_tag_created": false,
+    "github_release_created": false,
+    "mooncakes_published": false,
+    "contest_submitted": false
+  },
+  "local_evidence": "Created after the tested commit; not part of that commit and not pushed",
+  "runs": [
+    {
+      "id": 43167635468,
+      "url": "https://github.com/any07557-wq/-MoonXPT/actions/runs/43167635468",
+      "event": "push",
+      "attempt": 1,
+      "created_at": "2026-11-12T06:22:03Z",
+      "updated_at": "2026-11-12T06:23:06Z",
+      "conclusion": "success",
+      "jobs": {
+        "offline-core": "success",
+        "fixtures-interop": "success",
+        "sas-interop": "skipped",
+        "public-corpus": "skipped",
+        "release-repro": "success"
+      },
+      "bundle": {
+        "file": "raw-push-43167635468.zip",
+        "bytes": 110367,
+        "sha256": "a8e995a9b0a973d1ebd2065d59d2ef15b94c6b70a14cdcc073d6e52dcad0a8ef"
+      },
+      "raw_log_files": 30,
+      "artifacts": [
+        {
+          "job": "release-repro",
+          "id": 13920747437,
+          "file": "release-repro-43167635468-1.zip",
+          "bytes": 18711,
+          "sha256": "4538d845acdee03c0ff7883591997509a2df81dae4df47d6d22f73e064f25d36",
+          "github_digest_verified": true,
+          "source_files_verified": 95
+        },
+        {
+          "job": "offline-core",
+          "id": 13920313470,
+          "file": "offline-core-43167635468-1.zip",
+          "bytes": 16440,
+          "sha256": "dc29fe93a5781e3d8dc264bab6ba5aced4c98bac97e3bc67092ee19a42454ac1",
+          "github_digest_verified": true,
+          "source_files_verified": 95
+        },
+        {
+          "job": "fixtures-interop",
+          "id": 13919954015,
+          "file": "fixtures-interop-43167635468-1.zip",
+          "bytes": 23456,
+          "sha256": "e93acec24915f65fe2f82b81b33ff184729ccb177478a9acec6a927c2c3fab04",
+          "github_digest_verified": true,
+          "source_files_verified": 95
+        }
+      ]
+    },
+    {
+      "id": 43167683870,
+      "url": "https://github.com/any07557-wq/-MoonXPT/actions/runs/43167683870",
+      "event": "workflow_dispatch",
+      "attempt": 1,
+      "created_at": "2026-11-12T06:22:27Z",
+      "updated_at": "2026-11-12T06:23:35Z",
+      "conclusion": "success",
+      "jobs": {
+        "offline-core": "success",
+        "public-corpus": "success",
+        "fixtures-interop": "success",
+        "sas-interop": "skipped",
+        "release-repro": "success"
+      },
+      "bundle": {
+        "file": "raw-dispatch-43167683870.zip",
+        "bytes": 143773,
+        "sha256": "93f39e275ad06e966bb7508695af90d9825088a071e98367ba1d2cb2d8d7f971"
+      },
+      "raw_log_files": 41,
+      "artifacts": [
+        {
+          "job": "offline-core",
+          "id": 13921290220,
+          "file": "offline-core-43167683870-1.zip",
+          "bytes": 16357,
+          "sha256": "48d1c6476b65c03eb392b63bb62f06e45d02cc9ad11fbe75d34e94f12294e864",
+          "github_digest_verified": true,
+          "source_files_verified": 95
+        },
+        {
+          "job": "fixtures-interop",
+          "id": 13920797353,
+          "file": "fixtures-interop-43167683870-1.zip",
+          "bytes": 23447,
+          "sha256": "50c2bb8abb46b4f17456f80613efd3b3a6fbde30156e5b3b1a176a12f0888b66",
+          "github_digest_verified": true,
+          "source_files_verified": 95
+        },
+        {
+          "job": "public-corpus",
+          "id": 13920593048,
+          "file": "public-corpus-43167683870-1.zip",
+          "bytes": 8893,
+          "sha256": "7b4fbfffddfc279f4ec8bc49d67b0738fe863a87064ecd413bdd83a18aab1129",
+          "github_digest_verified": true,
+          "source_files_verified": 95
+        },
+        {
+          "job": "release-repro",
+          "id": 13920413424,
+          "file": "release-repro-43167683870-1.zip",
+          "bytes": 18705,
+          "sha256": "f4a8eebdebb0f67e8ec9c4dfe94d730268be99818b4ddb4cbe2b48b0a0eaa989",
+          "github_digest_verified": true,
+          "source_files_verified": 95
+        }
+      ]
+    }
+  ]
+}

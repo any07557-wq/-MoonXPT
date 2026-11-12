@@ -1,0 +1,43 @@
+{
+  "authorization": "User explicitly authorized push of reviewed branch and remote CI, 2026-11-12",
+  "source_commit": "b0d622d7f1e555b9c32cebf991682d9a7d25de0f",
+  "repository": "https://github.com/any07557-wq/-MoonXPT.git",
+  "push": {
+    "argv": [
+      "git",
+      "push",
+      "-u",
+      "origin",
+      "work/v0.2.0-boundary"
+    ],
+    "exit_code": 0,
+    "output": "remote: \nremote: Create a pull request for 'work/v0.2.0-boundary' on GitHub by visiting:        \nremote:      https://github.com/any07557-wq/-MoonXPT/pull/new/work/v0.2.0-boundary        \nremote: \nTo https://github.com/any07557-wq/-MoonXPT.git\n * [new branch]      work/v0.2.0-boundary -> work/v0.2.0-boundary\nbranch 'work/v0.2.0-boundary' set up to track 'origin/work/v0.2.0-boundary'.\n"
+  },
+  "dispatch": {
+    "argv": [
+      "gh",
+      "workflow",
+      "run",
+      "ci.yml",
+      "--repo",
+      "any07557-wq/-MoonXPT",
+      "--ref",
+      "work/v0.2.0-boundary",
+      "-f",
+      "real_corpus=true",
+      "-f",
+      "sas_interop=false"
+    ],
+    "exit_code": 0,
+    "output": "https://github.com/any07557-wq/-MoonXPT/actions/runs/43167683870\n"
+  },
+  "main_preserved": "bad7ec0158c5585b3a2ba1b0fe99528cfa1ffd7a",
+  "v010_tag_object_preserved": "51ab97700bdaf15e225f432ec1bf27c94dc70a8f",
+  "v010_source_preserved": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+  "sas": "blocked; no real SAS execution; dispatched with sas_interop=false",
+  "new_tags_created": false,
+  "release_created": false,
+  "main_merged": false,
+  "mooncakes_published": false,
+  "contest_submitted": false
+}

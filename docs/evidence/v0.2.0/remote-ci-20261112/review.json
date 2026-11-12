@@ -1,0 +1,60 @@
+{
+  "reviewed_at_utc": "2026-11-12T06:54:52.873672+00:00",
+  "source_commit": "b0d622d7f1e555b9c32cebf991682d9a7d25de0f",
+  "runs": [
+    {
+      "id": 43167635468,
+      "head_sha": "b0d622d7f1e555b9c32cebf991682d9a7d25de0f",
+      "event": "push",
+      "run_attempt": 1,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43167683870,
+      "head_sha": "b0d622d7f1e555b9c32cebf991682d9a7d25de0f",
+      "event": "workflow_dispatch",
+      "run_attempt": 1,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "v010_release": {
+    "status": "metadata_unchanged",
+    "release_id": 437649678,
+    "fields_compared": [
+      "id",
+      "tag_name",
+      "target_commitish",
+      "name",
+      "draft",
+      "prerelease",
+      "published_at",
+      "body"
+    ],
+    "assets_compared": [
+      "id",
+      "name",
+      "size",
+      "digest",
+      "state",
+      "created_at",
+      "updated_at"
+    ],
+    "asset_count": 7,
+    "baseline_file": "docs/evidence/release-20261107/release.json",
+    "baseline_sha256": "cc1008d8ad0e7ed77ebfd7ec382cfeaa5806730b74a6e344e0d022fd10c14680",
+    "current_api_file": "review-v010-release.json",
+    "boundary": "Release body, identifiers and all 7 asset API digests/metadata compared; assets were not redownloaded in this review"
+  },
+  "remote_refs": {
+    "refs/heads/main": "bad7ec0158c5585b3a2ba1b0fe99528cfa1ffd7a",
+    "refs/heads/work/v0.2.0-boundary": "b0d622d7f1e555b9c32cebf991682d9a7d25de0f",
+    "refs/tags/v0.1.0": "51ab97700bdaf15e225f432ec1bf27c94dc70a8f",
+    "refs/tags/v0.1.0^{}": "2cddd31bb8b88648f619969dbb4fe195051735b4"
+  },
+  "release_preparation": "not yet complete; see release-review.md",
+  "sas": "blocked; neither SAS direction executed",
+  "commit_authorization": "pending; no commit performed",
+  "push_authorization": "not requested for new evidence; previous authorization was for source_commit only"
+}

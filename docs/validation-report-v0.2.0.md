@@ -118,3 +118,41 @@ Engine、真实LOG/PROC CONTENTS/PROC COMPARE及编码环境，现有模板不�
 
 最终回执、各阶段完整commit、fixture SHA、各oracle版本/验证方向与原日志位于
 `docs/evidence/v0.2.0/final-20261112/`；此前阶段状态及失败记录保留，不覆盖。
+
+## 远端 CI 验收追加（2026-11-12，用户授权后）
+
+开发分支 `work/v0.2.0-boundary` 已推送到授权仓库
+`https://github.com/any07557-wq/-MoonXPT.git`。两个实际运行均对应确切提交
+`b0d622d7f1e555b9c32cebf991682d9a7d25de0f`，不是旧版本的运行记录：
+
+- [Push run 43167635468](https://github.com/any07557-wq/-MoonXPT/actions/runs/43167635468)：
+  offline-core、fixtures-interop、release-repro 全部 success；public-corpus 非手动事件因而 skipped。
+- [手动 run 43167683870](https://github.com/any07557-wq/-MoonXPT/actions/runs/43167683870)：
+  `real_corpus=true`、`sas_interop=false`，四类非 SAS job 全部 success。
+
+两个 run 的 offline-core 与 release-repro 均实际通过 81/81。云端重新安装固定 oracle，
+完成 ReadStat/pyreadstat 单成员及 Python xport 单/多成员双向验证；此前声明的 oracle
+限制保持不变。三份固定 SHA-256 的 NHANES 文件共 620612 单元格和声明元数据再次通过，
+最大实测差异 0 ULP。
+
+7 个成功 job 的官方 SDK/core 均下载到各 job 独立新前缀，归档键
+`0.10.15+943464bfa`，hash/版本与受验 commit 的 lock 一致；安装回执确认未读现有 SDK、
+未复用下载缓存。release-repro 另从该 commit 干净克隆，不复用项目构建缓存。其原始回执中
+“共享现有 SDK/宿主”描述的是远端 job 内部的克隆步骤，外层 SDK 安装回执和完整 Actions
+日志补齐云端执行上下文；原始回执不改写，不推断每个 job 使用不同物理机器。
+
+已下载两次运行的完整日志、全部 7 个 artifacts 和原始 API 元数据。每个下载 ZIP 的
+SHA-256 与 GitHub artifact digest 一致；内部 manifest、每份回执覆盖的 95 个实现/配置文件
+与受验 Git blobs 一致。原始文件及独立离线复核入口归档于
+[remote-ci-20261112](evidence/v0.2.0/remote-ci-20261112/README.md)。
+
+**READY_WITH_SAS_VALIDATION_BLOCKED** 保持不变。两个 SAS job 均 skipped；C05、S01–S14
+及两个 SAS 方向仍 blocked，没有实际 SAS 执行或成功声明。此前 not_run/未 push 的记录
+保留其当时含义，由本节追加最新证据。main、v0.1.0 Tag/Release 未变；本轮没有修改 workflow、
+创建 v0.2.0 Tag/Release、发布 Mooncakes 或提交赛事。本次归档准备时，这批远端证据及文档
+追加尚未提交或推送。
+
+提交前已将候选范围收拢为上述远端证据目录及本报告；原证据索引和用户原有申报书不纳入。
+递归凭据扫描、只读 v0.1.0 Release 核对和发布准备待办见
+[提交前审查](evidence/v0.2.0/remote-ci-20261112/release-review.md)。本次提交前审查时，证据本地
+commit 与后续 push 分别待明确授权；正式版本制品尚需单独整理和验收，不据此创建 Release。
