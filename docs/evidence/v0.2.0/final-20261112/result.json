@@ -1,0 +1,613 @@
+{
+  "date": "2026-11-12",
+  "verdict": "READY_WITH_SAS_VALIDATION_BLOCKED",
+  "baseline_repository_commit": "bad7ec0158c5585b3a2ba1b0fe99528cfa1ffd7a",
+  "implementation_commit": "69abb7dfa7b44dfc7dfc7d3e4e8b89addb50a48d",
+  "branch": "work/v0.2.0-boundary",
+  "v010_tag_object": "51ab97700bdaf15e225f432ec1bf27c94dc70a8f",
+  "v010_tag_source": "2cddd31bb8b88648f619969dbb4fe195051735b4",
+  "stages": [
+    {
+      "stage": "C01",
+      "commit": "c65e6736f95fba68b230670076cee4f6d7687b60",
+      "subject": "docs: specify v5 tail and member boundary contract",
+      "status": "passed"
+    },
+    {
+      "stage": "C02",
+      "commit": "6c2732d843a0097e0ee7a9df357d63d0373b2cea",
+      "subject": "feat: resolve v5 observation counts and tail padding",
+      "status": "passed"
+    },
+    {
+      "stage": "C03",
+      "commit": "7db9373eb4811f00f2332f7059e72aca8a018901",
+      "subject": "feat: validate v5 multi-member boundary chains",
+      "status": "passed"
+    },
+    {
+      "stage": "C04",
+      "commit": "fcc38e09e90d7e53b188fded8b7a0b134f40bdde",
+      "subject": "feat: expose explicit v5 boundary policies",
+      "status": "passed"
+    },
+    {
+      "stage": "C05",
+      "commit": "98a249d5de1da0df8cc1d86a97f5fdb6029a197b",
+      "subject": "test: prepare real sas xport interoperability validation",
+      "status": "blocked"
+    },
+    {
+      "stage": "C06",
+      "commit": "69abb7dfa7b44dfc7dfc7d3e4e8b89addb50a48d",
+      "subject": "test: complete independent v5 interoperability gates",
+      "status": "passed"
+    }
+  ],
+  "unit_test_groups": {
+    "total": 81,
+    "passed": 81,
+    "original_groups_preserved": 27
+  },
+  "test_ids": {
+    "R01": "passed",
+    "R02": "passed",
+    "R03": "passed",
+    "R04": "passed",
+    "R05": "passed",
+    "R06": "passed",
+    "R07": "passed",
+    "R08": "passed",
+    "R09": "passed",
+    "R10": "passed",
+    "R11": "passed",
+    "R12": "passed",
+    "R13": "passed",
+    "R14": "passed",
+    "R15": "passed"
+  },
+  "sas_test_ids": {
+    "S01": "blocked",
+    "S02": "blocked",
+    "S03": "blocked",
+    "S04": "blocked",
+    "S05": "blocked",
+    "S06": "blocked",
+    "S07": "blocked",
+    "S08": "blocked",
+    "S09": "blocked",
+    "S10": "blocked",
+    "S11": "blocked",
+    "S12": "blocked",
+    "S13": "blocked",
+    "S14": "blocked"
+  },
+  "corpus": [
+    {
+      "member": "DEMO_J",
+      "rows": 9254,
+      "columns": 46,
+      "cells": 425684,
+      "sha256": "c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec",
+      "max_ulp": 0,
+      "metadata": "exact declared attributes",
+      "result": "PASS"
+    },
+    {
+      "member": "BMX_J",
+      "rows": 8704,
+      "columns": 21,
+      "cells": 182784,
+      "sha256": "8d675e42d8826ac98714b2c3dd4c5138a5e353fb4424f7eff5e6db4a01ce838a",
+      "max_ulp": 0,
+      "metadata": "exact declared attributes",
+      "result": "PASS"
+    },
+    {
+      "member": "GLU_J",
+      "rows": 3036,
+      "columns": 4,
+      "cells": 12144,
+      "sha256": "5b38897d0d7bfbc69dd9ca74ffdaf2f6a9bed5a91d4a7bf46e07f1332cc3379e",
+      "max_ulp": 0,
+      "metadata": "exact declared attributes",
+      "result": "PASS"
+    }
+  ],
+  "oracle_versions": {
+    "pyreadstat": "1.3.7",
+    "xport": "3.6.1",
+    "pandas": "3.1.0",
+    "numpy": "2.5.4",
+    "setuptools": "80.10.2",
+    "narwhals": "2.28.0",
+    "python-dateutil": "4.0.0",
+    "tzdata": "2026.6"
+  },
+  "oracle_source_lock": {
+    "readstat_family": {
+      "wrapper": "pyreadstat",
+      "wrapper_version": "1.3.7",
+      "vendor_repository": "https://github.com/Roche/pyreadstat",
+      "vendor_commit": "e6e23bc0021875f35fccc3c2707c3e5151c130bb",
+      "read_source_sha256": "11c18b92a8db0daca92a965b50fe20edc88903c4c14a54235d79a93b6ce5ce71",
+      "write_source_sha256": "5d565f95d8ae8c6d10700c4f93a32b5eb8933ae578baf9ad849b57c1cf50f245",
+      "upstream_review_commit": "8ce32a11c248225dd4ccaccbcadd24214c5da46f",
+      "scope": "Oracle execution uses the pinned pyreadstat distribution and records actual binary hashes. Vendor source snapshot is identified separately; no standalone upstream ReadStat build is claimed. pyreadstat and ReadStat are one family."
+    },
+    "python_xport_family": {
+      "version": "3.6.1",
+      "v56_sha256": "20b5e2dd8cba9fb57f4a785933ec4fcf8668807e8d828f6b9c4803c1611085ba",
+      "adapter": "tools/xport_compat.py changes pandas Series construction only; no parser/format algorithm changes"
+    }
+  },
+  "directions": {
+    "I03_R01": {
+      "status": "passed",
+      "family": "ReadStat via pyreadstat",
+      "members": 1,
+      "rows": 4
+    },
+    "I05_R03": {
+      "status": "passed",
+      "family": "Python xport",
+      "members": 1,
+      "rows": {
+        "FIRST": 3
+      }
+    },
+    "I05_R05": {
+      "status": "passed",
+      "family": "Python xport",
+      "members": 2,
+      "rows": {
+        "FIRST": 3,
+        "SECOND": 2
+      }
+    },
+    "I04_R02": {
+      "status": "passed",
+      "family": "ReadStat via pyreadstat",
+      "single_member_files": [
+        "TEST_A",
+        "TEST_B",
+        "EMPTY",
+        "TAGS"
+      ],
+      "rows": {
+        "TEST_A": 3,
+        "TEST_B": 2,
+        "EMPTY": 0,
+        "TAGS": 28
+      },
+      "scope": "all ordinary numeric values/masks and exposed metadata; decoded character views only"
+    },
+    "I06_R04": {
+      "status": "passed",
+      "family": "Python xport",
+      "single_member_files": [
+        "TEST_A",
+        "TEST_B",
+        "EMPTY",
+        "TAGS"
+      ]
+    },
+    "I06_R06": {
+      "status": "passed",
+      "family": "Python xport",
+      "members": [
+        "TEST_A",
+        "TEST_B",
+        "EMPTY",
+        "TAGS"
+      ],
+      "rows": {
+        "TEST_A": 3,
+        "TEST_B": 2,
+        "EMPTY": 0,
+        "TAGS": 28
+      },
+      "scope": "all members/columns/rows of regular multi-member output"
+    }
+  },
+  "oracle_limitations": [
+    "Character raw storage bytes and trailing-space identity are not exposed by either convenience reader; no blanket observation trim is used to claim equality.",
+    "Numeric/gap/reordered-position/full-HFP-range coverage outside oracle exposure remains normative vectors, not an oracle success claim.",
+    "ReadStat and pyreadstat are one family. Upstream reviewed code differs from the actual pinned vendored reader.",
+    "SAS XPORT Engine is blocked; no SAS results are included."
+  ],
+  "edge_cases": [
+    {
+      "family": "ReadStat",
+      "fixture": "SHORT",
+      "authored_rows": 2,
+      "observed_rows": 1,
+      "status": "not_supported_by_oracle",
+      "reason": "all-blank observation lost by this pinned reader; not counted as interoperable"
+    },
+    {
+      "family": "ReadStat",
+      "fixture": "FULLBL",
+      "authored_rows": 1,
+      "observed_rows": 0,
+      "status": "not_supported_by_oracle",
+      "reason": "all-blank observation lost by this pinned reader; not counted as interoperable"
+    },
+    {
+      "family": "Python xport",
+      "fixture": "SHORT",
+      "authored_rows": 2,
+      "observed_rows": 1,
+      "status": "not_supported_by_oracle",
+      "reason": "all-blank observation lost by this pinned reader; not counted as interoperable"
+    },
+    {
+      "family": "Python xport",
+      "fixture": "FULLBL",
+      "authored_rows": 1,
+      "observed_rows": 0,
+      "status": "not_supported_by_oracle",
+      "reason": "all-blank observation lost by this pinned reader; not counted as interoperable"
+    },
+    {
+      "family": "ReadStat",
+      "fixture": "invalid-padding.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 1,
+        "rejected": false
+      }
+    },
+    {
+      "family": "Python xport",
+      "fixture": "invalid-padding.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 1,
+        "rejected": false
+      }
+    },
+    {
+      "family": "ReadStat",
+      "fixture": "truncated-padding.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 1,
+        "rejected": false
+      }
+    },
+    {
+      "family": "Python xport",
+      "fixture": "truncated-padding.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 1,
+        "rejected": false
+      }
+    },
+    {
+      "family": "ReadStat",
+      "fixture": "truncated-observation.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 0,
+        "rejected": false
+      }
+    },
+    {
+      "family": "Python xport",
+      "fixture": "truncated-observation.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 0,
+        "rejected": false
+      }
+    },
+    {
+      "family": "ReadStat",
+      "fixture": "nul-padding.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 1,
+        "rejected": false
+      }
+    },
+    {
+      "family": "Python xport",
+      "fixture": "nul-padding.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 1,
+        "rejected": false
+      }
+    }
+  ],
+  "fixture_hashes": [
+    {
+      "file": "short-unique.xpt",
+      "bytes": 960,
+      "sha256": "5158ded91e0cb3e6d3520eb33210630f1ba9c29c79c7ee4a0ac94fda9e8a0176",
+      "test_ids": [
+        "B03",
+        "A02"
+      ],
+      "producer": "Python stdlib TS-140 layout vector, generate.py",
+      "tool": "Python 3 stdlib",
+      "license": "MIT, synthetic MoonXPT test data",
+      "personal_data": false,
+      "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+    },
+    {
+      "file": "short-ambiguous.xpt",
+      "bytes": 960,
+      "sha256": "0a320867f9015aee9fdf0fdb12d6b5428e98c9ff607fcc5cd1cec4eeb60e4482",
+      "test_ids": [
+        "B19",
+        "A04",
+        "A06"
+      ],
+      "producer": "Python stdlib TS-140 layout vector, generate.py",
+      "tool": "Python 3 stdlib",
+      "license": "MIT, synthetic MoonXPT test data",
+      "personal_data": false,
+      "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+    },
+    {
+      "file": "wide-unique.xpt",
+      "bytes": 1040,
+      "sha256": "81798b3fe49d9a82e843b1c00f90e4c8ecafa7e88d268d31d66ab62b2575f801",
+      "test_ids": [
+        "B07",
+        "A03"
+      ],
+      "producer": "Python stdlib TS-140 layout vector, generate.py",
+      "tool": "Python 3 stdlib",
+      "license": "MIT, synthetic MoonXPT test data",
+      "personal_data": false,
+      "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+    },
+    {
+      "file": "multi-unique.xpt",
+      "bytes": 1760,
+      "sha256": "80837eb03aac4cc6878f9b8ebb076a00a5cd955961a6d4956d738dabcd1ddc18",
+      "test_ids": [
+        "M01",
+        "A07"
+      ],
+      "producer": "Python stdlib TS-140 layout vector, generate.py",
+      "tool": "Python 3 stdlib",
+      "license": "MIT, synthetic MoonXPT test data",
+      "personal_data": false,
+      "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+    },
+    {
+      "file": "multi-ambiguous-rows.xpt",
+      "bytes": 1680,
+      "sha256": "34897403ce73de41ae969dee813be80b3aa7df0b35cc4a198bc92c9711967f2f",
+      "test_ids": [
+        "M07"
+      ],
+      "producer": "Python stdlib TS-140 layout vector, generate.py",
+      "tool": "Python 3 stdlib",
+      "license": "MIT, synthetic MoonXPT test data",
+      "personal_data": false,
+      "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+    },
+    {
+      "file": "polyglot.xpt",
+      "bytes": 1920,
+      "sha256": "47e0e2d95172126cda317d4d6807ec3d70a25d5888d800e37ecf1393dd66ed1f",
+      "test_ids": [
+        "M18"
+      ],
+      "producer": "Python stdlib TS-140 layout vector, generate.py",
+      "tool": "Python 3 stdlib",
+      "license": "MIT, synthetic MoonXPT test data",
+      "personal_data": false,
+      "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+    },
+    {
+      "file": "invalid-padding.xpt",
+      "bytes": 1040,
+      "sha256": "4519a5955c75780407c37732fbd1d4bb128578e4eaaf52c9e162d9b52887a5a5",
+      "test_ids": [
+        "B11",
+        "A05"
+      ],
+      "producer": "Python stdlib TS-140 layout vector, generate.py",
+      "tool": "Python 3 stdlib",
+      "license": "MIT, synthetic MoonXPT test data",
+      "personal_data": false,
+      "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+    },
+    {
+      "file": "nul-padding.xpt",
+      "bytes": 1040,
+      "sha256": "c6b2691ca7ad63e35e9b673b7ee02b77907c1b17f8c245bf45bc41e1e9f08b58",
+      "test_ids": [
+        "B11",
+        "R10"
+      ],
+      "producer": "Python stdlib TS-140 layout vector, generate.py",
+      "tool": "Python 3 stdlib",
+      "license": "MIT, synthetic MoonXPT test data",
+      "personal_data": false,
+      "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+    },
+    {
+      "file": "truncated-padding.xpt",
+      "bytes": 1039,
+      "sha256": "ebee8e23021c2536a81defb0ee8670b0bfb220a34e783b8ec62f7b0edce2321b",
+      "test_ids": [
+        "B13"
+      ],
+      "producer": "Python stdlib TS-140 layout vector, generate.py",
+      "tool": "Python 3 stdlib",
+      "license": "MIT, synthetic MoonXPT test data",
+      "personal_data": false,
+      "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+    },
+    {
+      "file": "truncated-observation.xpt",
+      "bytes": 960,
+      "sha256": "d13dfdb1f1cce4e5674e2e39518b4eac4285a2a4ce52ad8ae48e80758563d82b",
+      "test_ids": [
+        "B12"
+      ],
+      "producer": "Python stdlib TS-140 layout vector, generate.py",
+      "tool": "Python 3 stdlib",
+      "license": "MIT, synthetic MoonXPT test data",
+      "personal_data": false,
+      "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+    },
+    {
+      "file": "truncated-member-header.xpt",
+      "bytes": 1140,
+      "sha256": "40ee70714b26479d7c755da5e7216052c5242dd654f9687145483c97fdbacd55",
+      "test_ids": [
+        "M16"
+      ],
+      "producer": "Python stdlib TS-140 layout vector, generate.py",
+      "tool": "Python 3 stdlib",
+      "license": "MIT, synthetic MoonXPT test data",
+      "personal_data": false,
+      "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+    },
+    {
+      "file": "trailing-garbage.xpt",
+      "bytes": 1120,
+      "sha256": "8aaeb9c2ae9c4de3193d31ebec6c8d79b6c48018bbed6759a3093d4853374bc8",
+      "test_ids": [
+        "M17"
+      ],
+      "producer": "Python stdlib TS-140 layout vector, generate.py",
+      "tool": "Python 3 stdlib",
+      "license": "MIT, synthetic MoonXPT test data",
+      "personal_data": false,
+      "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+    },
+    {
+      "file": "wide-blank.xpt",
+      "bytes": 960,
+      "sha256": "b1cea50bfcffb6f806f49c5522353edaef0a564aca4cab46c9cb75209d5aecdf",
+      "test_ids": [
+        "B06",
+        "A15"
+      ],
+      "producer": "Python stdlib TS-140 layout vector, generate.py",
+      "tool": "Python 3 stdlib",
+      "license": "MIT, synthetic MoonXPT test data",
+      "personal_data": false,
+      "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+    },
+    {
+      "file": "zero-row.xpt",
+      "bytes": 880,
+      "sha256": "5f7eabfce50b4ee7fb757323a6fbf209b43314fcbdcc33714b270eabf47325ad",
+      "test_ids": [
+        "B01",
+        "A16"
+      ],
+      "producer": "Python stdlib TS-140 layout vector, generate.py",
+      "tool": "Python 3 stdlib",
+      "license": "MIT, synthetic MoonXPT test data",
+      "personal_data": false,
+      "purpose": "validity, ambiguity or deliberate corruption as named; not SAS-generated"
+    },
+    {
+      "file": "EMPTY.xpt",
+      "bytes": 880,
+      "sha256": "fbc57dd3ca18f223c496b6b372833168fd9114f0a6115d4a7ada57b3767f9ed7"
+    },
+    {
+      "file": "FULLBL.xpt",
+      "bytes": 960,
+      "sha256": "e0916c2fecb04d231cba599e6a4ad49e279d523a54c4cad504b3e4c52dcae873"
+    },
+    {
+      "file": "SHORT.xpt",
+      "bytes": 960,
+      "sha256": "71b7ba8008dcfa5c94c497f002940d1962bc411d5bebb5348aad7f81f2936754"
+    },
+    {
+      "file": "TAGS.xpt",
+      "bytes": 1120,
+      "sha256": "8f80cf998013924d5fad9c28d629afc1dba33a0f9d56f16921eab4589fdce6d9"
+    },
+    {
+      "file": "TEST_A.xpt",
+      "bytes": 1120,
+      "sha256": "f58a1118a13152153dd202bf25bd23a84272d63e294fa605215f5db26a7e2d2b"
+    },
+    {
+      "file": "TEST_B.xpt",
+      "bytes": 1120,
+      "sha256": "928635c30042563a2d4beafb77ebbf8f032c7586d03f1118d6524938858c32cd"
+    },
+    {
+      "file": "moon_multi.xpt",
+      "bytes": 4960,
+      "sha256": "6391fabd8c4b77ba79d89422b5cfb3cc7195fb71d908efce99c6c4bf21bac4e2"
+    }
+  ],
+  "clean_checkout": {
+    "status": "passed",
+    "source_commit": "69abb7dfa7b44dfc7dfc7d3e4e8b89addb50a48d",
+    "project_build_cache_reused": false,
+    "sdk": "existing pinned SDK, not a new SDK installation",
+    "oracle": "not requested; offline core reproduction",
+    "boundary": "new local clone and build directory; shared host OS/kernel and fixed SDK, not a new machine or remote CI",
+    "exit_code": 0
+  },
+  "ci": {
+    "configuration": "passed",
+    "remote_runs": "not_run",
+    "shellcheck": "not_run",
+    "jobs": [
+      "offline-core",
+      "fixtures-interop",
+      "public-corpus",
+      "sas-interop",
+      "release-repro"
+    ]
+  },
+  "sas": {
+    "status": "blocked",
+    "reason": "user confirmed no legally available SAS environment or runner",
+    "executable": null,
+    "version": null,
+    "executed": false,
+    "prepared_programs": "tests/interop/sas",
+    "needed": [
+      "licensed SAS Foundation with XPORT Engine",
+      "actual executable/authorized runner",
+      "actual version/LOG/PROC CONTENTS/PROC COMPARE",
+      "session encoding verification and S13 extension"
+    ]
+  },
+  "protected_materials": {
+    "immutable_files": 305,
+    "append_only_documents": 3,
+    "user_untracked_file": {
+      "path": "docs/project-application.md",
+      "sha256": "abaa7cfe029c8067551560659dbda596f84040d3e06946e9dfd0f85acd291c38",
+      "bytes": 3570
+    }
+  },
+  "publication": {
+    "push": false,
+    "v020_tag": false,
+    "GitHub_Release": false,
+    "Mooncakes": false,
+    "contest_submission": false
+  },
+  "delivery_note": "This receipt names the exact tested implementation commit. Final evidence is appended in a later documentation-only commit; its full delivery hash is reported after commit in the final response and .cache/v0.2.0/final-delivery.json."
+}

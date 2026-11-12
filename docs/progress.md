@@ -161,3 +161,23 @@ ReadStat多成员限制单列。305份旧材料/测试核对不变，五类CI本
 
 C06后续发现并补齐文件输入逻辑原点、资源上限不能消除格式歧义两类回归。新增3组，
 当前81/81、全部旧集成、独立矩阵、真实语料重新通过，先前失败日志保留；最终clone待追加。
+
+
+## 最终验收追加（2026-11-12）
+
+**READY_WITH_SAS_VALIDATION_BLOCKED**。实际实现commit为
+`69abb7dfa7b44dfc7dfc7d3e4e8b89addb50a48d`。C01–C04、C06现已passed，C05仍blocked。
+R14已从该确定commit干净克隆实际通过：81/81、全部旧集成、新API/CLI与资源检查，
+未复用项目构建缓存；SDK仍为既有固定版本，共享宿主OS/内核，不计新机器/SDK安装。
+
+修正后的81/81、两家实现双向、620612单元格/声明元数据及max ULP0已重新验收；
+305份旧材料、v0.1.0 tag及历史不变。用户未跟踪申报书3570字节，SHA-256为
+abaa7cfe029c8067551560659dbda596f84040d3e06946e9dfd0f85acd291c38，未纳入提交。
+
+SAS实际执行信息：可执行路径/版本/runner均无，S01–S14 blocked；后续需要合法XPORT
+Engine、真实LOG/PROC CONTENTS/PROC COMPARE及编码环境，现有模板不能代替执行。
+新远端CI均not_run，只有配置与本地入口通过。没有push、v0.2.0 tag、Release、Mooncakes
+发布或赛事提交。最终文档提交的完整hash在交付回复及本地final-delivery.json登记。
+
+最终回执、各阶段完整commit、fixture SHA、各oracle版本/验证方向与原日志位于
+`docs/evidence/v0.2.0/final-20261112/`；此前阶段状态及失败记录保留，不覆盖。

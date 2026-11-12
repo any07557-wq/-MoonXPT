@@ -98,3 +98,23 @@ python3 tools/reproduce_v020.py --commit HEAD --evidence-dir ../v020-clean-new
 候选集合，多解仍报歧义，唯一行数超限才报E_V5_RESOURCE_LIMIT。资源上限不是作者行数证据。
 修正前79组中1失败、81组中2失败的实际日志独立保留，修正后81/81与全部集成、双向oracle
 及620612真实单元格回归重新通过。精确提交的clean checkout仍在代码提交后单独归档。
+
+
+## 最终验收追加（2026-11-12）
+
+**READY_WITH_SAS_VALIDATION_BLOCKED**。实际实现commit为
+`69abb7dfa7b44dfc7dfc7d3e4e8b89addb50a48d`。C01–C04、C06现已passed，C05仍blocked。
+R14已从该确定commit干净克隆实际通过：81/81、全部旧集成、新API/CLI与资源检查，
+未复用项目构建缓存；SDK仍为既有固定版本，共享宿主OS/内核，不计新机器/SDK安装。
+
+修正后的81/81、两家实现双向、620612单元格/声明元数据及max ULP0已重新验收；
+305份旧材料、v0.1.0 tag及历史不变。用户未跟踪申报书3570字节，SHA-256为
+abaa7cfe029c8067551560659dbda596f84040d3e06946e9dfd0f85acd291c38，未纳入提交。
+
+SAS实际执行信息：可执行路径/版本/runner均无，S01–S14 blocked；后续需要合法XPORT
+Engine、真实LOG/PROC CONTENTS/PROC COMPARE及编码环境，现有模板不能代替执行。
+新远端CI均not_run，只有配置与本地入口通过。没有push、v0.2.0 tag、Release、Mooncakes
+发布或赛事提交。最终文档提交的完整hash在交付回复及本地final-delivery.json登记。
+
+最终回执、各阶段完整commit、fixture SHA、各oracle版本/验证方向与原日志位于
+`docs/evidence/v0.2.0/final-20261112/`；此前阶段状态及失败记录保留，不覆盖。

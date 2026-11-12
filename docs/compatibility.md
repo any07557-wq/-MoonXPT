@@ -62,3 +62,11 @@ API、CLI、JSON状态及迁移说明见[新边界契约](boundary-v0.2.0.md)。
 
 完整仓库的docs/validation-report-v0.2.0.md列出版本、方向、限制和复现命令；clean checkout
 实际结果会在最终验收章节单独追加。
+
+
+## v0.2.0最终本地验收更新（2026-11-12）
+
+C01–C04、C06 passed；C05 blocked。精确实现commit 69abb7dfa7b44dfc7dfc7d3e4e8b89addb50a48d
+的clean checkout实测81/81、原集成、新CLI及资源检查通过，R14现为passed。最终结论
+READY_WITH_SAS_VALIDATION_BLOCKED；只复用固定SDK，无项目缓存复用。前文oracle限制不变，
+SAS仍无真实执行、新远端CI not_run。完整仓库docs/evidence/v0.2.0/final-20261112/保存新回执。

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "source_commit": "69abb7dfa7b44dfc7dfc7d3e4e8b89addb50a48d",
+  "project_build_cache_reused": false,
+  "sdk": "existing pinned SDK, not a new SDK installation",
+  "oracle": "not requested; offline core reproduction",
+  "boundary": "new local clone and build directory; shared host OS/kernel and fixed SDK, not a new machine or remote CI",
+  "exit_code": 0
+}
