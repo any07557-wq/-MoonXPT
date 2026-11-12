@@ -165,7 +165,9 @@ pub fn resolve_v5_boundary(
       let data = length - p.to_int64()
       if data % width.to_int64() == 0L {
         let n = data / width.to_int64()
-        if n <= limits.max_rows && (hint is None || hint == Some(n)) {
+        // Resource limits are not evidence of the author's row count. Keep all
+        // format candidates, even if some exceed the processing budget.
+        if hint is None || hint == Some(n) {
           counts.push(n)
           pads.push(p)
         }
@@ -191,6 +193,15 @@ pub fn resolve_v5_boundary(
     )
   }
   let unique = counts.length() == 1
+  if unique && counts[0] > limits.max_rows {
+    v5_fail(
+      "limit",
+      "E_V5_RESOURCE_LIMIT",
+      "unique observation count exceeds row limit",
+      offset=boundary,
+      dataset=name,
+    )
+  }
   {
     row_count: if unique {
       Some(counts[0])

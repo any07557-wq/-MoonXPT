@@ -1,54 +1,102 @@
-name: MoonXPT compatibility
+name: MoonXPT v0.2.0 boundaries and interoperability
 on:
   push:
   pull_request:
   workflow_dispatch:
     inputs:
       real_corpus:
-        description: Download hash-pinned CDC corpus and run independent oracles
+        description: Download fixed public corpus and compare every value
+        type: boolean
+        default: false
+      sas_interop:
+        description: Run only on an authorized licensed SAS XPORT Engine runner
         type: boolean
         default: false
 permissions:
   contents: read
 jobs:
-  offline:
+  offline-core:
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
+          fetch-depth: 0
           persist-credentials: false
-      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+      - uses: ./.github/actions/setup-v020
+      - run: python3 tools/check_v020.py --mode offline --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"
+      - if: always()
+        uses: ./.github/actions/preserve-v020
         with:
-          python-version: '3.14.4'
-      - name: Fresh SDK, build and offline tests
-        run: python3 tools/verify_release.py --mode offline --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"
-      - name: Preserve verification evidence including failures
-        if: always()
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+          name: offline-core-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/moonxpt-evidence
+  fixtures-interop:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
-          name: offline-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/moonxpt-evidence/
-          if-no-files-found: error
-          retention-days: 30
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: ./.github/actions/setup-v020
+        with:
+          oracles: 'true'
+      - run: .cache/venv/bin/python tools/check_v020.py --mode interop --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"
+      - if: always()
+        uses: ./.github/actions/preserve-v020
+        with:
+          name: fixtures-interop-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/moonxpt-evidence
   public-corpus:
     if: github.event_name == 'workflow_dispatch' && inputs.real_corpus
     runs-on: ubuntu-24.04
     timeout-minutes: 35
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
+          fetch-depth: 0
           persist-credentials: false
-      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+      - uses: ./.github/actions/setup-v020
         with:
-          python-version: '3.14.4'
-      - name: Fresh SDK, oracles and hash-pinned public corpus
-        run: python3 tools/verify_release.py --mode full --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"
-      - name: Preserve verification evidence including failures
-        if: always()
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+          oracles: 'true'
+      - run: .cache/venv/bin/python tools/fetch_corpus.py
+      - run: .cache/venv/bin/python tools/check_v020.py --mode corpus --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"
+      - if: always()
+        uses: ./.github/actions/preserve-v020
         with:
           name: public-corpus-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/moonxpt-evidence/
-          if-no-files-found: error
-          retention-days: 30
+          path: ${{ runner.temp }}/moonxpt-evidence
+  sas-interop:
+    if: github.event_name == 'workflow_dispatch' && inputs.sas_interop && vars.SAS_XPORT_RUNNER_ENABLED == 'true'
+    runs-on: [self-hosted, linux, x64, sas-xport]
+    timeout-minutes: 45
+    env:
+      SAS_EXECUTABLE: ${{ vars.SAS_EXECUTABLE }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: ./.github/actions/setup-v020
+      - run: python3 tools/run_sas_v020.py --sas "$SAS_EXECUTABLE" --work-dir "$RUNNER_TEMP/moonxpt-evidence" --confirm-xport-engine-authorized
+      - if: always()
+        uses: ./.github/actions/preserve-v020
+        with:
+          name: sas-interop-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/moonxpt-evidence
+  release-repro:
+    needs: offline-core
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: ./.github/actions/setup-v020
+      - run: python3 tools/reproduce_v020.py --commit "$GITHUB_SHA" --evidence-dir "$RUNNER_TEMP/moonxpt-evidence"
+      - if: always()
+        uses: ./.github/actions/preserve-v020
+        with:
+          name: release-repro-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/moonxpt-evidence

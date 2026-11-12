@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "files": 90,
+  "sha256": "9b196476440b7f3497744a58fd43dcbbdb007ffff945ef1106a8fae5480f3881",
+  "scope": "development library packaging and local links only; not a final release artifact or registry publication"
+}

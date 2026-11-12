@@ -165,6 +165,7 @@ pub struct Input {
 }
 
 ///|
+/// A reposition callback uses offsets relative to the first byte exposed by read.
 pub fn Input::new(
   read : (Int32) -> Bytes raise,
   max_bytes~ : Int64 = 1099511627776L,

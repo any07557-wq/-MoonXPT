@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "actionlint_version": "1.7.12",
+  "command": ".cache/ci-preparation/actionlint -shellcheck= .github/workflows/ci.yml",
+  "scope": "local workflow/action metadata and expression lint; shellcheck unavailable/disabled; no remote job executed",
+  "jobs": [
+    "offline-core",
+    "fixtures-interop",
+    "public-corpus",
+    "sas-interop",
+    "release-repro"
+  ],
+  "sas_runner": "planned custom label only, not provisioned or enabled",
+  "files": [
+    {
+      "file": ".github/workflows/ci.yml",
+      "sha256": "4ebb823795c1be61345cbd653164934a4db77db4dd02e98313541bef069c3bee"
+    },
+    {
+      "file": ".github/actionlint.yaml",
+      "sha256": "2fe3927ac48aa2de17587656e980bd537823b50cca9b2cf1242e45c763486d30"
+    },
+    {
+      "file": ".github/actions/setup-v020/action.yml",
+      "sha256": "e1e0a1ef567403801b3294a2083a07ab5592ea8d51cfec642ae6eccd47f732f8"
+    },
+    {
+      "file": ".github/actions/preserve-v020/action.yml",
+      "sha256": "703c048c5ab723a2f1679ad6bb4b02b4cefff70178a3b5b71bed7e2de9812e31"
+    }
+  ]
+}

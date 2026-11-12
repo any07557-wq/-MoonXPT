@@ -1,0 +1,18 @@
+name: Preserve v0.2.0 evidence
+description: Upload reports, raw logs and checksums including failed validation runs
+inputs:
+  name:
+    description: Artifact name
+    required: true
+  path:
+    description: Evidence directory
+    required: true
+runs:
+  using: composite
+  steps:
+    - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: ${{ inputs.name }}
+        path: ${{ inputs.path }}
+        if-no-files-found: error
+        retention-days: 30

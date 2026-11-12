@@ -30,3 +30,12 @@
 - [Python xport3.6.1](https://github.com/selik/xport)：已安装固定发行包的v56.py SHA-256为20b5e2dd8cba9fb57f4a785933ec4fcf8668807e8d828f6b9c4803c1611085ba；Observations在空白行终止并rstrip字符、Member/Library处理多个成员。pandas构造器适配不改变格式算法。与ReadStat是两个家族。
 
 关键规则、MoonXPT决策及B/M/A/R测试ID见[ADR-003](adr-003-v5-boundary-resolution.md)。
+
+
+## v0.2.0实际oracle构建核对（2026-11-12追加）
+
+- [pyreadstat1.3.7固定源码](https://github.com/Roche/pyreadstat/tree/e6e23bc0021875f35fccc3c2707c3e5151c130bb)：11-11通过官方GitHub API核对tag commit与vendored readstat.h/reader/writer blob。它的reader SHA-256为11c18b92a8db0daca92a965b50fe20edc88903c4c14a54235d79a93b6ce5ce71，与上游8ce32a1不同。writer摘要相同，但不能据此说成运行过上游commit的独立构建。
+- 实际vendor缺少宽空白尾行补丁，两个固定便利reader实测都会丢失80字节全空白观测；上游源码中的修复没有用于替代实际运行。动态模块、适配器、全部固定依赖版本及SHA记录在新c06证据。
+- Python xport的MemberHeader/Namestr低层API提供position、width、标签和format/informat；其DataFrame Series可能丢失这些属性，故未用Series属性作元数据真值。低层ibm_to_ieee另验28种缺失，字符rstrip/NaN归一限制不隐藏。
+
+C06不新增运行时依赖，两个oracle家族的源与许可仍按原THIRD_PARTY.md保留；测试数据为自有合成内容，真实NHANES文件不入Git或发布包。

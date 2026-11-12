@@ -2,7 +2,8 @@
 
 日期2026-11-11；状态：C01设计审查完成，后续实现按阶段追加结果。
 依据为官方TS-140现行28页October2021修订本、SAS官方EOF问答、固定ReadStat源码及
-Python xport3.6.1。来源摘要及访问记录见[evidence/v0.2.0/c01/sources.json](evidence/v0.2.0/c01/sources.json)。
+Python xport3.6.1。来源摘要及访问记录保存在完整仓库的
+`docs/evidence/v0.2.0/c01/sources.json`，库包不携带整份开发证据。
 
 ## 已核实的规范与工程决策
 
@@ -73,3 +74,22 @@ C01检查：现有fixture的W与npos已审计，原27组离线通过；设计没
 为保留v0.1.0显式兼容行为，TrimPadding可选择最早的**完整合法**路径并取最大合法padding，
 报告boundary_status=ambiguous和相应诊断，不能标为唯一推断。它不再依赖未经验证的单个头。
 这项有损opt-in例外不适用于默认严格策略；旧测试保持原样，初次回归失败日志单独保留。
+
+
+## C06实际构建差异（2026-11-12追加）
+
+实际pyreadstat1.3.7 vendored源码为Roche/pyreadstat e6e23bc0021875f35fccc3c2707c3e5151c130bb，
+缺少上游8ce32a1的宽空白尾行修复。它与Python xport3.6.1均将80字节全空白观测读为0行；
+这不改变TS-140下该行唯一有效的结论，也不扩大Writer短观测风险规则。便利reader的字符
+裁剪与NaN归一不用于证明原始字符/tag；低层xport API和规范字节向量另列。完整结果见
+完整仓库docs/validation-report-v0.2.0.md及独立c06证据，旧C01来源与结论保持原样。
+
+
+## C06最后两项回归修正（2026-11-12）
+
+真实文件的Input必须以构造时的当前位置作为逻辑原点。新增带8字节前缀的双成员真实文件
+回归，验证两成员row offset为880/1680；C03新增seek适配漏掉原点的问题已修正。
+另新增两项资源语义回归：max_rows不能删掉合法N/P候选来制造唯一解释；先保留完整格式
+候选集合，多解仍报歧义，唯一行数超限才报E_V5_RESOURCE_LIMIT。资源上限不是作者行数证据。
+修正前79组中1失败、81组中2失败的实际日志独立保留，修正后81/81与全部集成、双向oracle
+及620612真实单元格回归重新通过。精确提交的clean checkout仍在代码提交后单独归档。

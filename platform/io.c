@@ -20,7 +20,10 @@ int32_t mx_read(int32_t fd, uint8_t *buffer, int32_t n) {
   return got < 0 ? -errno : (int32_t)got;
 }
 int32_t mx_close(int32_t fd) { return close(fd) < 0 ? -errno : 0; }
-int32_t mx_seekable(int32_t fd) { return lseek(fd, 0, SEEK_CUR) < 0 ? 0 : 1; }
+int64_t mx_tell(int32_t fd) {
+  off_t position = lseek(fd, 0, SEEK_CUR);
+  return position < 0 ? -(int64_t)errno : (int64_t)position;
+}
 int32_t mx_seek(int32_t fd, int64_t offset) {
   if (offset < 0 || (int64_t)(off_t)offset != offset) return -EOVERFLOW;
   return lseek(fd, (off_t)offset, SEEK_SET) < 0 ? -errno : 0;

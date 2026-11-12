@@ -50,7 +50,7 @@ pkgtype(kind: "executable")
 接口签名见[核心](pkg.generated.mbti)、[交换层](exchange/pkg.generated.mbti)。
 上述workspace方法无需registry发布；它不证明Mooncakes账号或命名空间已获确认。
 
-## 0.1.0范围与兼容性
+## 继承的V5范围与兼容性
 
 - XPORT V5，单/多成员，136/140描述符读取，140描述符写出，IBM数值与28种缺失。
 - 保留字段原始字节，显式ASCII/Windows-1252；CSV为UTF-8，JSON schema_version=1。

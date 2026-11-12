@@ -14,7 +14,7 @@ extern "C" fn read_raw(
 extern "C" fn close_raw(fd : Int32) -> Int32 = "mx_close"
 
 ///|
-extern "C" fn seekable_raw(fd : Int32) -> Int32 = "mx_seekable"
+extern "C" fn tell_raw(fd : Int32) -> Int64 = "mx_tell"
 
 ///|
 extern "C" fn seek_raw(fd : Int32, offset : Int64) -> Int32 = "mx_seek"
@@ -63,15 +63,19 @@ pub fn File::input(
   self : File,
   max_bytes~ : Int64 = 1099511627776L,
 ) -> @xpt.Input raise @xpt.XptError {
+  let origin = tell_raw(self.fd)
   @xpt.Input::new(
     n => self.read(n),
     max_bytes~,
-    reposition=if seekable_raw(self.fd) == 1 {
+    reposition=if origin >= 0L {
       Some(offset => {
         if self.closed {
           @xpt.fail("io", "seek on closed file")
         }
-        let status = seek_raw(self.fd, offset)
+        if offset < 0L || offset > 9223372036854775807L - origin {
+          @xpt.fail("io", "stream-relative seek overflow", offset~)
+        }
+        let status = seek_raw(self.fd, origin + offset)
         if status < 0 {
           @xpt.fail("io", "seek failed: errno \{-status}", offset~)
         }

@@ -1,0 +1,17 @@
+{
+  "readstat_family": {
+    "wrapper": "pyreadstat",
+    "wrapper_version": "1.3.7",
+    "vendor_repository": "https://github.com/Roche/pyreadstat",
+    "vendor_commit": "e6e23bc0021875f35fccc3c2707c3e5151c130bb",
+    "read_source_sha256": "11c18b92a8db0daca92a965b50fe20edc88903c4c14a54235d79a93b6ce5ce71",
+    "write_source_sha256": "5d565f95d8ae8c6d10700c4f93a32b5eb8933ae578baf9ad849b57c1cf50f245",
+    "upstream_review_commit": "8ce32a11c248225dd4ccaccbcadd24214c5da46f",
+    "scope": "Oracle execution uses the pinned pyreadstat distribution and records actual binary hashes. Vendor source snapshot is identified separately; no standalone upstream ReadStat build is claimed. pyreadstat and ReadStat are one family."
+  },
+  "python_xport_family": {
+    "version": "3.6.1",
+    "v56_sha256": "20b5e2dd8cba9fb57f4a785933ec4fcf8668807e8d828f6b9c4803c1611085ba",
+    "adapter": "tools/xport_compat.py changes pandas Series construction only; no parser/format algorithm changes"
+  }
+}

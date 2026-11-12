@@ -95,7 +95,12 @@ fn emit(path : String, selected : String?) -> @xpt.WriteReport raise {
   )
   for (meta, rows) in cases() {
     if selected is None ||
-      selected == Some(@xpt.text_field(meta.name, @xpt.Ascii)) {
+      selected == Some(@xpt.text_field(meta.name, @xpt.Ascii)) ||
+      (
+        selected == Some("__REGULAR__") &&
+        meta.name != b"SHORT" &&
+        meta.name != b"FULLBL"
+      ) {
       writer.begin_dataset(meta)
       for row in rows {
         writer.write_row(row)
@@ -124,6 +129,7 @@ fn main {
         ),
       )
     }
+    ignore(emit(args[1] + "/moon_regular.xpt", Some("__REGULAR__")))
     let report = emit(args[1] + "/moon_multi.xpt", None)
     let result : Json = {
       "producer": "MoonXPT 0.2.0 development",

@@ -1,0 +1,406 @@
+{
+  "status": "passed",
+  "mode": "corpus",
+  "steps": [
+    {
+      "name": "protected-baseline",
+      "command": [
+        "/home/user/MoonBit_Program/MoonXPT/.cache/venv/bin/python",
+        "/home/user/MoonBit_Program/MoonXPT/tools/verify_v010_baseline.py",
+        "--output",
+        "/home/user/MoonBit_Program/MoonXPT/.cache/v0.2.0/c06-corpus-runner/protected-baseline.json"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "log": "protected-baseline.log"
+    },
+    {
+      "name": "public-corpus",
+      "command": [
+        "/home/user/MoonBit_Program/MoonXPT/.cache/venv/bin/python",
+        "/home/user/MoonBit_Program/MoonXPT/tools/check.py",
+        "--oracle",
+        "--corpus"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "log": "public-corpus.log"
+    }
+  ],
+  "sas": "blocked",
+  "source_parent_commit": "98a249d5de1da0df8cc1d86a97f5fdb6029a197b",
+  "source_scope": "current working-tree files; code hashes recorded, not assumed identical to HEAD",
+  "sdk_scope": "existing fixed SDK; optional CI fresh-install receipt retained separately",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "source_files": [
+    {
+      "file": ".github/actionlint.yaml",
+      "sha256": "2fe3927ac48aa2de17587656e980bd537823b50cca9b2cf1242e45c763486d30"
+    },
+    {
+      "file": ".github/actions/preserve-v020/action.yml",
+      "sha256": "703c048c5ab723a2f1679ad6bb4b02b4cefff70178a3b5b71bed7e2de9812e31"
+    },
+    {
+      "file": ".github/actions/setup-v020/action.yml",
+      "sha256": "e1e0a1ef567403801b3294a2083a07ab5592ea8d51cfec642ae6eccd47f732f8"
+    },
+    {
+      "file": ".github/workflows/ci.yml",
+      "sha256": "4ebb823795c1be61345cbd653164934a4db77db4dd02e98313541bef069c3bee"
+    },
+    {
+      "file": "binary.mbt",
+      "sha256": "fa13d1c5d562f92ff4a0f7ded15861ddcb4b80764f3ed77c413c6e70db90ef3f"
+    },
+    {
+      "file": "binary_wbtest.mbt",
+      "sha256": "20297d7304db91570e4e88726839eb1c846503729d9527fda649f6ddbe4e8480"
+    },
+    {
+      "file": "boundary.mbt",
+      "sha256": "270c8eb13ea4e857618ef9f65b001ed7d3c6d65a9ed2091f7c11dd7328a5c360"
+    },
+    {
+      "file": "boundary_api_wbtest.mbt",
+      "sha256": "e2261a48dc9970955d289cdc5486a2f961477b8e91a656c319352f6a9889d9e1"
+    },
+    {
+      "file": "boundary_wbtest.mbt",
+      "sha256": "5ea37eacf27c97e57388bdd583f5c7e46fdf842334cbd3da4cee4912c6445c6d"
+    },
+    {
+      "file": "cmd/moonxpt/main.mbt",
+      "sha256": "2d7f895b8e589040d974f3f77a02be12c98177c8349f488e4666a34e334c1cd7"
+    },
+    {
+      "file": "cmd/moonxpt/moon.pkg",
+      "sha256": "f62a4ec65fc2fa31949861b37a9ecfc67c724f2f4f6f8afa73df209b185c39ca"
+    },
+    {
+      "file": "codec_oracle_wbtest.mbt",
+      "sha256": "05b54db85b82178b7340aec55493dd51fabd5e4f04ff3e1648c2b46560cc5094"
+    },
+    {
+      "file": "codec_wbtest.mbt",
+      "sha256": "02660ec8c7c4ea7b0432d169f6bacfe92ddcd319d691ed5fb76d15d02cc545ae"
+    },
+    {
+      "file": "edge_wbtest.mbt",
+      "sha256": "b775c84b624ee10b6eff526a830d22e83f1371cdfeba3153a4a89fd3111b5eb7"
+    },
+    {
+      "file": "examples/scan/main.mbt",
+      "sha256": "1d2dd1992e2f1ad30e9a5978d8d839b84804ac642f39a078ea112eda68bf6160"
+    },
+    {
+      "file": "examples/scan/moon.pkg",
+      "sha256": "7782dd8c9ecc1c9c1afb3d37b56425bb51656cbfa913a1233ab083f0de2c1129"
+    },
+    {
+      "file": "examples/write/main.mbt",
+      "sha256": "691a2b08a2fdc642195dc715e8f2a0b0a47f4ddb8bf9a204bd4b185df553e96a"
+    },
+    {
+      "file": "examples/write/moon.pkg",
+      "sha256": "7782dd8c9ecc1c9c1afb3d37b56425bb51656cbfa913a1233ab083f0de2c1129"
+    },
+    {
+      "file": "exchange/boundary.mbt",
+      "sha256": "516697f70508927299371e4876d282bf7ee4ff36cfa844c1054605805c7b12dc"
+    },
+    {
+      "file": "exchange/csv.mbt",
+      "sha256": "4afd7d58c96aa3b2ab232960359a43efd411d75f8a4cbb1d5d37f46d394ea5eb"
+    },
+    {
+      "file": "exchange/csv_reader.mbt",
+      "sha256": "210c001ba24d12f991d49a2979f0f598f64b28e2845445a5c1539ffbb6fa5ecf"
+    },
+    {
+      "file": "exchange/csv_reader_test.mbt",
+      "sha256": "d9860700f9029cbadce37e93f3ee1fdafeb32424a938647e379c2e12deff2a95"
+    },
+    {
+      "file": "exchange/csv_test.mbt",
+      "sha256": "f08c536a93e013e3e264f8ec3d18863c76ad3c58ac0772a82c71c715182cc5de"
+    },
+    {
+      "file": "exchange/import_metadata.mbt",
+      "sha256": "28adf013ae126495e5de0b6e1400be75d085601144d3f331fbd2b55aba921917"
+    },
+    {
+      "file": "exchange/import_test.mbt",
+      "sha256": "7576180bef66fe7c419b6045515dcc43e817048458fd675ee464db36a725f680"
+    },
+    {
+      "file": "exchange/metadata.mbt",
+      "sha256": "139fe5a646130b7b1c5a9cf3c0cf255559249eee859111e043146ac646a12a58"
+    },
+    {
+      "file": "exchange/moon.pkg",
+      "sha256": "d49952db70c5e95f10ce5a9fcf8146ef5f65345c3911506eff3a7a5e1be2651c"
+    },
+    {
+      "file": "member_chain.mbt",
+      "sha256": "33ac8a96dfe8bfa99fb26f90836173cc0423454905c009d053fbc333cea8c57b"
+    },
+    {
+      "file": "member_chain_wbtest.mbt",
+      "sha256": "a51dcb9b7735d23c9e82fc9d530ac07a02b1dd815a7aec011edaa4f1334fa08c"
+    },
+    {
+      "file": "metadata.mbt",
+      "sha256": "c4e4c48ee5081ecb4b93af9bf70f42386b8fdef89d3a93c6261714778f23f362"
+    },
+    {
+      "file": "metadata_wbtest.mbt",
+      "sha256": "741e14b76c16e2c0bfd57bf858b031ce296fd6ae9eecf85ff2a83746c57a995c"
+    },
+    {
+      "file": "model.mbt",
+      "sha256": "0b0527824d9c135dbddaae307dcbf66dd110116402ae672ababf478d4aa7e32d"
+    },
+    {
+      "file": "model_test.mbt",
+      "sha256": "fde8fbfdaa94f93c53a4b114302351bf888623a2348d043b40bcaa45d01529e8"
+    },
+    {
+      "file": "moon.mod",
+      "sha256": "634c441c5c26889b325da97f362c7272f7767c0b9d8dd47e29856a3a9953bfbf"
+    },
+    {
+      "file": "moon.pkg",
+      "sha256": "9d57a35acf0d0bbb6ce701a59360bdf31ad7c94607ca0711868e22324dcc73d9"
+    },
+    {
+      "file": "numeric.mbt",
+      "sha256": "7a07caa5fc121b3425d36648896f27d44b58573d48b8c43a1ef92c3a02e8bdeb"
+    },
+    {
+      "file": "platform/io.c",
+      "sha256": "0c4d17d1ded692884d752b8c624190f2fce8e1450b0b0c0e9456fb2b3249e525"
+    },
+    {
+      "file": "platform/io.mbt",
+      "sha256": "ebf56631516e7f51c24d074a6f934f74ff6fb5bcce959c0aefb36a1910cdebf3"
+    },
+    {
+      "file": "platform/moon.pkg",
+      "sha256": "7139ced4657a45a5ee0fe5c56f972077b3e9c8b0dfd2385ec0e30862562ba7e2"
+    },
+    {
+      "file": "platform/stage.mbt",
+      "sha256": "cf5bf8484c370d76073508593585b823c7b05c82720cac8891d97e876bc3aa8d"
+    },
+    {
+      "file": "platform/stage_wbtest.mbt",
+      "sha256": "d9f699f28bb2ab98d10266b92620b278a55bef02347b4185a4103fedab93c1c8"
+    },
+    {
+      "file": "platform/stdio.mbt",
+      "sha256": "2bcd4c1aca2b3632284712590f0850442f96d65b9b6327b3019730fa19caf7a8"
+    },
+    {
+      "file": "platform/text.mbt",
+      "sha256": "e6e5bdd2a5d9d258e493e5afeb98af64dbb5ec89c07ee6295ea9f8a91f279e98"
+    },
+    {
+      "file": "platform/write.mbt",
+      "sha256": "b173bf27f584abff64553bd90dfe5ddf9910d336d31cabf70e95dc07ca1134b0"
+    },
+    {
+      "file": "reader.mbt",
+      "sha256": "17063c6440f3a85edcab41b43208be52a747959bf5fa29860377a87a36e0616a"
+    },
+    {
+      "file": "reader_report.mbt",
+      "sha256": "cffdeb3fcb94b1a8d1f1e0736bee09831cddcf0a1cbf3468e4b4e3a3e0f3365b"
+    },
+    {
+      "file": "reader_wbtest.mbt",
+      "sha256": "cb75c61680dd3ddabbd7eb1f50a877f847028bb3067fd4ae65673a4a8acc3232"
+    },
+    {
+      "file": "smoke.mbt",
+      "sha256": "9d21ea934d5df159aaa8c7776a4cb0e58e66ca5c9f5719059ff48646ba703d70"
+    },
+    {
+      "file": "smoke_test.mbt",
+      "sha256": "08f2be123bbe4b34191c2dfaa519b3a9616e7de1893d9a56604c3c62f2bee1b9"
+    },
+    {
+      "file": "tests/boundary/generators/generate.py",
+      "sha256": "de503ea9a6cf311e671b3a13c061ad05089e23726b82bced84c4ab2b73a3cf60"
+    },
+    {
+      "file": "tests/interop/driver/main.mbt",
+      "sha256": "edec8ae3b63115e406f9810273a2f7bad36e08bd469447033244992c09f9b2d2"
+    },
+    {
+      "file": "tests/interop/driver/moon.pkg",
+      "sha256": "989996412ba543b4d330de0ee3d2695661172b1108c056d97ab3d35c6b6b5a8a"
+    },
+    {
+      "file": "text.mbt",
+      "sha256": "1e79c48f387845ee23b0a2e46493a54648ea61f957b885ad07b2589eb525b168"
+    },
+    {
+      "file": "tools/benchmark.py",
+      "sha256": "43c57197af1c26bbf8f019cb643cd7935179c2cf039586c2b7d8b7b4198b7f71"
+    },
+    {
+      "file": "tools/build_artifacts.py",
+      "sha256": "ae94f78962e36e93523ad7f99935a00b36d4596d3d423d5b0d0fcce8424c0211"
+    },
+    {
+      "file": "tools/check.py",
+      "sha256": "37d5943f866faddd6c2dbe3f536e751f48d802b565229336477a333ecfd7aef4"
+    },
+    {
+      "file": "tools/check_v020.py",
+      "sha256": "24dfcb52e79ce7cc88b95730b75e5fa20872794f055f8e575ea4530a006c0e5a"
+    },
+    {
+      "file": "tools/check_writer.py",
+      "sha256": "643d5e22342303fa05e74ae6b2e1f1818b6015baad0c00b848ec3ddf7cc2efe1"
+    },
+    {
+      "file": "tools/compare_scan.py",
+      "sha256": "f8c78a2b8a126f6c26bbc1845206508e92174b7ddaf86559239cbdc14a3eecd1"
+    },
+    {
+      "file": "tools/fetch_corpus.py",
+      "sha256": "9f3e14aa8790a8ee6f4b7aa6b9697c960be13fbf716e50a9c63dabafa8dbac4f"
+    },
+    {
+      "file": "tools/generate_codec_vectors.py",
+      "sha256": "6e0f92daac7aad0a9a0062e2f84161c688e8c754e730f0e887045852d017e6fe"
+    },
+    {
+      "file": "tools/generate_fixtures.py",
+      "sha256": "fd04f20a8d653787f979e08379dde7ed1d88ddc1e94462b697265efb5fa5adba"
+    },
+    {
+      "file": "tools/install_toolchain.py",
+      "sha256": "599aacda853b243095ec1574e7ce0d92e23c2af5229ba2bdd99028bfe21f08ae"
+    },
+    {
+      "file": "tools/oracles-v0.2.0.json",
+      "sha256": "415a8dce7f4187b88bcea91671b93fb10936b73bf5152e95c96908944d7412c2"
+    },
+    {
+      "file": "tools/probe_toolchain_sources.py",
+      "sha256": "be22381a35eb5f428ab330f3a5d9a44b3e8922eb46cc008b2de1f68828c26629"
+    },
+    {
+      "file": "tools/reproduce_clean.py",
+      "sha256": "005f3218443c45cdad8f80392d2cb2dd1f1784c2f0bd00f28208ac01aba5c27c"
+    },
+    {
+      "file": "tools/reproduce_v020.py",
+      "sha256": "e880eec49e15b17f27405f04e0f8efba8428a2df2c9ec5c9b3b9aeb5ca9c3cf3"
+    },
+    {
+      "file": "tools/requirements-oracle.txt",
+      "sha256": "46fe57229548150a7e8da4561a10845e4c5a56b5ea89dffc177c06fa3dd0f1ec"
+    },
+    {
+      "file": "tools/research.py",
+      "sha256": "46c7451a8f21ca51b5ce90aefa226926775cc2deb959bef828ed776507062c23"
+    },
+    {
+      "file": "tools/run_sas_v020.py",
+      "sha256": "5a8e98396b635f984c005b7197a5fdc743399b1de09e4e9714bbc45e0712516e"
+    },
+    {
+      "file": "tools/test_boundary_cli.py",
+      "sha256": "85180fb53e115e5a923f3a284539183b1c9a36bc0fbf8f57e20edb1a74ca7c63"
+    },
+    {
+      "file": "tools/test_boundary_resources.py",
+      "sha256": "d246643973d528f910ee26df38acf28a401cf825bececa3bd3c498bfb0bca632"
+    },
+    {
+      "file": "tools/test_consumer.py",
+      "sha256": "63f36f4769409c2be80f3044b356828990c9d163b8f3fb5657ec5a0409a13bda"
+    },
+    {
+      "file": "tools/test_exchange.py",
+      "sha256": "647c084dca5872adaded0f3f0112b59f7323203f3ac1fc040fc1e3f9f072c52c"
+    },
+    {
+      "file": "tools/test_export.py",
+      "sha256": "1e58f7b3d302bc51973c5c4f4e623ba6f5bc7654dc958544fea1c38bb6ab6e96"
+    },
+    {
+      "file": "tools/test_fixtures.py",
+      "sha256": "979cf01296e0faa5257851622894342dbcda3fe9ae72470dd3be3aa1cb20d59d"
+    },
+    {
+      "file": "tools/test_inspect.py",
+      "sha256": "9e2c7819097c6c15d44df7616ba68a732d8ba2f39b975efac0fc6011c35da3c2"
+    },
+    {
+      "file": "tools/test_interop_v020.py",
+      "sha256": "7c388a5052c9f09a2b25f2a75646b9b04c0953c93b0d3326fe6a07c9a23c6b22"
+    },
+    {
+      "file": "tools/test_malformed.py",
+      "sha256": "805013a6845e79728def9a922261c6b472d0545b6a30e787cd3cef3590d38f65"
+    },
+    {
+      "file": "tools/toolchain.json",
+      "sha256": "802a2de35b84e7311ec59bea10bde9036a6553eaa9b78db7e42387d2586ad186"
+    },
+    {
+      "file": "tools/validate_corpus.py",
+      "sha256": "62f16cf8dab5f10b72cb6726dea55af6d2a70b12568e2fba4b5762a0a48d99f8"
+    },
+    {
+      "file": "tools/verify_artifacts.py",
+      "sha256": "7789bed814fb0624edc5d39b877d3ee8b2d302f879a7bf14c4329fc12280d2ec"
+    },
+    {
+      "file": "tools/verify_ci_evidence.py",
+      "sha256": "9b6e177bfc312c12f18b0c184871bdaf68fa366c5cabf14f4b039b7031076fe6"
+    },
+    {
+      "file": "tools/verify_independent_install.py",
+      "sha256": "f7ad5b55cffd790dd8ec813960726adaa0bde8f3eb58daa8a75007f2df2194d1"
+    },
+    {
+      "file": "tools/verify_release.py",
+      "sha256": "2768fdd08ac111e2dc7af5604765c1aee15116f5773829f111fd369e068fa7eb"
+    },
+    {
+      "file": "tools/verify_v010_baseline.py",
+      "sha256": "f06c19b95310c8e58970bd00663bb6ff58916e53f1b4c3deb2d0360814f635b1"
+    },
+    {
+      "file": "tools/xport_compat.py",
+      "sha256": "2e55369569f511c7cfd4102dcd06cbd85339f651720820befa84cd73000b0466"
+    },
+    {
+      "file": "writer.mbt",
+      "sha256": "c325f4df425ff38e365007f29bb58ea26355b2a622c8b9b38d9e68e12ca2bc4f"
+    },
+    {
+      "file": "writer_report.mbt",
+      "sha256": "294f0f8ebbe269140bc813fd8ede388ea10b518a8fd4ff89519b01ecf7272175"
+    },
+    {
+      "file": "writer_schema.mbt",
+      "sha256": "a9110839a7c562f744ccb246951c91083c954960eb39f8c2e1abda7076bfd9c5"
+    },
+    {
+      "file": "writer_schema_wbtest.mbt",
+      "sha256": "c79f8322fadb9fff78c1e25267ba57a1a23c63be5e9f5374e1c63e6b403a2350"
+    },
+    {
+      "file": "writer_wbtest.mbt",
+      "sha256": "12724da75d9e48ccc993ec365ea1db75675729502e744b23b692ef1914fee120"
+    }
+  ],
+  "toolchain": "moon 0.1.20261012 (748b63c 2026-10-12) ~/.moon/bin/moon\nmoonc v0.10.15+943464bfa (2026-10-12) ~/.moon/bin/moonc\nmoonrun 0.1.20261012 (748b63c 2026-10-12) ~/.moon/bin/moonrun\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg\n"
+}

@@ -43,3 +43,22 @@
 | SAS XPORT Engine双向 | blocked | 用户确认无合法环境/runner；C05仅准备，不以mock替代 |
 
 API、CLI、JSON状态及迁移说明见[新边界契约](boundary-v0.2.0.md)。
+
+
+## v0.2.0 C06互操作更新（2026-11-12追加）
+
+本节更新上一开发阶段的not_run状态，不改v0.1.0表格或C04当时记录。
+
+| 能力 | 状态 | 工具/证据及限制 |
+|---|---|---|
+| ReadStat家族双向单成员 | passed | pyreadstat1.3.7，实际vendor e6e23bc；普通数值、掩码及暴露元数据，c06/interop/result.json |
+| ReadStat多成员 | not_supported_by_oracle | 实测4成员文件被当首schema读取为124行，未计作通过 |
+| Python xport单/多成员双向 | passed（正常支持范围） | 3.6.1固定v56摘要；完整4成员，逐行逐列及低层metadata/tag；边缘输入另列 |
+| 短/宽全空白末行 | not_supported_by_oracle（两个便利reader） | SHORT 2→1、FULLBL 1→0；MoonXPT严格解析与字节向量通过，不将oracle裁剪结果当真值 |
+| 字符原始存储与tag | not_supported_by_oracle（便利DataFrame） | 全字符原始字节按作者向量；tag另由xport低层28种字节向量证明 |
+| 旧真实语料新版本回归 | passed | 3份620612单元格及声明元数据，实际max ULP0；新c06结果与旧记录分开 |
+| SAS双向 | blocked | 无合法SAS环境/runner，S01–S14没有实际执行 |
+| 新远端CI | not_run | 五类job已配置并本地lint；未push，不继承v0.1.0云端结论 |
+
+完整仓库的docs/validation-report-v0.2.0.md列出版本、方向、限制和复现命令；clean checkout
+实际结果会在最终验收章节单独追加。

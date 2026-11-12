@@ -1,0 +1,4 @@
+# Planned label only; no SAS runner is currently provisioned or enabled.
+self-hosted-runner:
+  labels:
+    - sas-xport

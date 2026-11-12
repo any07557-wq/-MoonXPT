@@ -1,0 +1,452 @@
+{
+  "status": "passed",
+  "directions": {
+    "I03_R01": {
+      "status": "passed",
+      "family": "ReadStat via pyreadstat",
+      "members": 1,
+      "rows": 4
+    },
+    "I05_R03": {
+      "status": "passed",
+      "family": "Python xport",
+      "members": 1,
+      "rows": {
+        "FIRST": 3
+      }
+    },
+    "I05_R05": {
+      "status": "passed",
+      "family": "Python xport",
+      "members": 2,
+      "rows": {
+        "FIRST": 3,
+        "SECOND": 2
+      }
+    },
+    "I04_R02": {
+      "status": "passed",
+      "family": "ReadStat via pyreadstat",
+      "single_member_files": [
+        "TEST_A",
+        "TEST_B",
+        "EMPTY",
+        "TAGS"
+      ],
+      "rows": {
+        "TEST_A": 3,
+        "TEST_B": 2,
+        "EMPTY": 0,
+        "TAGS": 28
+      },
+      "scope": "all ordinary numeric values/masks and exposed metadata; decoded character views only"
+    },
+    "I06_R04": {
+      "status": "passed",
+      "family": "Python xport",
+      "single_member_files": [
+        "TEST_A",
+        "TEST_B",
+        "EMPTY",
+        "TAGS"
+      ]
+    },
+    "I06_R06": {
+      "status": "passed",
+      "family": "Python xport",
+      "members": [
+        "TEST_A",
+        "TEST_B",
+        "EMPTY",
+        "TAGS"
+      ],
+      "rows": {
+        "TEST_A": 3,
+        "TEST_B": 2,
+        "EMPTY": 0,
+        "TAGS": 28
+      },
+      "scope": "all members/columns/rows of regular multi-member output"
+    }
+  },
+  "test_ids": {
+    "R01": "passed",
+    "R02": "passed",
+    "R03": "passed",
+    "R04": "passed",
+    "R05": "passed",
+    "R06": "passed",
+    "R07": "passed",
+    "R08": "passed",
+    "R09": "passed",
+    "R10": "passed"
+  },
+  "limitations": [
+    "Character raw storage bytes and trailing-space identity are not exposed by either convenience reader; no blanket observation trim is used to claim equality.",
+    "Numeric/gap/reordered-position/full-HFP-range coverage outside oracle exposure remains normative vectors, not an oracle success claim.",
+    "ReadStat and pyreadstat are one family. Upstream reviewed code differs from the actual pinned vendored reader.",
+    "SAS XPORT Engine is blocked; no SAS results are included."
+  ],
+  "edges": [
+    {
+      "family": "ReadStat",
+      "fixture": "SHORT",
+      "authored_rows": 2,
+      "observed_rows": 1,
+      "status": "not_supported_by_oracle",
+      "reason": "all-blank observation lost by this pinned reader; not counted as interoperable"
+    },
+    {
+      "family": "ReadStat",
+      "fixture": "FULLBL",
+      "authored_rows": 1,
+      "observed_rows": 0,
+      "status": "not_supported_by_oracle",
+      "reason": "all-blank observation lost by this pinned reader; not counted as interoperable"
+    },
+    {
+      "family": "Python xport",
+      "fixture": "SHORT",
+      "authored_rows": 2,
+      "observed_rows": 1,
+      "status": "not_supported_by_oracle",
+      "reason": "all-blank observation lost by this pinned reader; not counted as interoperable"
+    },
+    {
+      "family": "Python xport",
+      "fixture": "FULLBL",
+      "authored_rows": 1,
+      "observed_rows": 0,
+      "status": "not_supported_by_oracle",
+      "reason": "all-blank observation lost by this pinned reader; not counted as interoperable"
+    },
+    {
+      "family": "ReadStat",
+      "fixture": "invalid-padding.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 1,
+        "rejected": false
+      }
+    },
+    {
+      "family": "Python xport",
+      "fixture": "invalid-padding.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 1,
+        "rejected": false
+      }
+    },
+    {
+      "family": "ReadStat",
+      "fixture": "truncated-padding.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 1,
+        "rejected": false
+      }
+    },
+    {
+      "family": "Python xport",
+      "fixture": "truncated-padding.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 1,
+        "rejected": false
+      }
+    },
+    {
+      "family": "ReadStat",
+      "fixture": "truncated-observation.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 0,
+        "rejected": false
+      }
+    },
+    {
+      "family": "Python xport",
+      "fixture": "truncated-observation.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 0,
+        "rejected": false
+      }
+    },
+    {
+      "family": "ReadStat",
+      "fixture": "nul-padding.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 1,
+        "rejected": false
+      }
+    },
+    {
+      "family": "Python xport",
+      "fixture": "nul-padding.xpt",
+      "status": "not_supported_by_oracle",
+      "reason": "oracle outcome recorded; not evidence of strict padding/physical-record validation",
+      "observed": {
+        "rows": 1,
+        "rejected": false
+      }
+    }
+  ],
+  "oracle_versions": {
+    "pyreadstat": "1.3.7",
+    "xport": "3.6.1",
+    "pandas": "3.1.0",
+    "numpy": "2.5.4",
+    "setuptools": "80.10.2",
+    "narwhals": "2.28.0",
+    "python-dateutil": "4.0.0",
+    "tzdata": "2026.6"
+  },
+  "oracle_source_lock": {
+    "readstat_family": {
+      "wrapper": "pyreadstat",
+      "wrapper_version": "1.3.7",
+      "vendor_repository": "https://github.com/Roche/pyreadstat",
+      "vendor_commit": "e6e23bc0021875f35fccc3c2707c3e5151c130bb",
+      "read_source_sha256": "11c18b92a8db0daca92a965b50fe20edc88903c4c14a54235d79a93b6ce5ce71",
+      "write_source_sha256": "5d565f95d8ae8c6d10700c4f93a32b5eb8933ae578baf9ad849b57c1cf50f245",
+      "upstream_review_commit": "8ce32a11c248225dd4ccaccbcadd24214c5da46f",
+      "scope": "Oracle execution uses the pinned pyreadstat distribution and records actual binary hashes. Vendor source snapshot is identified separately; no standalone upstream ReadStat build is claimed. pyreadstat and ReadStat are one family."
+    },
+    "python_xport_family": {
+      "version": "3.6.1",
+      "v56_sha256": "20b5e2dd8cba9fb57f4a785933ec4fcf8668807e8d828f6b9c4803c1611085ba",
+      "adapter": "tools/xport_compat.py changes pandas Series construction only; no parser/format algorithm changes"
+    }
+  },
+  "runtime_modules": [
+    {
+      "file": "_readstat_parser.cpython-314-x86_64-linux-gnu.so",
+      "sha256": "e870487937fdad756573cb64f7b6c172a9732c248dfbaa71f666d895e328f538"
+    },
+    {
+      "file": "_readstat_writer.cpython-314-x86_64-linux-gnu.so",
+      "sha256": "6de8ab78ed72f3cb1c327c07328bfe169deb9b2d235f0588d8bf9fb8846feb8a"
+    }
+  ],
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "adapter_sha256": "2e55369569f511c7cfd4102dcd06cbd85339f651720820befa84cd73000b0466",
+  "moon_generator": {
+    "producer": "MoonXPT 0.2.0 development",
+    "member_count": 6,
+    "row_count": 36,
+    "sas_executed": false
+  },
+  "special_missing": {
+    "Python_xport_low_level": "passed: 28 classes, tagged byte vectors exact",
+    "ReadStat_wrapper": "not_supported_by_oracle: tags normalized to NaN",
+    "dataframe_tag_identity": "not_supported_by_oracle"
+  },
+  "ReadStat_multi_member_probe": {
+    "status": "not_supported_by_oracle",
+    "exit_code": 0,
+    "stdout": "{\"rows\": 124, \"columns\": [\"N\", \"TXT\"]}\n",
+    "stderr": "",
+    "scope": "No ReadStat multi-member success claim; no first-member slicing used for R06"
+  },
+  "files": [
+    {
+      "file": "exports/moon_regular-EMPTY.csv",
+      "bytes": 2,
+      "sha256": "7058299627365fc7a3dd7840fd3d56f29306cd30c0f2c13cb500fe79617290ff",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/moon_regular-EMPTY.json",
+      "bytes": 701,
+      "sha256": "c6f217c684ccfb2032cc34464389cbe1c108c18179026a93be6285fdef3c5c93",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/moon_regular-TAGS.csv",
+      "bytes": 89,
+      "sha256": "174660528ac8af52d637904d17ab9ef35789026826f770cf4c75281b60674d80",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/moon_regular-TAGS.json",
+      "bytes": 705,
+      "sha256": "0824fa51f5a038434f8c5ede61c514ec39f12fb2fec1fb9a497c85af7f115bc1",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/moon_regular-TEST_A.csv",
+      "bytes": 59,
+      "sha256": "5d866307401d14356b280779200fb6aa6640aebb7b3e6a1aaa0e177092ecce2f",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/moon_regular-TEST_A.json",
+      "bytes": 978,
+      "sha256": "47e92344c8450eb9efc57edc952432a79e4df1cf33c3867eaa087fad1cb46a9a",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/moon_regular-TEST_B.csv",
+      "bytes": 25,
+      "sha256": "9c39e7a2cad90e08df006b0e42a261b70dbcdae5d0bdb15ec0b8fd2b8c20b538",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/moon_regular-TEST_B.json",
+      "bytes": 938,
+      "sha256": "5a7642f161e05b9079834bdfded7606591451d328fa5133d74b7a702cb040f01",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/readstat-v5-ORACLE.csv",
+      "bytes": 53,
+      "sha256": "60a40e700610fab95e84dbe551973a20399673fb05a8cc7cc510f7307a49ac5b",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/readstat-v5-ORACLE.json",
+      "bytes": 956,
+      "sha256": "5f05ea5b73fd09b29eba2195009ab94c6a7c19cef378a1906af06f49e23d6a48",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/xport-multi-FIRST.csv",
+      "bytes": 40,
+      "sha256": "9571191136bfc025a40d92d2413d0d17f40ea395d782aab06ccee7835bcffb8f",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/xport-multi-FIRST.json",
+      "bytes": 916,
+      "sha256": "22f8b1255d101099066837b2a472359fa9e7bf416d39ce9e4457294d5edcc9d2",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/xport-multi-SECOND.csv",
+      "bytes": 17,
+      "sha256": "6c5b7a0ec8c56f5d1f600953963ad7450f893d281babd9e926deb543ecc8d539",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/xport-multi-SECOND.json",
+      "bytes": 707,
+      "sha256": "79ac966e5b1749952b312a3866dbb9e7a58a99380d78fd99e6873fd116606ede",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/xport-single-FIRST.csv",
+      "bytes": 40,
+      "sha256": "9571191136bfc025a40d92d2413d0d17f40ea395d782aab06ccee7835bcffb8f",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "exports/xport-single-FIRST.json",
+      "bytes": 916,
+      "sha256": "22f8b1255d101099066837b2a472359fa9e7bf416d39ce9e4457294d5edcc9d2",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "inputs/readstat-v5.xpt",
+      "bytes": 1120,
+      "sha256": "09633f9bc5a4b77fbd814007040c55d3daa7f65b9e3247556448babe74355702",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "inputs/xport-multi.xpt",
+      "bytes": 1840,
+      "sha256": "bfd6aa78bea12cfa96d7e9a5f063e3a07cc7af61ea594bc5cb241d2bebed3894",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "inputs/xport-single.xpt",
+      "bytes": 1120,
+      "sha256": "097c217210117e8f144c5688e1c309215c970736d349d61dee36149fcacb7b2f",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "moon/EMPTY.xpt",
+      "bytes": 880,
+      "sha256": "fbc57dd3ca18f223c496b6b372833168fd9114f0a6115d4a7ada57b3767f9ed7",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "moon/FULLBL.xpt",
+      "bytes": 960,
+      "sha256": "e0916c2fecb04d231cba599e6a4ad49e279d523a54c4cad504b3e4c52dcae873",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "moon/SHORT.xpt",
+      "bytes": 960,
+      "sha256": "71b7ba8008dcfa5c94c497f002940d1962bc411d5bebb5348aad7f81f2936754",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "moon/TAGS.xpt",
+      "bytes": 1120,
+      "sha256": "8f80cf998013924d5fad9c28d629afc1dba33a0f9d56f16921eab4589fdce6d9",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "moon/TEST_A.xpt",
+      "bytes": 1120,
+      "sha256": "f58a1118a13152153dd202bf25bd23a84272d63e294fa605215f5db26a7e2d2b",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "moon/TEST_B.xpt",
+      "bytes": 1120,
+      "sha256": "928635c30042563a2d4beafb77ebbf8f032c7586d03f1118d6524938858c32cd",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "moon/moon_multi.xpt",
+      "bytes": 4960,
+      "sha256": "6391fabd8c4b77ba79d89422b5cfb3cc7195fb71d908efce99c6c4bf21bac4e2",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    },
+    {
+      "file": "moon/moon_regular.xpt",
+      "bytes": 3520,
+      "sha256": "6e7c72e5ba03b75d6c426c63bf9c581d34100658eaaed147fdd654ba22d7770a",
+      "license": "MIT synthetic test data",
+      "personal_data": false
+    }
+  ]
+}

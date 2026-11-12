@@ -1,0 +1,5 @@
+{
+  "status": "passed",
+  "files": 7,
+  "scope": "fresh current MoonXPT generator reproduces all seven frozen C05 inputs; no SAS execution"
+}

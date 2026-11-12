@@ -1,0 +1,23 @@
+[
+  {
+    "path": "src/readstat.h",
+    "vendor_commit": "e6e23bc0021875f35fccc3c2707c3e5151c130bb",
+    "blob": "0fb057e6487ecb6c576727ea15edfb593c0e774f",
+    "sha256": "fc7700f1b5fa0474fa56df1b80ec3064dab342547df5144261792b823936f1c9",
+    "file": "pyreadstat-readstat.h"
+  },
+  {
+    "path": "src/sas/readstat_xport_read.c",
+    "vendor_commit": "e6e23bc0021875f35fccc3c2707c3e5151c130bb",
+    "blob": "298f67db03db42320052468c3c054cbde78d77c4",
+    "sha256": "11c18b92a8db0daca92a965b50fe20edc88903c4c14a54235d79a93b6ce5ce71",
+    "file": "pyreadstat-readstat_xport_read.c"
+  },
+  {
+    "path": "src/sas/readstat_xport_write.c",
+    "vendor_commit": "e6e23bc0021875f35fccc3c2707c3e5151c130bb",
+    "blob": "b550b545abb3587bc973f90f20bee6af976b9c86",
+    "sha256": "5d565f95d8ae8c6d10700c4f93a32b5eb8933ae578baf9ad849b57c1cf50f245",
+    "file": "pyreadstat-readstat_xport_write.c"
+  }
+]

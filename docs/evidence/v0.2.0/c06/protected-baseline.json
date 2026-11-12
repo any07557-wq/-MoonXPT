@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "immutable_files": 305,
+  "append_only_documents": 3,
+  "v010_tag_preserved": true,
+  "history_preserved": true,
+  "boundary": "Local Git objects and current file bytes verified; no remote mutation or new CI run."
+}

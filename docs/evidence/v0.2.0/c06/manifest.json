@@ -1,0 +1,139 @@
+{
+  "files": [
+    {
+      "file": "ci-static.json",
+      "bytes": 1059,
+      "sha256": "fdaea4b5973c338788def6ffbb6f52f6ec5b4c3cf3a1346cd92803607be0ce05"
+    },
+    {
+      "file": "corpus/corpus-results.json",
+      "bytes": 770,
+      "sha256": "b7dcb119566169165e5474cd0fc5eff0f3a37f8602ad3d6ecfb5bbb81b766f3a"
+    },
+    {
+      "file": "corpus/evidence.zip",
+      "bytes": 8558,
+      "sha256": "839e73fa1f651e698ccb287f06caaa41e39f6b5e53e13a4eb7f4c525b899dda4"
+    },
+    {
+      "file": "corpus/result.json",
+      "bytes": 13833,
+      "sha256": "419cd9e3d5fab8bc937d070d0d241e3dd0ca2b62a56f04ffbce7d5264cf80dd9"
+    },
+    {
+      "file": "initial-interop-failure.zip",
+      "bytes": 14038,
+      "sha256": "2a7e972502a2b7510bff3fd91b6f998ea1643eb743ff012db8fd086ba746c46f"
+    },
+    {
+      "file": "interop/evidence.zip",
+      "bytes": 24204,
+      "sha256": "a6e0d133b6b6821530b9f8e6f070349dbd64ecf0dcf4989490772251a00eb800"
+    },
+    {
+      "file": "interop/result.json",
+      "bytes": 14412,
+      "sha256": "b61b613e0b28a6d290f6a0017ccca3b3a76b4f2ff188b622560df764fd7f0952"
+    },
+    {
+      "file": "offline/evidence.zip",
+      "bytes": 16661,
+      "sha256": "96a172133f204e6a9b4a9a4c65f55abd4b4cdc6b765d8606bc8897946c9661c5"
+    },
+    {
+      "file": "offline/result.json",
+      "bytes": 14793,
+      "sha256": "a183ac74c92be48e6c41b9a04c453f10b5b5908cd871be17256a31c3b936274c"
+    },
+    {
+      "file": "oracle-lock.json",
+      "bytes": 986,
+      "sha256": "415a8dce7f4187b88bcea91671b93fb10936b73bf5152e95c96908944d7412c2"
+    },
+    {
+      "file": "package-smoke.json",
+      "bytes": 239,
+      "sha256": "943bc3a728d75d540b1753da4c47cf1c81c6b623525b2821fc5f8c56f683ca10"
+    },
+    {
+      "file": "post-fix/c05-fixtures-preserved.json",
+      "bytes": 142,
+      "sha256": "0676f41bb10e356651fac8c3a0805450a6254dac49752839ba983dcdb4150d77"
+    },
+    {
+      "file": "post-fix/ci-static-complete.json",
+      "bytes": 1196,
+      "sha256": "908db5771075dddf89f4e1a7d19580f406a7d456232746214500c1e968aef244"
+    },
+    {
+      "file": "post-fix/corpus-result.json",
+      "bytes": 14268,
+      "sha256": "0ca56d61222c54d9af9f0965ab024d8b15bd5a6a5a54d26cf597797312244510"
+    },
+    {
+      "file": "post-fix/corpus.zip",
+      "bytes": 8710,
+      "sha256": "0038ac3c63771c1d66315c8f982e3bbbb40b99e8f7e021df9f91a7a03fac8f83"
+    },
+    {
+      "file": "post-fix/interop-result.json",
+      "bytes": 14412,
+      "sha256": "17f9da3bd0893fd6458f051d9c446d3d8dcc951ee850946a7f8ddb1ab245b871"
+    },
+    {
+      "file": "post-fix/interop.zip",
+      "bytes": 24345,
+      "sha256": "ac2a32211fd15819e1e00eea80b43a7d2f41cfbc2cd9d61156b89a6e335a8d4b"
+    },
+    {
+      "file": "post-fix/offline-result.json",
+      "bytes": 15232,
+      "sha256": "020fc5b66df7936e7a13abab5d0ef99ac13732db8b01c08a7b141603a315cb7a"
+    },
+    {
+      "file": "post-fix/offline.zip",
+      "bytes": 16661,
+      "sha256": "08188352e1323bbb3363f1f90d567761528333419abbb37b7f0f1dffd11f794f"
+    },
+    {
+      "file": "post-fix/package-smoke.json",
+      "bytes": 217,
+      "sha256": "4004f711b0fbdef94b5c9be65551ab29fd943b2f08b828a9ff57a278c65ffc55"
+    },
+    {
+      "file": "post-fix/regressions-before-fix.zip",
+      "bytes": 750,
+      "sha256": "1ac7322a185cc6cc2e90335090228832594b7b120f7b86333aad43ad813861fd"
+    },
+    {
+      "file": "post-fix/result.json",
+      "bytes": 726,
+      "sha256": "07aebf548d74a844732be5933a8e7c33683c633f9c81bdd9ecec7d0585d52d1a"
+    },
+    {
+      "file": "protected-baseline.json",
+      "bytes": 242,
+      "sha256": "8cefc91ddf22fd49fec3707fdd7eedc8ffff85fde623edf9dbc6d1616f443050"
+    },
+    {
+      "file": "raw-console.zip",
+      "bytes": 3587,
+      "sha256": "b1624541f5aafda4c4063f2ddef5387633dca09a54e87496ac5d4c368b1a30e4"
+    },
+    {
+      "file": "result.json",
+      "bytes": 1570,
+      "sha256": "0e27339db8fabe007bee4591992150b5d08df1d8d40e19ce31cd07d9b45109e5"
+    },
+    {
+      "file": "vendor-commit.json",
+      "bytes": 198,
+      "sha256": "0091e4f3ca313d0064802c4155e094592fadc4267d780799ce7bf4ff14e28ea0"
+    },
+    {
+      "file": "vendor-source-records.json",
+      "bytes": 891,
+      "sha256": "e2a5bb2149927422ef57d5f057c31568cfe769501e89ca6fe7dc4ddf1c6b728a"
+    }
+  ]
+}

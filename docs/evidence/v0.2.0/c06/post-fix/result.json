@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "test_groups": 81,
+  "added_regressions": [
+    "File input captures stream origin for relative reposition; real prefixed file and both member offsets checked",
+    "max_rows cannot remove legitimate format candidates or manufacture uniqueness; unique over-budget count is resource error"
+  ],
+  "pre_fix_results": {
+    "prefixed_seek": "79 total, 78 passed, 1 failed",
+    "row_limit": "81 total, 79 passed, 2 failed"
+  },
+  "post_fix_results": "81/81 plus all original integrations, CLI A01-A18, both oracle directions and 620612 corpus cells; SDK/oracles/corpus reused with pins/hashes checked",
+  "clean_checkout": "not_run until implementation commit exists",
+  "no_tolerance_increase": true
+}

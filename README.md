@@ -110,7 +110,7 @@ while reader.next_dataset() is Some(schema) {
 ## 验证
 
 ```sh
-python3 tools/check.py                         # 离线：27组、CLI、夹具、异常、公共消费方
+python3 tools/check.py                         # 离线：原27组及新增边界测试、CLI、夹具、异常、公共消费方
 bash tools/setup_oracles.sh                    # 仅开发验证需要
 .cache/venv/bin/python tools/check.py --oracle --corpus
 .cache/venv/bin/python tools/reproduce_clean.py --corpus

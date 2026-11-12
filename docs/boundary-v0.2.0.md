@@ -66,3 +66,12 @@ Writer::new新增tail_policy，默认RejectAmbiguousTail：遇到已知的W<80�
 finish_report返回实际成员/行数、padding及逐成员诊断；CLI输出结果并在stderr给warning。
 旧finish()->Unit保留。库的外部Output已交付字节不能撤销；CLI始终使用临时stage，成功后
 发布，失败清理，保留旧版并发冲突与成组回滚约定。
+
+
+## C06复现与证据入口（2026-11-12追加）
+
+完整仓库使用tools/check_v020.py的offline/interop/corpus三种模式，分别归档原检查与新增
+CLI/资源测试、独立双向夹具、固定真实语料。所有证据路径必须新建，失败保留原日志。
+可用tools/reproduce_v020.py对已提交HEAD做新克隆与无项目缓存构建；复用固定SDK这一
+边界会写入回执，不冒称新机器/SDK安装。SAS保持blocked，真实执行需后续合法环境。
+详情在完整仓库docs/validation-report-v0.2.0.md；库包不携带开发工具或全部证据。
